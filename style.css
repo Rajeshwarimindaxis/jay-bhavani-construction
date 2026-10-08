@@ -2416,13 +2416,13 @@ ul {
     .hero-bottom-item i {
         display: block;
 
-        font-size: 12px;
+        font-size: 14px;
 
         margin-bottom: 1px;
     }
 
     .hero-bottom-item span {
-        font-size: 7px;
+        font-size: 9px;
 
         line-height: 1.15;
     }
@@ -3221,15 +3221,14 @@ ul {
     .top-contact-separator {
         font-size: 13px;
     }
-
-
     /* ========================================================
-       HERO
-       ======================================================== */
+   HERO - TABLET & MOBILE
+   ======================================================== */
+
+@media (max-width: 768px) {
 
     .hero {
         min-height: 570px;
-
         padding-top: 118px;
     }
 
@@ -3245,24 +3244,103 @@ ul {
         font-size: 9px;
     }
 
+    /* Bottom service strip */
     .hero-bottom,
     .hero-bottom-inner,
     .hero-bottom-item {
         height: 64px;
     }
 
+    .hero-bottom-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 3px 2px;
+    }
+
     .hero-bottom-item a {
-        font-size: 6px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        width: 100%;
+        height: 100%;
+        font-size: 8px !important;
+        line-height: 1;
+        text-align: center;
     }
 
     .hero-bottom-item span {
-        font-size: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    /* Orange arrow - vertically centered */
+    .hero-bottom-item i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+}
+
+
+/* ========================================================
+   SMALL MOBILE
+   ======================================================== */
+
+@media (max-width: 480px) {
+
+    .hero {
+        min-height: 560px;
+        padding-top: 110px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-description {
+        font-size: 10px;
+    }
+
+    .hero-feature {
+        font-size: 8px;
+    }
+
+    .hero-bottom,
+    .hero-bottom-inner,
+    .hero-bottom-item {
+        height: 64px;
+    }
+
+    .hero-bottom-item {
+        gap: 2px;
+        padding: 2px 1px;
+    }
+
+    .hero-bottom-item a {
+        font-size: 7px !important;
+        gap: 3px;
+    }
+
+    .hero-bottom-item span {
+        font-size: 7px;
+        line-height: 0.95;
     }
 
     .hero-bottom-item i {
         font-size: 9px;
+        line-height: 1;
     }
-
+}
 
     /* ========================================================
        ABOUT
