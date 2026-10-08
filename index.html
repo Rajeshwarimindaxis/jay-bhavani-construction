@@ -1,0 +1,3430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Jay Bhavani Construction - Industrial Sheds, PEB Structures, Commercial Buildings, RCC Road Construction and RCC Flooring.">
+
+    <meta name="keywords"
+          content="Jay Bhavani Construction, Industrial Sheds, PEB Structures, Commercial Buildings, RCC Roads, RCC Flooring, Construction">
+
+    <meta name="author"
+          content="Jay Bhavani Construction">
+
+    <title>
+        Jay Bhavani Construction | Strong Structures. Smart Solutions.
+    </title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <!-- =========================================================
+         SERVICES + GALLERY ANIMATION
+    ========================================================== -->
+
+    <style>
+
+       <style>
+
+/* =========================================================
+   SERVICES SLIDER
+========================================================= */
+
+.services-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 12px 0 30px;
+}
+
+
+/* =========================================================
+   SERVICES TRACK
+========================================================= */
+
+.services-track {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+    width: max-content;
+    will-change: transform;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.service-card {
+    flex: 0 0 var(--service-card-width, 360px);
+    width: var(--service-card-width, 360px);
+    min-width: var(--service-card-width, 360px);
+
+    height: 485px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(20, 35, 55, 0.08);
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.07);
+
+    position: relative;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* CARD HOVER */
+
+.service-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.13);
+
+}
+
+
+/* =========================================================
+   SERVICE IMAGE
+========================================================= */
+
+.service-image {
+
+    width: 100%;
+
+    height: 235px;
+    min-height: 235px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    background: #e9edf1;
+}
+
+
+.service-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+/* IMAGE HOVER */
+
+.service-card:hover .service-image img {
+
+    transform: scale(1.07);
+
+}
+
+
+/* =========================================================
+   DARK IMAGE OVERLAY
+========================================================= */
+
+.service-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.02),
+            rgba(0, 0, 0, 0.28)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   SERVICE CATEGORY
+========================================================= */
+
+.service-category {
+
+    position: absolute;
+
+    left: 18px;
+    bottom: 18px;
+
+    z-index: 2;
+
+    padding: 7px 13px;
+
+    border-radius: 6px;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+========================================================= */
+
+.service-content {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 25px 25px 23px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+}
+
+
+/* =========================================================
+   SERVICE ICON
+========================================================= */
+
+.service-icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(214, 164, 55, 0.12);
+
+    color: #c18a18;
+
+    font-size: 20px;
+
+    margin-bottom: 17px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.service-card:hover .service-icon {
+
+    background: #c18a18;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   SERVICE TITLE
+========================================================= */
+
+.service-content h3 {
+
+    margin: 0 0 11px;
+
+    min-height: 30px;
+
+    color: #17212b;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    letter-spacing: -0.2px;
+
+}
+
+
+/* =========================================================
+   SERVICE DESCRIPTION
+========================================================= */
+
+.service-content p {
+
+    margin: 0;
+
+    color: #66717d;
+
+    font-size: 14.5px;
+
+    line-height: 1.65;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 4;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   SERVICE ARROW
+========================================================= */
+
+.service-arrow {
+
+    width: 40px;
+    height: 40px;
+
+    margin-top: auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f3f5f7;
+
+    color: #1c2935;
+
+    font-size: 14px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.service-card:hover .service-arrow {
+
+    background: #c18a18;
+
+    color: #ffffff;
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================================
+   SERVICE CARD BOTTOM ACCENT
+========================================================= */
+
+.service-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 3px;
+
+    background: #c18a18;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.35s ease;
+
+    z-index: 5;
+
+}
+
+
+.service-card:hover::before {
+
+    transform: scaleX(1);
+
+}
+
+
+/* =========================================================
+   SERVICE CONTROLS
+========================================================= */
+
+.services-controls-row {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.services-slider-controls {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.service-nav-btn {
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(20, 35, 55, 0.12);
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #1d2935;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.06);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.service-nav-btn:hover {
+
+    background: #c18a18;
+
+    color: #ffffff;
+
+    border-color: #c18a18;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(193, 138, 24, 0.25);
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1101px) {
+
+    .service-card {
+
+        height: 485px;
+
+    }
+
+    .service-image {
+
+        height: 235px;
+        min-height: 235px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) and (min-width: 769px) {
+
+    .services-track {
+
+        gap: 24px;
+
+    }
+
+
+    .service-card {
+
+        height: 465px;
+
+    }
+
+
+    .service-image {
+
+        height: 220px;
+        min-height: 220px;
+
+    }
+
+
+    .service-content {
+
+        padding: 22px;
+
+    }
+
+
+    .service-content h3 {
+
+        font-size: 20px;
+
+    }
+
+
+    .service-content p {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .services-slider {
+
+        padding-bottom: 20px;
+
+    }
+
+
+    .services-track {
+
+        gap: 16px;
+
+    }
+
+
+    .service-card {
+
+        height: 450px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .service-image {
+
+        height: 215px;
+        min-height: 215px;
+
+    }
+
+
+    .service-content {
+
+        padding: 21px;
+
+    }
+
+
+    .service-icon {
+
+        width: 44px;
+        height: 44px;
+
+        margin-bottom: 14px;
+
+    }
+
+
+    .service-content h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .service-content p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .services-controls-row {
+
+        justify-content: center;
+
+        margin-bottom: 15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .service-card {
+
+        height: 440px;
+
+    }
+
+
+    .service-image {
+
+        height: 205px;
+        min-height: 205px;
+
+    }
+
+
+    .service-content {
+
+        padding: 19px;
+
+    }
+
+
+    .service-content h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    .service-category {
+
+        left: 14px;
+        bottom: 14px;
+
+        font-size: 10px;
+
+        padding: 6px 10px;
+
+    }
+
+}
+
+        /* =====================================================
+           GALLERY ANIMATION
+        ====================================================== */
+
+        .gallery-item {
+
+            opacity: 0;
+
+            transform:
+                translateY(55px)
+                scale(0.96);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+        }
+
+
+        .gallery-item.gallery-visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+
+        /* ONE-BY-ONE DELAY */
+
+        .gallery-item:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .gallery-item:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .gallery-item:nth-child(3) {
+            transition-delay: 0.25s;
+        }
+
+        .gallery-item:nth-child(4) {
+            transition-delay: 0.35s;
+        }
+
+        .gallery-item:nth-child(5) {
+            transition-delay: 0.45s;
+        }
+
+        .gallery-item:nth-child(6) {
+            transition-delay: 0.55s;
+        }
+
+        .gallery-item:nth-child(7) {
+            transition-delay: 0.65s;
+        }
+
+        .gallery-item:nth-child(8) {
+            transition-delay: 0.75s;
+        }
+
+
+        /* GALLERY IMAGE HOVER */
+
+        .gallery-item {
+            overflow: hidden;
+        }
+
+
+        .gallery-item img {
+            transition:
+                transform 0.7s ease;
+        }
+
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+
+        /* REDUCED MOTION */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .services-track,
+            .service-card,
+            .service-image img,
+            .gallery-item,
+            .gallery-item img {
+
+                transition: none !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         TOP CONTACT TICKER
+         Continuous horizontal scrolling bar
+    ========================================================== -->
+
+    <div class="top-contact-bar" aria-label="Contact information">
+
+        <div class="top-contact-track">
+
+            <div class="top-contact-group">
+
+                <a href="tel:+917499429991" class="top-contact-item">
+                    +91 7499429991
+                </a>
+
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:info@jbinfras.com" class="top-contact-item">
+                    info@jbinfras.com
+                </a>
+
+                <span class="top-contact-separator">|</span>
+
+                <a href="tel:+917499429991" class="top-contact-item">
+                    +91 7499429991
+                </a>
+
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item">
+                    jaybhavaniconstruction64@gmail.com
+                </a>
+
+                <span class="top-contact-separator">|</span>
+
+            </div>
+
+
+            <!-- Exact duplicate for seamless continuous looping -->
+            <div class="top-contact-group" aria-hidden="true">
+
+                <a href="tel:+917499429991" class="top-contact-item">
+                    +91 7499429991
+                </a>
+
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:info@jbinfras.com" class="top-contact-item">
+                    info@jbinfras.com
+                </a>
+
+                <span class="top-contact-separator">|</span>
+
+                <a href="tel:+917499429991" class="top-contact-item">
+                    +91 7499429991
+                </a>
+
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item">
+                    jaybhavaniconstruction64@gmail.com
+                </a>
+
+                <span class="top-contact-separator">|</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="header" id="header">
+
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">
+
+                <img
+                    src="./logoo.png"
+                    alt="Jay Bhavani Construction Logo"
+                    class="site-logo">
+
+                <div class="logo-name">
+                    Jay Bhavani Construction
+                </div>
+
+            </a>
+
+
+            <nav class="navbar" id="navbar">
+
+                <a href="#home"
+                   class="nav-link active">
+                    Home
+                </a>
+
+                <a href="about.html"
+                   class="nav-link">
+                    About
+                </a>
+
+                <a href="#services"
+                   class="nav-link">
+                    Services
+                </a>
+
+                <a href="#gallery"
+                   class="nav-link">
+                    Gallery
+                </a>
+
+                <a href="#contact"
+                   class="nav-link">
+                    Contact
+                </a>
+
+                <a href="#contact"
+                   class="nav-quote">
+                    Get a Quote
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open Menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-tag">
+
+                        <span></span>
+
+                        BUILDING WITH STRENGTH & PRECISION
+
+                    </div>
+
+
+                    <h1>
+
+                        Strong Structures.
+
+                        <span>
+                            Smart Solutions.
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Professional construction solutions
+                        for industrial, commercial and
+                        infrastructure projects — built with
+                        quality, precision and reliability.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#services"
+                            class="btn btn-primary">
+
+                            Explore Services
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#contact"
+                            class="btn btn-outline">
+
+                            Contact Us
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-features">
+
+                        <div class="hero-feature">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                Quality Focused
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-feature">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                Customer Centric
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-feature">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                Timely Completion
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HERO SERVICE STRIP -->
+
+            <div class="hero-bottom">
+
+                <div class="container hero-bottom-inner">
+
+
+                    <a
+                        href="industrial-sheds.html"
+                        class="hero-bottom-item">
+
+                        <div class="service-strip-icon">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                Industrial Sheds
+                            </span>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right strip-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="peb-structures.html"
+                        class="hero-bottom-item">
+
+                        <div class="service-strip-icon">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                PEB Structures
+                            </span>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right strip-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="commercial-buildings.html"
+                        class="hero-bottom-item">
+
+                        <div class="service-strip-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                Commercial Buildings
+                            </span>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right strip-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="rcc-road-construction.html"
+                        class="hero-bottom-item">
+
+                        <div class="service-strip-icon">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                RCC Road Construction
+                            </span>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right strip-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="rcc-flooring.html"
+                        class="hero-bottom-item">
+
+                        <div class="service-strip-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+
+                        <div>
+                            <span>
+                                RCC Flooring
+                            </span>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right strip-arrow"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section
+            class="section about-section"
+            id="about">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-tag">
+
+                        <span></span>
+
+                        ABOUT US
+
+                    </div>
+
+
+                    <h2>
+
+                        Building
+                        <span>Strength</span>.
+
+                        Delivering
+                        <span>Trust</span>.
+
+                    </h2>
+
+
+                    <p>
+
+                        Jay Bhavani Construction is focused on
+                        delivering dependable construction and
+                        structural solutions with attention to
+                        quality, innovation and timely execution.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-grid">
+
+
+                    <div class="about-image">
+
+                        <img
+                            src="images/ABOUTSECTIONIMAG.jpg"
+                            alt="Industrial Shed Construction">
+
+
+                        <div class="image-badge">
+
+                            <i class="fa-solid fa-hard-hat"></i>
+
+                            <div>
+
+                                <strong>
+                                    Built With Purpose
+                                </strong>
+
+                                <small>
+                                    Quality • Precision • Reliability
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="about-content">
+
+                        <span class="content-label">
+                            OUR APPROACH
+                        </span>
+
+
+                        <h3>
+
+                            Construction that combines
+                            experience, technology and precision.
+
+                        </h3>
+
+
+                        <p>
+
+                            We provide construction solutions
+                            across industrial, commercial and
+                            infrastructure requirements.
+
+                            Our approach focuses on understanding
+                            project needs and executing work with
+                            quality and professionalism.
+
+                        </p>
+
+
+                        <p>
+
+                            From structural fabrication and
+                            pre-engineered buildings to commercial
+                            construction and RCC infrastructure,
+                            we aim to provide reliable solutions
+                            for every project.
+
+                        </p>
+
+
+                        <div class="about-points">
+
+                            <div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    Quality-oriented execution
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    Modern construction practices
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    Customer-focused approach
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    Reliable project execution
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section
+            class="section services-section"
+            id="services">
+
+            <div class="container">
+
+
+                <div class="section-heading centered">
+
+                    <div class="section-tag">
+
+                        <span></span>
+
+                        WHAT WE DO
+
+                        <span></span>
+
+                    </div>
+
+
+                    <h2>
+
+                        Our
+                        <span>Construction Services</span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Reliable construction solutions engineered
+                        for industrial, commercial and
+                        infrastructure needs.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- ARROW CONTROLS -->
+
+                <div class="services-controls-row">
+
+                    <div
+                        class="services-slider-controls"
+                        aria-label="Services navigation">
+
+
+                        <button
+                            type="button"
+                            class="service-nav-btn service-prev"
+                            aria-label="Previous services"
+                            title="Previous services">
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="service-nav-btn service-next"
+                            aria-label="Next services"
+                            title="Next services">
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SERVICE SLIDER
+                ================================================== -->
+
+                <div class="services-slider">
+
+                    <div class="services-track">
+
+
+                        <!-- SERVICE 1 -->
+
+                        <a
+                            href="industrial-sheds.html"
+                            class="service-card">
+
+
+                            <div class="service-image">
+
+                                <img
+                                    src="images/industrial-shed.jpg"
+                                    alt="Industrial Shed Construction">
+
+                                <div class="service-category">
+                                    INDUSTRIAL
+                                </div>
+
+                            </div>
+
+
+                            <div class="service-content">
+
+                                <div class="service-icon">
+
+                                    <i class="fa-solid fa-industry"></i>
+
+                                </div>
+
+
+                                <h3>
+                                    Industrial Sheds
+                                </h3>
+
+
+                                <p>
+
+                                    Strong and functional
+                                    industrial shed solutions
+                                    designed for manufacturing,
+                                    storage and industrial
+                                    requirements.
+
+                                </p>
+
+
+                                <span class="service-arrow">
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- SERVICE 2 -->
+
+                        <a
+                            href="peb-structures.html"
+                            class="service-card">
+
+
+                            <div class="service-image">
+
+                                <img
+                                    src="images/peb-structure.jpg"
+                                    alt="PEB Structure Construction">
+
+                                <div class="service-category">
+                                    STRUCTURAL
+                                </div>
+
+                            </div>
+
+
+                            <div class="service-content">
+
+                                <div class="service-icon">
+
+                                    <i class="fa-solid fa-warehouse"></i>
+
+                                </div>
+
+
+                                <h3>
+                                    PEB Structures
+                                </h3>
+
+
+                                <p>
+
+                                    Efficient pre-engineered
+                                    building structures focused
+                                    on strength, functionality
+                                    and durability.
+
+                                </p>
+
+
+                                <span class="service-arrow">
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- SERVICE 3 -->
+
+                        <a
+                            href="commercial-buildings.html"
+                            class="service-card">
+
+
+                            <div class="service-image">
+
+                                <img
+                                    src="images/commercial-building.jpg"
+                                    alt="Commercial Building Construction">
+
+                                <div class="service-category">
+                                    COMMERCIAL
+                                </div>
+
+                            </div>
+
+
+                            <div class="service-content">
+
+                                <div class="service-icon">
+
+                                    <i class="fa-solid fa-building"></i>
+
+                                </div>
+
+
+                                <h3>
+                                    Commercial Buildings
+                                </h3>
+
+
+                                <p>
+
+                                    Professional commercial
+                                    construction solutions
+                                    combining functionality,
+                                    aesthetics and long-term
+                                    usability.
+
+                                </p>
+
+
+                                <span class="service-arrow">
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- SERVICE 4 -->
+
+                        <a
+                            href="rcc-road-construction.html"
+                            class="service-card">
+
+
+                            <div class="service-image">
+
+                                <img
+                                    src="images/rcc-road.jpg"
+                                    alt="RCC Road Construction">
+
+                                <div class="service-category">
+                                    INFRASTRUCTURE
+                                </div>
+
+                            </div>
+
+
+                            <div class="service-content">
+
+                                <div class="service-icon">
+
+                                    <i class="fa-solid fa-road"></i>
+
+                                </div>
+
+
+                                <h3>
+                                    RCC Road Construction
+                                </h3>
+
+
+                                <p>
+
+                                    Durable RCC road construction
+                                    solutions for industrial,
+                                    commercial and infrastructure
+                                    applications.
+
+                                </p>
+
+
+                                <span class="service-arrow">
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- SERVICE 5 -->
+
+                        <a
+                            href="rcc-flooring.html"
+                            class="service-card">
+
+
+                            <div class="service-image">
+
+                                <img
+                                    src="images/RCC Roads & Flooring.png"
+                                    alt="RCC Flooring Construction">
+
+                                <div class="service-category">
+                                    FLOORING
+                                </div>
+
+                            </div>
+
+
+                            <div class="service-content">
+
+                                <div class="service-icon">
+
+                                    <i class="fa-solid fa-layer-group"></i>
+
+                                </div>
+
+
+                                <h3>
+                                    RCC Flooring
+                                </h3>
+
+
+                                <p>
+
+                                    High-quality RCC flooring
+                                    solutions designed for
+                                    strength, durability and
+                                    long-term performance.
+
+                                </p>
+
+
+                                <span class="service-arrow">
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROCESS
+        ====================================================== -->
+
+        <section
+            class="section process-section"
+            id="process">
+
+            <div class="container">
+
+
+                <div class="section-heading centered">
+
+                    <div class="section-tag">
+
+                        <span></span>
+
+                        HOW WE WORK
+
+                        <span></span>
+
+                    </div>
+
+
+                    <h2>
+
+                        From Concept to
+                        <span>Completion</span>
+
+                    </h2>
+
+
+                    <p>
+
+                        A structured approach helps us maintain
+                        clarity and efficiency throughout the
+                        project lifecycle.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-item">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Understand project requirements,
+                            scope and expectations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-line"></div>
+
+
+                    <div class="process-item">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+
+                        <h3>
+                            Plan
+                        </h3>
+
+                        <p>
+                            Develop a practical approach for
+                            project planning and execution.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-line"></div>
+
+
+                    <div class="process-item">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-person-digging"></i>
+                        </div>
+
+                        <h3>
+                            Execute
+                        </h3>
+
+                        <p>
+                            Execute construction work with
+                            attention to quality and safety.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-line"></div>
+
+
+                    <div class="process-item">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-flag-checkered"></i>
+                        </div>
+
+                        <h3>
+                            Deliver
+                        </h3>
+
+                        <p>
+                            Complete and deliver the project
+                            according to agreed requirements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             GALLERY
+        ====================================================== -->
+
+        <section
+            class="section gallery-section"
+            id="gallery">
+
+            <div class="container">
+
+
+                <div class="section-heading centered">
+
+                    <div class="section-tag">
+
+                        <span></span>
+
+                        OUR GALLERY
+
+                        <span></span>
+
+                    </div>
+
+
+                    <h2>
+
+                        Our Work in
+                        <span>Pictures</span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Explore a glimpse of our construction
+                        work and project capabilities.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="gallery-grid">
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/industrialshedd.jpg"
+                            alt="Industrial Shed Construction">
+
+                        <div class="gallery-caption">
+
+                            <span>
+                                INDUSTRIAL
+                            </span>
+
+                            <h3>
+                                Industrial Sheds
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/PPEB.jpg"
+                            alt="PEB Construction">
+
+                        <div class="gallery-caption">
+
+                            <span>
+                                STRUCTURAL
+                            </span>
+
+                            <h3>
+                                PEB Structures
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/commercialbuildingg.jpg"
+                            alt="Commercial Construction">
+
+                        <div class="gallery-caption">
+
+                            <span>
+                                COMMERCIAL
+                            </span>
+
+                            <h3>
+                                Commercial Buildings
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/rcc flooring.png"
+                            alt="RCC Road Construction">
+
+                        <div class="gallery-caption">
+
+                            <span>
+                                INFRASTRUCTURE
+                            </span>
+
+                            <h3>
+                                RCC Roads & Flooring
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/industrail park.png"
+                            alt="Industrial Construction Project">
+
+                        <div class="gallery-caption">
+
+                            <span>
+                                PROJECT WORK
+                            </span>
+
+                            <h3>
+                                Industrial Project Work
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/peb.jpg"
+                            alt="Pre Engineered Building Project">
+
+                        <div class="gallery-caption">
+
+                            <span>
+                                PEB PROJECT
+                            </span>
+
+                            <h3>
+                                Pre-Engineered Buildings
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/comercialwork.png"
+                            alt="Commercial Building Project">
+
+                        <div class="gallery-caption">
+
+                            <span>
+                                COMMERCIAL
+                            </span>
+
+                            <h3>
+                                Commercial Project Work
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/rcc-road.jpg"
+                            alt="RCC Infrastructure Project">
+
+                        <div class="gallery-caption">
+
+                            <span>
+                                INFRASTRUCTURE
+                            </span>
+
+                            <h3>
+                                RCC Infrastructure Work
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MISSION / VISION
+        ====================================================== -->
+
+        <section
+            class="section mission-section">
+
+            <div class="container">
+
+                <div class="mission-grid">
+
+
+                    <div class="mission-card">
+
+                        <div class="mission-icon">
+
+                            <i class="fa-solid fa-bullseye"></i>
+
+                        </div>
+
+
+                        <span>
+                            OUR MISSION
+                        </span>
+
+
+                        <h3>
+                            Delivering Quality
+                            Construction Solutions
+                        </h3>
+
+
+                        <p>
+
+                            Our focus is on delivering
+                            dependable construction solutions
+                            with quality, innovation,
+                            professional execution and
+                            customer-focused service.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="mission-card">
+
+                        <div class="mission-icon">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </div>
+
+
+                        <span>
+                            OUR VISION
+                        </span>
+
+
+                        <h3>
+                            Building Long-Term Trust
+                        </h3>
+
+
+                        <p>
+
+                            We aim to establish ourselves as a
+                            reliable construction partner through
+                            quality work, responsible execution
+                            and long-term customer relationships.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+
+                    <div>
+
+                        <span>
+                            HAVE A PROJECT IN MIND?
+                        </span>
+
+
+                        <h2>
+
+                            Let's Build Something
+
+                            <strong>
+                                Strong Together.
+                            </strong>
+
+                        </h2>
+
+
+                        <p>
+
+                            Tell us about your construction
+                            requirements and let's discuss
+                            the right solution for your project.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="#contact"
+                        class="btn btn-light">
+
+                        Get a Quote
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section
+            class="section contact-section"
+            id="contact">
+
+            <div class="container">
+
+                <div class="contact-grid">
+
+
+                    <div class="contact-info">
+
+                        <div class="section-tag">
+
+                            <span></span>
+
+                            GET IN TOUCH
+
+                        </div>
+
+
+                        <h2>
+
+                            Let's Discuss Your
+                            <span>Project</span>
+
+                        </h2>
+
+
+                        <p>
+
+                            <strong>
+                                Have a construction requirement?
+                            </strong>
+                            <br>
+
+                            Contact us to discuss your project,
+                            requirements and potential solutions.
+
+                        </p>
+
+
+                        <div class="contact-details">
+
+
+                            <a
+                                href="tel:+7499429991"
+                                class="contact-item">
+
+
+                                <div class="contact-icon">
+
+                                    <i class="fa-solid fa-phone"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <small>
+                                        CALL US
+                                    </small>
+
+                                    <strong>
+                                        +91 7499429991
+                                    </strong>
+
+                                </div>
+
+                            </a>
+
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+
+                                    <i class="fa-solid fa-location-dot"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <small>
+                                        OFFICE
+                                    </small>
+
+                                    <strong>
+
+                                        Office No C715/16,
+                                        Gera Imperium Gateway,
+                                        Nashik Phata, 411034
+
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-form-wrapper">
+
+
+                        <div class="form-header">
+
+                            <span>
+                                PROJECT ENQUIRY
+                            </span>
+
+                            <h3>
+                                Tell Us About Your Project
+                            </h3>
+
+                            <p>
+
+                                Fill in the details below and
+                                our team can get in touch with you.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <form id="contactForm">
+
+
+                            <div class="form-row">
+
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Your Name
+                                    </label>
+
+
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Enter your name"
+                                        required>
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="phone">
+                                        Phone Number
+                                    </label>
+
+
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="Enter phone number"
+                                        required>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    required>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="service">
+                                    Service Required
+                                </label>
+
+
+                                <select
+                                    id="service"
+                                    name="service"
+                                    required>
+
+
+                                    <option value="">
+                                        Select a service
+                                    </option>
+
+
+                                    <option value="Industrial Sheds">
+                                        Industrial Sheds
+                                    </option>
+
+
+                                    <option value="PEB Structures">
+                                        PEB Structures
+                                    </option>
+
+
+                                    <option value="Commercial Buildings">
+                                        Commercial Buildings
+                                    </option>
+
+
+                                    <option value="RCC Road Construction">
+                                        RCC Road Construction
+                                    </option>
+
+
+                                    <option value="RCC Flooring">
+                                        RCC Flooring
+                                    </option>
+
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+
+                                </select>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="message">
+                                    Project Details
+                                </label>
+
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Tell us briefly about your project..."
+                                    required></textarea>
+
+                            </div>
+
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary form-submit">
+
+                                Send Enquiry
+
+                                <i class="fa-solid fa-paper-plane"></i>
+
+                            </button>
+
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div class="footer-about">
+
+
+                    <a
+                        href="#home"
+                        class="footer-logo">
+
+
+                        <img
+                            src="./logoo.png"
+                            alt="Jay Bhavani Construction Logo"
+                            class="footer-site-logo">
+
+
+                    </a>
+
+
+                    <p>
+
+                        Building strong foundations and
+                        delivering dependable construction
+                        solutions for industrial, commercial
+                        and infrastructure projects.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        QUICK LINKS
+                    </h4>
+
+
+                    <a href="#home">
+                        Home
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="#services">
+                        Services
+                    </a>
+
+                    <a href="#gallery">
+                        Gallery
+                    </a>
+
+                    <a href="#contact">
+                        Contact
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        SERVICES
+                    </h4>
+
+
+                    <a href="industrial-sheds.html">
+                        Industrial Sheds
+                    </a>
+
+                    <a href="peb-structures.html">
+                        PEB Structures
+                    </a>
+
+                    <a href="commercial-buildings.html">
+                        Commercial Buildings
+                    </a>
+
+                    <a href="rcc-road-construction.html">
+                        RCC Road Construction
+                    </a>
+
+                    <a href="rcc-flooring.html">
+                        RCC Flooring
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        CONTACT
+                    </h4>
+
+
+                    <a href="tel:+917499429991">
+                        +91 7499429991
+                    </a>
+
+                    <a href="mailto:info@jbinfras.com">
+                        info@jbinfras.com
+                    </a>
+
+                    <a href="mailto:jaybhavaniconstruction64@gmail.com">
+                        jaybhavaniconstruction64@gmail.com
+                    </a>
+
+                    <span>
+                        Nashik Phata, Pune, 411034
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="footer-bottom">
+
+                <p class="footer-credit">
+
+                    ©
+                    <span id="currentYear"></span>
+                    Jay Bhavani Construction.
+                    All Rights Reserved.
+
+                </p>
+
+
+                <p>
+
+                    <span class="footer divider"></span>
+
+                    Developed by MindAxis Innovation Pvt. Ltd.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         FLOATING CONTACT
+    ====================================================== -->
+
+    <div class="floating-contact">
+
+
+        <a
+            href="https://wa.me/918208417128"
+            target="_blank"
+            class="float-btn whatsapp"
+            aria-label="WhatsApp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+        </a>
+
+
+        <a
+            href="tel:+918208417128"
+            class="float-btn phone"
+            aria-label="Phone">
+
+            <i class="fa-solid fa-phone"></i>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BACK TO TOP
+    ====================================================== -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        aria-label="Back to top">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+
+    <!-- =====================================================
+         SERVICES SLIDER JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                const track =
+                    document.querySelector(
+                        ".services-track"
+                    );
+
+
+                const slider =
+                    document.querySelector(
+                        ".services-slider"
+                    );
+
+
+                const prev =
+                    document.querySelector(
+                        ".service-prev"
+                    );
+
+
+                const next =
+                    document.querySelector(
+                        ".service-next"
+                    );
+
+
+                if (
+                    !track ||
+                    !slider ||
+                    !prev ||
+                    !next
+                ) {
+                    return;
+                }
+
+
+                const cards =
+                    Array.from(
+                        track.querySelectorAll(
+                            ".service-card"
+                        )
+                    );
+
+
+                let currentIndex = 0;
+
+                let autoSlide = null;
+
+
+                /* =========================================
+                   VISIBLE CARDS
+                ========================================= */
+
+                function getVisibleCards() {
+
+                    if (window.innerWidth <= 768) {
+
+                        return 1;
+
+                    }
+
+
+                    if (window.innerWidth <= 1100) {
+
+                        return 2;
+
+                    }
+
+
+                    return 3;
+
+                }
+
+
+                /* =========================================
+                   MAXIMUM SLIDE POSITION
+                ========================================= */
+
+                function getMaxIndex() {
+
+                    return Math.max(
+                        0,
+                        cards.length -
+                        getVisibleCards()
+                    );
+
+                }
+
+
+                /* =========================================
+                   ACTUAL HORIZONTAL MOVEMENT
+                ========================================= */
+
+                function slideServices() {
+
+
+                    if (!cards.length) {
+                        return;
+                    }
+
+
+                    const cardWidth =
+                        cards[0]
+                            .getBoundingClientRect()
+                            .width;
+
+
+                    const gap =
+                        parseFloat(
+                            getComputedStyle(track).gap
+                        ) || 0;
+
+
+                    const distance =
+                        currentIndex *
+                        (cardWidth + gap);
+
+
+                    /*
+                     * This transform creates
+                     * the visible horizontal slide.
+                     */
+
+                    track.style.transform =
+                        `translateX(-${distance}px)`;
+
+                }
+
+
+                /* =========================================
+                   NEXT
+                ========================================= */
+
+                function nextSlide() {
+
+
+                    const max =
+                        getMaxIndex();
+
+
+                    if (currentIndex < max) {
+
+                        currentIndex++;
+
+                    } else {
+
+                        currentIndex = 0;
+
+                    }
+
+
+                    slideServices();
+
+                }
+
+
+                /* =========================================
+                   PREVIOUS
+                ========================================= */
+
+                function previousSlide() {
+
+
+                    const max =
+                        getMaxIndex();
+
+
+                    if (currentIndex > 0) {
+
+                        currentIndex--;
+
+                    } else {
+
+                        currentIndex = max;
+
+                    }
+
+
+                    slideServices();
+
+                }
+
+
+                /* =========================================
+                   AUTO SLIDE
+                ========================================= */
+
+                function startAutoSlide() {
+
+                    stopAutoSlide();
+
+
+                    autoSlide =
+                        setInterval(
+                            function () {
+
+                                nextSlide();
+
+                            },
+                            3500
+                        );
+
+                }
+
+
+                function stopAutoSlide() {
+
+                    if (autoSlide !== null) {
+
+                        clearInterval(
+                            autoSlide
+                        );
+
+                        autoSlide = null;
+
+                    }
+
+                }
+
+
+                function restartAutoSlide() {
+
+                    stopAutoSlide();
+
+                    startAutoSlide();
+
+                }
+
+
+                /* =========================================
+                   NEXT BUTTON
+                ========================================= */
+
+                next.addEventListener(
+                    "click",
+                    function () {
+
+                        nextSlide();
+
+                        restartAutoSlide();
+
+                    }
+                );
+
+
+                /* =========================================
+                   PREVIOUS BUTTON
+                ========================================= */
+
+                prev.addEventListener(
+                    "click",
+                    function () {
+
+                        previousSlide();
+
+                        restartAutoSlide();
+
+                    }
+                );
+
+
+                /* =========================================
+                   PAUSE ON HOVER
+                ========================================= */
+
+                slider.addEventListener(
+                    "mouseenter",
+                    function () {
+
+                        stopAutoSlide();
+
+                    }
+                );
+
+
+                slider.addEventListener(
+                    "mouseleave",
+                    function () {
+
+                        startAutoSlide();
+
+                    }
+                );
+
+
+                /* =========================================
+                   MOBILE SWIPE
+                ========================================= */
+
+                let touchStartX = 0;
+
+                let touchEndX = 0;
+
+
+                slider.addEventListener(
+                    "touchstart",
+                    function (event) {
+
+                        touchStartX =
+                            event.touches[0].clientX;
+
+                        stopAutoSlide();
+
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+
+                slider.addEventListener(
+                    "touchend",
+                    function (event) {
+
+
+                        touchEndX =
+                            event.changedTouches[0].clientX;
+
+
+                        const difference =
+                            touchStartX -
+                            touchEndX;
+
+
+                        if (
+                            Math.abs(difference) >
+                            50
+                        ) {
+
+
+                            if (difference > 0) {
+
+                                nextSlide();
+
+                            } else {
+
+                                previousSlide();
+
+                            }
+
+                        }
+
+
+                        startAutoSlide();
+
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+
+                /* =========================================
+                   RESIZE
+                ========================================= */
+
+                let resizeTimer;
+
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+
+
+                        clearTimeout(
+                            resizeTimer
+                        );
+
+
+                        resizeTimer =
+                            setTimeout(
+                                function () {
+
+                                    currentIndex = 0;
+
+                                    slideServices();
+
+                                },
+                                150
+                            );
+
+                    }
+                );
+
+
+                /* =========================================
+                   INITIALIZE
+                ========================================= */
+
+                currentIndex = 0;
+
+                slideServices();
+
+                startAutoSlide();
+
+
+            }
+        );
+
+    </script>
+
+
+
+    <!-- =====================================================
+         GALLERY ANIMATION
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                const galleryItems =
+                    document.querySelectorAll(
+                        ".gallery-item"
+                    );
+
+
+                if (!galleryItems.length) {
+                    return;
+                }
+
+
+                const galleryObserver =
+                    new IntersectionObserver(
+                        function (
+                            entries,
+                            observer
+                        ) {
+
+
+                            entries.forEach(
+                                function (entry) {
+
+
+                                    if (
+                                        entry.isIntersecting
+                                    ) {
+
+
+                                        entry.target
+                                            .classList
+                                            .add(
+                                                "gallery-visible"
+                                            );
+
+
+                                        observer.unobserve(
+                                            entry.target
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+                        },
+                        {
+                            threshold: 0.15,
+
+                            rootMargin:
+                                "0px 0px -50px 0px"
+                        }
+                    );
+
+
+                galleryItems.forEach(
+                    function (item) {
+
+                        galleryObserver.observe(
+                            item
+                        );
+
+                    }
+                );
+
+
+            }
+        );
+
+    </script>
+
+
+
+    <!-- =====================================================
+         GENERAL JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* YEAR */
+
+        document.getElementById(
+            "currentYear"
+        ).textContent =
+            new Date().getFullYear();
+
+
+
+        /* MOBILE MENU */
+
+        const menuToggle =
+            document.getElementById(
+                "menuToggle"
+            );
+
+
+        const navbar =
+            document.getElementById(
+                "navbar"
+            );
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navbar.classList.toggle(
+                    "active"
+                );
+
+                menuToggle.classList.toggle(
+                    "active"
+                );
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(
+                ".nav-link, .nav-quote"
+            )
+            .forEach(
+                link => {
+
+                    link.addEventListener(
+                        "click",
+                        () => {
+
+                            navbar.classList.remove(
+                                "active"
+                            );
+
+                            menuToggle.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* HEADER SHADOW */
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+
+                const header =
+                    document.getElementById(
+                        "header"
+                    );
+
+
+                if (
+                    window.scrollY > 40
+                ) {
+
+                    header.classList.add(
+                        "scrolled"
+                    );
+
+                } else {
+
+                    header.classList.remove(
+                        "scrolled"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* BACK TO TOP */
+
+        const backToTop =
+            document.getElementById(
+                "backToTop"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+
+                if (
+                    window.scrollY > 500
+                ) {
+
+                    backToTop.classList.add(
+                        "show"
+                    );
+
+                } else {
+
+                    backToTop.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+
+        /* CONTACT FORM */
+
+        document
+            .getElementById("contactForm")
+            .addEventListener(
+                "submit",
+                function (event) {
+
+
+                    event.preventDefault();
+
+
+                    alert(
+                        "Thank you! Your enquiry has been submitted."
+                    );
+
+
+                    this.reset();
+
+                }
+            );
+
+
+    </script>
+
+
+</body>
+
+</html>
