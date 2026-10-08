@@ -1,5 +1,5 @@
 /* =========================================================
-   ABOUT HERO SECTION — UPDATED ONLY
+   ABOUT HERO SECTION
 ========================================================= */
 
 .about-hero {
@@ -14,7 +14,9 @@
 }
 
 
-/* HERO IMAGE */
+/* =========================================================
+   HERO IMAGE
+========================================================= */
 
 .about-hero-image {
     position: absolute;
@@ -28,7 +30,9 @@
 }
 
 
-/* HERO OVERLAY */
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
 
 .about-hero-overlay {
     position: absolute;
@@ -45,7 +49,9 @@
 }
 
 
-/* HERO CONTAINER */
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
 
 .about-hero-container {
     position: relative;
@@ -60,7 +66,9 @@
 }
 
 
-/* HERO CONTENT — CENTERED */
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .about-hero-content {
     width: 100%;
@@ -76,7 +84,9 @@
 }
 
 
-/* WHO WE ARE */
+/* =========================================================
+   HERO TAG
+========================================================= */
 
 .about-hero-tag {
     display: flex;
@@ -90,7 +100,7 @@
 
     color: #F28C28;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
 
     font-size: 16px;
 
@@ -102,7 +112,9 @@
 }
 
 
-/* LINES BESIDE WHO WE ARE */
+/* =========================================================
+   LINES BESIDE HERO TAG
+========================================================= */
 
 .about-hero-tag::before,
 .about-hero-tag::after {
@@ -115,7 +127,9 @@
 }
 
 
-/* HERO HEADING */
+/* =========================================================
+   HERO HEADING
+========================================================= */
 
 .about-hero h1 {
     max-width: 900px;
@@ -136,21 +150,25 @@
 }
 
 
-/* ORANGE HEADING TEXT */
+/* =========================================================
+   ORANGE HEADING TEXT
+========================================================= */
 
 .about-hero h1 span {
     color: #F28C28;
 }
 
 
-/* HERO PARAGRAPH */
+/* =========================================================
+   HERO PARAGRAPH
+========================================================= */
 
 .about-hero p {
     max-width: 760px;
 
     margin: 0 auto 40px;
 
-    color: rgba(255, 255, 255, 0.82);
+    color: floralwhite
 
     font-family: "Inter", sans-serif;
 
@@ -162,9 +180,12 @@
 }
 
 
-/* HERO BUTTONS */
+/* =========================================================
+   HERO BUTTONS
+   Matches HTML: .about-hero-buttons
+========================================================= */
 
-.about-hero-actions {
+.about-hero-buttons {
     display: flex;
 
     align-items: center;
@@ -177,7 +198,9 @@
 }
 
 
-/* PRIMARY BUTTON */
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
 
 .about-hero .btn-primary {
     display: inline-flex;
@@ -221,9 +244,12 @@
 }
 
 
-/* SECONDARY BUTTON */
+/* =========================================================
+   OUTLINE BUTTON
+   Matches HTML: .btn-outline
+========================================================= */
 
-.about-hero .btn-secondary {
+.about-hero .btn-outline {
     display: inline-flex;
 
     align-items: center;
@@ -259,7 +285,7 @@
 }
 
 
-.about-hero .btn-secondary:hover {
+.about-hero .btn-outline:hover {
     transform: translateY(-4px);
 
     background: #ffffff;
@@ -296,96 +322,6 @@
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-
-/* =========================================================
-   HERO RESPONSIVE
-========================================================= */
-
-@media (max-width: 850px) {
-
-    .about-hero {
-        min-height: 680px;
-    }
-
-    .about-hero-content {
-        padding: 110px 0 90px;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .about-hero {
-        min-height: 650px;
-    }
-
-    .about-hero-content {
-        padding: 90px 0 70px;
-    }
-
-    .about-hero-tag {
-        gap: 10px;
-
-        font-size: 11px;
-
-        letter-spacing: 1.5px;
-    }
-
-    .about-hero-tag::before,
-    .about-hero-tag::after {
-        width: 30px;
-    }
-
-    .about-hero h1 {
-        font-size: clamp(38px, 10vw, 52px);
-
-        letter-spacing: -1px;
-
-        margin-bottom: 22px;
-    }
-
-    .about-hero p {
-        font-size: 15px;
-
-        line-height: 1.7;
-
-        margin-bottom: 30px;
-    }
-
-    .about-hero-actions {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .about-hero .btn-primary,
-    .about-hero .btn-secondary {
-        width: 100%;
-
-        min-height: 56px;
-    }
-}
-
-
-@media (max-width: 400px) {
-
-    .about-hero {
-        min-height: 620px;
-    }
-
-    .about-hero-content {
-        padding: 80px 0 60px;
-    }
-
-    .about-hero h1 {
-        font-size: 36px;
-    }
-
-    .about-hero p {
-        font-size: 14px;
     }
 }
 
@@ -482,7 +418,6 @@
     50% {
         transform: translateY(-8px);
     }
-
 }
 
 
@@ -1010,21 +945,16 @@
 
     0%,
     100% {
-
         transform:
             translate(0, 0)
             rotate(0deg);
-
     }
 
     50% {
-
         transform:
             translate(-25px, 25px)
             rotate(8deg);
-
     }
-
 }
 
 
@@ -1032,19 +962,14 @@
 
     0%,
     100% {
-
         transform:
             translate(0, 0);
-
     }
 
     50% {
-
         transform:
             translate(20px, -25px);
-
     }
-
 }
 
 
@@ -1137,11 +1062,8 @@
 @keyframes underlineReveal {
 
     to {
-
         transform: scaleX(1);
-
     }
-
 }
 
 
@@ -1255,46 +1177,28 @@
 @keyframes whyContentIn {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateX(-45px);
-
+        transform: translateX(-45px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateX(0);
-
+        transform: translateX(0);
     }
-
 }
 
 
 @keyframes whyListIn {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateX(45px);
-
+        transform: translateX(45px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateX(0);
-
+        transform: translateX(0);
     }
-
 }
 
 
@@ -1585,7 +1489,38 @@
 
 
 /* =========================================================
-   18. CTA SECTION
+   18. VALUES CARD ANIMATION
+========================================================= */
+
+.values-grid .value-card {
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.values-grid .value-card.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.values-grid .value-card.show:hover {
+
+    transform: translateY(-8px);
+}
+
+
+/* =========================================================
+   19. CTA SECTION
 ========================================================= */
 
 .about-cta {
@@ -1834,261 +1769,882 @@
 
     transform: translateY(-3px);
 }
+/* =========================================================
+   COMPLETE RESPONSIVE CSS
+   DESKTOP / LAPTOP CSS IS NOT CHANGED
+========================================================= */
 
 
 /* =========================================================
-   22. TABLET
+   TABLET — 1100px
 ========================================================= */
 
 @media (max-width: 1100px) {
 
     .about-company-grid {
-
-        gap: 55px;
-
-    }
-
-
-    .why-modern-grid {
-
-        gap: 55px;
-
-    }
-
-
-    .sets-apart-grid,
-    .values-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .capabilities-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-}
-
-
-/* =========================================================
-   23. MOBILE / SMALL TABLET
-========================================================= */
-
-@media (max-width: 850px) {
-
-    .about-hero {
-
-        min-height: 570px;
-
-    }
-
-
-    .about-company-grid,
-    .mission-vision-grid,
-    .why-modern-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .why-modern-grid {
-
-        gap: 60px;
-
-    }
-
-
-    .about-company-image img {
-
-        height: 420px;
-
-    }
-
-}
-
-
-/* =========================================================
-   24. MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .about-hero-container {
-
-        width: calc(100% - 30px);
-
-    }
-
-
-    .about-hero-content {
-
-        padding: 70px 0;
-
-    }
-
-
-    .about-hero h1 {
-
-        font-size: 42px;
-
-        letter-spacing: -1px;
-
-    }
-
-
-    .about-hero-content > p {
-
-        font-size: 15px;
-
-    }
-
-
-    .about-hero-buttons {
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-    }
-
-
-    .about-hero-buttons .btn {
-
-        width: 100%;
-
-    }
-
-
-    .about-company,
-    .capabilities-section,
-    .mission-vision-section,
-    .sets-apart-section,
-    .why-section,
-    .values-section {
-
-        padding-top: 75px;
-
-        padding-bottom: 75px;
-
-    }
-
-
-    .about-company-grid {
-
+        grid-template-columns: 0.95fr 1.05fr;
         gap: 45px;
-
     }
-
 
     .about-company-image img {
-
-        height: 330px;
-
+        height: 430px;
     }
-
 
     .company-experience {
-
-        right: 15px;
-
-        bottom: 15px;
-
+        right: -15px;
+        bottom: 90px;
     }
 
+    .capabilities-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
 
-    .capabilities-grid,
-    .sets-apart-grid,
+    .why-modern-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 50px;
+    }
+
     .values-grid {
-
-        grid-template-columns: 1fr;
-
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
     }
 
+    .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP — 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: calc(100% - 35px);
+    }
+
+    /* ABOUT HERO */
+
+    .about-hero {
+        min-height: 590px;
+    }
+
+    .about-hero-content {
+        padding: 115px 20px 75px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(38px, 6vw, 58px);
+    }
+
+    .about-hero p {
+        max-width: 650px;
+        font-size: 15px;
+    }
+
+
+    /* COMPANY */
+
+    .about-company {
+        padding: 75px 0;
+    }
+
+    .about-company-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 30px;
+    }
+
+    .about-company-image img {
+        height: 390px;
+    }
+
+    .company-experience {
+        right: -10px;
+        bottom: 30px;
+        padding: 15px 18px;
+    }
+
+    .company-experience strong {
+        font-size: 19px;
+    }
+
+    .company-experience span {
+        font-size: 10px;
+    }
+
+    .about-company-content h2 {
+        font-size: 34px;
+    }
+
+    .about-company-content p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .about-highlight {
+        padding: 16px;
+        font-size: 12px;
+    }
+
+
+    /* CAPABILITIES */
+
+    .capabilities-section {
+        padding: 75px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .capability-card {
+        min-height: 205px;
+        padding: 23px 18px;
+    }
+
+    .capability-card-icon {
+        width: 43px;
+        height: 43px;
+        margin-bottom: 16px;
+        font-size: 19px;
+    }
+
+    .capability-card h3 {
+        font-size: 16px;
+    }
+
+    .capability-card p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+
+    /* MISSION / VISION */
+
+    .mission-vision-section {
+        padding: 75px 0;
+    }
+
+    .mission-vision-heading {
+        margin-bottom: 32px;
+    }
+
+    .mission-vision-heading h2 {
+        font-size: 36px;
+    }
+
+    .mission-vision-heading p {
+        font-size: 13px;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
 
     .mission-card {
+        padding: 28px;
+    }
 
-        padding: 30px;
+    .mission-card-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 18px;
+    }
 
+    .mission-card h3 {
+        font-size: 21px;
+    }
+
+    .mission-card p {
+        font-size: 12px;
+        line-height: 1.7;
     }
 
 
-    /* =====================================================
-       WHY SECTION
-    ===================================================== */
+    /* WHY CHOOSE US */
+
+    .why-section {
+        padding: 75px 0;
+    }
+
+    .why-modern-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 35px;
+        align-items: center;
+    }
 
     .why-modern-content h2 {
-
-        font-size: 40px;
-
-        letter-spacing: -1px;
-
+        font-size: clamp(32px, 5vw, 48px);
+        line-height: 1.08;
     }
 
+    .why-intro {
+        font-size: 12px;
+        line-height: 1.7;
+        margin-bottom: 24px;
+    }
+
+    .why-stats {
+        gap: 8px;
+    }
+
+    .why-stat {
+        min-width: 95px;
+        padding: 12px;
+    }
+
+    .why-stat strong {
+        font-size: 18px;
+    }
+
+    .why-stat span {
+        font-size: 9px;
+    }
 
     .why-modern-item {
-
-        grid-template-columns:
-            38px 1px 1fr;
-
-        gap: 12px;
-
+        grid-template-columns: 35px 1px 1fr;
+        gap: 11px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
     }
-
-
-    .why-modern-text {
-
-        gap: 12px;
-
-    }
-
 
     .why-modern-icon {
-
-        width: 36px;
-        height: 36px;
-
-        font-size: 13px;
-
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
     }
-
 
     .why-modern-text h3 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
 
-        font-size: 17px;
-
+    .why-modern-text p {
+        font-size: 10px;
+        line-height: 1.6;
     }
 
 
-    .why-modern-text p {
+    /* VALUES */
 
+    .values-section {
+        padding: 75px 0;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .value-card {
+        padding: 20px 14px;
+    }
+
+    .value-card h3 {
+        font-size: 15px;
+    }
+
+    .value-card p {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+
+    /* SETS APART */
+
+    .sets-apart-section {
+        padding: 75px 0;
+    }
+
+    .sets-apart-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .sets-apart-heading h2,
+    .sets-apart-section h2 {
+        font-size: clamp(34px, 5vw, 48px);
+        line-height: 1.08;
+    }
+
+    .sets-apart-heading > p {
         font-size: 12px;
+        line-height: 1.7;
+    }
 
+    .sets-apart-item {
+        padding: 18px 0;
+    }
+
+    .sets-apart-item h3 {
+        font-size: 16px;
+    }
+
+    .sets-apart-item p {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .sets-apart-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+    }
+
+
+    /* CTA */
+
+    .about-cta {
+        padding: 65px 0;
+        min-height: 300px;
+    }
+
+    .about-cta-content {
+        max-width: 650px;
+    }
+
+    .about-cta-content h2 {
+        font-size: clamp(30px, 5vw, 44px);
+        margin-bottom: 12px;
+    }
+
+    .about-cta-content p {
+        max-width: 580px;
+        font-size: 12px;
+        line-height: 1.65;
+        margin-bottom: 20px;
+    }
+
+    .about-cta-content .btn {
+        min-height: 44px;
+        padding: 0 20px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: calc(100% - 24px);
     }
 
 
     /* =====================================================
-       WHY STATS
+       HOME HERO
+       SHOW THE TEXT ABOVE BUILDING WITH STRENGTH
     ===================================================== */
 
-    .why-stat {
+    .hero {
+        min-height: 570px;
+        padding-top: 125px !important;
+        padding-bottom: 75px !important;
+        background-position: center center;
+    }
 
-        min-width: 95px;
+    .hero-content {
+        padding-top: 15px !important;
+    }
 
-        padding: 13px;
+    /* IMPORTANT:
+       Do not hide the hero tag on mobile */
+    .hero-tag {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        font-size: 8px;
+        line-height: 1.2;
+        letter-spacing: 1.2px;
+        text-align: center;
+    }
 
+    .hero-tag::before,
+    .hero-tag::after {
+        display: block !important;
+        content: "";
+        width: 22px;
+        height: 2px;
+        background: var(--primary);
+        flex-shrink: 0;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        line-height: 1.08;
+        margin-bottom: 17px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .hero-feature {
+        font-size: 9px;
     }
 
 
+    /* HERO BOTTOM */
+
+    .hero-bottom,
+    .hero-bottom-inner,
+    .hero-bottom-item {
+        height: 64px;
+    }
+
+    .hero-bottom-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 3px 2px;
+    }
+
+    .hero-bottom-item a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        width: 100%;
+        height: 100%;
+        font-size: 8px !important;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .hero-bottom-item span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .hero-bottom-item i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       ABOUT HERO
+    ===================================================== */
+
+    .about-hero {
+        min-height: 500px;
+    }
+
+    .about-hero-content {
+        padding: 90px 8px 55px;
+    }
+
+    .about-hero-tag {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        gap: 8px;
+        margin-bottom: 18px;
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .about-hero-tag::before,
+    .about-hero-tag::after {
+        width: 25px;
+        height: 2px;
+    }
+
+    .about-hero h1 {
+        font-size: 30px;
+        letter-spacing: -0.7px;
+        margin-bottom: 17px;
+    }
+
+    .about-hero p {
+        max-width: 500px;
+        font-size: 11px;
+        line-height: 1.65;
+        margin-bottom: 22px;
+    }
+
+    .about-hero-actions {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .about-hero .btn-primary,
+    .about-hero .btn-secondary,
+    .about-hero .btn-outline {
+        width: auto;
+        min-height: 42px;
+        padding: 0 14px;
+        border-radius: 6px;
+        font-size: 10px;
+        gap: 7px;
+    }
+
+
+    /* =====================================================
+       ABOUT COMPANY
+    ===================================================== */
+
+    .about-company {
+        padding: 50px 0;
+    }
+
+    .about-company-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .about-company-image img {
+        height: 245px;
+    }
+
+    /* ORANGE QUALITY BOX — MOVE UP */
+    .company-experience {
+        right: -7px;
+        bottom: 95px !important;
+        padding: 9px 11px;
+        border-radius: 5px;
+        z-index: 5;
+    }
+
+    .company-experience strong {
+        font-size: 14px;
+    }
+
+    .company-experience span {
+        font-size: 7px;
+    }
+
+    .about-company-content h2 {
+        font-size: 21px;
+        line-height: 1.12;
+        margin-bottom: 12px;
+    }
+
+    .about-company-content p {
+        font-size: 9px;
+        line-height: 1.6;
+        margin-bottom: 9px;
+    }
+
+    .about-highlight {
+        margin-top: 12px;
+        padding: 9px 10px;
+        border-left-width: 3px;
+        font-size: 8px;
+        line-height: 1.55;
+    }
+
+
+    /* =====================================================
+       COMMON HEADINGS
+    ===================================================== */
+
+    .section-tag {
+        margin-bottom: 8px;
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-heading {
+        margin-bottom: 25px;
+    }
+
+    .section-heading h2,
+    .mission-vision-heading h2 {
+        font-size: 24px;
+        line-height: 1.15;
+        margin-bottom: 10px;
+    }
+
+    .section-heading p,
+    .mission-vision-heading p {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       CAPABILITIES — 3 COLUMNS
+    ===================================================== */
+
+    .capabilities-section {
+        padding: 50px 0;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .capability-card {
+        min-height: 145px;
+        padding: 13px 7px;
+        border-radius: 6px;
+    }
+
+    .capability-card::before {
+        height: 2px;
+    }
+
+    .capability-card-icon {
+        width: 31px;
+        height: 31px;
+        margin-bottom: 9px;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+
+    .capability-card h3 {
+        font-size: 11px;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+
+    .capability-card p {
+        font-size: 7px;
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       MISSION / VISION — 2 COLUMNS
+    ===================================================== */
+
+    .mission-vision-section {
+        padding: 50px 0;
+    }
+
+    .mission-vision-heading {
+        margin-bottom: 24px;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+    }
+
+    .mission-card {
+        padding: 17px 11px;
+        border-radius: 7px;
+    }
+
+    .mission-card-icon {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 11px;
+        font-size: 12px;
+    }
+
+    .mission-card h3 {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .mission-card p {
+        font-size: 8px;
+        line-height: 1.55;
+    }
+
+
+    /* =====================================================
+       WHY CHOOSE US — 2 COLUMNS
+    ===================================================== */
+
+    .why-section {
+        padding: 55px 0;
+    }
+
+    .why-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 8px;
+    }
+
+    .why-modern-grid {
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .why-content .section-tag {
+        font-size: 7px;
+    }
+
+    .why-modern-content h2,
+    .why-content h2 {
+        font-size: 23px;
+        letter-spacing: -0.5px;
+        line-height: 1.08;
+        margin-bottom: 13px;
+    }
+
+    .why-intro,
+    .why-content p {
+        max-width: 100%;
+        font-size: 8px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    .why-stats {
+        gap: 5px;
+    }
+
+    .why-stat {
+        min-width: 0;
+        flex: 1;
+        padding: 8px 6px;
+    }
+
     .why-stat strong {
+        font-size: 13px;
+    }
 
-        font-size: 20px;
+    .why-stat span {
+        font-size: 6.5px;
+    }
 
+    .why-modern-item {
+        grid-template-columns: 22px 1px 1fr;
+        gap: 6px;
+        padding-bottom: 13px;
+        margin-bottom: 13px;
+    }
+
+    .why-modern-number {
+        font-size: 8px;
+    }
+
+    .why-modern-line {
+        min-height: 45px;
+    }
+
+    .why-modern-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 9px;
+    }
+
+    .why-modern-text h3 {
+        font-size: 10px;
+        line-height: 1.25;
+    }
+
+    .why-modern-text p {
+        font-size: 7px;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+       WHAT SETS US APART — 2 COLUMNS
+    ===================================================== */
+
+    .sets-apart-section {
+        padding: 50px 0;
+    }
+
+    .sets-apart-grid {
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .sets-apart-heading h2,
+    .sets-apart-section h2 {
+        font-size: 25px;
+        line-height: 1.08;
+        margin-bottom: 12px;
+    }
+
+    .sets-apart-heading > p {
+        font-size: 8px;
+        line-height: 1.6;
+    }
+
+    .sets-apart-item {
+        padding: 11px 0;
+    }
+
+    .sets-apart-item h3 {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+
+    .sets-apart-item p {
+        font-size: 7px;
+        line-height: 1.45;
+    }
+
+    .sets-apart-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       VALUES — 4 COLUMNS
+    ===================================================== */
+
+    .values-section {
+        padding: 50px 0;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+
+    .value-card {
+        padding: 13px 6px;
+        border-radius: 6px;
+    }
+
+    .value-card h3 {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .value-card p {
+        font-size: 6.5px;
+        line-height: 1.45;
     }
 
 
@@ -2097,9 +2653,28 @@
     ===================================================== */
 
     .about-cta {
+        min-height: 0;
+        padding: 48px 0;
+    }
 
-        padding: 75px 0;
+    .about-cta-content {
+        max-width: 72%;
+    }
 
+    .about-cta-content h2 {
+        font-size: 27px;
+        line-height: 1.05;
+    }
+
+    .about-cta-content p {
+        font-size: 8px;
+        line-height: 1.55;
+    }
+
+    .about-cta-content .btn {
+        min-height: 38px;
+        padding: 0 15px;
+        font-size: 9px;
     }
 
 
@@ -2108,112 +2683,880 @@
     ===================================================== */
 
     .floating-contact {
-
-        right: 15px;
-
-        bottom: 18px;
-
+        right: 10px;
+        bottom: 12px;
+        gap: 6px;
     }
 
-}
-
-
-/* =========================================================
-   25. VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 420px) {
-
-    .about-hero h1 {
-
-        font-size: 36px;
-
+    .float-btn {
+        width: 37px;
+        height: 37px;
+        font-size: 13px;
     }
-
-
-    .about-hero-buttons {
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-    }
-
-
-    .about-hero .btn {
-
-        width: 100%;
-
-    }
-
-
-    .why-modern-content h2 {
-
-        font-size: 35px;
-
-    }
-
-
-    .why-stats {
-
-        gap: 8px;
-
-    }
-
-
-    .why-stat {
-
-        flex: 1;
-
-        min-width: 0;
-
-    }
-
 
     .back-to-top {
-
-        right: 18px;
-
-        bottom: 125px;
-
+        right: 10px;
+        bottom: 105px;
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
     }
 
+
+    /* =====================================================
+       FOOTER — SMALL HEIGHT
+    ===================================================== */
+
+    footer.footer {
+        padding: 10px 0 5px !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        height: auto !important;
+    }
+
+    footer.footer > .container {
+        width: 100% !important;
+        padding: 0 7px !important;
+        margin: 0 auto !important;
+    }
+
+    footer.footer .footer-grid {
+        display: grid !important;
+        grid-template-columns: 1.15fr 0.8fr 1fr 1.15fr !important;
+        gap: 4px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: start !important;
+    }
+
+    footer.footer .footer-column {
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Footer logo */
+
+    footer.footer .footer-logo {
+        display: block !important;
+        margin: 0 0 3px !important;
+        padding: 0 !important;
+    }
+
+    footer.footer .footer-site-logo {
+        width: 52px !important;
+        height: 30px !important;
+        max-width: 52px !important;
+        max-height: 30px !important;
+        object-fit: contain !important;
+        margin: 0 !important;
+    }
+
+    /* Footer heading */
+
+    footer.footer .footer-column h3 {
+        font-size: 7px !important;
+        line-height: 1.1 !important;
+        margin: 0 0 3px !important;
+        padding: 0 !important;
+        white-space: nowrap;
+    }
+
+    /* Footer description */
+
+    footer.footer .footer-column p {
+        font-size: 5px !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Footer lists */
+
+    footer.footer .footer-column ul {
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    footer.footer .footer-column li {
+        font-size: 5px !important;
+        line-height: 1.15 !important;
+        margin: 0 0 2px !important;
+        padding: 0 !important;
+    }
+
+    footer.footer .footer-column a {
+        font-size: 5px !important;
+        line-height: 1.15 !important;
+    }
+
+    /* Contact */
+
+    footer.footer .footer-contact li {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 2px !important;
+    }
+
+    footer.footer .footer-contact li i {
+        width: 7px !important;
+        min-width: 7px !important;
+        font-size: 5px !important;
+        margin-top: 0 !important;
+    }
+
+    /* Footer bottom */
+
+    footer.footer .footer-bottom {
+        margin: 5px 0 0 !important;
+        padding: 3px 0 0 !important;
+        min-height: 0 !important;
+        gap: 2px !important;
+    }
+
+    footer.footer .footer-bottom p {
+        font-size: 4px !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 }
 
 
 /* =========================================================
-   26. ACCESSIBILITY / REDUCED MOTION
+   MOBILE — 480px
 ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 480px) {
 
-    .about-hero-image,
-    .about-hero-content,
-    .about-hero-tag,
+    .container {
+        width: calc(100% - 18px);
+    }
+
+
+    /* =====================================================
+       HOME HERO
+    ===================================================== */
+
+    .hero {
+        min-height: 555px;
+        padding-top: 120px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .hero-content {
+        padding-top: 12px !important;
+    }
+
+    /* MAKE HERO TAG VISIBLE */
+    .hero-tag {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 7.5px !important;
+        gap: 6px;
+        margin-bottom: 13px;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+
+    .hero-tag::before,
+    .hero-tag::after {
+        display: block !important;
+        width: 18px;
+        height: 2px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+        line-height: 1.08;
+        margin-bottom: 13px;
+    }
+
+    .hero-description {
+        font-size: 9px;
+        line-height: 1.55;
+        margin-bottom: 17px;
+    }
+
+    .hero-feature {
+        font-size: 8px;
+    }
+
+
+    /* HERO BOTTOM */
+
+    .hero-bottom,
+    .hero-bottom-inner,
+    .hero-bottom-item {
+        height: 64px;
+    }
+
+    .hero-bottom-item {
+        gap: 2px;
+        padding: 2px 1px;
+    }
+
+    .hero-bottom-item a {
+        font-size: 7px !important;
+        gap: 3px;
+    }
+
+    .hero-bottom-item span {
+        font-size: 7px;
+        line-height: .95;
+    }
+
+    .hero-bottom-item i {
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       ABOUT HERO
+    ===================================================== */
+
+    .about-hero {
+        min-height: 450px;
+    }
+
+    .about-hero-content {
+        padding: 82px 5px 45px;
+    }
+
+    .about-hero-tag {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 7.5px;
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
     .about-hero-tag::before,
-    .about-hero h1,
-    .about-hero h1 span,
-    .about-hero-content > p,
-    .about-hero-buttons,
-    .company-experience,
-    .shape-one,
-    .shape-two,
-    .why-modern-content,
-    .why-modern-list {
+    .about-hero-tag::after {
+        width: 20px;
+    }
 
-        animation: none !important;
+    .about-hero h1 {
+        font-size: 27px;
+        letter-spacing: -0.5px;
+        margin-bottom: 13px;
+    }
 
+    .about-hero p {
+        font-size: 9px;
+        line-height: 1.55;
+        margin-bottom: 17px;
+    }
+
+    .about-hero-actions {
+        gap: 6px;
+    }
+
+    .about-hero .btn-primary,
+    .about-hero .btn-secondary,
+    .about-hero .btn-outline {
+        min-height: 38px;
+        padding: 0 11px;
+        font-size: 8px;
     }
 
 
-    *,
-    *::before,
-    *::after {
+    /* =====================================================
+       COMPANY
+    ===================================================== */
 
-        transition-duration: 0.01ms !important;
-
-        scroll-behavior: auto !important;
-
+    .about-company {
+        padding: 42px 0;
     }
 
+    .about-company-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 10px;
+    }
+
+    .about-company-image img {
+        height: 205px;
+    }
+
+    /* MOVE ORANGE BOX UP */
+    .company-experience {
+        right: -5px;
+        bottom: 75px !important;
+        padding: 7px 8px;
+        z-index: 5;
+    }
+
+    .company-experience strong {
+        font-size: 11px;
+    }
+
+    .company-experience span {
+        font-size: 6px;
+    }
+
+    .about-company-content h2 {
+        font-size: 18px;
+        margin-bottom: 9px;
+    }
+
+    .about-company-content p {
+        font-size: 7.5px;
+        line-height: 1.5;
+    }
+
+    .about-highlight {
+        margin-top: 9px;
+        padding: 7px 8px;
+        font-size: 6.8px;
+    }
+
+
+    /* =====================================================
+       CAPABILITIES
+    ===================================================== */
+
+    .capabilities-section {
+        padding: 42px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 20px;
+    }
+
+    .section-heading h2,
+    .mission-vision-heading h2 {
+        font-size: 21px;
+    }
+
+    .section-heading p,
+    .mission-vision-heading p {
+        font-size: 8px;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    .capability-card {
+        min-height: 125px;
+        padding: 10px 5px;
+    }
+
+    .capability-card-icon {
+        width: 27px;
+        height: 27px;
+        margin-bottom: 7px;
+        font-size: 11px;
+    }
+
+    .capability-card h3 {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+
+    .capability-card p {
+        font-size: 6px;
+    }
+
+
+    /* =====================================================
+       MISSION / VISION
+    ===================================================== */
+
+    .mission-vision-section {
+        padding: 42px 0;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+
+    .mission-card {
+        padding: 13px 8px;
+    }
+
+    .mission-card-icon {
+        width: 29px;
+        height: 29px;
+        margin-bottom: 8px;
+        font-size: 10px;
+    }
+
+    .mission-card h3 {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .mission-card p {
+        font-size: 6.5px;
+    }
+
+
+    /* =====================================================
+       WHY CHOOSE US
+    ===================================================== */
+
+    .why-section {
+        padding: 45px 0;
+    }
+
+    .why-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 8px;
+    }
+
+    .why-modern-grid {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 10px;
+    }
+
+    .why-content .section-tag {
+        font-size: 7px;
+    }
+
+    .why-modern-content h2,
+    .why-content h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .why-intro,
+    .why-content p {
+        font-size: 7px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .why-stat {
+        padding: 6px 5px;
+    }
+
+    .why-stat strong {
+        font-size: 11px;
+    }
+
+    .why-stat span {
+        font-size: 5.5px;
+    }
+
+    .why-modern-item {
+        grid-template-columns: 18px 1px 1fr;
+        gap: 5px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .why-modern-number {
+        font-size: 7px;
+    }
+
+    .why-modern-line {
+        min-height: 38px;
+    }
+
+    .why-modern-icon {
+        width: 22px;
+        height: 22px;
+        font-size: 8px;
+    }
+
+    .why-modern-text h3 {
+        font-size: 8.5px;
+        margin-bottom: 2px;
+    }
+
+    .why-modern-text p {
+        font-size: 6px;
+        line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       SETS APART
+    ===================================================== */
+
+    .sets-apart-section {
+        padding: 42px 0;
+    }
+
+    .sets-apart-grid {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 10px;
+    }
+
+    .sets-apart-heading h2,
+    .sets-apart-section h2 {
+        font-size: 21px;
+        margin-bottom: 9px;
+    }
+
+    .sets-apart-heading > p {
+        font-size: 7px;
+        line-height: 1.5;
+    }
+
+    .sets-apart-item {
+        padding: 8px 0;
+    }
+
+    .sets-apart-item h3 {
+        font-size: 8.5px;
+        margin-bottom: 3px;
+    }
+
+    .sets-apart-item p {
+        font-size: 6px;
+        line-height: 1.4;
+    }
+
+    .sets-apart-icon {
+        width: 22px;
+        height: 22px;
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       VALUES
+    ===================================================== */
+
+    .values-section {
+        padding: 42px 0;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+    }
+
+    .value-card {
+        padding: 10px 5px;
+    }
+
+    .value-card h3 {
+        font-size: 8.5px;
+    }
+
+    .value-card p {
+        font-size: 5.8px;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .about-cta {
+        padding: 40px 0;
+    }
+
+    .about-cta-content {
+        max-width: 70%;
+    }
+
+    .about-cta-content h2 {
+        font-size: 23px;
+    }
+
+    .about-cta-content p {
+        font-size: 7px;
+    }
+
+    .about-cta-content .btn {
+        min-height: 34px;
+        padding: 0 12px;
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       FOOTER — EVEN SMALLER
+    ===================================================== */
+
+    footer.footer {
+        padding: 6px 0 3px !important;
+    }
+
+    footer.footer > .container {
+        padding: 0 5px !important;
+    }
+
+    footer.footer .footer-grid {
+        grid-template-columns: 1.15fr 0.8fr 1fr 1.15fr !important;
+        gap: 2px !important;
+    }
+
+    footer.footer .footer-site-logo {
+        width: 42px !important;
+        height: 24px !important;
+        max-width: 42px !important;
+        max-height: 24px !important;
+    }
+
+    footer.footer .footer-column h3 {
+        font-size: 6px !important;
+        margin-bottom: 2px !important;
+    }
+
+    footer.footer .footer-column p,
+    footer.footer .footer-column li,
+    footer.footer .footer-column a {
+        font-size: 4px !important;
+        line-height: 1.1 !important;
+    }
+
+    footer.footer .footer-column li {
+        margin-bottom: 1px !important;
+    }
+
+    footer.footer .footer-contact li {
+        gap: 1px !important;
+    }
+
+    footer.footer .footer-contact li i {
+        width: 6px !important;
+        min-width: 6px !important;
+        font-size: 4px !important;
+    }
+
+    footer.footer .footer-bottom {
+        margin-top: 3px !important;
+        padding-top: 2px !important;
+    }
+
+    footer.footer .footer-bottom p {
+        font-size: 3.5px !important;
+        line-height: 1 !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL — 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: calc(100% - 14px);
+    }
+
+
+    /* HOME HERO */
+
+    .hero {
+        min-height: 530px;
+        padding-top: 112px !important;
+        padding-bottom: 65px !important;
+    }
+
+    .hero-tag {
+        font-size: 7px !important;
+        gap: 5px;
+        margin-bottom: 11px;
+    }
+
+    .hero-tag::before,
+    .hero-tag::after {
+        width: 15px;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .hero-description {
+        font-size: 8px;
+    }
+
+
+    /* ABOUT */
+
+    .about-company-grid {
+        gap: 7px;
+    }
+
+    .about-company-image img {
+        height: 180px;
+    }
+
+    /* ORANGE BOX HIGHER */
+    .company-experience {
+        right: -4px;
+        bottom: 80px !important;
+        padding: 6px 7px;
+    }
+
+    .company-experience strong {
+        font-size: 10px;
+    }
+
+    .company-experience span {
+        font-size: 5.5px;
+    }
+
+    .about-company-content h2 {
+        font-size: 16px;
+    }
+
+    .about-company-content p {
+        font-size: 6.5px;
+    }
+
+    .about-highlight {
+        font-size: 6px;
+        padding: 6px;
+    }
+
+
+    /* CAPABILITIES */
+
+    .capability-card {
+        min-height: 112px;
+        padding: 8px 4px;
+    }
+
+    .capability-card-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+
+    .capability-card h3 {
+        font-size: 8px;
+    }
+
+    .capability-card p {
+        font-size: 5.5px;
+    }
+
+
+    /* WHY */
+
+    .why-modern-grid {
+        gap: 7px;
+    }
+
+    .why-modern-content h2 {
+        font-size: 18px;
+    }
+
+    .why-intro {
+        font-size: 6px;
+    }
+
+    .why-modern-item {
+        grid-template-columns: 16px 1px 1fr;
+        gap: 4px;
+    }
+
+    .why-modern-icon {
+        width: 19px;
+        height: 19px;
+        font-size: 7px;
+    }
+
+    .why-modern-text h3 {
+        font-size: 7.5px;
+    }
+
+    .why-modern-text p {
+        font-size: 5.5px;
+    }
+
+
+    /* SETS APART */
+
+    .sets-apart-grid {
+        gap: 7px;
+    }
+
+    .sets-apart-heading h2,
+    .sets-apart-section h2 {
+        font-size: 18px;
+    }
+
+    .sets-apart-heading > p {
+        font-size: 6px;
+    }
+
+    .sets-apart-item h3 {
+        font-size: 7.5px;
+    }
+
+    .sets-apart-item p {
+        font-size: 5.5px;
+    }
+
+
+    /* CTA */
+
+    .about-cta {
+        padding: 32px 0;
+    }
+
+    .about-cta-content h2 {
+        font-size: 20px;
+    }
+
+    .about-cta-content p {
+        font-size: 6px;
+    }
+
+    .about-cta-content .btn {
+        min-height: 30px;
+        padding: 0 10px;
+        font-size: 7px;
+    }
+
+
+    /* =====================================================
+       FOOTER — MINIMUM HEIGHT
+    ===================================================== */
+
+    footer.footer {
+        padding: 5px 0 2px !important;
+    }
+
+    footer.footer .footer-grid {
+        gap: 2px !important;
+    }
+
+    footer.footer .footer-site-logo {
+        width: 38px !important;
+        height: 22px !important;
+        max-width: 38px !important;
+        max-height: 22px !important;
+    }
+
+    footer.footer .footer-column h3 {
+        font-size: 5.5px !important;
+        margin-bottom: 1px !important;
+    }
+
+    footer.footer .footer-column p,
+    footer.footer .footer-column li,
+    footer.footer .footer-column a {
+        font-size: 3.7px !important;
+        line-height: 1.05 !important;
+    }
+
+    footer.footer .footer-column li {
+        margin-bottom: 1px !important;
+    }
+
+    footer.footer .footer-bottom {
+        margin-top: 2px !important;
+        padding-top: 2px !important;
+    }
+
+    footer.footer .footer-bottom p {
+        font-size: 3.2px !important;
+    }
 }
