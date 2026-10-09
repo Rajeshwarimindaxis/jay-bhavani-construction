@@ -59,8 +59,6 @@
 
     <style>
 
-       <style>
-
 /* =========================================================
    SERVICES SLIDER
 ========================================================= */
@@ -121,10 +119,7 @@
         transform 0.35s ease,
         box-shadow 0.35s ease;
 }
-
-
 /* CARD HOVER */
-
 .service-card:hover {
 
     transform: translateY(-8px);
@@ -133,12 +128,7 @@
         0 18px 40px rgba(0, 0, 0, 0.13);
 
 }
-
-
-/* =========================================================
-   SERVICE IMAGE
-========================================================= */
-
+/*SERVICE IMAGE */
 .service-image {
 
     width: 100%;
@@ -154,8 +144,6 @@
 
     background: #e9edf1;
 }
-
-
 .service-image img {
 
     width: 100%;
@@ -170,21 +158,13 @@
     transition:
         transform 0.7s ease;
 }
-
-
 /* IMAGE HOVER */
-
 .service-card:hover .service-image img {
 
     transform: scale(1.07);
 
 }
-
-
-/* =========================================================
-   DARK IMAGE OVERLAY
-========================================================= */
-
+/*DARK IMAGE OVERLAY*/
 .service-image::after {
 
     content: "";
@@ -203,12 +183,7 @@
     pointer-events: none;
 
 }
-
-
-/* =========================================================
-   SERVICE CATEGORY
-========================================================= */
-
+/*SERVICE CATEGORY*/
 .service-category {
 
     position: absolute;
@@ -235,12 +210,7 @@
     line-height: 1;
 
 }
-
-
-/* =========================================================
-   SERVICE CONTENT
-========================================================= */
-
+/*SERVICE CONTENT*/
 .service-content {
 
     flex: 1;
@@ -256,12 +226,7 @@
     background: #ffffff;
 
 }
-
-
-/* =========================================================
-   SERVICE ICON
-========================================================= */
-
+/*SERVICE ICON*/
 .service-icon {
 
     width: 48px;
@@ -290,8 +255,6 @@
         color 0.3s ease,
         transform 0.3s ease;
 }
-
-
 .service-card:hover .service-icon {
 
     background: #c18a18;
@@ -301,12 +264,7 @@
     transform: translateY(-2px);
 
 }
-
-
-/* =========================================================
-   SERVICE TITLE
-========================================================= */
-
+/*SERVICE TITLE */
 .service-content h3 {
 
     margin: 0 0 11px;
@@ -324,12 +282,7 @@
     letter-spacing: -0.2px;
 
 }
-
-
-/* =========================================================
-   SERVICE DESCRIPTION
-========================================================= */
-
+/* SERVICE DESCRIPTION */
 .service-content p {
 
     margin: 0;
@@ -349,12 +302,7 @@
     overflow: hidden;
 
 }
-
-
-/* =========================================================
-   SERVICE ARROW
-========================================================= */
-
+/*SERVICE ARROW*/
 .service-arrow {
 
     width: 40px;
@@ -380,8 +328,6 @@
         color 0.3s ease,
         transform 0.3s ease;
 }
-
-
 .service-card:hover .service-arrow {
 
     background: #c18a18;
@@ -391,11 +337,7 @@
     transform: translateX(5px);
 
 }
-
-
-/* =========================================================
-   SERVICE CARD BOTTOM ACCENT
-========================================================= */
+/*SERVICE CARD BOTTOM ACCENt */
 
 .service-card::before {
 
@@ -422,18 +364,12 @@
     z-index: 5;
 
 }
-
-
 .service-card:hover::before {
 
     transform: scaleX(1);
 
 }
-
-
-/* =========================================================
-   SERVICE CONTROLS
-========================================================= */
+/*SERVICE CONTROLS */
 
 .services-controls-row {
 
@@ -489,8 +425,6 @@
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
-
-
 .service-nav-btn:hover {
 
     background: #c18a18;
@@ -505,11 +439,7 @@
         0 8px 20px rgba(193, 138, 24, 0.25);
 
 }
-
-
-/* =========================================================
-   DESKTOP
-========================================================= */
+/* DESKTOP */
 
 @media (min-width: 1101px) {
 
@@ -527,12 +457,7 @@
     }
 
 }
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
+/* TABLET */
 @media (max-width: 1100px) and (min-width: 769px) {
 
     .services-track {
@@ -540,37 +465,27 @@
         gap: 24px;
 
     }
-
-
     .service-card {
 
         height: 465px;
 
     }
-
-
     .service-image {
 
         height: 220px;
         min-height: 220px;
 
     }
-
-
     .service-content {
 
         padding: 22px;
 
     }
-
-
     .service-content h3 {
 
         font-size: 20px;
 
     }
-
-
     .service-content p {
 
         font-size: 14px;
@@ -578,12 +493,7 @@
     }
 
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
+/* MOBILE*/
 @media (max-width: 768px) {
 
     .services-slider {
@@ -639,8 +549,6 @@
         font-size: 19px;
 
     }
-
-
     .service-content p {
 
         font-size: 14px;
@@ -648,8 +556,6 @@
         line-height: 1.6;
 
     }
-
-
     .services-controls-row {
 
         justify-content: center;
@@ -659,11 +565,7 @@
     }
 
 }
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/*SMALL MOBILE */
 
 @media (max-width: 480px) {
 
@@ -680,22 +582,16 @@
         min-height: 205px;
 
     }
-
-
     .service-content {
 
         padding: 19px;
 
     }
-
-
     .service-content h3 {
 
         font-size: 18px;
 
     }
-
-
     .service-category {
 
         left: 14px;
@@ -708,11 +604,7 @@
     }
 
 }
-
-        /* =====================================================
-           GALLERY ANIMATION
-        ====================================================== */
-
+        /* GALLERY ANIMATION*/
         .gallery-item {
 
             opacity: 0;
@@ -772,55 +664,31 @@
         .gallery-item:nth-child(8) {
             transition-delay: 0.75s;
         }
-
-
         /* GALLERY IMAGE HOVER */
-
         .gallery-item {
             overflow: hidden;
         }
-
-
         .gallery-item img {
             transition:
                 transform 0.7s ease;
         }
-
-
         .gallery-item:hover img {
             transform: scale(1.06);
         }
-
-
         /* REDUCED MOTION */
-
         @media (prefers-reduced-motion: reduce) {
-
             .services-track,
             .service-card,
             .service-image img,
             .gallery-item,
             .gallery-item img {
-
                 transition: none !important;
-
             }
-
         }
-
     </style>
-
 </head>
-
-
 <body>
-
-
-    <!-- =========================================================
-         TOP CONTACT TICKER
-         Continuous horizontal scrolling bar
-    ========================================================== -->
-
+    <!- CONTACT TICKER -->
     <div class="top-contact-bar" aria-label="Contact information">
 
         <div class="top-contact-track">
@@ -886,12 +754,7 @@
         </div>
 
     </div>
-
-
-    <!-- =========================================================
-         HEADER
-    ========================================================== -->
-
+    <!-- HEADER -->
     <header class="header" id="header">
 
         <div class="container nav-container">
@@ -963,12 +826,6 @@
 
 
     <main>
-
-
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
-
         <section class="hero" id="home">
 
             <div class="hero-overlay"></div>
@@ -984,8 +841,6 @@
                         BUILDING WITH STRENGTH & PRECISION
 
                     </div>
-
-
                     <h1>
 
                         Strong Structures.
@@ -995,18 +850,14 @@
                         </span>
 
                     </h1>
-
-
                     <p class="hero-description"><strong>
 
                         Professional construction solutions
                         for industrial, <br>
                         commercial and
-                        infrastructure projects. </br>
+                        infrastructure projects.</strong> </br>
 
                     </p>
-
-
                     <div class="hero-buttons">
 
                         <a
@@ -1018,8 +869,6 @@
                             <i class="fa-solid fa-arrow-right"></i>
 
                         </a>
-
-
                         <a
                             href="#contact"
                             class="btn btn-outline">
@@ -1029,7 +878,6 @@
                         </a>
 
                     </div>
-
 
                     <div class="hero-features">
 
@@ -1070,10 +918,6 @@
                 </div>
 
             </div>
-
-
-
-            <!-- HERO SERVICE STRIP -->
 
             <div class="hero-bottom">
 
@@ -1158,13 +1002,7 @@
             </div>
 
         </section>
-
-
-
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
-
+        <!-- ABOUT-->
         <section
             class="section about-section"
             id="about">
@@ -1180,8 +1018,6 @@
                         ABOUT US
 
                     </div>
-
-
                     <h2>
 
                         Building
@@ -1191,8 +1027,6 @@
                         <span>Trust</span>.
 
                     </h2>
-
-
                     <p>
 
                         Jay Bhavani Construction is focused on
@@ -1203,9 +1037,6 @@
                     </p>
 
                 </div>
-
-
-
                 <div class="about-grid">
 
 
@@ -1333,19 +1164,11 @@
 
         </section>
 
-
-
-        <!-- =====================================================
-             SERVICES
-        ====================================================== -->
-
         <section
             class="section services-section"
             id="services">
 
             <div class="container">
-
-
                 <div class="section-heading centered">
 
                     <div class="section-tag">
@@ -1357,16 +1180,12 @@
                         <span></span>
 
                     </div>
-
-
                     <h2>
 
                         Our
                         <span>Construction Services</span>
 
                     </h2>
-
-
                     <p>
 
                         Reliable construction solutions engineered
@@ -2143,7 +1962,6 @@
                             Building Long-Term Trust
                         </h3>
 
-
                         <p>
 
                             We aim to establish ourselves as a
@@ -2164,9 +1982,7 @@
 
 
 
-        <!-- =====================================================
-             CTA
-        ====================================================== -->
+        <!--CTA-->
 
         <section class="cta-section">
 
@@ -2261,8 +2077,9 @@
                             </strong>
                             <br>
 
+
                             Contact us to discuss your project,
-                            requirements and potential solutions.
+                            requirements and potential solutions.</br>
 
                         </p>
 
@@ -2340,10 +2157,7 @@
                                 PROJECT ENQUIRY
                             </span>
 
-                            <h3>
-                                Tell Us About Your Project
-                            </h3>
-
+                            <h3>Tell Us About Your Project</h3>
                             <p>
 
                                 Fill in the details below and
@@ -2352,12 +2166,13 @@
                             </p>
 
                         </div>
-
-
-
-                        <form id="contactForm">
-
-
+                        <form id="contactForm"
+                              action="https://formsubmit.co/rajeshwariarekar7@gmail.com"
+                              method="POST">
+                              <!-- Email settings -->
+                              <input type="hidden" name="_subject"
+                                     value="New Project Enquiry - Jay Bhavani Construction">
+                               <input type="hidden" name="_captcha" value="true">
                             <div class="form-row">
 
 
@@ -3376,30 +3191,6 @@
 
             }
         );
-
-
-
-        /* CONTACT FORM */
-
-        document
-            .getElementById("contactForm")
-            .addEventListener(
-                "submit",
-                function (event) {
-
-
-                    event.preventDefault();
-
-
-                    alert(
-                        "Thank you! Your enquiry has been submitted."
-                    );
-
-
-                    this.reset();
-
-                }
-            );
 
 
     </script>

@@ -542,99 +542,38 @@ if (
     startAutoSlide();
 
 }
-
-
 /* ================= CONTACT FORM ================= */
 
-const contactForm =
-    document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
 
-    contactForm.addEventListener(
-        "submit",
-        function (event) {
+    contactForm.addEventListener("submit", function (event) {
 
+        const nameElement = document.getElementById("name");
+        const phoneElement = document.getElementById("phone");
+        const emailElement = document.getElementById("email");
+        const serviceElement = document.getElementById("service");
+        const messageElement = document.getElementById("message");
+
+        const name = nameElement ? nameElement.value.trim() : "";
+        const phone = phoneElement ? phoneElement.value.trim() : "";
+        const email = emailElement ? emailElement.value.trim() : "";
+        const service = serviceElement ? serviceElement.value : "";
+        const message = messageElement ? messageElement.value.trim() : "";
+
+        if (!name || !phone || !email || !service || !message) {
             event.preventDefault();
-
-
-            const nameElement =
-                document.getElementById("name");
-
-            const phoneElement =
-                document.getElementById("phone");
-
-            const emailElement =
-                document.getElementById("email");
-
-            const serviceElement =
-                document.getElementById("service");
-
-            const messageElement =
-                document.getElementById("message");
-
-
-            const name =
-                nameElement
-                    ? nameElement.value.trim()
-                    : "";
-
-
-            const phone =
-                phoneElement
-                    ? phoneElement.value.trim()
-                    : "";
-
-
-            const email =
-                emailElement
-                    ? emailElement.value.trim()
-                    : "";
-
-
-            const service =
-                serviceElement
-                    ? serviceElement.value
-                    : "";
-
-
-            const message =
-                messageElement
-                    ? messageElement.value.trim()
-                    : "";
-
-
-            if (
-                !name ||
-                !phone ||
-                !email ||
-                !service ||
-                !message
-            ) {
-
-                alert(
-                    "Please fill in all required fields."
-                );
-
-                return;
-
-            }
-
-
-            alert(
-                "Thank you, " +
-                name +
-                "! Your enquiry has been submitted."
-            );
-
-
-            contactForm.reset();
-
+            alert("Please fill in all required fields.");
+            return;
         }
-    );
+
+        // Allow the browser to submit the form to FormSubmit.
+        // Do not call preventDefault() or reset the form here.
+
+    });
 
 }
-
 
 /* ================= BACK TO TOP ================= */
 
