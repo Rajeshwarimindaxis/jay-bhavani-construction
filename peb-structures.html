@@ -996,3 +996,61 @@
     <script src="hf.js" defer></script>
 </body>
 </html>
+/* =========================================
+   PEB PAGE — MOBILE NAVIGATION FIX
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .header .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .header .navbar {
+        display: none;
+    }
+
+    .header .navbar.active {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .header .navbar .services-nav-item,
+    .header .navbar .brochure-nav-item {
+        width: 100%;
+    }
+
+    .header .services-nav-header,
+    .header .brochure-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header .services-dropdown,
+    .header .brochure-dropdown {
+        display: none;
+        position: static;
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .header .services-nav-item.dropdown-open > .services-dropdown,
+    .header .brochure-nav-item.dropdown-open > .brochure-dropdown {
+        display: block;
+    }
+}

@@ -1605,3 +1605,55 @@
         font-size: 8px !important;
     }
 }
+/* FIX: SERVICES NAVIGATION ON MOBILE */
+@media (max-width: 768px) {
+
+    .header .navbar.active .services-nav-item {
+        display: block !important;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .header .navbar.active .services-nav-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 44px;
+    }
+
+    .header .navbar.active .services-nav-link {
+        display: flex !important;
+        flex: 1;
+        align-items: center;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .header .navbar.active #servicesDropdownToggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Hide submenu until the arrow is tapped */
+    .header .navbar.active .services-nav-item .services-dropdown {
+        display: none;
+    }
+
+    /* Show submenu when the arrow is tapped */
+    .header .navbar.active .services-nav-item.dropdown-open .services-dropdown {
+        display: block !important;
+        position: static !important;
+        width: 100%;
+        max-width: 100%;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        box-shadow: none;
+    }
+}
