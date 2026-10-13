@@ -1,0 +1,1671 @@
+/* =========================================================
+   COMMERCIAL BUILDINGS STYLESHEET
+   Jay Bhavani Construction
+========================================================= */
+
+:root {
+    --comm-blue: #0759b5;
+    --comm-blue-dark: #06458f;
+    --comm-blue-light: #1976d2;
+    --comm-gold: #c18a18;
+    --comm-gold-light: #e3b84e;
+    --comm-dark: #091a2e;
+    --comm-dark-2: #0f2742;
+    --comm-text: #506173;
+    --comm-light: #f4f7fb;
+    --comm-white: #ffffff;
+    --comm-border: #e1e7ee;
+    --comm-radius: 12px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+    color: var(--comm-text);
+    background: var(--comm-white);
+}
+
+/* ================= HERO SECTION ================= */
+
+.comm-hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--comm-dark);
+}
+
+.comm-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(9, 26, 46, 0.96) 0%,
+            rgba(9, 26, 46, 0.88) 50%,
+            rgba(9, 26, 46, 0.45) 100%
+        ),
+        url("images/commercial-building.jpg") center 40% / cover no-repeat;
+    transform: scale(1.03);
+    animation: commHeroZoom 1.5s ease-out both;
+}
+
+@keyframes commHeroZoom {
+    from { transform: scale(1.1); opacity: 0.8; }
+    to { transform: scale(1.03); opacity: 1; }
+}
+
+.comm-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.12;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 44px 44px;
+}
+
+.comm-container {
+    width: min(1180px, calc(100% - 44px));
+    margin-inline: auto;
+}
+
+.comm-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 860px;
+    padding: 100px 0 110px;
+    color: #fff;
+}
+
+.comm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--comm-gold-light);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.comm-eyebrow::before {
+    content: "";
+    height: 2px;
+    width: 35px;
+    background: var(--comm-gold-light);
+}
+
+.comm-hero h1 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(38px, 5.5vw, 68px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -1.4px;
+    margin: 0 0 20px;
+}
+
+.comm-hero h1 span {
+    display: block;
+    color: #ff9b3d;
+}
+
+.comm-hero-description {
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 30px;
+}
+
+.comm-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.comm-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 0 1px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.comm-button-primary {
+    background: #f28c28;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(242, 140, 40, 0.3);
+}
+
+.comm-button-primary:hover {
+    background: #d96f0b;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(242, 140, 40, 0.4);
+}
+
+.comm-button-outline {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+}
+
+.comm-button-outline:hover {
+    background: #fff;
+    color: var(--comm-dark);
+    transform: translateY(-3px);
+}
+
+.comm-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+}
+
+.comm-hero-note i {
+    color: #ff9b3d;
+    font-size: 16px;
+}
+
+/* ================= SECTION COMMON ================= */
+
+.comm-section {
+    padding: 95px 0;
+}
+
+.comm-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--comm-blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.comm-section-label::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--comm-blue);
+}
+
+.comm-heading {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 800;
+    color: var(--comm-dark);
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 20px;
+}
+
+.comm-heading span {
+    color: var(--comm-blue);
+}
+
+.comm-body-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--comm-text);
+    margin-bottom: 18px;
+}
+
+/* ================= OVERVIEW INTRO ================= */
+
+.comm-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(30px, 4.5vw, 65px);
+    align-items: center;
+}
+
+.comm-intro-image {
+    position: relative;
+    min-height: 440px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e5ebf2;
+    box-shadow: 0 20px 45px rgba(6, 43, 74, 0.12);
+}
+
+.comm-intro-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.comm-intro-image:hover img {
+    transform: scale(1.05);
+}
+
+.comm-image-badge {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(9, 26, 46, 0.92);
+    border-left: 4px solid #f28c28;
+    border-radius: 8px;
+    color: #fff;
+    backdrop-filter: blur(8px);
+}
+
+.comm-image-badge i {
+    font-size: 24px;
+    color: #ff9b3d;
+}
+
+.comm-image-badge strong {
+    display: block;
+    font-size: 14px;
+}
+
+.comm-image-badge small {
+    display: block;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 3px;
+}
+
+.comm-check-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    margin-top: 26px;
+}
+
+.comm-check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--comm-dark);
+}
+
+.comm-check-item i {
+    color: #f28c28;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* ================= BENEFITS STRIP ================= */
+
+.comm-benefits {
+    background: var(--comm-light);
+    border-top: 1px solid var(--comm-border);
+    border-bottom: 1px solid var(--comm-border);
+    padding: 45px 0;
+}
+
+.comm-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.comm-benefit-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(6, 43, 74, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comm-benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(6, 43, 74, 0.09);
+}
+
+.comm-benefit-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(7, 89, 181, 0.1);
+    color: var(--comm-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.comm-benefit-card strong {
+    display: block;
+    font-size: 14px;
+    color: var(--comm-dark);
+}
+
+.comm-benefit-card small {
+    display: block;
+    font-size: 12px;
+    color: var(--comm-text);
+    margin-top: 3px;
+}
+
+/* ================= APPLICATIONS GRID ================= */
+
+.comm-applications-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.comm-applications-heading .comm-section-label::before {
+    display: none;
+}
+
+.comm-applications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.comm-app-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--comm-border);
+    box-shadow: 0 8px 25px rgba(6, 43, 74, 0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.comm-app-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(6, 43, 74, 0.12);
+}
+
+.comm-app-image {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+}
+
+.comm-app-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.comm-app-card:hover .comm-app-image img {
+    transform: scale(1.08);
+}
+
+.comm-app-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(9, 26, 46, 0.88);
+    color: #ff9b3d;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    backdrop-filter: blur(6px);
+}
+
+.comm-app-content {
+    padding: 24px;
+}
+
+.comm-app-content h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--comm-dark);
+    margin: 0 0 10px;
+}
+
+.comm-app-content p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--comm-text);
+    margin: 0;
+}
+
+/* ================= FEATURES SPLIT ================= */
+
+.comm-features-section {
+    background: #f8fbfe;
+}
+
+.comm-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(30px, 4.5vw, 65px);
+    align-items: center;
+}
+
+.comm-features-image {
+    min-height: 400px;
+    border-radius: 9px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 45px rgba(6, 43, 74, 0.1);
+}
+
+.comm-features-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comm-feature-items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.comm-feature-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.comm-feature-icon {
+    width: 40px;
+    height: 36px;
+    border-radius: 7px;
+    background: #fff;
+    color: var(--comm-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    border: 0.8px solid #dce4ee;
+    box-shadow: 0 4px px rgba(6, 43, 74, 0.05);
+}
+
+.comm-feature-item h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--comm-dark);
+    margin: 0 0 6px;
+}
+
+.comm-feature-item p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--comm-text);
+    margin: 0;
+}
+
+/* ================= SPECIFICATIONS & PROCESS ================= */
+
+.comm-specs-table-wrapper {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid var(--comm-border);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(6, 43, 74, 0.05);
+    margin-top: 40px;
+}
+
+.comm-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comm-specs-table th,
+.comm-specs-table td {
+    padding: 18px 24px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.comm-specs-table th {
+    background: #091a2e;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+}
+
+.comm-specs-table td strong {
+    color: var(--comm-dark);
+}
+
+.comm-specs-table tr:hover td {
+    background: #fbfdff;
+}
+
+/* Process steps */
+.comm-process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.comm-step-card {
+    background: #fff;
+    padding: 26px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--comm-border);
+    position: relative;
+    box-shadow: 0 5px 20px rgba(6, 43, 74, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.comm-step-card:hover {
+    transform: translateY(-5px);
+}
+
+.comm-step-number {
+    font-family: "Manrope", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: rgba(7, 89, 181, 0.2);
+    margin-bottom: 12px;
+}
+
+.comm-step-card h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--comm-dark);
+    margin: 0 0 8px;
+}
+
+.comm-step-card p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--comm-text);
+    margin: 0;
+}
+
+/* ================= CTA BANNER ================= */
+
+.comm-cta {
+    position: relative;
+    background: linear-gradient(135deg, #091a2e 0%, #0c2b4c 100%);
+    padding: 25px 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+.comm-cta::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -80px;
+    width: 360px;
+    height: 360px;
+    background: rgba(242, 140, 40, 0.15);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.comm-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.comm-cta-content {
+    max-width: 680px;
+}
+
+.comm-cta-content .comm-section-label {
+    color: #ff9b3d;
+}
+
+.comm-cta-content .comm-section-label::before {
+    background: #ff9b3d;
+}
+
+.comm-cta-content h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(28px, 3.8vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 14px;
+    color: #fff;
+}
+
+.comm-cta-content h2 span {
+    color: #ff9b3d;
+}
+
+.comm-cta-content p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 700px) {
+    .comm-intro-grid,
+    .comm-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comm-intro-image,
+    .comm-features-image {
+        min-height: 100px;
+    }
+
+    .comm-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comm-applications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comm-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comm-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .comm-benefits-grid,
+    .comm-process-grid,
+    .comm-check-list {
+        grid-template-columns: 1fr;
+    }
+
+    .comm-hero-buttons {
+        flex-direction: column;
+    }
+
+    .comm-button {
+        width: 100%;
+    }
+}
+/* FIX: ALIGN BROCHURE BUTTON TO THE LEFT ON MOBILE */
+@media (max-width: 1200px) {
+
+    .navbar.active .brochure-nav-header {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+    .comm-intro-grid,
+    .comm-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comm-intro-image,
+    .comm-features-image {
+        min-height: 200px;
+    }
+
+    .comm-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .comm-applications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .comm-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px;
+    }
+
+    .comm-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .comm-benefits-grid,
+    .comm-process-grid,
+    .comm-check-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px;
+    }
+
+    .comm-applications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .comm-hero-buttons {
+        flex-direction: column;
+    }
+
+    .comm-button {
+        width: 100%;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .comm-benefits-grid,
+    .comm-process-grid,
+    .comm-applications-grid,
+    .comm-check-list {
+        gap: 8px;
+    }
+}
+
+/* FIX: ALIGN BROCHURE BUTTON TO THE LEFT ON MOBILE */
+@media (max-width: 1200px) {
+    .navbar.active .brochure-nav-header {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar.active .brochure-nav-header .brochure-nav-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        height: auto !important;
+        padding: 10px 6px !important;
+        margin: 0 !important;
+        text-align: left !important;
+        text-indent: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-bottom: 1px solid #f0f4f8 !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        color: #0759B5 !important;
+        transform: none !important;
+    }
+}
+
+}
+
+/* =====================================
+   COMMERCIAL BENEFITS - IMPROVED DESIGN
+===================================== */
+
+.comm-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.comm-benefits-grid > * {
+    min-width: 0;
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    background: #FFFFFF;
+    border: 1px solid #E0E8F2;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(6, 54, 95, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.comm-benefits-grid > *:hover {
+    transform: translateY(-4px);
+    border-color: #B9D5F2;
+    box-shadow: 0 10px 25px rgba(6, 54, 95, 0.10);
+}
+
+/* Icon box */
+.comm-benefits-grid > * .comm-benefit-icon {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #EAF2FC;
+    color: #0759B5;
+    border-radius: 14px;
+    font-size: 23px;
+}
+
+/* Text content */
+.comm-benefits-grid h3,
+.comm-benefits-grid h4 {
+    margin: 0 0 5px;
+    color: #102F50;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 700;
+    overflow-wrap: break-word;
+}
+
+.comm-benefits-grid p {
+    margin: 0;
+    color: #62758A;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .comm-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .comm-benefits-grid > * {
+        padding: 20px;
+    }
+}
+
+/* Mobile: clean 2-column layout */
+@media (max-width: 640px) {
+    .comm-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .comm-benefits-grid > * {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+
+        min-width: 0;
+        padding: 16px 14px;
+        border-radius: 14px;
+    }
+
+    .comm-benefits-grid > * .comm-benefit-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        border-radius: 12px;
+        font-size: 20px;
+    }
+
+    .comm-benefits-grid h3,
+    .comm-benefits-grid h4 {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+    }
+
+    .comm-benefits-grid p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 360px) {
+    .comm-benefits-grid {
+        gap: 9px;
+    }
+
+    .comm-benefits-grid > * {
+        padding: 12px 10px;
+    }
+
+    .comm-benefits-grid h3,
+    .comm-benefits-grid h4 {
+        font-size: 13px;
+    }
+
+    .comm-benefits-grid p {
+        font-size: 11px;
+    }
+}
+/* ==========================================
+   COMMERCIAL SOLUTIONS - MOBILE CARD GRID
+========================================== */
+
+/* Keep desktop layout unchanged */
+@media (max-width: 640px) {
+
+    /* Main commercial cards container */
+    .comm-section .comm-container .comm-projects-grid,
+    .comm-section .comm-container .comm-solutions-grid,
+    .comm-section .comm-container .comm-cards-grid,
+    .comm-section .comm-container .comm-gallery-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        align-items: stretch !important;
+    }
+
+    /* Prevent cards from stretching across the screen */
+    .comm-section .comm-container .comm-project-card,
+    .comm-section .comm-container .comm-solution-card,
+    .comm-section .comm-container .comm-card {
+        min-width: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Images */
+    .comm-section .comm-container .comm-project-card img,
+    .comm-section .comm-container .comm-solution-card img,
+    .comm-section .comm-container .comm-card img {
+        display: block;
+        width: 100% !important;
+        height: 100px !important;
+        object-fit: cover !important;
+    }
+
+    /* Compact card content */
+    .comm-section .comm-container .comm-project-card h3,
+    .comm-section .comm-container .comm-solution-card h3,
+    .comm-section .comm-container .comm-card h3 {
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .comm-section .comm-container .comm-project-card p,
+    .comm-section .comm-container .comm-solution-card p,
+    .comm-section .comm-container .comm-card p {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+    }
+}
+@media (max-width: 1200px) {
+
+    /* Remove any standalone dropdown toggle above Services */
+    .header .navbar.active .services-nav-item > .dropdown-toggle:not(a):not(button),
+    .header .navbar.active .services-nav-item > .services-toggle:not(a):not(button) {
+        display: none !important;
+    }
+
+    /* Keep Services name and its arrow on one row */
+    .header .navbar.active .services-nav-item {
+        display: block !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .header .navbar.active .services-nav-item > a,
+    .header .navbar.active .services-nav-item > button {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        width: 100% !important;
+        padding: 7px !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+    }
+
+    /* Hide duplicate standalone arrows */
+    .header .navbar.active .services-nav-item .dropdown-arrow {
+        display: none !important;
+    }
+
+    /* Remove excess spacing after Services */
+    .header .navbar.active .services-nav-item {
+        margin-bottom: 0 !important;
+        border-bottom: 1px solid #EAF2F9 !important;
+    }
+
+    /* Compact all navigation rows */
+    .header .navbar.active > a:not(.btn),
+    .header .navbar.active .brochure-nav-trigger {
+        min-height: 0 !important;
+        padding: 6px 7px !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Bring Gallery and Contact up */
+    .header .navbar.active > a[href*="gallery"],
+    .header .navbar.active > a[href*="contact"] {
+        margin-top: 0 !important;
+        padding: 6px 7px !important;
+    }
+
+    /* Keep Get a Quote compact */
+    .header .navbar.active > a.btn,
+    .header .navbar.active > .btn {
+        min-height: 36px !important;
+        margin-top: 6px !important;
+        padding: 6px 10px !important;
+    }
+}
+/* Three-column card grid on mobile and tablet */
+@media screen and (max-width: 1024px) {
+
+    .comm-applications-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        align-items: stretch !important;
+    }
+
+    .comm-app-card {
+        min-width: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .comm-app-content {
+        padding: 12px !important;
+        min-width: 0;
+    }
+
+    .comm-app-content h3 {
+        font-size: 13px !important;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .comm-app-content p {
+        font-size: 11px !important;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Smaller mobile screens */
+@media screen and (max-width: 480px) {
+
+    .comm-applications-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 7px !important;
+    }
+
+    .comm-app-content {
+        padding: 8px !important;
+    }
+
+    .comm-app-content h3 {
+        font-size: 11px !important;
+    }
+
+    .comm-app-content p {
+        font-size: 10px !important;
+    }
+}
+/* =========================================
+   MOBILE COMMERCIAL CARDS
+   2 TOP + 1 CENTERED BELOW
+========================================= */
+
+@media screen and (max-width: 640px) {
+
+    .comm-applications-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px 12px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+
+    .comm-applications-grid > .comm-app-card {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+        overflow: hidden !important;
+        border-radius: 13px !important;
+        justify-self: stretch !important;
+    }
+
+    /* Third card centered in second row */
+    .comm-applications-grid > .comm-app-card:nth-child(3) {
+        grid-column: 1 / -1 !important;
+        width: 78% !important;
+        max-width: 300px !important;
+        justify-self: center !important;
+    }
+
+    /* Image sizing */
+    .comm-applications-grid .comm-app-image {
+        position: relative !important;
+        width: 100% !important;
+        height: 150px !important;
+        min-height: 150px !important;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .comm-applications-grid .comm-app-image img {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    /* Image labels */
+    .comm-applications-grid .comm-app-badge {
+        top: 10px !important;
+        left: 9px !important;
+        right: 9px !important;
+        width: auto !important;
+        max-width: calc(100% - 18px) !important;
+        padding: 6px 8px !important;
+        font-size: 10px !important;
+        line-height: 1.35 !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+    }
+
+    /* Text area */
+    .comm-applications-grid .comm-app-content {
+        padding: 14px 12px 16px !important;
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+    }
+
+    .comm-applications-grid .comm-app-content h3 {
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+        margin: 0 0 9px !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+    }
+
+    .comm-applications-grid .comm-app-content p {
+        font-size: 12px !important;
+        line-height: 1.65 !important;
+        margin: 0 !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+    }
+}
+
+/* Very small mobile screens */
+@media screen and (max-width: 380px) {
+
+    .comm-applications-grid {
+        gap: 14px 9px !important;
+    }
+
+    .comm-applications-grid > .comm-app-card:nth-child(3) {
+        width: 86% !important;
+    }
+
+    .comm-applications-grid .comm-app-image {
+        height: 125px !important;
+        min-height: 125px !important;
+    }
+
+    .comm-applications-grid .comm-app-content {
+        padding: 11px 9px 13px !important;
+    }
+
+    .comm-applications-grid .comm-app-content h3 {
+        font-size: 13px !important;
+    }
+
+    .comm-applications-grid .comm-app-content p {
+        font-size: 11px !important;
+        line-height: 1.55 !important;
+    }
+}
+@media screen and (max-width: 767px) {
+
+    /* Hero section layout */
+    .service-hero .container,
+    .service-hero .services-container,
+    .service-hero .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Image and text side by side */
+    .service-hero .hero-content,
+    .service-hero .service-hero-content,
+    .service-hero .hero-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        align-items: center !important;
+        gap: 14px !important;
+    }
+
+    /* Image side */
+    .service-hero img,
+    .service-hero .hero-image {
+        width: 100% !important;
+        height: 200px !important;
+        object-fit: cover !important;
+        border-radius: 12px !important;
+    }
+
+    /* Text side */
+    .service-hero h1 {
+        font-size: clamp(18px, 4.5vw, 25px) !important;
+        line-height: 1.25 !important;
+        margin: 8px 0 12px !important;
+        overflow-wrap: break-word;
+    }
+
+    .service-hero p {
+        font-size: 12px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .service-hero .eyebrow {
+        font-size: 10px !important;
+        letter-spacing: 1px !important;
+    }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 480px) {
+    .service-hero .hero-content,
+    .service-hero .service-hero-content,
+    .service-hero .hero-grid {
+        gap: 10px !important;
+    }
+
+    .service-hero img,
+    .service-hero .hero-image {
+        height: 155px !important;
+    }
+
+    .service-hero h1 {
+        font-size: 18px !important;
+    }
+
+    .service-hero p {
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+    }
+}
+@media screen and (max-width: 767px) {
+
+    /* Main hero layout */
+    .comm-section:has(.comm-heading) {
+        padding: 25px 0 35px !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-container {
+        display: grid !important;
+        grid-template-columns: 42% minmax(0, 1fr) !important;
+        align-items: start !important;
+        gap: 14px !important;
+    }
+
+    /* Image on the left */
+    .comm-section:has(.comm-heading) .comm-container img {
+        width: 100% !important;
+        height: 210px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        border-radius: 12px !important;
+        display: block !important;
+    }
+
+    /* Content on the right */
+    .comm-section:has(.comm-heading) .comm-container > div {
+        min-width: 0 !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-heading {
+        font-size: 22px !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.5px !important;
+        margin: 0 0 12px !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-container p {
+        font-size: 12px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 12px !important;
+    }
+
+    /* Feature items */
+    .comm-section:has(.comm-heading) .comm-container h3 {
+        font-size: 13px !important;
+        line-height: 1.35 !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-container li,
+    .comm-section:has(.comm-heading) .comm-container .comm-feature {
+        margin-bottom: 12px !important;
+    }
+}
+
+/* Narrow phones */
+@media screen and (max-width: 480px) {
+
+    .comm-section:has(.comm-heading) .comm-container {
+        grid-template-columns: 38% minmax(0, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-container img {
+        height: 170px !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-heading {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-container p {
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-container h3 {
+        font-size: 11px !important;
+    }
+}
+.comm-image-badge {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: 6px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 5px 16px;
+    min-height: 0;
+    width: auto;
+    box-sizing: border-box;
+
+    background: rgba(6, 35, 63, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 4px solid #F28C28;
+    border-radius: 8px;
+
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.comm-image-badge h3,
+.comm-image-badge h4,
+.comm-image-badge strong {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.comm-image-badge p {
+    margin: 1px 0 0;
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+@media (max-width: 767px) {
+    .comm-image-badge {
+        left: 3px;
+        right: 3px;
+        bottom: 4px;
+        padding: 4px 9px;
+        gap: 7px;
+    }
+
+    .comm-image-badge h3,
+    .comm-image-badge h4,
+    .comm-image-badge strong {
+        font-size: 12px;
+    }
+
+    .comm-image-badge p {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+}
+/* Mobile: Portfolio text above the grid */
+@media screen and (max-width: 500px) {
+
+    .comm-section:has(.comm-heading) .comm-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+
+        width: calc(100% - 30px) !important;
+        margin-inline: auto !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-heading {
+        width: 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+    .comm-section:has(.comm-heading) .comm-portfolio-grid {
+        display: grid !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* Smaller phones */
+@media screen and (max-width: 400px) {
+
+    .comm-section:has(.comm-heading) .comm-container {
+        gap: 10px !important;
+        width: calc(100% - 24px) !important;
+    }
+}
+
+/* =========================================
+   REDUCE SPACING BETWEEN ALL SECTIONS
+   ========================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* Reduce top and bottom section padding */
+    .comm-section {
+        padding-top: 35px !important;
+        padding-bottom: 35px !important;
+    }
+
+    /* Reduce spacing inside section containers */
+    .comm-container {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Reduce space below section headings */
+    .comm-heading {
+        margin-bottom: 18px !important;
+    }
+
+    /* Reduce heading and paragraph gaps */
+    .comm-heading h1,
+    .comm-heading h2,
+    .comm-heading h3 {
+        margin-bottom: 8px !important;
+    }
+
+    .comm-heading p {
+        margin-top: 5px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Reduce gaps between grids and cards */
+    .comm-grid,
+    .comm-portfolio-grid,
+    .comm-applications-grid {
+        row-gap: 14px !important;
+        column-gap: 12px !important;
+    }
+
+    /* Reduce extra spacing around images */
+    .comm-image-wrapper {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Reduce spacing around buttons */
+    .comm-buttons,
+    .comm-btn-group {
+        margin-top: 12px !important;
+        gap: 8px !important;
+    }
+}
+
+/* Extra-tight spacing on small phones */
+@media screen and (max-width: 480px) {
+
+    .comm-section {
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+
+    .comm-heading {
+        margin-bottom: 14px !important;
+    }
+
+    .comm-grid,
+    .comm-portfolio-grid,
+    .comm-applications-grid {
+        row-gap: 10px !important;
+        column-gap: 8px !important;
+    }
+}
+
+/* Responsive layout for mobile */
+@media screen and (max-width: 480px) {
+    .comm-feature-items {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+    }
+}
+
+/* Tablet and mobile responsiveness */
+@media screen and (max-width: 767px) {
+    .comm-feature-items {
+        gap: 11px !important;
+        margin-top: 8px !important;
+    }
+
+    .comm-feature-items > * {
+        padding: 11px !important;
+    }
+
+    .comm-section:has(.comm-feature-items) {
+        padding-top: 12px !important;
+        padding-bottom: 14px !important;
+    }
+}
+
+/* Very small screens */
+@media screen and (max-width: 380px) {
+    .comm-feature-items {
+        gap: 9px !important;
+    }
+
+    .comm-feature-items > * {
+        padding: 6px !important;
+    }
+}
+
+/* DESKTOP ONLY: Full width with 4 columns */
+@media screen and (min-width: 1024px) {
+
+    .comm-section:has(.comm-feature-items) {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .comm-section:has(.comm-feature-items) .comm-container {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 40px 30px !important;
+        box-sizing: border-box !important;
+    }
+
+    .comm-section:has(.comm-feature-items) .comm-heading {
+        width: 100% !important;
+        max-width: none !important;
+        display: block !important;
+    }
+
+    .comm-section:has(.comm-feature-items) .comm-feature-items {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 30px 0 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .comm-section:has(.comm-feature-items) .comm-feature-items > * {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+}

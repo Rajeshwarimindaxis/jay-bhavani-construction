@@ -1,0 +1,1830 @@
+:root {
+    --industrial-gold: #c18a18;
+    --industrial-gold-light: #e3b84e;
+    --industrial-dark: #17212b;
+    --industrial-text: #66717d;
+    --industrial-light: #f5f7f9;
+    --industrial-white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    overflow-x: hidden;
+}
+/* =====================================
+   PREMIUM INDUSTRIAL HERO - ORANGE THEME
+===================================== */
+
+.industrial-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 24, 43, 0.97) 0%,
+            rgba(10, 24, 43, 0.91) 48%,
+            rgba(10, 24, 43, 0.68) 100%
+        ),
+        url("images/industrialshedd.jpg") center / cover no-repeat;
+    padding: 12px 0 9px;
+    color: #ffffff;
+}
+
+/* Subtle orange decorative glow */
+.industrial-hero::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    right: -100px;
+    width: 430px;
+    height: 400px;
+    background: rgba(245, 130, 32, 0.13);
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+
+.industrial-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    padding: 25px 0 20px;
+    box-sizing: border-box;
+    text-align: left;
+    color: #fff;
+}
+
+
+/* Small heading above the main title */
+.industrial-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffad62;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+.eyebrow-line {
+    display: inline-block;
+    width: 38px;
+    height: 3px;
+    background: #f58220;
+    border-radius: 5px;
+}
+
+/* Main heading */
+.industrial-hero h1 {
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(42px, 5.5vw, 70px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+    margin: 0 0 24px;
+}
+
+.industrial-hero h1 span {
+    display: block;
+    color: #f58220;
+    margin-top: 7px;
+}
+
+/* Description */
+.industrial-hero-description {
+    max-width: 680px;
+    color: #dce4ee;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 34px;
+}
+
+/* Buttons */
+.industrial-hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.industrial-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 54px;
+    padding: 15px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Orange primary button */
+.industrial-button-primary {
+    background: #f58220;
+    color: #ffffff;
+    border: 1px solid #f58220;
+    box-shadow: 0 8px 22px rgba(245, 130, 32, 0.22);
+}
+
+.industrial-button-primary:hover {
+    background: #df6b0b;
+    border-color: #df6b0b;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(245, 130, 32, 0.3);
+}
+
+.industrial-button-primary i {
+    transition: transform 0.3s ease;
+}
+
+.industrial-button-primary:hover i {
+    transform: translateX(4px);
+}
+
+/* Outline secondary button */
+.industrial-button-outline {
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.industrial-button-outline:hover {
+    background: #ffffff;
+    color: #10233d;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Quality note */
+.industrial-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    color: #e2e8f0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.industrial-hero-note i {
+    color: #f58220;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+
+
+.industrial-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    padding: 25px 0 20px;
+    box-sizing: border-box;
+    text-align: left;
+    color: #fff;
+}
+
+
+@media (max-width: 900px) {
+    .industrial-hero-content {
+        max-width: 720px;
+        padding: 38px 0 42px;
+    }
+}
+
+@media (max-width: 600px) {
+    .industrial-hero-content {
+        padding: 28px 0 32px;
+    }
+}
+
+/* ========================================
+   SERVICES NAVIGATION DROPDOWN
+======================================== */
+
+.services-nav-item {
+    position: relative;
+}
+
+.services-nav-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.services-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 5px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.services-dropdown-toggle i {
+    font-size: 11px;
+    transition: transform .3s ease;
+}
+
+.services-nav-item.dropdown-open .services-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.services-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: -30px;
+    width: 340px;
+    max-width: calc(100vw - 30px);
+    padding: 18px;
+    background: #fff;
+    border: 1px solid rgba(23, 33, 43, .08);
+    border-radius: 14px;
+    box-shadow: 0 20px 55px rgba(17, 29, 42, .16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+    z-index: 1000;
+}
+
+.services-nav-item.dropdown-open .services-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.services-dropdown-heading {
+    padding: 4px 8px 14px;
+    border-bottom: 1px solid #edf0f2;
+    margin-bottom: 8px;
+}
+
+.services-dropdown-heading span {
+    color: var(--industrial-gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.services-dropdown-heading p {
+    color: var(--industrial-text);
+    font-size: 12px;
+    margin: 5px 0 0;
+}
+
+.services-dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 8px;
+    text-decoration: none;
+    border-radius: 9px;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.services-dropdown-link:hover {
+    background: #f7f4ec;
+    transform: translateX(4px);
+}
+
+.services-dropdown-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    color: var(--industrial-gold);
+    background: rgba(193, 138, 24, .12);
+    border-radius: 9px;
+}
+
+.services-dropdown-link strong,
+.services-dropdown-link small {
+    display: block;
+}
+
+.services-dropdown-link strong {
+    color: var(--industrial-dark);
+    font-size: 12px;
+}
+
+.services-dropdown-link small {
+    color: var(--industrial-text);
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.dropdown-link-arrow {
+    margin-left: auto;
+    color: var(--industrial-gold);
+    font-size: 12px;
+}
+
+/* ========================================
+   INDUSTRIAL HERO
+======================================== */
+
+.industrial-hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--industrial-dark);
+    margin-top: 0;
+}
+
+.industrial-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 23, 33, .96) 0%,
+            rgba(13, 23, 33, .84) 48%,
+            rgba(13, 23, 33, .36) 100%
+        ),
+        url("images/industrialshedd.jpg") center 45% / cover no-repeat;
+    transform: scale(1.04);
+    animation: industrialHeroZoom 1.5s ease-out both;
+}
+
+.industrial-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .15;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .08) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(90deg, black, transparent 90%);
+}
+
+.industrial-hero .industrial-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 48px;
+    box-sizing: border-box;
+}
+
+.industrial-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 900px;
+    margin: 0;
+    padding: 65px 0 75px;
+    box-sizing: border-box;
+    text-align: left;
+    color: #fff;
+}
+
+.industrial-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--industrial-gold-light);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+    animation: industrialFadeUp .8s .1s both;
+}
+
+.industrial-eyebrow::before {
+    content: "";
+    height: 2px;
+    width: 35px;
+    background: var(--industrial-gold-light);
+}
+
+.industrial-hero h1 {
+    max-width: 780px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin: 0 0 24px;
+}
+
+.industrial-hero h1 span {
+    display: block;
+    color: var(--industrial-gold-light);
+}
+
+.industrial-hero-description {
+    max-width: 630px;
+    color: rgba(255, 255, 255, .82);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.industrial-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.industrial-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 50px;
+    padding: 0 24px;
+    border: 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+}
+
+.industrial-button-primary {
+    background: var(--industrial-gold);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(193, 138, 24, .22);
+}
+
+.industrial-button-primary:hover {
+    background: #a9740f;
+    transform: translateY(-3px);
+    box-shadow: 0 13px 28px rgba(193, 138, 24, .3);
+}
+
+.industrial-button-outline {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .45);
+}
+
+.industrial-button-outline:hover {
+    background: #fff;
+    color: var(--industrial-dark);
+    transform: translateY(-3px);
+}
+
+.industrial-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, .75);
+    font-size: 12px;
+}
+
+.industrial-hero-note i {
+    color: var(--industrial-gold-light);
+}
+
+/* ========================================
+   SHARED SECTION STYLES
+======================================== */
+
+.industrial-section {
+    padding: 95px 0;
+}
+
+.industrial-container {
+    width: min(1180px, calc(100% - 44px));
+    margin-inline: auto;
+}
+
+.industrial-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--industrial-gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    margin-bottom: 16px;
+}
+
+.industrial-section-label::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--industrial-gold);
+}
+
+.industrial-heading {
+    color: var(--industrial-dark);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin: 0 0 22px;
+}
+
+.industrial-heading span {
+    color: var(--industrial-gold);
+}
+
+.industrial-body-text {
+    color: var(--industrial-text);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* ========================================
+   INTRO — IMAGE LEFT, TEXT RIGHT
+======================================== */
+
+.industrial-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(25px, 4.2vw, 65px);
+}
+
+.industrial-intro-image {
+    min-width: 0;
+    min-height: 440px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #e7ebef;
+}
+
+.industrial-intro-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.industrial-intro-image:hover img {
+    transform: scale(1.055);
+}
+
+.industrial-intro-content {
+    min-width: 0;
+}
+
+.industrial-image-badge {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    color: #fff;
+    background: rgba(23, 33, 43, .92);
+    border-left: 4px solid var(--industrial-gold);
+    border-radius: 8px;
+}
+
+.industrial-image-badge i {
+    flex-shrink: 0;
+    color: var(--industrial-gold-light);
+    font-size: 25px;
+}
+
+.industrial-image-badge strong,
+.industrial-image-badge small {
+    display: block;
+}
+
+.industrial-image-badge strong {
+    font-size: 14px;
+}
+
+.industrial-image-badge small {
+    color: rgba(255, 255, 255, .7);
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.industrial-check-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px 18px;
+    margin-top: 26px;
+}
+
+.industrial-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    color: var(--industrial-dark);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.industrial-check-item i {
+    flex-shrink: 0;
+    color: var(--industrial-gold);
+    margin-top: 3px;
+}
+
+/* ========================================
+   BENEFITS STRIP
+======================================== */
+
+.industrial-benefits {
+    background: var(--industrial-dark);
+    padding: 34px 0;
+}
+
+.industrial-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.industrial-benefit {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    color: #fff;
+    transition: transform .3s ease;
+}
+
+.industrial-benefit:hover {
+    transform: translateY(-4px);
+}
+
+.industrial-benefit-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    color: var(--industrial-gold-light);
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 12px;
+    font-size: 19px;
+}
+
+.industrial-benefit strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.industrial-benefit small {
+    display: block;
+    color: rgba(255, 255, 255, .63);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   APPLICATION CARDS
+======================================== */
+
+.industrial-applications {
+    background: var(--industrial-light);
+}
+
+.industrial-section-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.industrial-section-heading .industrial-section-label {
+    justify-content: center;
+}
+
+.industrial-section-heading .industrial-section-label::after {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--industrial-gold);
+}
+
+.industrial-applications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.industrial-application-card {
+    min-width: 0;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, .055);
+    border: 1px solid rgba(23, 33, 43, .06);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.industrial-application-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .11);
+}
+
+.industrial-application-image {
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+    background: #e7ebef;
+}
+
+.industrial-application-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.industrial-application-card:hover .industrial-application-image img {
+    transform: scale(1.07);
+}
+
+.industrial-application-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .28), transparent 70%);
+}
+
+.industrial-application-icon {
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    bottom: 18px;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    color: #fff;
+    background: var(--industrial-gold);
+    font-size: 19px;
+}
+
+.industrial-application-content {
+    padding: 25px;
+}
+
+.industrial-application-content h3 {
+    color: var(--industrial-dark);
+    font-size: 19px;
+    margin: 0 0 12px;
+}
+
+.industrial-application-content p {
+    color: var(--industrial-text);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ========================================
+   DESIGN FEATURES
+======================================== */
+
+.industrial-design-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 65px;
+    align-items: center;
+}
+
+.industrial-design-image {
+    min-width: 0;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #e7ebef;
+}
+
+.industrial-design-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.industrial-design-image:hover img {
+    transform: scale(1.05);
+}
+
+.industrial-design-content {
+    min-width: 0;
+}
+
+.industrial-design-content > p {
+    color: var(--industrial-text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.industrial-feature-list {
+    display: grid;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.industrial-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 17px;
+    border: 1px solid #edf0f2;
+    border-radius: 11px;
+    transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+
+.industrial-feature:hover {
+    border-color: rgba(193, 138, 24, .5);
+    transform: translateX(5px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .045);
+}
+
+.industrial-feature-icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: rgba(193, 138, 24, .12);
+    color: var(--industrial-gold);
+}
+
+.industrial-feature h3 {
+    margin: 0 0 6px;
+    color: var(--industrial-dark);
+    font-size: 14px;
+}
+
+.industrial-feature p {
+    margin: 0;
+    color: var(--industrial-text);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   PROCESS
+======================================== */
+
+.industrial-process {
+    background: var(--industrial-light);
+}
+
+.industrial-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 45px;
+}
+
+.industrial-process-card {
+    position: relative;
+    min-width: 0;
+    padding: 28px 22px;
+    background: #fff;
+    border: 1px solid #e9edf0;
+    border-radius: 13px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.industrial-process-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 32px rgba(0, 0, 0, .07);
+}
+
+.industrial-process-number {
+    position: absolute;
+    top: 17px;
+    right: 19px;
+    color: #e5e8eb;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.industrial-process-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    color: var(--industrial-gold);
+    background: rgba(193, 138, 24, .12);
+    border-radius: 12px;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.industrial-process-card h3 {
+    color: var(--industrial-dark);
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.industrial-process-card p {
+    color: var(--industrial-text);
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ========================================
+   ENQUIRY CTA
+======================================== */
+
+.industrial-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 75px 0;
+    background: var(--industrial-dark);
+}
+
+.industrial-cta::before,
+.industrial-cta::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(227, 184, 78, .18);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.industrial-cta::before {
+    top: -160px;
+    right: -80px;
+}
+
+.industrial-cta::after {
+    bottom: -200px;
+    right: 70px;
+    width: 380px;
+    height: 380px;
+}
+
+.industrial-cta-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.industrial-cta-content {
+    min-width: 0;
+}
+
+.industrial-cta .industrial-heading {
+    color: #fff;
+    max-width: 690px;
+    margin-bottom: 14px;
+}
+
+.industrial-cta p {
+    max-width: 680px;
+    color: rgba(255, 255, 255, .7);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.industrial-cta .industrial-button {
+    flex-shrink: 0;
+}
+
+/* ========================================
+   SCROLL REVEAL ANIMATIONS
+======================================== */
+
+.industrial-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .75s ease, transform .75s ease;
+}
+
+.industrial-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.industrial-delay-1 {
+    transition-delay: .1s;
+}
+
+.industrial-delay-2 {
+    transition-delay: .2s;
+}
+
+.industrial-delay-3 {
+    transition-delay: .3s;
+}
+
+@keyframes industrialFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes industrialHeroZoom {
+    from {
+        transform: scale(1.12);
+    }
+
+    to {
+        transform: scale(1.04);
+    }
+}
+
+/* ========================================
+   TABLET RESPONSIVENESS
+======================================== */
+
+@media (max-width: 1100px) {
+    .industrial-container {
+        width: calc(100% - 48px);
+    }
+
+    .industrial-hero .industrial-container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .industrial-intro-grid,
+    .industrial-design-grid {
+        gap: 30px;
+    }
+
+    .industrial-benefits-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .industrial-benefit {
+        gap: 10px;
+    }
+
+    .industrial-benefit-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .industrial-applications-grid {
+        gap: 18px;
+    }
+
+    .industrial-application-content {
+        padding: 20px;
+    }
+
+    .industrial-process-grid {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .industrial-hero {
+        min-height: 580px;
+    }
+
+    .industrial-hero .industrial-container {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .industrial-hero-content {
+        max-width: 720px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .industrial-hero h1 {
+        font-size: clamp(42px, 6vw, 60px);
+        letter-spacing: -1.5px;
+    }
+
+    .industrial-intro-grid {
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+        gap: 25px;
+    }
+
+    .industrial-intro-image {
+        min-height: 360px;
+    }
+
+    .industrial-heading {
+        font-size: clamp(28px, 3.6vw, 38px);
+    }
+
+    .industrial-body-text {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .industrial-check-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .industrial-design-grid {
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+        gap: 25px;
+    }
+
+    .industrial-design-image {
+        height: 420px;
+    }
+
+    .industrial-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .industrial-applications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .industrial-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .industrial-cta-inner {
+        gap: 25px;
+    }
+}
+
+/* ========================================
+   MOBILE — PRESERVE TWO COLUMNS
+   IMAGE LEFT, CONTENT RIGHT
+======================================== */
+
+@media (max-width: 600px) {
+    .industrial-section {
+        padding: 55px 0;
+    }
+
+    .industrial-container {
+        width: calc(100% - 28px);
+    }
+
+    .industrial-hero {
+        min-height: 560px;
+    }
+
+    .industrial-hero .industrial-container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .industrial-hero::before {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(13, 23, 33, .94) 0%,
+                rgba(13, 23, 33, .82) 100%
+            ),
+            url("images/industrialshedd.jpg") center / cover no-repeat;
+    }
+
+    .industrial-hero-content {
+        max-width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .industrial-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.3px;
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .industrial-eyebrow::before {
+        width: 24px;
+    }
+
+    .industrial-hero h1 {
+        font-size: clamp(34px, 8vw, 46px);
+        line-height: 1.12;
+        letter-spacing: -1px;
+        margin-bottom: 18px;
+    }
+
+    .industrial-hero-description {
+        font-size: 13px;
+        line-height: 1.8;
+        margin-bottom: 24px;
+    }
+
+    .industrial-hero-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .industrial-button {
+        width: auto;
+        min-height: 46px;
+        padding: 0 16px;
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .industrial-hero-note {
+        align-items: flex-start;
+        font-size: 11px;
+        line-height: 1.7;
+        margin-top: 22px;
+    }
+
+    /* Overview stays side-by-side on mobile */
+    .industrial-intro-grid {
+        grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+        gap: 12px;
+        align-items: start;
+    }
+
+    .industrial-intro-image {
+        min-height: 270px;
+        height: 100%;
+        border-radius: 12px;
+    }
+
+    .industrial-image-badge {
+        left: 7px;
+        right: 7px;
+        bottom: 7px;
+        gap: 7px;
+        padding: 9px 7px;
+        border-left-width: 3px;
+    }
+
+    .industrial-image-badge i {
+        font-size: 17px;
+    }
+
+    .industrial-image-badge strong {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .industrial-image-badge small {
+        font-size: 8px;
+        line-height: 1.4;
+    }
+
+    .industrial-intro-content .industrial-section-label {
+        font-size: 8px;
+        line-height: 1.5;
+        letter-spacing: .6px;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .industrial-intro-content .industrial-section-label::before {
+        width: 14px;
+        flex-shrink: 0;
+    }
+
+    .industrial-intro-content .industrial-heading {
+        font-size: clamp(19px, 4.8vw, 27px);
+        line-height: 1.18;
+        letter-spacing: -.5px;
+        margin-bottom: 12px;
+    }
+
+    .industrial-intro-content .industrial-body-text {
+        font-size: 10px;
+        line-height: 1.65;
+        margin-top: 0;
+        margin-bottom: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .industrial-check-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .industrial-check-item {
+        gap: 6px;
+        font-size: 9px;
+        line-height: 1.45;
+    }
+
+    .industrial-check-item i {
+        font-size: 10px;
+        margin-top: 2px;
+    }
+
+    .industrial-heading {
+        font-size: clamp(26px, 6vw, 36px);
+        letter-spacing: -.7px;
+    }
+
+    .industrial-body-text {
+        font-size: 13px;
+    }
+
+    .industrial-design-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .industrial-design-image {
+        height: 280px;
+    }
+
+    .industrial-design-content > p {
+        font-size: 13px;
+    }
+
+    .industrial-benefits {
+        padding: 25px 0;
+    }
+
+    .industrial-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px 10px;
+    }
+
+    .industrial-benefit {
+        align-items: flex-start;
+        padding: 4px 0;
+        gap: 9px;
+    }
+
+    .industrial-benefit-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        border-radius: 9px;
+    }
+
+    .industrial-benefit strong {
+        font-size: 11px;
+    }
+
+    .industrial-benefit small {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .industrial-section-heading {
+        margin-bottom: 30px;
+    }
+
+    .industrial-applications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .industrial-application-image {
+        height: 155px;
+    }
+
+    .industrial-application-icon {
+        width: 35px;
+        height: 35px;
+        left: 12px;
+        bottom: 12px;
+        font-size: 14px;
+    }
+
+    .industrial-application-content {
+        padding: 15px 12px;
+    }
+
+    .industrial-application-content h3 {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .industrial-application-content p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .industrial-feature-list {
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .industrial-feature {
+        padding: 13px;
+        gap: 12px;
+    }
+
+    .industrial-feature-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .industrial-feature h3 {
+        font-size: 12px;
+    }
+
+    .industrial-feature p {
+        font-size: 11px;
+    }
+
+    .industrial-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .industrial-process-card {
+        padding: 20px 15px;
+    }
+
+    .industrial-process-icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 18px;
+    }
+
+    .industrial-process-card h3 {
+        font-size: 14px;
+    }
+
+    .industrial-process-card p {
+        font-size: 11px;
+    }
+
+    .industrial-process-number {
+        font-size: 25px;
+        top: 12px;
+        right: 13px;
+    }
+
+    .industrial-cta {
+        padding: 55px 0;
+    }
+
+    .industrial-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .industrial-cta .industrial-heading {
+        font-size: 28px;
+    }
+
+    .industrial-cta p {
+        font-size: 12px;
+    }
+
+    .industrial-cta .industrial-button {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+    .industrial-hero .industrial-container {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .industrial-hero h1 {
+        font-size: 32px;
+    }
+
+    .industrial-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .industrial-hero-buttons .industrial-button {
+        width: 100%;
+    }
+
+    /* Keep two columns, but allow a little more room for text */
+    .industrial-intro-grid {
+        grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+        gap: 9px;
+    }
+
+    .industrial-intro-image {
+        min-height: 240px;
+    }
+
+    .industrial-intro-content .industrial-heading {
+        font-size: 18px;
+    }
+
+    .industrial-intro-content .industrial-body-text {
+        font-size: 9px;
+        line-height: 1.55;
+    }
+
+    .industrial-check-item {
+        font-size: 8px;
+    }
+
+    .industrial-applications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industrial-application-image {
+        height: 210px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+    .industrial-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .industrial-hero-content {
+        max-width: 700px;
+        padding: 25px 0 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .industrial-hero-content {
+        padding: 20px 0 15px;
+    }
+}
+
+/* Reduce overview image height on mobile */
+@media (max-width: 500px) {
+    .industrial-intro-image {
+        height: 230px;
+        min-height: 230px;
+    }
+
+    .industrial-intro-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .industrial-image-badge {
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        padding: 6px 6px;
+    }
+}
+
+@media (max-width: 380px) {
+    .industrial-intro-image {
+        height: 200px;
+        min-height: 200px;
+    }
+}
+
+/* Compact overview side text on mobile */
+@media (max-width: 600px) {
+    .industrial-intro-content .industrial-section-label {
+        margin-bottom: 6px;
+        line-height: 1.3;
+    }
+
+    .industrial-intro-content .industrial-heading {
+        font-size: 20px;
+        line-height: 1.12;
+        margin-bottom: 8px;
+    }
+
+    .industrial-intro-content .industrial-body-text {
+        font-size: 10px;
+        line-height: 1.45;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .industrial-check-list {
+        gap: 5px;
+        margin-top: 8px;
+    }
+
+    .industrial-check-item {
+        font-size: 9px;
+        line-height: 1.35;
+        gap: 5px;
+    }
+
+    .industrial-check-item i {
+        margin-top: 1px;
+    }
+}
+
+@media (max-width: 380px) {
+    .industrial-intro-content .industrial-heading {
+        font-size: 18px;
+    }
+
+    .industrial-intro-content .industrial-body-text {
+        font-size: 9px;
+        line-height: 1.4;
+        margin-bottom: 6px;
+    }
+
+    .industrial-check-list {
+        gap: 4px;
+        margin-top: 6px;
+    }
+
+    .industrial-check-item {
+        font-size: 8px;
+    }
+}
+
+/* Add top spacing above the overview image */
+@media (max-width: 600px) {
+    .industrial-intro-image {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 380px) {
+    .industrial-intro-image {
+        margin-top: 30px;
+    }
+}
+
+/* Three-column application cards on mobile */
+@media (max-width: 600px) {
+    .industrial-applications-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .industrial-application-card {
+        min-width: 0;
+    }
+
+    .industrial-application-image {
+        height: 100px;
+    }
+
+    .industrial-application-content {
+        padding: 9px 7px;
+    }
+
+    .industrial-application-content h3 {
+        font-size: 11px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .industrial-application-content p {
+        font-size: 9px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .industrial-application-icon {
+        width: 28px;
+        height: 28px;
+        left: 7px;
+        bottom: 7px;
+        font-size: 12px;
+    }
+}
+
+/* Two-column industrial features grid on mobile */
+@media (max-width: 600px) {
+    .industrial-feature-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .industrial-feature {
+        min-width: 0;
+        padding: 10px;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .industrial-feature-icon {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+        font-size: 12px;
+    }
+
+    .industrial-feature h3 {
+        font-size: 11px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .industrial-feature p {
+        font-size: 10px;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+    }
+}
+/* FIX: ALIGN BROCHURE BUTTON TO THE LEFT ON MOBILE */
+@media (max-width: 1200px) {
+
+    .navbar.active .brochure-nav-header {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar.active .brochure-nav-header .brochure-nav-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 46px !important;
+        height: auto !important;
+
+        padding: 10px 6px !important;
+        margin: 0 !important;
+
+        text-align: left !important;
+        text-indent: 0 !important;
+
+        background: transparent !important;
+        border: 0 !important;
+        border-bottom: 1px solid #f0f4f8 !important;
+
+        font-family: "Inter", sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        color: #0759B5 !important;
+
+        transform: none !important;
+    }
+}

@@ -1,0 +1,1607 @@
+/* ==========================================================================
+   JAY BHAVANI CONSTRUCTION
+   SHARED HEADER, NAVIGATION & FOOTER STYLESHEET (hf.css)
+   
+   Includes:
+   1. Root Variables & Typography
+   2. Accessibility Skip Link
+   3. Top Sliding Contact Strip (Marquee)
+   4. Header & Sticky Scroll Behavior
+   5. Brand Logo & Site Identity
+   6. Main Navigation & Nav Links
+   7. Get A Quote CTA Button
+   8. Services Navigation Dropdown (Desktop & Mobile)
+   9. Mobile Menu Toggle (Hamburger)
+   10. Mobile Navigation Drawer
+   11. Footer (4-Column Layout, Links, Address, Copyright)
+   12. Floating WhatsApp & Phone Contact Buttons
+   13. Back to Top Button
+   14. Responsive Media Queries
+   ========================================================================== */
+
+/* ==========================================================================
+   1. ROOT VARIABLES
+   ========================================================================== */
+:root {
+    --logo-blue: #0759B5;
+    --logo-blue-dark: #06458F;
+    --logo-blue-light: #1976D2;
+    --dark: #06365F;
+    --dark-2: #084B7A;
+    --dark-3: #052B4A;
+    --text: #304F68;
+    --muted: #667D90;
+    --primary: #F28C28;
+    --primary-dark: #D96F0B;
+    --light: #F4F8FC;
+    --light-2: #EAF2F9;
+    --white: #FFFFFF;
+    --border: #DCE6EF;
+
+    --shadow-sm: 0 5px 18px rgba(6, 54, 95, 0.07);
+    --shadow-md: 0 12px 30px rgba(6, 54, 95, 0.10);
+    --shadow-lg: 0 20px 45px rgba(6, 54, 95, 0.14);
+    --shadow-xl: 0 25px 60px rgba(6, 54, 95, 0.18);
+
+    --container: 1180px;
+    --radius: 12px;
+}
+
+/* ==========================================================================
+   2. ACCESSIBILITY SKIP LINK & FOCUS STYLES
+   ========================================================================== */
+.skip-link {
+    position: fixed;
+    left: 16px;
+    top: -100px;
+    z-index: 9999;
+    padding: 12px 16px;
+    background: var(--dark);
+    color: var(--white);
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+.menu-toggle:focus-visible,
+.nav-link:focus-visible,
+.brochure-nav-trigger:focus-visible,
+.nav-quote:focus-visible,
+.services-dropdown-toggle:focus-visible,
+.float-btn:focus-visible,
+.back-to-top:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* ==========================================================================
+   3. TOP SLIDING CONTACT STRIP (MARQUEE)
+   ========================================================================== */
+.top-contact-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 38px;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #06365F;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(242, 140, 40, 0.65);
+}
+
+.top-contact-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    flex-shrink: 0;
+    animation: topContactScroll 26s linear infinite;
+    will-change: transform;
+}
+
+.top-contact-track:hover {
+    animation-play-state: paused;
+}
+
+.top-contact-group {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.top-contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+    padding: 0 22px;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+}
+
+.top-contact-item:hover {
+    color: var(--primary);
+}
+
+.top-contact-item i {
+    color: var(--primary);
+    font-size: 11px;
+}
+
+.top-contact-separator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    user-select: none;
+}
+
+@keyframes topContactScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   4. HEADER & STICKY SCROLL BEHAVIOR
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffffff 20%,
+        #f4f8fc 34%,
+        #e8f2fa 52%,
+        #d8e9f7 70%,
+        #c5def0 100%
+    );
+    border-bottom: 2px solid var(--primary);
+    box-shadow: 0 4px 18px rgba(7, 59, 105, 0.12);
+    transition: box-shadow 0.3s ease, background 0.3s ease, top 0.3s ease;
+}
+
+.header.scrolled {
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #f8fbfd 25%,
+        #edf5fb 45%,
+        #dcecf8 70%,
+        #c9e1f2 100%
+    );
+    box-shadow: 0 8px 25px rgba(7, 59, 105, 0.16);
+}
+
+/* .nav-container {
+    width: 100%;
+    max-width: none;
+    height: 80px;
+    padding: 0 clamp(12px, 2.2vw, 32px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+
+.nav-container {
+    width: 100%;
+    max-width: none;
+    height: 80px;
+    padding: 0 24px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   5. BRAND LOGO
+   ========================================================================== */
+.logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+    flex-shrink: 0;
+    text-decoration: none;
+    background: transparent;
+    z-index: 3;
+}
+
+.header .logo {
+    margin-left: 0;
+}
+
+.site-logo {
+    width: 110px;
+    max-width: 110px;
+    height: 60px;
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-name {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--logo-blue);
+    margin-left: 0;
+    padding: 0;
+    white-space: nowrap;
+    line-height: 1.25;
+    letter-spacing: 0;
+}
+
+/* ==========================================================================
+   6. MAIN NAVIGATION & NAV LINKS
+   ========================================================================== */
+/* .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(12px, 1.35vw, 20px);
+    margin-left: auto;
+} */
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(10px, 1vw, 15px);
+    margin-left: auto;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+
+.nav-link {
+    position: relative;
+    color: var(--logo-blue);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 29px 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-dark);
+}
+
+.nav-link.active {
+    color: var(--primary-dark);
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 17px;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* ==========================================================================
+   7. GET A QUOTE CTA BUTTON
+   ========================================================================== */
+/* .nav-quote {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45px;
+    padding: 0 24px;
+    background: linear-gradient(
+        135deg,
+        #ff9f43 0%,
+        #f28c28 55%,
+        #e47a18 100%
+    );
+    color: #06365F;
+    border-radius: 7px;
+    box-shadow: 0 6px 17px rgba(242, 140, 40, 0.24);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+
+.nav-quote {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0 18px;
+    margin: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+    background: linear-gradient(
+        135deg,
+        #ff9f43 0%,
+        #f28c28 55%,
+        #e47a18 100%
+    );
+    color: #06365F;
+    border-radius: 7px;
+    box-shadow: 0 6px 17px rgba(242, 140, 40, 0.24);
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.nav-quote:hover {
+    background: linear-gradient(
+        135deg,
+        #f28c28 0%,
+        #e47a18 55%,
+        #d96f0b 100%
+    );
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 22px rgba(242, 140, 40, 0.30);
+}
+
+
+/* .nav-quote:hover {
+    background: linear-gradient(
+        135deg,
+        #f28c28 0%,
+        #e47a18 55%,
+        #d96f0b 100%
+    );
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 22px rgba(242, 140, 40, 0.30);
+} */
+
+/* ==========================================================================
+   8. SERVICES NAVIGATION DROPDOWN (DESKTOP)
+   ========================================================================== */
+.services-nav-item {
+    position: relative;
+}
+
+.services-nav-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.services-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--logo-blue);
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.services-dropdown-toggle:hover {
+    background: rgba(7, 89, 181, 0.08);
+}
+
+.services-dropdown-toggle i {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+}
+
+.services-nav-item.dropdown-open .services-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.brochure-nav-item.dropdown-open .services-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.services-dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 0;
+    width: 340px;
+    padding: 14px;
+    background: #ffffff;
+    border: 1px solid rgba(20, 35, 55, 0.09);
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+}
+
+.services-nav-item:hover > .services-dropdown,
+.services-nav-item:focus-within > .services-dropdown,
+.services-nav-item.dropdown-open .services-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.brochure-nav-item {
+    position: relative;
+}
+
+.brochure-nav-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.brochure-nav-trigger {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    padding: 29px 0;
+    background: transparent;
+    cursor: pointer;
+    color: var(--logo-blue);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.brochure-nav-trigger:hover {
+    color: var(--primary-dark);
+}
+
+.brochure-nav-item:hover > .services-dropdown,
+.brochure-nav-item:focus-within > .services-dropdown,
+.brochure-nav-item.dropdown-open .services-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.services-dropdown-heading {
+    padding: 8px 10px 14px;
+    border-bottom: 1px solid #edf0f3;
+    margin-bottom: 7px;
+}
+
+.services-dropdown-heading span,
+.services-dropdown-heading > span {
+    display: block;
+    color: #bd891e;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.services-dropdown-heading p {
+    margin: 6px 0 0;
+    color: #75808c;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.services-dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 10px;
+    border-radius: 9px;
+    color: #1d2935;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.services-dropdown-link:hover,
+.services-dropdown-link:focus-visible,
+.services-dropdown-link.active {
+    background: #f7f4ec;
+    transform: translateX(3px);
+    outline: none;
+}
+
+.services-dropdown-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f4ecdc;
+    color: #c4870b;
+    font-size: 18px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.services-dropdown-link:hover .services-dropdown-icon {
+    background: #c4870b;
+    color: #ffffff;
+}
+
+.services-dropdown-link span:nth-child(2),
+.services-dropdown-link .services-link-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.services-dropdown-link strong {
+    font-size: 13px;
+    font-weight: 700;
+    color: #192734;
+    line-height: 1.35;
+}
+
+.services-dropdown-link small {
+    font-size: 11px;
+    color: #7b8793;
+    line-height: 1.35;
+    margin-top: 2px;
+}
+
+.dropdown-link-arrow {
+    margin-left: auto;
+    font-size: 12px;
+    color: #c4870b;
+    transition: transform 0.25s ease;
+}
+
+.services-dropdown-link:hover .dropdown-link-arrow {
+    transform: translateX(3px);
+}
+
+/* ==========================================================================
+   9. MOBILE MENU TOGGLE (HAMBURGER)
+   ========================================================================== */
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #d5e3ef;
+    background: #ffffff;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--logo-blue);
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   10. FOOTER STYLING
+   ========================================================================== */
+.footer {
+    background: linear-gradient(
+        135deg,
+        #052B4A 0%,
+        #06365F 48%,
+        #084B7A 100%
+    );
+    color: var(--white);
+    padding: 70px 0 25px;
+    border-top: 3px solid var(--primary);
+    font-family: "Inter", sans-serif;
+}
+
+.footer .container {
+    width: min(var(--container), calc(100% - 44px));
+    margin-inline: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 45px;
+    padding-bottom: 50px;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    text-decoration: none;
+}
+
+.footer-site-logo {
+    width: 100px;
+    height: 60px;
+    object-fit: contain;
+    background: var(--white);
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.footer-logo-name {
+    color: var(--white);
+    font-family: "Manrope", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.footer-about p {
+    max-width: 320px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13.5px;
+    line-height: 1.8;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    color: var(--white);
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column a,
+.footer-column span,
+.footer-column p,
+.footer address {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13.5px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    text-decoration: none;
+    font-style: normal;
+    transition: color 0.25s ease;
+}
+
+.footer-column a:hover {
+    color: var(--primary);
+}
+
+.footer-column a.footer-quote-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    margin-top: 8px;
+    padding: 0 16px;
+    border-radius: 6px;
+    background: var(--primary);
+    color: var(--dark-3);
+    font-weight: 700;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-column a.footer-quote-link:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    width: 100%;
+    padding: 22px 15px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    text-align: center;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
+
+.footer-developed {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
+
+.footer-developed strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   11. FLOATING CONTACT BUTTONS
+   ========================================================================== */
+.floating-contact {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.float-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.float-btn span {
+    display: none;
+}
+
+.float-btn:hover {
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
+}
+
+.float-btn.whatsapp {
+    background: #25d366;
+}
+
+.float-btn.phone {
+    background: var(--primary-dark);
+}
+
+.float-btn.email {
+    background: var(--logo-blue);
+}
+
+/* ==========================================================================
+   12. BACK TO TOP BUTTON
+   ========================================================================== */
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 155px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    background: var(--logo-blue);
+    color: var(--white);
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 850;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   13. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* ---------- Compact navigation under 1200px ---------- */
+@media (max-width: 1200px) {
+    .header {
+        top: 38px;
+        height: 76px;
+    }
+
+    .nav-container {
+        height: 76px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        height: 76px;
+    }
+
+    .logo-name {
+        font-size: 15px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Active mobile navigation drawer */
+    .navbar.active {
+        position: absolute;
+        display: flex;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 114px);
+        overflow-y: auto;
+        padding: 16px 20px 24px;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin-left: 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 3px solid var(--primary);
+        box-shadow: 0 15px 35px rgba(6, 54, 95, 0.16);
+    }
+
+    .navbar.active .nav-link,
+    .navbar.active .brochure-nav-trigger {
+        width: 100%;
+        padding: 12px 6px;
+        font-size: 15px;
+        border-bottom: 1px solid #f0f4f8;
+    }
+
+    .navbar.active .nav-link.active::after {
+        bottom: 0;
+        height: 2px;
+    }
+
+    .navbar.active .services-nav-header {
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid #f0f4f8;
+    }
+
+    .navbar.active .brochure-nav-header {
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid #f0f4f8;
+    }
+
+    .navbar.active .services-nav-header .nav-link {
+        border-bottom: none;
+    }
+
+    .navbar.active .brochure-nav-header .brochure-nav-trigger {
+        border-bottom: none;
+    }
+
+    .navbar.active .services-dropdown {
+        position: static;
+        width: 100%;
+        transform: none;
+        box-shadow: none;
+        border: 1px solid #e5edf5;
+        background: #fbfdff;
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .navbar.active .brochure-nav-item .services-dropdown {
+        display: none;
+    }
+
+    .navbar.active .brochure-nav-item.dropdown-open .services-dropdown {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .navbar.active .services-nav-item.dropdown-open .services-dropdown {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .navbar.active .nav-quote {
+        width: 100%;
+        margin-top: 14px;
+        padding: 12px 20px;
+        justify-content: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+}```css
+/* =========================================
+   TABLET RESPONSIVENESS
+   ========================================= */
+
+@media (min-width: 577px) and (max-width: 1024px) {
+
+    .footer {
+        padding: 55px 0 22px;
+    }
+
+    .footer > .container {
+        width: 100%;
+        padding: 0 28px;
+        box-sizing: border-box;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 38px 35px;
+        align-items: start;
+        padding-bottom: 35px;
+    }
+
+    .footer-about,
+    .footer-column {
+        min-width: 0;
+    }
+
+    .footer-site-logo {
+        width: 150px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .footer-about p {
+        max-width: 360px;
+        line-height: 1.8;
+    }
+
+    .footer-column a,
+    .footer-column span {
+        overflow-wrap: anywhere;
+        line-height: 1.9;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+
+/* =========================================
+   MOBILE PHONES
+   ========================================= */
+
+@media (max-width: 576px) {
+
+    .footer {
+        padding: 42px 0 20px;
+    }
+
+    .footer > .container {
+        width: 100%;
+        padding: 0 22px;
+        box-sizing: border-box;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding-bottom: 28px;
+    }
+
+    .footer-about,
+    .footer-column {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .footer-site-logo {
+        width: 110px;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .footer-about p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.8;
+        margin-top: 16px;
+    }
+
+    .footer-column h4 {
+        margin-bottom: 12px;
+        font-size: 15px;
+    }
+
+    .footer-column a,
+    .footer-column span {
+        display: block;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.9;
+        overflow-wrap: anywhere;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 10px;
+        padding-top: 20px;
+    }
+
+    .footer-bottom p {
+        max-width: 100%;
+        margin: 0;
+        font-size: 12px;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+    }
+
+    .floating-contact {
+        right: 14px;
+        bottom: 18px;
+        gap: 10px;
+    }
+
+    .float-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 130px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   EXTRA-SMALL PHONES
+   ========================================= */
+
+/* @media (max-width: 380px) {
+
+    .footer > .container {
+        padding: 0 16px;
+    }
+
+    .footer-site-logo {
+        width: 90px;
+    }
+
+    .footer-about p {
+        font-size: 13px;
+    }
+
+    .footer-column a,
+    .footer-column span {
+        font-size: 13px;
+    }
+}
+```
+
+/* ---------- Mobile Phones Under 768px ---------- */
+/* @media (max-width: 768px) {
+    .top-contact-bar {
+        height: 34px;
+    }
+
+    .top-contact-track {
+        animation-duration: 22s;
+    }
+
+    .top-contact-item {
+        font-size: 10.5px;
+        padding: 0 14px;
+    }
+
+    .header {
+        top: 34px;
+        height: 70px;
+    }
+
+    .nav-container {
+        height: 70px;
+        padding: 0 16px;
+    }
+
+    .logo-name {
+        font-size: 14px;
+    }
+
+    .navbar.active {
+        top: 70px;
+        max-height: calc(100vh - 104px);
+    }
+
+    .footer {
+        padding: 50px 0 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-bottom: 35px;
+    }
+
+    .footer-about p {
+        max-width: 100%;
+    }
+
+    .floating-contact {
+        right: 14px;
+        bottom: 18px;
+        gap: 10px;
+    }
+
+    .float-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 130px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+} 
+*/
+@media (max-width: 576px) {
+
+    .footer {
+        padding: 30px 0 18px;
+    }
+
+    .footer > .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 18px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* Compact footer layout */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        padding-bottom: 22px;
+    }
+
+    .footer-about,
+    .footer-column {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Logo and company name */
+    .footer-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .footer-site-logo {
+        width: 78px;
+        height: 60px;
+        flex: 0 0 78px;
+        object-fit: contain;
+    }
+
+    .footer-logo-name,
+    .footer-logo .logo-name {
+        font-size: 15px;
+        line-height: 1.4;
+        font-weight: 700;
+    }
+
+    /* About description */
+    .footer-about p {
+        max-width: 100%;
+        margin-top: 12px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    /* Footer headings */
+    .footer-column h4 {
+        margin: 0 0 8px;
+        font-size: 14px;
+    }
+
+    /* Footer links and contact details */
+    .footer-column a,
+    .footer-column span {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 3px;
+        font-size: 13px;
+        line-height: 1.75;
+        overflow-wrap: anywhere;
+    }
+
+    /* Copyright and developer credit */
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 7px;
+        padding-top: 16px;
+    }
+
+    .footer-bottom p {
+        max-width: 100%;
+        margin: 0;
+        font-size: 11px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    /* Floating buttons */
+    .floating-contact {
+        right: 10px;
+        bottom: 12px;
+        gap: 8px;
+    }
+
+    .float-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .back-to-top {
+        right: 10px;
+        bottom: 108px;
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .top-contact-bar {
+        height: 32px;
+    }
+
+    .top-contact-item {
+        font-size: 9.5px;
+        padding: 0 10px;
+    }
+
+    .header {
+        top: 32px;
+        height: 64px;
+    }
+
+    .nav-container {
+        height: 64px;
+        padding: 0 12px;
+    }
+
+    .logo-name {
+        font-size: 12px;
+    }
+
+    .navbar.active {
+        top: 64px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .menu-toggle span {
+        width: 20px;
+    }
+}
+
+
+/* HEADER ALIGNMENT FIX */
+.header,
+.header .nav-container {
+    box-sizing: border-box;
+}
+
+.header .nav-container {
+    min-width: 0;
+}
+
+.header .logo {
+    flex-shrink: 0;
+}
+
+.header .navbar {
+    min-width: 0;
+}
+
+.header .nav-quote {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+/* =========================================
+   RESPONSIVE FOOTER — SAME GRID AS DESKTOP
+   ========================================= */
+
+/* Desktop: 4 columns */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.9fr 1fr 1.2fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.footer-about,
+.footer-column {
+    min-width: 0;
+}
+
+/* Tablet: retain 4 columns with tighter spacing */
+@media (min-width: 577px) and (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+        gap: 18px;
+    }
+
+    .footer-column h4 {
+        font-size: 13px;
+    }
+
+    .footer-column a,
+    .footer-column span {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Mobile: keep all 4 columns in the same grid */
+@media (max-width: 576px) {
+    .footer {
+        padding: 28px 0 16px;
+        overflow: hidden;
+    }
+
+    .footer > .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .footer .footer-grid {
+        display: grid !important;
+        grid-template-columns: 1.25fr 0.9fr 1fr 1.2fr !important;
+        gap: 10px !important;
+        align-items: start;
+        padding-bottom: 20px;
+    }
+
+    /* All four columns stay in the grid */
+    .footer .footer-about,
+    .footer .footer-column {
+        grid-column: auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Logo and company name */
+    .footer .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .footer .footer-site-logo {
+        width: 55px !important;
+        height: 42px !important;
+        flex: 0 0 auto;
+        object-fit: contain;
+    }
+
+    .footer .footer-logo-name,
+    .footer .footer-logo .logo-name {
+        font-size: 10px !important;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    /* Company description */
+    .footer .footer-about p {
+        margin-top: 10px;
+        font-size: 10px !important;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    /* Column headings */
+    .footer .footer-column h4 {
+        margin: 0 0 9px;
+        font-size: 10px !important;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    /* Links and contact details */
+    .footer .footer-column a,
+    .footer .footer-column span {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 9px !important;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* Copyright and developer credit */
+    .footer .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 6px;
+        padding-top: 16px;
+    }
+
+    .footer .footer-bottom p {
+        margin: 0;
+        font-size: 10px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Extra-small mobile screens */
+@media (max-width: 380px) {
+    .footer > .container {
+        padding: 0 6px;
+    }
+
+    .footer .footer-grid {
+        gap: 6px !important;
+        grid-template-columns: 1.2fr 0.9fr 1fr 1.15fr !important;
+    }
+
+    .footer .footer-column h4 {
+        font-size: 9px !important;
+    }
+
+    .footer .footer-column a,
+    .footer .footer-column span {
+        font-size: 8px !important;
+    }
+}

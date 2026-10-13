@@ -1,0 +1,1940 @@
+:root {
+    --peb-navy: #073b63;
+    --peb-navy-dark: #052b47;
+    --peb-navy-deep: #031d31;
+
+    --peb-orange: #f58216;
+    --peb-orange-light: #ff9b3d;
+
+    --peb-white: #fff;
+    --peb-heading: #102d46;
+    --peb-text: #596b7c;
+
+    --peb-light: #f4f7fa;
+    --peb-border: #e1e8ef;
+
+    --peb-heading-font: "Manrope", sans-serif;
+    --peb-body-font: "Inter", sans-serif;
+
+    --peb-max-width: 1200px;
+}
+
+/* =========================================================
+   GENERAL PEB PAGE STYLES
+========================================================= */
+
+.peb-page {
+    overflow: clip;
+    color: var(--peb-text);
+    font-family: var(--peb-body-font);
+    background: var(--peb-white);
+}
+
+.peb-page *,
+.peb-page *::before,
+.peb-page *::after {
+    box-sizing: border-box;
+}
+
+.peb-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.peb-page a {
+    text-decoration: none;
+}
+
+.peb-container {
+    width: min(var(--peb-max-width), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.peb-section {
+    padding: 100px 0;
+}
+
+/* SECTION LABELS */
+
+.peb-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 17px;
+    color: var(--peb-orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.7;
+}
+
+.peb-kicker > span {
+    width: 28px;
+    height: 3px;
+    background: var(--peb-orange);
+}
+
+.peb-kicker-light {
+    color: var(--peb-orange-light);
+}
+
+/* SECTION HEADINGS */
+
+.peb-section-head {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.peb-section-head .peb-kicker {
+    justify-content: center;
+}
+
+.peb-section-head h2,
+.peb-overview-copy h2,
+.peb-process-intro h2,
+.peb-design-copy h2 {
+    margin: 0 0 20px;
+    color: var(--peb-heading);
+    font-family: var(--peb-heading-font);
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 800;
+    letter-spacing: -1.25px;
+    line-height: 1.2;
+}
+
+.peb-section-head h2 span,
+.peb-overview-copy h2 span,
+.peb-process-intro h2 span,
+.peb-design-copy h2 span {
+    color: var(--peb-orange);
+}
+
+.peb-section-head > p {
+    max-width: 660px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.peb-btn {
+    display: inline-flex;
+    min-height: 51px;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 13px 22px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-family: var(--peb-body-font);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.peb-btn:hover {
+    transform: translateY(-3px);
+}
+
+.peb-btn-orange {
+    background: var(--peb-orange);
+    color: var(--peb-white);
+}
+
+.peb-btn-orange:hover {
+    background: var(--peb-orange-light);
+    color: var(--peb-white);
+}
+
+.peb-btn-outline {
+    border-color: rgba(255, 255, 255, 0.65);
+    color: var(--peb-white);
+    background: transparent;
+}
+
+.peb-btn-outline:hover {
+    border-color: var(--peb-orange);
+    background: var(--peb-orange);
+    color: var(--peb-white);
+}
+
+.peb-btn-dark {
+    background: var(--peb-navy-dark);
+    color: var(--peb-white);
+}
+
+.peb-btn-dark:hover {
+    background: var(--peb-white);
+    color: var(--peb-navy-dark);
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.peb-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    min-height: 640px;
+    align-items: center;
+    padding: 95px 0 80px;
+    overflow: hidden;
+    background:
+        var(--peb-navy-dark)
+        url("images/peb.jpg")
+        center 48% / cover no-repeat;
+}
+
+.peb-hero-shade {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(3, 25, 42, 0.96) 0%,
+        rgba(4, 39, 64, 0.89) 48%,
+        rgba(4, 35, 58, 0.40) 100%
+    );
+}
+
+.peb-hero::after {
+    position: absolute;
+    z-index: -1;
+    right: -130px;
+    bottom: -260px;
+    width: 560px;
+    height: 560px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    content: "";
+}
+
+.peb-hero-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.peb-hero-copy {
+    max-width: 790px;
+}
+
+.peb-hero-copy .peb-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--peb-orange-light);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.peb-eyebrow span {
+    display: inline-block;
+    width: 27px;
+    height: 3px;
+    background: var(--peb-orange);
+}
+
+.peb-hero-copy h1 {
+    margin: 0 0 23px;
+    color: var(--peb-white);
+    font-family: var(--peb-heading-font);
+    font-size: clamp(42px, 6vw, 70px);
+    font-weight: 800;
+    letter-spacing: -2.3px;
+    line-height: 1.08;
+}
+
+.peb-hero-copy h1 span {
+    display: block;
+    color: var(--peb-orange);
+}
+
+.peb-hero-copy > p {
+    max-width: 660px;
+    margin: 0 0 30px;
+    color: rgba(255, 255, 255, 0.83);
+    font-size: 15px;
+    line-height: 1.95;
+}
+
+.peb-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-bottom: 33px;
+}
+
+.peb-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.83);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.peb-hero-note i {
+    color: var(--peb-orange-light);
+}
+
+.peb-hero-stamp {
+    display: flex;
+    flex: 0 0 140px;
+    align-items: center;
+    gap: 12px;
+    align-self: flex-end;
+    margin-bottom: 5px;
+    color: var(--peb-white);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    line-height: 1.8;
+}
+
+.peb-stamp-line {
+    width: 4px;
+    height: 48px;
+    background: var(--peb-orange);
+}
+
+/* =========================================================
+   OVERVIEW SECTION
+========================================================= */
+
+.peb-overview {
+    background: var(--peb-white);
+}
+
+.peb-overview-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 72px;
+}
+
+.peb-overview-visual {
+    position: relative;
+    min-width: 0;
+    padding: 0 0 24px 24px;
+}
+
+.peb-photo-frame {
+    position: relative;
+    z-index: 1;
+}
+
+.peb-photo-frame::before {
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    left: -16px;
+    width: 65%;
+    height: 65%;
+    border-top: 5px solid var(--peb-orange);
+    border-left: 5px solid var(--peb-orange);
+    content: "";
+}
+
+.peb-photo-frame img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    box-shadow: 0 20px 48px rgba(4, 35, 57, 0.14);
+}
+
+.peb-image-caption {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    max-width: calc(100% - 24px);
+    padding: 17px 21px;
+    background: var(--peb-navy);
+    color: var(--peb-white);
+}
+
+.peb-image-caption > i {
+    color: var(--peb-orange);
+    font-size: 22px;
+}
+
+.peb-image-caption strong,
+.peb-image-caption small {
+    display: block;
+}
+
+.peb-image-caption strong {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.peb-image-caption small {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 10px;
+}
+
+.peb-orange-square {
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    background: var(--peb-orange);
+}
+
+.peb-overview-copy h2 {
+    margin-bottom: 22px;
+}
+
+.peb-overview-copy > p {
+    margin: 0 0 16px;
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+.peb-check-list {
+    display: grid;
+    gap: 13px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.peb-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    color: var(--peb-heading);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.peb-check-list i {
+    margin-top: 3px;
+    color: var(--peb-orange);
+}
+
+/* =========================================================
+   BENEFITS SECTION
+========================================================= */
+
+.peb-benefits {
+    position: relative;
+    padding: 95px 0;
+    background: var(--peb-light);
+}
+
+.peb-benefits::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--peb-orange) 0 25%,
+        var(--peb-navy) 25% 100%
+    );
+    content: "";
+}
+
+.peb-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 19px;
+}
+
+.peb-benefit-card {
+    position: relative;
+    min-width: 0;
+    padding: 30px 24px 28px;
+    border: 1px solid var(--peb-border);
+    border-radius: 4px;
+    background: var(--peb-white);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.peb-benefit-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(245, 130, 22, 0.55);
+    box-shadow: 0 17px 38px rgba(4, 35, 57, 0.09);
+}
+
+.peb-benefit-icon {
+    display: flex;
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    background: rgba(245, 130, 22, 0.11);
+    color: var(--peb-orange);
+    font-size: 23px;
+}
+
+.peb-card-index {
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    color: #e9eef3;
+    font-family: var(--peb-heading-font);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.peb-benefit-card h3 {
+    margin: 0 0 12px;
+    color: var(--peb-heading);
+    font-family: var(--peb-heading-font);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.peb-benefit-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   APPLICATIONS SECTION
+========================================================= */
+
+.peb-applications {
+    background: var(--peb-white);
+}
+
+.peb-app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.peb-app-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--peb-border);
+    background: var(--peb-white);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.peb-app-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 42px rgba(4, 35, 57, 0.12);
+}
+
+.peb-app-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.peb-app-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.peb-app-card:hover .peb-app-image img {
+    transform: scale(1.04);
+}
+
+.peb-app-icon {
+    position: absolute;
+    right: 20px;
+    bottom: -1px;
+    display: flex;
+    width: 53px;
+    height: 53px;
+    align-items: center;
+    justify-content: center;
+    background: var(--peb-orange);
+    color: var(--peb-white);
+    font-size: 20px;
+}
+
+.peb-app-copy {
+    padding: 25px 24px 28px;
+}
+
+.peb-app-number {
+    display: block;
+    margin-bottom: 11px;
+    color: var(--peb-orange);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.peb-app-copy h3 {
+    margin: 0 0 12px;
+    color: var(--peb-heading);
+    font-family: var(--peb-heading-font);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.peb-app-copy p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   PROCESS SECTION
+========================================================= */
+
+.peb-process {
+    padding: 100px 0;
+    background: var(--peb-navy-dark);
+}
+
+.peb-process-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 78px;
+}
+
+.peb-process-intro {
+    position: sticky;
+    top: 35px;
+}
+
+.peb-process-intro h2 {
+    color: var(--peb-white);
+}
+
+.peb-process-intro h2 span {
+    display: block;
+}
+
+.peb-process-intro > p {
+    margin: 0 0 27px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+.peb-process-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.peb-process-step {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 20px;
+    padding: 0 0 28px;
+}
+
+.peb-process-step + .peb-process-step {
+    padding-top: 27px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.peb-step-number {
+    display: flex;
+    width: 52px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(245, 130, 22, 0.7);
+    border-radius: 50%;
+    color: var(--peb-orange-light);
+    font-family: var(--peb-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.peb-process-step h3 {
+    margin: 3px 0 9px;
+    color: var(--peb-white);
+    font-family: var(--peb-heading-font);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.peb-process-step p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.69);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   DESIGN CONSIDERATIONS SECTION
+========================================================= */
+
+.peb-design {
+    background: var(--peb-light);
+}
+
+.peb-design-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.peb-design-image {
+    position: relative;
+    min-width: 0;
+    padding: 0 0 25px 25px;
+}
+
+.peb-design-image::before {
+    position: absolute;
+    z-index: 0;
+    top: -16px;
+    left: 0;
+    width: 65%;
+    height: 65%;
+    border-top: 5px solid var(--peb-orange);
+    border-left: 5px solid var(--peb-orange);
+    content: "";
+}
+
+.peb-design-image > img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    box-shadow: 0 18px 44px rgba(4, 35, 57, 0.12);
+}
+
+.peb-design-image-note {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    max-width: calc(100% - 25px);
+    padding: 17px 20px;
+    background: var(--peb-navy);
+    color: var(--peb-white);
+}
+
+.peb-design-image-note > span {
+    width: 4px;
+    height: 39px;
+    flex-shrink: 0;
+    background: var(--peb-orange);
+}
+
+.peb-design-image-note strong,
+.peb-design-image-note small {
+    display: block;
+}
+
+.peb-design-image-note strong {
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.peb-design-image-note small {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.peb-design-copy h2 {
+    margin-bottom: 19px;
+}
+
+.peb-design-copy > p {
+    margin: 0 0 22px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.peb-design-item {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+    padding: 17px 0;
+    border-top: 1px solid var(--peb-border);
+}
+
+.peb-design-item > i {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(245, 130, 22, 0.11);
+    color: var(--peb-orange);
+    font-size: 16px;
+}
+
+.peb-design-item h3 {
+    margin: 0 0 5px;
+    color: var(--peb-heading);
+    font-family: var(--peb-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.peb-design-item p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   CALL-TO-ACTION SECTION
+========================================================= */
+
+.peb-cta {
+    position: relative;
+    padding: 70px 0;
+    overflow: hidden;
+    background: var(--peb-orange);
+}
+
+.peb-cta::after {
+    position: absolute;
+    top: -200px;
+    right: -90px;
+    width: 470px;
+    height: 470px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    content: "";
+}
+
+.peb-cta-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.peb-cta-copy {
+    max-width: 720px;
+}
+
+.peb-cta .peb-kicker {
+    color: var(--peb-navy-dark);
+}
+
+.peb-cta .peb-kicker::before {
+    background: var(--peb-navy-dark);
+}
+
+.peb-cta-copy h2 {
+    margin: 0 0 14px;
+    color: var(--peb-white);
+    font-family: var(--peb-heading-font);
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.peb-cta-copy p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.peb-cta .peb-btn {
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   OPTIONAL SCROLL REVEAL ANIMATION
+========================================================= */
+
+.peb-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.peb-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   TABLET RESPONSIVE STYLES
+========================================================= */
+
+@media (max-width: 1024px) {
+    .peb-container {
+        width: calc(100% - 40px);
+    }
+
+    .peb-section,
+    .peb-benefits,
+    .peb-process {
+        padding-top: 78px;
+        padding-bottom: 78px;
+    }
+
+    .peb-overview-grid,
+    .peb-design-grid {
+        gap: 42px;
+    }
+
+    .peb-process-grid {
+        gap: 45px;
+    }
+
+    .peb-hero {
+        min-height: 590px;
+    }
+
+    .peb-hero-stamp {
+        display: none;
+    }
+
+    .peb-photo-frame img {
+        height: 390px;
+    }
+
+    .peb-design-image > img {
+        height: 400px;
+    }
+
+    .peb-benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .peb-app-grid {
+        gap: 16px;
+    }
+
+    .peb-app-copy {
+        padding: 22px 19px 24px;
+    }
+
+    .peb-app-image img {
+        height: 205px;
+    }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE STYLES
+========================================================= */
+
+@media (max-width: 768px) {
+    .peb-container {
+        width: calc(100% - 36px);
+    }
+
+    .peb-section,
+    .peb-benefits,
+    .peb-process {
+        padding-top: 62px;
+        padding-bottom: 62px;
+    }
+
+    .peb-section-head {
+        margin-bottom: 31px;
+    }
+
+    .peb-section-head h2,
+    .peb-overview-copy h2,
+    .peb-process-intro h2,
+    .peb-design-copy h2 {
+        font-size: clamp(28px, 6vw, 36px);
+        letter-spacing: -0.7px;
+    }
+
+    .peb-section-head > p {
+        font-size: 12px;
+    }
+
+    .peb-hero {
+        min-height: 0;
+        padding: 72px 0 58px;
+        background-position: 60% center;
+    }
+
+    .peb-hero-copy h1 {
+        font-size: clamp(37px, 9vw, 55px);
+        letter-spacing: -1.4px;
+    }
+
+    .peb-hero-copy > p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .peb-hero-actions {
+        gap: 10px;
+        margin-bottom: 26px;
+    }
+
+    .peb-btn {
+        min-height: 47px;
+        padding: 11px 15px;
+        font-size: 11px;
+    }
+
+    .peb-hero-note {
+        align-items: flex-start;
+        font-size: 11px;
+    }
+
+    .peb-overview-grid,
+    .peb-design-grid,
+    .peb-process-grid {
+        grid-template-columns: 1fr;
+        gap: 39px;
+    }
+
+    .peb-overview-visual {
+        max-width: 570px;
+        padding-left: 17px;
+    }
+
+    .peb-photo-frame img {
+        height: 340px;
+    }
+
+    .peb-image-caption {
+        padding: 14px 15px;
+    }
+
+    .peb-image-caption strong {
+        font-size: 11px;
+    }
+
+    .peb-image-caption small {
+        font-size: 9px;
+    }
+
+    .peb-overview-copy > p,
+    .peb-design-copy > p {
+        font-size: 12px;
+    }
+
+    .peb-check-list li {
+        font-size: 11px;
+    }
+
+    .peb-benefit-grid {
+        gap: 13px;
+    }
+
+    .peb-benefit-card {
+        padding: 23px 18px;
+    }
+
+    .peb-benefit-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 18px;
+        font-size: 20px;
+    }
+
+    .peb-benefit-card h3 {
+        font-size: 14px;
+    }
+
+    .peb-benefit-card p {
+        font-size: 11px;
+    }
+
+    .peb-app-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .peb-app-card {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .peb-app-image img {
+        height: 100%;
+        min-height: 225px;
+    }
+
+    .peb-app-copy {
+        align-self: center;
+        padding: 20px 17px;
+    }
+
+    .peb-app-copy h3 {
+        font-size: 16px;
+    }
+
+    .peb-app-copy p {
+        font-size: 11px;
+    }
+
+    .peb-process-intro {
+        position: static;
+    }
+
+    .peb-process-step {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .peb-step-number {
+        width: 42px;
+        height: 42px;
+        font-size: 12px;
+    }
+
+    .peb-process-step h3 {
+        font-size: 15px;
+    }
+
+    .peb-process-step p {
+        font-size: 11px;
+    }
+
+    .peb-design-image {
+        max-width: 600px;
+        padding-left: 17px;
+    }
+
+    .peb-design-image > img {
+        height: 340px;
+    }
+
+    .peb-design-image-note {
+        padding: 14px 15px;
+    }
+
+    .peb-design-image-note strong {
+        font-size: 11px;
+    }
+
+    .peb-design-image-note small {
+        font-size: 9px;
+    }
+
+    .peb-cta {
+        padding: 5px 0;
+    }
+
+    .peb-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .peb-cta-copy h2 {
+        font-size: clamp(29px, 6vw, 37px);
+    }
+
+    .peb-cta-copy p {
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE RESPONSIVE STYLES
+========================================================= */
+
+@media (max-width: 480px) {
+    .peb-container {
+        width: calc(100% - 30px);
+    }
+
+    .peb-hero {
+        padding-top: 100px;
+    }
+
+    
+@media (max-width: 480px) {
+    .peb-hero-copy h1 {
+        font-size: clamp(30px, 7vw, 38px) !important;
+        line-height: 1.15 !important;
+        letter-spacing: -1px !important;
+        color: #fff !important;
+        margin: 0 0 20px !important;
+    }
+
+    .peb-hero-copy h1 span {
+        display: block !important;
+        color: #f58216 !important;
+    }
+}
+
+
+    .peb-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .peb-hero-actions .peb-btn {
+        width: 100%;
+    }
+
+    .peb-hero-note {
+        max-width: 320px;
+    }
+
+    .peb-benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .peb-benefit-card {
+        display: grid;
+        grid-template-columns: 45px minmax(0, 1fr);
+        column-gap: 15px;
+        padding: 20px;
+    }
+
+    .peb-benefit-icon {
+        grid-row: span 2;
+        width: 43px;
+        height: 43px;
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .peb-card-index {
+        top: 17px;
+        right: 16px;
+        font-size: 23px;
+    }
+
+    .peb-benefit-card h3 {
+        padding-right: 25px;
+    }
+
+    .peb-benefit-card p {
+        grid-column: 2;
+    }
+
+    .peb-app-card {
+        display: block;
+    }
+
+    .peb-app-image img {
+        height: 220px;
+        min-height: 0;
+    }
+
+    .peb-app-copy {
+        padding: 22px;
+    }
+
+    .peb-photo-frame img,
+    .peb-design-image > img {
+        height: 285px;
+    }
+
+    .peb-image-caption {
+        right: -1px;
+    }
+
+    .peb-process-step {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .peb-step-number {
+        width: 37px;
+        height: 37px;
+    }
+
+    .peb-design-item {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 11px;
+    }
+
+    .peb-design-item > i {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .peb-cta .peb-btn {
+        width: 100%;
+    }
+}
+/* PEB DESIGN: IMAGE LEFT, TEXT RIGHT ON MOBILE */
+@media screen and (max-width: 768px) {
+    .peb-page .peb-design .peb-design-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) !important;
+        column-gap: 12px !important;
+        row-gap: 0 !important;
+        align-items: start !important;
+    }
+
+    .peb-page .peb-design .peb-design-image {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .peb-page .peb-design .peb-design-image img {
+        display: block !important;
+        width: 100% !important;
+        height: 240px !important;
+        object-fit: cover !important;
+    }
+
+    .peb-page .peb-design .peb-design-image-note {
+        padding: 6px !important;
+    }
+
+    .peb-page .peb-design .peb-design-image-note strong {
+        font-size: 10px !important;
+    }
+
+    .peb-page .peb-design .peb-design-image-note small {
+        font-size: 9px !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy .peb-kicker {
+        font-size: 9px !important;
+        line-height: 1.4 !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy h2 {
+        font-size: 18px !important;
+        line-height: 1.25 !important;
+        margin: 8px 0 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .peb-page .peb-design .peb-design-copy > p {
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 7px !important;
+        margin-top: 12px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item > i {
+        flex-shrink: 0 !important;
+        font-size: 12px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item h3 {
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+        margin-bottom: 4px !important;
+        overflow-wrap: anywhere;
+    }
+
+    .peb-page .peb-design .peb-design-item p {
+        font-size: 10px !important;
+        line-height: 1.45 !important;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .peb-page .peb-design .peb-design-grid {
+        grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr) !important;
+        column-gap: 9px !important;
+    }
+
+    .peb-page .peb-design .peb-design-image img {
+        height: 200px !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy h2 {
+        font-size: 16px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item h3 {
+        font-size: 11px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item p {
+        font-size: 9px !important;
+    }
+}
+
+/* FORCE BENEFIT CARDS INTO 2 COLUMNS ON MOBILE */
+@media screen and (max-width: 768px) {
+    .peb-page .peb-benefit-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .peb-page .peb-benefit-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        min-width: 0 !important;
+        padding: 14px 12px !important;
+    }
+
+    .peb-page .peb-benefit-icon {
+        width: 38px !important;
+        height: 38px !important;
+        margin: 0 0 12px !important;
+        font-size: 17px !important;
+    }
+
+    .peb-page .peb-benefit-card h3 {
+        padding-right: 0 !important;
+        margin: 0 0 8px !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .peb-page .peb-benefit-card p {
+        grid-column: auto !important;
+        margin: 0 !important;
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .peb-page .peb-card-index {
+        top: 10px !important;
+        right: 10px !important;
+        font-size: 19px !important;
+    }
+}
+
+/* FORCE PEB APPLICATION CARDS INTO 3 COLUMNS ON MOBILE */
+@media screen and (max-width: 768px) {
+    .peb-page .peb-applications .peb-app-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .peb-page .peb-applications .peb-app-card {
+        display: flex !important;
+        flex-direction: column !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .peb-page .peb-applications .peb-app-image {
+        width: 100% !important;
+    }
+
+    .peb-page .peb-applications .peb-app-image img {
+        display: block !important;
+        width: 100% !important;
+        height: 100px !important;
+        min-height: 0 !important;
+        object-fit: cover !important;
+    }
+
+    .peb-page .peb-applications .peb-app-copy {
+        padding: 10px 8px !important;
+    }
+
+    .peb-page .peb-applications .peb-app-number {
+        font-size: 8px !important;
+        margin-bottom: 6px !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .peb-page .peb-applications .peb-app-copy h3 {
+        font-size: 11px !important;
+        line-height: 1.35 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .peb-page .peb-applications .peb-app-copy p {
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .peb-page .peb-applications .peb-app-icon {
+        width: 28px !important;
+        height: 28px !important;
+        right: 5px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* PEB PROCESS SECTION — COMPACT RESPONSIVE MOBILE LAYOUT */
+@media screen and (max-width: 768px) {
+    .peb-page .peb-process {
+        padding: 38px 0 !important;
+    }
+
+    .peb-page .peb-process-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 22px !important;
+        align-items: start !important;
+    }
+
+    .peb-page .peb-process-intro {
+        position: static !important;
+        top: auto !important;
+        margin: 0 !important;
+    }
+
+    .peb-page .peb-process-intro .peb-kicker {
+        margin-bottom: 8px !important;
+        font-size: 9px !important;
+        letter-spacing: 1.3px !important;
+    }
+
+    .peb-page .peb-process-intro h2 {
+        font-size: clamp(23px, 5.5vw, 30px) !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.4px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .peb-page .peb-process-intro > p {
+        font-size: 11px !important;
+        line-height: 1.65 !important;
+        margin-bottom: 14px !important;
+    }
+
+    .peb-page .peb-process-list {
+        gap: 0 !important;
+    }
+
+    .peb-page .peb-process-step {
+        display: grid !important;
+        grid-template-columns: 34px minmax(0, 1fr) !important;
+        gap: 11px !important;
+        padding: 12px 0 !important;
+    }
+
+    .peb-page .peb-process-step:first-child {
+        padding-top: 0 !important;
+    }
+
+    .peb-page .peb-step-number {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 10px !important;
+    }
+
+    .peb-page .peb-process-step h3 {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        margin: 2px 0 5px !important;
+    }
+
+    .peb-page .peb-process-step p {
+        font-size: 10px !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+
+    .peb-page .peb-process-step + .peb-process-step {
+        padding-top: 12px !important;
+    }
+}
+
+/* EXTRA COMPACT FOR SMALL PHONES */
+@media screen and (max-width: 380px) {
+    .peb-page .peb-process {
+        padding: 30px 0 !important;
+    }
+
+    .peb-page .peb-process-grid {
+        gap: 17px !important;
+    }
+
+    .peb-page .peb-process-intro h2 {
+        font-size: 23px !important;
+    }
+
+    .peb-page .peb-process-intro > p {
+        font-size: 10px !important;
+        line-height: 1.55 !important;
+    }
+
+    .peb-page .peb-process-step {
+        grid-template-columns: 29px minmax(0, 1fr) !important;
+        gap: 9px !important;
+        padding: 10px 0 !important;
+    }
+
+    .peb-page .peb-step-number {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 9px !important;
+    }
+
+    .peb-page .peb-process-step h3 {
+        font-size: 12px !important;
+    }
+
+    .peb-page .peb-process-step p {
+        font-size: 9px !important;
+        line-height: 1.55 !important;
+    }
+}
+
+/* PEB DESIGN — IMAGE TOP, TEXT BELOW ON MOBILE */
+@media screen and (max-width: 768px) {
+    .peb-page .peb-design {
+        padding: 35px 0 !important;
+    }
+
+    .peb-page .peb-design .peb-design-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        align-items: stretch !important;
+    }
+
+    /* Image */
+    .peb-page .peb-design .peb-design-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px 0 18px 12px !important;
+        margin: 0 !important;
+    }
+
+    .peb-page .peb-design .peb-design-image > img {
+        width: 100% !important;
+        height: 210px !important;
+        object-fit: cover !important;
+    }
+
+    .peb-page .peb-design .peb-design-image-note {
+        padding: 9px 12px !important;
+        gap: 8px !important;
+    }
+
+    .peb-page .peb-design .peb-design-image-note > span {
+        height: 28px !important;
+    }
+
+    .peb-page .peb-design .peb-design-image-note strong {
+        font-size: 10px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .peb-page .peb-design .peb-design-image-note small {
+        font-size: 9px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Text below image */
+    .peb-page .peb-design .peb-design-copy {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy .peb-kicker {
+        font-size: 9px !important;
+        letter-spacing: 1.3px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy h2 {
+        font-size: clamp(23px, 5.5vw, 30px) !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.4px !important;
+        margin: 0 0 10px !important;
+        overflow-wrap: normal !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy > p {
+        font-size: 11px !important;
+        line-height: 1.65 !important;
+        margin: 0 0 14px !important;
+    }
+
+    /* Design feature rows */
+    .peb-page .peb-design .peb-design-item {
+        display: grid !important;
+        grid-template-columns: 32px minmax(0, 1fr) !important;
+        gap: 10px !important;
+        padding: 11px 0 !important;
+        margin: 0 !important;
+    }
+
+    .peb-page .peb-design .peb-design-item > i {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 12px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item h3 {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        margin: 0 0 4px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item p {
+        font-size: 10px !important;
+        line-height: 1.55 !important;
+        margin: 0 !important;
+    }
+}
+
+/* EXTRA COMPACT ON SMALL PHONES */
+@media screen and (max-width: 380px) {
+    .peb-page .peb-design {
+        padding: 28px 0 !important;
+    }
+
+    .peb-page .peb-design .peb-design-grid {
+        gap: 15px !important;
+    }
+
+    .peb-page .peb-design .peb-design-image > img {
+        height: 175px !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy h2 {
+        font-size: 22px !important;
+    }
+
+    .peb-page .peb-design .peb-design-copy > p {
+        font-size: 10px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item {
+        grid-template-columns: 28px minmax(0, 1fr) !important;
+        gap: 8px !important;
+        padding: 9px 0 !important;
+    }
+
+    .peb-page .peb-design .peb-design-item > i {
+        width: 27px !important;
+        height: 27px !important;
+        font-size: 11px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item h3 {
+        font-size: 11px !important;
+    }
+
+    .peb-page .peb-design .peb-design-item p {
+        font-size: 9px !important;
+    }
+}
+/* FIX: ALIGN BROCHURE BUTTON TO THE LEFT ON MOBILE */
+@media (max-width: 1200px) {
+
+    .navbar.active .brochure-nav-header {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar.active .brochure-nav-header .brochure-nav-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 46px !important;
+        height: auto !important;
+
+        padding: 10px 6px !important;
+        margin: 0 !important;
+
+        text-align: left !important;
+        text-indent: 0 !important;
+
+        background: transparent !important;
+        border: 0 !important;
+        border-bottom: 1px solid #f0f4f8 !important;
+
+        font-family: "Inter", sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        color: #0759B5 !important;
+
+        transform: none !important;
+    }
+}
+```css
+/* =========================================
+   MOBILE NAVBAR - COMPACT SINGLE SCREEN
+========================================= */
+
+@media screen and (max-width: 1200px) {
+
+    /* Compact navigation panel */
+    .header .navbar.active {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+
+        padding: 3px 14px 10px !important;
+        height: auto !important;
+        max-height: calc(100dvh - 110px) !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    /* Home, About, Gallery, Contact */
+    .header .navbar.active > a:not(.btn) {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 0 !important;
+        padding: 7px 7px !important;
+        margin: 0 !important;
+
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+
+        border-bottom: 1px solid #EAF2F9 !important;
+    }
+
+    /* Brochure button */
+    .header .navbar.active .brochure-nav-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 0 !important;
+        padding: 7px !important;
+        margin: 0 !important;
+
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+    }
+
+    /* Services wrapper */
+    .header .navbar.active .services-nav-item {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Services name and arrow on the same line */
+    .header .navbar.active .services-nav-item > a,
+    .header .navbar.active .services-nav-item > button {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        width: 100% !important;
+        min-height: 0 !important;
+        padding: 7px !important;
+        margin: 0 !important;
+
+        text-align: left !important;
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Keep dropdown arrow beside Services */
+    .header .navbar.active .services-nav-item > a i,
+    .header .navbar.active .services-nav-item > button i,
+    .header .navbar.active .services-nav-item .dropdown-arrow {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        margin-left: 10px !important;
+    }
+
+    /* Collapsed dropdown takes no extra space */
+    .header .navbar.active .services-nav-item .dropdown-menu,
+    .header .navbar.active .services-nav-item .services-dropdown {
+        display: none;
+    }
+
+    /* Quote button */
+    .header .navbar.active > a.btn,
+    .header .navbar.active > .btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        min-height: 38px !important;
+        padding: 7px 12px !important;
+        margin: 7px 0 0 !important;
+
+        font-size: 13px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Extra compact on smaller phones */
+@media screen and (max-width: 480px) {
+    .header .navbar.active {
+        padding: 2px 12px 7px !important;
+    }
+
+    .header .navbar.active > a:not(.btn),
+    .header .navbar.active .brochure-nav-trigger,
+    .header .navbar.active .services-nav-item > a,
+    .header .navbar.active .services-nav-item > button {
+        padding: 6px !important;
+        font-size: 13px !important;
+    }
+}
+```

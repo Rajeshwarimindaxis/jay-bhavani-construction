@@ -1,0 +1,616 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the construction projects and work gallery of Jay Bhavani Construction.">
+    <meta name="author" content="Jay Bhavani Construction">
+    <title>Gallery | Jay Bhavani Construction</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="hf.css">
+    <link rel="stylesheet" href="gallery.css">
+
+    <style>
+        /* Separate navy-blue background for the gallery hero */
+        .hero.gallery-hero {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5, 20, 43, 0.82),
+                    rgba(5, 20, 43, 0.52),
+                    rgba(5, 20, 43, 0.25)
+                ),
+                url("images/gallery-hero-bg.png") center / cover no-repeat;
+        }
+
+        .gallery-item[hidden] {
+            display: none !important;
+        }
+
+        .gallery-image-link {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .gallery-image-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-zoom {
+            display: grid;
+            place-items: center;
+        }
+
+        @media (max-width: 650px) {
+            .gallery-image-link {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP CONTACT BAR -->
+    <div class="top-contact-bar" aria-label="Contact information">
+        <div class="top-contact-track">
+
+            <div class="top-contact-group">
+                <a href="tel:+917499429991" class="top-contact-item">
+                    <i class="fa-solid fa-phone"></i> +91 7499429991
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:info@jbinfras.com" class="top-contact-item">
+                    <i class="fa-solid fa-envelope"></i> info@jbinfras.com
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="tel:+918208417128" class="top-contact-item">
+                    <i class="fa-solid fa-phone"></i> +91 8208417128
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item">
+                    <i class="fa-solid fa-envelope"></i> jaybhavaniconstruction64@gmail.com
+                </a>
+            </div>
+
+            <div class="top-contact-group" aria-hidden="true">
+                <a href="tel:+917499429991" class="top-contact-item" tabindex="-1">
+                    <i class="fa-solid fa-phone"></i> +91 7499429991
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:info@jbinfras.com" class="top-contact-item" tabindex="-1">
+                    <i class="fa-solid fa-envelope"></i> info@jbinfras.com
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="tel:+918208417128" class="top-contact-item" tabindex="-1">
+                    <i class="fa-solid fa-phone"></i> +91 8208417128
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item" tabindex="-1">
+                    <i class="fa-solid fa-envelope"></i> jaybhavaniconstruction64@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+
+            <a href="index.html#home" class="logo">
+                <img src="./logoo.png" alt="Jay Bhavani Construction Logo" class="site-logo">
+                <div class="logo-name">Jay Bhavani Construction</div>
+            </a>
+
+            <nav class="navbar" id="navbar" aria-label="Main navigation">
+
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+
+                <!-- BROCHURE DROPDOWN -->
+                <div class="nav-item brochure-nav-item" id="brochureNavItem">
+                    <div class="brochure-nav-header">
+                        <button type="button"
+                                class="brochure-nav-trigger"
+                                id="brochureNavTrigger"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                aria-controls="brochureDropdown">
+                            Brochure
+                        </button>
+
+                        <button type="button"
+                                class="services-dropdown-toggle"
+                                id="brochureDropdownToggle"
+                                aria-label="Toggle Brochure menu"
+                                aria-expanded="false"
+                                aria-controls="brochureDropdown">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="services-dropdown brochure-dropdown"
+                         id="brochureDropdown"
+                         aria-hidden="true">
+
+                        <a href="Jay_Bhawani_Construction_Brochure.pdf"
+                           class="services-dropdown-link"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </span>
+                            <span>
+                                <strong>View Brochure</strong>
+                                <small>Open the brochure in a new tab</small>
+                            </span>
+                        </a>
+
+                        <a href="Jay_Bhawani_Construction_Brochure.pdf"
+                           class="services-dropdown-link"
+                           download="Jay_Bhawani_Construction_Brochure.pdf">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-download"></i>
+                            </span>
+                            <span>
+                                <strong>Download Brochure</strong>
+                                <small>Save a copy of our brochure</small>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SERVICES DROPDOWN -->
+                <div class="nav-item services-nav-item" id="servicesNavItem">
+                    <div class="services-nav-header">
+                        <a href="services.html" class="nav-link services-nav-link">
+                            Services
+                        </a>
+
+                        <button type="button"
+                                class="services-dropdown-toggle"
+                                id="servicesDropdownToggle"
+                                aria-label="Toggle Services menu"
+                                aria-expanded="false"
+                                aria-controls="servicesDropdown">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="services-dropdown" id="servicesDropdown" aria-hidden="true">
+                        <div class="services-dropdown-heading">
+                            <span>OUR SERVICES</span>
+                            <p>Explore our construction solutions</p>
+                        </div>
+
+                        <a href="industrial-sheds.html" class="services-dropdown-link">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-industry"></i>
+                            </span>
+                            <span>
+                                <strong>Industrial Sheds</strong>
+                                <small>Industrial construction solutions</small>
+                            </span>
+                            <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
+                        </a>
+
+                        <a href="peb-structures.html" class="services-dropdown-link">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-warehouse"></i>
+                            </span>
+                            <span>
+                                <strong>PEB Structures</strong>
+                                <small>Pre-engineered building structures</small>
+                            </span>
+                            <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
+                        </a>
+
+                        <a href="commercial-buildings.html" class="services-dropdown-link">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </span>
+                            <span>
+                                <strong>Commercial Buildings</strong>
+                                <small>Commercial construction projects</small>
+                            </span>
+                            <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
+                        </a>
+
+                        <a href="rcc-road-construction.html" class="services-dropdown-link">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-road"></i>
+                            </span>
+                            <span>
+                                <strong>RCC Road Construction</strong>
+                                <small>Durable RCC road solutions</small>
+                            </span>
+                            <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
+                        </a>
+
+                        <a href="rcc-flooring.html" class="services-dropdown-link">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </span>
+                            <span>
+                                <strong>RCC Flooring</strong>
+                                <small>Strong and durable flooring</small>
+                            </span>
+                            <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="gallery.html" class="nav-link active" aria-current="page">
+                    Gallery
+                </a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="index.html#contact" class="nav-quote">Get a Quote</a>
+            </nav>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open Menu"
+                    aria-expanded="false"
+                    aria-controls="navbar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero gallery-hero" id="home">
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-container">
+                <div class="hero-content">
+
+
+                    <h1>
+                        Our Work.
+                        <span>Our Gallery.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        <strong>
+                            Explore our industrial, commercial and infrastructure
+                            construction projects, built with strength and precision.
+                        </strong>
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#project-gallery" class="btn btn-primary">
+                            Explore Gallery
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="index.html#contact" class="btn btn-outline">
+                            Contact Us
+                        </a>
+                    </div>
+
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Quality Focused</span>
+                        </div>
+
+                        <div class="hero-feature">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Precision Built</span>
+                        </div>
+
+                        <div class="hero-feature">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Reliable Solutions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="gallery-section" id="project-gallery">
+            <div class="container">
+
+                <div class="gallery-heading">
+                    <div class="gallery-tag">
+                        <span></span>
+                        OUR PROJECT PORTFOLIO
+                        <span></span>
+                    </div>
+
+                    <h2>Building <span>Excellence</span> in Every Project</h2>
+
+                    <p>
+                        Take a closer look at our construction work across industrial,
+                        commercial and infrastructure projects.
+                    </p>
+                </div>
+
+                <!-- CATEGORY FILTERS -->
+                <div class="gallery-filters" aria-label="Filter gallery">
+                    <button type="button" class="gallery-filter active" data-filter="all">
+                        All Projects
+                    </button>
+                    <button type="button" class="gallery-filter" data-filter="industrial">
+                        Industrial Sheds
+                    </button>
+                    <button type="button" class="gallery-filter" data-filter="peb">
+                        PEB Structures
+                    </button>
+                    <button type="button" class="gallery-filter" data-filter="commercial">
+                        Commercial
+                    </button>
+                    <button type="button" class="gallery-filter" data-filter="infrastructure">
+                        RCC Infrastructure
+                    </button>
+                </div>
+
+                <!-- JavaScript adds all 30 project cards here -->
+                <div class="gallery-grid" id="galleryGrid"></div>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="gallery-cta">
+            <div class="container gallery-cta-inner">
+                <div>
+                    <span>HAVE A PROJECT IN MIND?</span>
+                    <h2>Let's Build Something <strong>Strong Together.</strong></h2>
+                    <p>Contact our team to discuss your construction requirements.</p>
+                </div>
+
+                <a href="index.html#contact" class="btn btn-primary">
+                    Get a Quote
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SAME FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-about">
+                    <a href="index.html#home" class="footer-logo">
+                        <img src="./logoo.png"
+                             alt="Jay Bhavani Construction Logo"
+                             class="footer-site-logo">
+                        <span class="footer-logo-name">Jay Bhavani Construction</span>
+                    </a>
+
+                    <p>
+                        Building strong foundations and delivering dependable
+                        construction solutions for industrial, commercial and
+                        infrastructure projects.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>QUICK LINKS</h4>
+                    <a href="index.html#home">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="Jay_Bhawani_Construction_Brochure.pdf"
+                       target="_blank" rel="noopener noreferrer">View Brochure</a>
+                    <a href="Jay_Bhawani_Construction_Brochure.pdf" download>
+                        Download Brochure
+                    </a>
+                    <a href="services.html">Services</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="index.html#contact" class="footer-quote-link">Get a Quote</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>OUR SERVICES</h4>
+                    <a href="industrial-sheds.html">Industrial Sheds</a>
+                    <a href="peb-structures.html">PEB Structures</a>
+                    <a href="commercial-buildings.html">Commercial Buildings</a>
+                    <a href="rcc-road-construction.html">RCC Road Construction</a>
+                    <a href="rcc-flooring.html">RCC Flooring</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>CONTACT</h4>
+                    <a href="tel:+917499429991">+91 7499429991</a>
+                    <a href="tel:+918208417128">+91 8208417128</a>
+                    <a href="mailto:info@jbinfras.com">info@jbinfras.com</a>
+                    <a href="mailto:jaybhavaniconstruction64@gmail.com">
+                        jaybhavaniconstruction64@gmail.com
+                    </a>
+                    <span>
+                        Office No C715 &amp; 716, Gera Imperium Gateway,
+                        Nashik Phata-Metro Station, Kasarwadi, Pune - 411034
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; <span id="currentYear"></span>
+                    Jay Bhavani Construction. All Rights Reserved.
+                </p>
+                <p class="footer-developed">
+                    Developed by MindAxis Innovation Pvt. Ltd.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CONTACT BUTTONS -->
+    <div class="floating-contact">
+        <a href="https://wa.me/918208417128"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="float-btn whatsapp"
+           aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="tel:+918208417128" class="float-btn phone" aria-label="Phone">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- EXISTING SITE JAVASCRIPT -->
+    <script src="hf.js" defer></script>
+    <script src="gallery.js" defer></script>
+
+    <!-- GENERATE 30 IMAGES + CATEGORY FILTERS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const grid = document.getElementById("galleryGrid");
+
+            const projectTypes = [
+                {
+                    category: "industrial",
+                    label: "INDUSTRIAL",
+                    title: "Industrial Construction",
+                    description: "Industrial construction planned for functional, durable spaces."
+                },
+                {
+                    category: "peb",
+                    label: "PEB STRUCTURE",
+                    title: "PEB Structure Project",
+                    description: "Pre-engineered building work focused on strength and efficiency."
+                },
+                {
+                    category: "commercial",
+                    label: "COMMERCIAL",
+                    title: "Commercial Building",
+                    description: "Commercial construction designed for practical everyday use."
+                },
+                {
+                    category: "infrastructure",
+                    label: "INFRASTRUCTURE",
+                    title: "RCC Infrastructure",
+                    description: "Concrete roads and flooring designed for long-term performance."
+                },
+                {
+                    category: "industrial",
+                    label: "INDUSTRIAL",
+                    title: "Industrial Facility",
+                    description: "Industrial project work with a focus on quality and reliability."
+                },
+                {
+                    category: "peb",
+                    label: "PEB PROJECT",
+                    title: "Pre-Engineered Building",
+                    description: "Modern structural solutions for industrial requirements."
+                },
+                {
+                    category: "commercial",
+                    label: "COMMERCIAL",
+                    title: "Commercial Project Work",
+                    description: "Construction work combining utility and a clean finish."
+                },
+                {
+                    category: "infrastructure",
+                    label: "RCC WORK",
+                    title: "RCC Road & Flooring",
+                    description: "Durable RCC surfaces for industrial and infrastructure use."
+                }
+            ];
+
+            for (let i = 1; i <= 30; i++) {
+                const number = String(i).padStart(2, "0");
+                const imagePath = `images/project-${number}.jpg`;
+                const type = projectTypes[(i - 1) % projectTypes.length];
+
+                const card = document.createElement("article");
+                card.className = "gallery-item";
+                card.dataset.category = type.category;
+
+                card.innerHTML = `
+                    <a href="${imagePath}"
+                       class="gallery-image-link"
+                       target="_blank"
+                       rel="noopener"
+                       aria-label="View project ${number}">
+                        <img src="${imagePath}"
+                             alt="${type.title} - Project ${number}"
+                             loading="lazy">
+                        <span class="gallery-zoom">
+                            <i class="fa-solid fa-expand"></i>
+                        </span>
+                    </a>
+
+                    <div class="gallery-caption">
+                        <span>${type.label} · PROJECT ${number}</span>
+                        <h3>${type.title} ${number}</h3>
+                        <p>${type.description}</p>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            }
+
+            // Category filtering
+            const filterButtons = document.querySelectorAll(".gallery-filter");
+            const cards = document.querySelectorAll(".gallery-item");
+
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const selected = this.dataset.filter;
+
+                    filterButtons.forEach(btn => {
+                        btn.classList.toggle("active", btn === this);
+                    });
+
+                    cards.forEach(card => {
+                        card.hidden =
+                            selected !== "all" &&
+                            card.dataset.category !== selected;
+                    });
+                });
+            });
+
+            // Footer year
+            const year = document.getElementById("currentYear");
+            if (year) {
+                year.textContent = new Date().getFullYear();
+            }
+
+            // Report missing image files in the browser console
+            grid.querySelectorAll("img").forEach(img => {
+                img.addEventListener("error", function () {
+                    console.warn("Gallery image not found:", this.src);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
