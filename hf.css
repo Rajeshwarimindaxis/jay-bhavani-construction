@@ -846,11 +846,9 @@
 .float-btn.phone {
     background: var(--primary-dark);
 }
-
 .float-btn.email {
     background: var(--logo-blue);
 }
-
 /* ==========================================================================
    12. BACK TO TOP BUTTON
    ========================================================================== */
@@ -870,30 +868,24 @@
     font-size: 16px;
     cursor: pointer;
     z-index: 850;
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
-
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-
 .back-to-top:hover {
     background: var(--primary);
     color: #ffffff;
     transform: translateY(-2px);
 }
-
 /* ==========================================================================
    13. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
-
-/* ---------- Compact navigation under 1200px ---------- */
 @media (max-width: 768px) {
     .header {
         top: 38px;
