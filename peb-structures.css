@@ -2085,23 +2085,84 @@
         justify-content: center;
         flex-shrink: 0;
         min-width: 44px;
-        min-height: 44px;
+        min-height: 58px;
     }
 
     /* Hide submenu until the arrow is tapped */
     .header .navbar.active .services-nav-item .services-dropdown {
         display: none;
     }
+    
+.navbar.active .services-nav-item {
+    display: block;
+    width: 100%;
+}
 
-    /* Show submenu when the arrow is tapped */
-    .header .navbar.active .services-nav-item.dropdown-open .services-dropdown {
-        display: block !important;
-        position: static !important;
-        width: 100%;
-        max-width: 100%;
-        visibility: visible;
-        opacity: 1;
-        transform: none;
-        box-shadow: none;
+.navbar.active .services-nav-item .services-dropdown {
+    display: none;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    transform: none;
+    box-shadow: none;
+}
+
+.navbar.active .services-nav-item.dropdown-open .services-dropdown {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+}
+
+/* FINAL MOBILE NAVIGATION SIZE FIX */
+@media (max-width: 1200px) {
+    .header .navbar.active {
+        padding: 12px 16px 20px !important;
+        gap: 0 !important;
+    }
+
+    .header .navbar.active > .nav-link,
+    .header .navbar.active .services-nav-link,
+    .header .navbar.active .brochure-nav-trigger {
+        min-height: 58px !important;
+        font-size: 16px !important;
+        padding: 12px 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    .header .navbar.active .services-nav-header,
+    .header .navbar.active .brochure-nav-header {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-height: 48px !important;
+        box-sizing: border-box !important;
+    }
+
+    .header .navbar.active .services-dropdown-toggle {
+        flex: 0 0 44px !important;
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .header .navbar.active .nav-quote {
+        width: 100% !important;
+        min-height: 50px !important;
+        margin: 10px 0 0 !important;
+        padding: 12px 14px !important;
+        justify-content: flex-start !important;
+        box-sizing: border-box !important;
     }
 }

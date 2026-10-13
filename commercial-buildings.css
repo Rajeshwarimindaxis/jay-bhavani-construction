@@ -733,7 +733,7 @@ body {
 @media (max-width: 1200px) {
 
     .navbar.active .brochure-nav-header {
-        display: block !important;
+        display: flex !important;
         width: 100% !important;
         text-align: left !important;
         margin: 0 !important;

@@ -19,6 +19,7 @@
     
     <link rel="stylesheet" href="peb-structures.css">
     <link rel="stylesheet" href="hf.css">
+    <link rel="stylesheet" href="hf.css">
 </head>
 
 <body>
@@ -51,13 +52,13 @@
 
     <header class="header" id="header">
         <div class="container nav-container">
-            <a href="index.html#home" class="logo">
+            <a href="index.html" class="logo">
                 <img src="./logoo.png" alt="Jay Bhavani Construction Logo" class="site-logo">
                 <div class="logo-name">Jay Bhavani Construction</div>
             </a>
 
             <nav class="navbar" id="navbar" aria-label="Main navigation">
-                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
 
                 <div class="nav-item brochure-nav-item" id="brochureNavItem">
@@ -119,7 +120,7 @@
                     </div>
                 </div>
 
-                <a href="index.html#gallery" class="nav-link">Gallery</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
                 <a href="index.html#contact" class="nav-quote">Get a Quote</a>
             </nav>
@@ -996,61 +997,3 @@
     <script src="hf.js" defer></script>
 </body>
 </html>
-/* =========================================
-   PEB PAGE — MOBILE NAVIGATION FIX
-   ========================================= */
-
-@media (max-width: 768px) {
-
-    .header .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .header .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .header .navbar {
-        display: none;
-    }
-
-    .header .navbar.active {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-    }
-
-    .header .navbar .services-nav-item,
-    .header .navbar .brochure-nav-item {
-        width: 100%;
-    }
-
-    .header .services-nav-header,
-    .header .brochure-nav-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .header .services-dropdown,
-    .header .brochure-dropdown {
-        display: none;
-        position: static;
-        width: 100%;
-        min-width: 0;
-        box-shadow: none;
-        transform: none;
-    }
-
-    .header .services-nav-item.dropdown-open > .services-dropdown,
-    .header .brochure-nav-item.dropdown-open > .brochure-dropdown {
-        display: block;
-    }
-}
