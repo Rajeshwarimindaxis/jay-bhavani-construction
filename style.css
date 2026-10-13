@@ -1410,7 +1410,7 @@ ul {
 
     /* Process */
     .process-section {
-        padding: 70px 0;
+        padding: 50px 0;
         overflow: hidden;
     }
 
@@ -1465,7 +1465,7 @@ ul {
 
     /* Gallery */
     .gallery-section {
-        padding: 75px 0;
+        padding: 50px 0;
     }
 
     .gallery-section .section-heading {
@@ -1501,7 +1501,7 @@ ul {
 
     /* Mission / Vision */
     .mission-section {
-        padding: 75px 0;
+        padding: 50px 0;
     }
 
     .mission-section::before {
@@ -1515,7 +1515,7 @@ ul {
 
     .mission-card {
         min-width: 0;
-        min-height: 300px;
+        min-height: 180px;
         padding: 28px 16px;
     }
 
@@ -1545,7 +1545,7 @@ ul {
 
     /* CTA */
     .cta-section {
-        padding: 60px 0;
+        padding: 20px 0;
     }
 
     .cta-box {
@@ -1929,7 +1929,7 @@ ul {
     }
 
     .mission-card {
-        min-height: 245px;
+        min-height: 20px;
         padding: 16px 8px;
     }
 
