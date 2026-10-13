@@ -55,11 +55,11 @@ button {
 .hero {
     position: relative;
     isolation: isolate;
-    min-height: 590px;
+    min-height: 620px;
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: 100px 7% 120px;
+    padding: 100px 0 90px;
 
     background:
         linear-gradient(
@@ -1161,5 +1161,254 @@ body.modal-open {
     .gallery-image-link {
         height: 150px;
         min-height: 170px;
+    }
+}```css
+/* =========================================
+   MOBILE NAVIGATION — BROCHURE ALIGNMENT
+========================================= */
+
+@media (max-width: 1200px) {
+
+    /* Manage mobile navigation drawer height */
+    .header .navbar.active {
+        max-height: calc(100dvh - 110px);
+        padding: 10px 16px 16px;
+        gap: 0;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    /* Move brochure button content to the left */
+    .header .navbar.active .brochure-nav-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        gap: 8px;
+        text-align: left;
+    }
+
+    .header .navbar.active .brochure-nav-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+        width: auto;
+        padding: 10px 6px;
+        margin: 0;
+        text-align: left;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* Keep brochure dropdown arrow beside the button */
+    .header .navbar.active .brochure-nav-header .services-dropdown-toggle {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        margin-left: 0;
+    }
+
+    /* Reduce navigation link heights */
+    .header .navbar.active > .nav-link {
+        padding: 10px 6px;
+        min-height: 40px;
+        font-size: 14px;
+    }
+
+    /* Compact brochure and services dropdown spacing */
+    .header .navbar.active .services-dropdown {
+        margin: 5px 0 8px;
+        padding: 8px;
+    }
+
+    .header .navbar.active .services-dropdown-link {
+        padding: 8px;
+        gap: 9px;
+    }
+
+    /* Keep Get a Quote compact */
+    .header .navbar.active .nav-quote {
+        min-height: 40px;
+        margin-top: 8px;
+        padding: 9px 14px;
+        font-size: 13px;
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+    .header .navbar.active {
+        max-height: calc(100dvh - 96px);
+        padding: 8px 12px 12px;
+    }
+
+    .header .navbar.active .brochure-nav-trigger {
+        padding: 9px 6px;
+        font-size: 13px;
+    }
+}
+
+/* FIX: ALIGN BROCHURE BUTTON TO THE LEFT ON MOBILE */
+@media (max-width: 1200px) {
+
+    .navbar.active .brochure-nav-header {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar.active .brochure-nav-header .brochure-nav-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 46px !important;
+        height: auto !important;
+
+        padding: 10px 6px !important;
+        margin: 0 !important;
+
+        text-align: left !important;
+        text-indent: 0 !important;
+
+        background: transparent !important;
+        border: 0 !important;
+        border-bottom: 1px solid #f0f4f8 !important;
+
+        font-family: "Inter", sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        color: #0759B5 !important;
+
+        transform: none !important;
+    }
+}
+/* =========================================
+   MOBILE BROCHURE DROPDOWN FIX
+   ========================================= */
+
+@media (max-width: 1200px) {
+
+    /* Keep the brochure item inside the mobile navigation */
+    .header .navbar.active .brochure-nav-item {
+        display: block;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Align Brochure text to the left and arrow to the right */
+    .header .navbar.active .brochure-nav-header {
+        display: flex;
+        width: 100%;
+        min-height: 44px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        border-bottom: 1px solid #f0f4f8;
+    }
+
+    .header .navbar.active .brochure-nav-trigger {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: flex-start;
+        width: auto;
+        min-height: 44px;
+        padding: 10px 6px;
+        margin: 0;
+        border: 0;
+        background: transparent;
+        color: var(--logo-blue);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .header .navbar.active .brochure-nav-header .services-dropdown-toggle {
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        margin-left: auto;
+    }
+
+    /* Hide dropdown until it is opened */
+    .header .navbar.active .brochure-nav-item > .services-dropdown {
+        display: none;
+        position: static;
+        width: 100%;
+        max-height: none;
+        margin: 6px 0 10px;
+        padding: 8px;
+        overflow: visible;
+        background: #f8fbfe;
+        border: 1px solid #e5edf5;
+        border-radius: 8px;
+        box-shadow: none;
+        transform: none;
+    }
+
+    /* Show dropdown when JavaScript adds dropdown-open */
+    .header .navbar.active
+    .brochure-nav-item.dropdown-open > .services-dropdown {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    /* Compact brochure links */
+    .header .navbar.active .brochure-dropdown .services-dropdown-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 8px;
+        margin: 0;
+    }
+
+    .header .navbar.active .brochure-dropdown .services-dropdown-icon {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        border-radius: 7px;
+    }
+
+    .header .navbar.active .brochure-dropdown .services-dropdown-link strong {
+        font-size: 12px;
+    }
+
+    .header .navbar.active .brochure-dropdown .services-dropdown-link small {
+        font-size: 10px;
+    }
+
+    /* Keep Get a Quote within the menu */
+    .header .navbar.active .nav-quote {
+        display: flex;
+        width: 100%;
+        min-height: 42px;
+        margin: 10px 0 0;
+        padding: 9px 14px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .navbar.active .brochure-nav-trigger {
+        min-height: 40px;
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+
+    .header .navbar.active .brochure-nav-header {
+        min-height: 40px;
     }
 }

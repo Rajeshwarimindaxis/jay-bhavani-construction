@@ -614,3 +614,34 @@
 
 </body>
 </html>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.getElementById("navbar");
+
+    if (!menuToggle || !navbar) {
+        console.error("Mobile menu: hamburger button or navbar not found.");
+        return;
+    }
+
+    menuToggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isOpen = navbar.classList.toggle("active");
+
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navbar.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            if (!link.closest(".services-nav-item, .brochure-nav-item")) {
+                navbar.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
+});
+</script>
