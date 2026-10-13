@@ -1884,3 +1884,465 @@ body {
     }
 }
 ```
+
+/* =========================================
+   MOBILE NAVBAR — COMPACT HEIGHT & PADDING
+   DESKTOP REMAINS UNCHANGED
+========================================= */
+
+@media screen and (max-width: 1200px) {
+
+    /* Mobile navigation panel */
+    .header .navbar.active {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+
+        padding: 4px 12px 10px !important;
+        height: auto !important;
+        max-height: calc(100dvh - 105px) !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Home, About, Gallery and Contact */
+    .header .navbar.active > a.nav-link,
+    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger) {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 42px !important;
+        height: auto !important;
+
+        padding: 9px 8px !important;
+        margin: 0 !important;
+
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+
+        border-bottom: 1px solid #EAF2F9 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Brochure wrapper */
+    .header .navbar.active .brochure-nav-header {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Brochure link/button */
+    .header .navbar.active .brochure-nav-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 42px !important;
+        height: auto !important;
+
+        padding: 9px 8px !important;
+        margin: 0 !important;
+
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+        text-align: left !important;
+
+        background: transparent !important;
+        border: 0 !important;
+        border-bottom: 1px solid #EAF2F9 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Services wrapper */
+    .header .navbar.active .services-nav-item {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Services row and dropdown arrow */
+    .header .navbar.active .services-nav-header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        width: 100% !important;
+        min-height: 42px !important;
+        height: auto !important;
+        padding: 0 4px 0 8px !important;
+        margin: 0 !important;
+
+        border-bottom: 1px solid #EAF2F9 !important;
+        box-sizing: border-box !important;
+    }
+
+    .header .navbar.active .services-nav-link {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        align-items: center !important;
+
+        min-width: 0 !important;
+        min-height: 42px !important;
+        padding: 9px 0 !important;
+        margin: 0 !important;
+
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+        color: #0759B5 !important;
+        text-align: left !important;
+    }
+
+    .header .navbar.active #servicesDropdownToggle {
+        display: flex !important;
+        flex: 0 0 36px !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 36px !important;
+        min-width: 36px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Closed dropdown */
+    .header .navbar.active .services-nav-item .services-dropdown {
+        display: none;
+    }
+
+    /* Open dropdown */
+    .header .navbar.active .services-nav-item.dropdown-open .services-dropdown {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 4px 0 4px 12px !important;
+        margin: 0 !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .header .navbar.active .services-dropdown a {
+        display: flex !important;
+        align-items: center !important;
+        min-height: 34px !important;
+        padding: 7px 8px !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        border-bottom: 1px solid #EAF2F9 !important;
+    }
+
+    /* Get a Quote button */
+    .header .navbar.active > a.btn,
+    .header .navbar.active > .btn,
+    .header .navbar.active .nav-quote {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        min-height: 44px !important;
+        height: auto !important;
+
+        padding: 10px 12px !important;
+        margin: 9px 0 0 !important;
+
+        font-size: 15px !important;
+        line-height: 1.3 !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Smaller phones */
+@media screen and (max-width: 480px) {
+    .header .navbar.active {
+        padding: 3px 10px 8px !important;
+        max-height: calc(100dvh - 100px) !important;
+    }
+
+    .header .navbar.active > a.nav-link,
+    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger),
+    .header .navbar.active .brochure-nav-trigger {
+        min-height: 39px !important;
+        padding: 8px 7px !important;
+        font-size: 14px !important;
+    }
+
+    .header .navbar.active .services-nav-header {
+        min-height: 39px !important;
+    }
+
+    .header .navbar.active .services-nav-link {
+        min-height: 39px !important;
+        padding: 8px 0 !important;
+        font-size: 14px !important;
+    }
+
+    .header .navbar.active #servicesDropdownToggle {
+        width: 34px !important;
+        min-width: 34px !important;
+        height: 34px !important;
+        min-height: 34px !important;
+    }
+
+    .header .navbar.active > a.btn,
+    .header .navbar.active > .btn,
+    .header .navbar.active .nav-quote {
+        min-height: 42px !important;
+        margin-top: 8px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* =========================================
+   MOBILE NAVBAR — COMPACT HEIGHT & PADDING
+   DESKTOP REMAINS UNCHANGED
+========================================= */
+
+@media screen and (max-width: 1200px) {
+
+    /* Mobile navigation panel */
+    .header .navbar.active {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+
+        padding: 4px 12px 10px !important;
+        height: auto !important;
+        max-height: calc(100dvh - 105px) !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Home, About, Gallery and Contact */
+    .header .navbar.active > a.nav-link,
+    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger) {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 42px !important;
+        height: auto !important;
+
+        padding: 9px 8px !important;
+        margin: 0 !important;
+
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+
+        border-bottom: 1px solid #EAF2F9 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Brochure wrapper */
+    .header .navbar.active .brochure-nav-header {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Brochure link/button */
+    .header .navbar.active .brochure-nav-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 42px !important;
+        height: auto !important;
+
+        padding: 9px 8px !important;
+        margin: 0 !important;
+
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+        text-align: left !important;
+
+        background: transparent !important;
+        border: 0 !important;
+        border-bottom: 1px solid #EAF2F9 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Services wrapper */
+    .header .navbar.active .services-nav-item {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Services row and dropdown arrow */
+    .header .navbar.active .services-nav-header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        width: 100% !important;
+        min-height: 42px !important;
+        height: auto !important;
+        padding: 0 4px 0 8px !important;
+        margin: 0 !important;
+
+        border-bottom: 1px solid #EAF2F9 !important;
+        box-sizing: border-box !important;
+    }
+
+    .header .navbar.active .services-nav-link {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        align-items: center !important;
+
+        min-width: 0 !important;
+        min-height: 42px !important;
+        padding: 9px 0 !important;
+        margin: 0 !important;
+
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+        color: #0759B5 !important;
+        text-align: left !important;
+    }
+
+    .header .navbar.active #servicesDropdownToggle {
+        display: flex !important;
+        flex: 0 0 36px !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 36px !important;
+        min-width: 36px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Closed dropdown */
+    .header .navbar.active .services-nav-item .services-dropdown {
+        display: none;
+    }
+
+    /* Open dropdown */
+    .header .navbar.active .services-nav-item.dropdown-open .services-dropdown {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 4px 0 4px 12px !important;
+        margin: 0 !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .header .navbar.active .services-dropdown a {
+        display: flex !important;
+        align-items: center !important;
+        min-height: 34px !important;
+        padding: 7px 8px !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        border-bottom: 1px solid #EAF2F9 !important;
+    }
+
+    /* Get a Quote button */
+    .header .navbar.active > a.btn,
+    .header .navbar.active > .btn,
+    .header .navbar.active .nav-quote {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        min-height: 44px !important;
+        height: auto !important;
+
+        padding: 10px 12px !important;
+        margin: 9px 0 0 !important;
+
+        font-size: 15px !important;
+        line-height: 1.3 !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Smaller phones */
+@media screen and (max-width: 480px) {
+    .header .navbar.active {
+        padding: 3px 10px 8px !important;
+        max-height: calc(100dvh - 100px) !important;
+    }
+
+    .header .navbar.active > a.nav-link,
+    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger),
+    .header .navbar.active .brochure-nav-trigger {
+        min-height: 39px !important;
+        padding: 8px 7px !important;
+        font-size: 14px !important;
+    }
+
+    .header .navbar.active .services-nav-header {
+        min-height: 39px !important;
+    }
+
+    .header .navbar.active .services-nav-link {
+        min-height: 39px !important;
+        padding: 8px 0 !important;
+        font-size: 14px !important;
+    }
+
+    .header .navbar.active #servicesDropdownToggle {
+        width: 34px !important;
+        min-width: 34px !important;
+        height: 34px !important;
+        min-height: 34px !important;
+    }
+
+    .header .navbar.active > a.btn,
+    .header .navbar.active > .btn,
+    .header .navbar.active .nav-quote {
+        min-height: 42px !important;
+        margin-top: 8px !important;
+        font-size: 14px !important;
+    }
+}
