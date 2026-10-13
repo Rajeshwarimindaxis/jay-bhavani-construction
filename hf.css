@@ -1,25 +1,4 @@
 /* ==========================================================================
-   JAY BHAVANI CONSTRUCTION
-   SHARED HEADER, NAVIGATION & FOOTER STYLESHEET (hf.css)
-   
-   Includes:
-   1. Root Variables & Typography
-   2. Accessibility Skip Link
-   3. Top Sliding Contact Strip (Marquee)
-   4. Header & Sticky Scroll Behavior
-   5. Brand Logo & Site Identity
-   6. Main Navigation & Nav Links
-   7. Get A Quote CTA Button
-   8. Services Navigation Dropdown (Desktop & Mobile)
-   9. Mobile Menu Toggle (Hamburger)
-   10. Mobile Navigation Drawer
-   11. Footer (4-Column Layout, Links, Address, Copyright)
-   12. Floating WhatsApp & Phone Contact Buttons
-   13. Back to Top Button
-   14. Responsive Media Queries
-   ========================================================================== */
-
-/* ==========================================================================
    1. ROOT VARIABLES
    ========================================================================== */
 :root {
@@ -1007,7 +986,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 35px;
     }
-}```css
+}
 /* =========================================
    TABLET RESPONSIVENESS
    ========================================= */
@@ -1195,7 +1174,7 @@
         font-size: 13px;
     }
 }
-```
+
 
 /* ---------- Mobile Phones Under 768px ---------- */
 /* @media (max-width: 768px) {
@@ -1649,7 +1628,7 @@
         box-shadow: none;
     }
 }
-```css
+
 /* FORCE BROCHURE LABEL AND ARROW INTO ONE ROW */
 @media (max-width: 1200px) {
 
@@ -1693,8 +1672,6 @@
         margin: 0 !important;
     }
 }
-```
-```css
 /* BROCHURE ROW — MATCH SERVICES ROW */
 .navbar.active .brochure-nav-item {
     display: block;
@@ -1733,4 +1710,3 @@
     height: 44px;
     margin: 0;
 }
-```
