@@ -1867,8 +1867,8 @@ body {
     .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger),
     .header .navbar.active .brochure-nav-trigger {
         min-height: 39px !important;
-        padding: 8px 7px !important;
-        font-size: 14px !important;
+        padding: 4px 7px !important;
+        font-size: 13px !important;
     }
 
     .header .navbar.active .services-nav-header {
@@ -1877,8 +1877,8 @@ body {
 
     .header .navbar.active .services-nav-link {
         min-height: 39px !important;
-        padding: 8px 0 !important;
-        font-size: 14px !important;
+        padding: 3px 0 !important;
+        font-size: 13px !important;
     }
 
     .header .navbar.active #servicesDropdownToggle {
@@ -1893,6 +1893,6 @@ body {
     .header .navbar.active .nav-quote {
         min-height: 42px !important;
         margin-top: 8px !important;
-        font-size: 14px !important;
+        font-size: 13px !important;
     }
 }

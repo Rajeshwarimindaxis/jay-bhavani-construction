@@ -2009,7 +2009,7 @@ a.contact-detail:hover strong {
     #navbar .nav-quote {
         font-family: 'Inter', sans-serif;
         font-size: 13px;
-        font-weight: 700;
+        font-weight: 600;
     }
 
     /* Brochure label: match Home, About and Gallery */
@@ -2077,8 +2077,8 @@ a.contact-detail:hover strong {
     color: #0056b3 !important;
     -webkit-text-fill-color: #0056b3 !important;
     font-family: 'Inter', sans-serif !important;
-    font-size: 14px !important;
-    font-weight: 700 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
     background: transparent !important;
     border: none !important;
     opacity: 1 !important;

@@ -275,8 +275,8 @@
     position: relative;
     color: var(--logo-blue);
     font-family: "Inter", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 600;
     padding: 29px 0;
     text-decoration: none;
     transition: color 0.3s ease;

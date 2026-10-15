@@ -3918,8 +3918,8 @@
         padding: 10px 12px !important;
         margin: 9px 0 0 !important;
 
-        font-size: 15px !important;
-        line-height: 1.3 !important;
+        font-size: 13px !important;
+        line-height: 1.45 !important;
         box-sizing: border-box !important;
     }
 }
@@ -3927,7 +3927,7 @@
 /* Smaller phones */
 @media screen and (max-width: 480px) {
     .header .navbar.active {
-        padding: 3px 10px 8px !important;
+        padding: 7px 8px !important;
         max-height: calc(100dvh - 100px) !important;
     }
 
@@ -3945,7 +3945,7 @@
 
     .header .navbar.active .services-nav-link {
         min-height: 30px !important;
-        padding: 5px 0 !important;
+        padding: 6px 0 !important;
         font-size: 13px !important;
     }
 
@@ -3959,8 +3959,9 @@
     .header .navbar.active > a.btn,
     .header .navbar.active > .btn,
     .header .navbar.active .nav-quote {
-        min-height: 42px !important;
+        min-height: 50px !important;
         margin-top: 8px !important;
+        padding:12px 14px;
         font-size: 13px !important;
     }
 }
