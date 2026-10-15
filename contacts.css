@@ -1605,4 +1605,698 @@ a.contact-detail:hover strong {
         line-height: 1.3;
         margin-top: 5px;
     }
+/* }
+/* FIX: SERVICES DROPDOWN ON MOBILE */
+@media (max-width: 1200px) {
+
+    #navbar.active .services-nav-item {
+        display: block;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    #navbar.active .services-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 8px;
+    }
+
+    #navbar.active .services-nav-link {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        min-width: 0;
+        padding: 12px 6px;
+    }
+
+    #navbar.active #servicesDropdownToggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        border: 0;
+        background: transparent;
+        color: #d99a24;
+        cursor: pointer;
+    }
+
+    /* Hide submenu until the arrow is tapped */
+    #navbar.active #servicesDropdown {
+        display: none;
+        position: static;
+        width: 100%;
+        max-height: none;
+        overflow: visible;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 8px 0 8px 12px;
+        background: #102b38;
+        border: 0;
+    }
+
+    #navbar.active .services-nav-item.dropdown-open #servicesDropdown {
+        display: block;
+    }
+
+    #navbar.active #servicesDropdown .services-dropdown-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 12px 10px;
+        color: #102b38;
+        white-space: normal;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    #navbar.active #servicesDropdown .services-dropdown-link strong {
+        display: block;
+        color: #102b38;
+        font-size: 13px;
+    }
+
+    #navbar.active #servicesDropdown .services-dropdown-link small {
+        display: block;
+        color: #102b38;
+        font-size: 11px;
+    }
+
+    #navbar.active .services-nav-item.dropdown-open
+    #servicesDropdownToggle i {
+        transform: rotate(180deg);
+    }
+
+    #servicesDropdownToggle i {
+        transition: transform .25s ease;
+    }
+}
+/* 
+/* =========================================
+   CONTACT PAGE — MOBILE NAVIGATION FIX
+   ========================================= */
+@media (max-width: 768px) {
+
+    body.contact-page #menuToggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body.contact-page #navbar {
+        display: none !important;
+    }
+
+    body.contact-page #navbar.active {
+        display: flex !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-height: calc(100vh - 114px);
+        overflow-y: auto;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        background: #fff !important;
+        z-index: 10001 !important;
+        box-sizing: border-box;
+    }
+
+    body.contact-page #navbar.active #servicesNavItem {
+        display: block !important;
+        width: 100%;
+    }
+
+    body.contact-page #navbar.active .services-nav-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    body.contact-page #navbar.active #servicesDropdownToggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+    }
+
+    body.contact-page #navbar.active #servicesNavItem > #servicesDropdown {
+        display: none !important;
+        position: static !important;
+        width: 100% !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    body.contact-page #navbar.active
+    #servicesNavItem.dropdown-open > #servicesDropdown {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body.contact-page #navbar.active {
+        display: flex !important;
+    }
+
+    body.contact-page #servicesNavItem.dropdown-open > #servicesDropdown {
+        display: block !important;
+        position: static !important;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+    } */
+/* }
+```css
+/* =========================================
+   CONTACT PAGE — BROCHURE DESKTOP LAYOUT
+   Preserve existing shared button styling
+========================================= */
+
+@media (min-width: 769px) {
+    body.contact-page #brochureNavItem {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    body.contact-page #brochureNavItem .brochure-nav-header {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    body.contact-page #brochureNavItem #brochureNavTrigger {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        background: transparent;
+        border: 0;
+        padding: 10px 0;
+        cursor: pointer;
+    }
+
+    body.contact-page #brochureNavItem #brochureDropdownToggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 0;
+        color: inherit;
+        padding: 10px 6px;
+        cursor: pointer;
+    }
+} */
+
+/* =========================================
+   CONTACT PAGE — BROCHURE NAV BUTTON
+   Match the other navigation links
+========================================= */
+
+@media (min-width: 769px) {
+    body.contact-page #brochureNavItem {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    body.contact-page #brochureNavItem .brochure-nav-header {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    body.contact-page #brochureNavItem #brochureNavTrigger {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 0;
+        margin: 0;
+        border: none;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    body.contact-page #brochureNavItem #brochureDropdownToggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 6px;
+        margin: 0;
+        border: none;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    body.contact-page #brochureNavItem:hover #brochureNavTrigger,
+    body.contact-page #brochureNavItem:hover #brochureDropdownToggle {
+        color: var(--primary, #e87524);
+    }
+} */
+/* =========================================
+   CONTACT PAGE — MOBILE NAVIGATION FIX
+   Keep the shared desktop navigation styling
+========================================= */
+
+@media (max-width: 768px) {
+
+    body.contact-page #menuToggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body.contact-page #navbar {
+        display: none !important;
+    }
+
+    body.contact-page #navbar.active {
+        display: flex !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-height: calc(100vh - 114px);
+        overflow-y: auto;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        background: #fff !important;
+        z-index: 10001 !important;
+        box-sizing: border-box;
+    }
+
+    body.contact-page #navbar.active .services-nav-item,
+    body.contact-page #navbar.active .brochure-nav-item {
+        display: block !important;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    body.contact-page #navbar.active .services-nav-header,
+    body.contact-page #navbar.active .brochure-nav-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 8px;
+    }
+
+    body.contact-page #navbar.active .services-nav-link {
+        display: flex !important;
+        flex: 1;
+        min-width: 0;
+        align-items: center;
+        padding: 12px 6px;
+    }
+
+    body.contact-page #navbar.active .services-dropdown-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    /* Hide the Services submenu until its arrow is tapped */
+    body.contact-page #navbar.active #servicesNavItem > #servicesDropdown {
+        display: none !important;
+        position: static !important;
+        width: 100% !important;
+        max-height: none !important;
+        overflow: visible !important;
+        opacity: 1;
+        visibility: visible;
+        transform: none !important;
+        pointer-events: auto;
+        box-shadow: none !important;
+        margin: 0;
+        padding: 8px 0 8px 12px;
+        background: #102b38;
+        border: 0;
+    }
+
+    body.contact-page #navbar.active
+    #servicesNavItem.dropdown-open > #servicesDropdown {
+        display: block !important;
+    }
+
+    body.contact-page #navbar.active #servicesDropdown .services-dropdown-link {
+        display: flex !important;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 12px 10px;
+        color: #fff;
+        white-space: normal;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    body.contact-page #navbar.active #servicesDropdown .services-dropdown-link strong {
+        display: block;
+        color: #fff;
+        font-size: 13px;
+    }
+
+    body.contact-page #navbar.active #servicesDropdown .services-dropdown-link small {
+        display: block;
+        color: #c3cbd0;
+        font-size: 11px;
+    }
+
+    body.contact-page #navbar.active #servicesNavItem.dropdown-open
+    #servicesDropdownToggle i {
+        transform: rotate(180deg);
+    }
+
+    body.contact-page #navbar.active #servicesDropdownToggle i {
+        transition: transform 0.25s ease;
+    }
+}
+
+/* MOBILE NAVIGATION ONLY — max-width 900px */
+@media (max-width: 900px) {
+
+    /* Consistent font and weight for all menu labels */
+    #navbar > .nav-link,
+    #navbar .services-nav-link,
+    #navbar .brochure-nav-trigger,
+    #navbar .nav-quote {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    /* Brochure label: match Home, About and Gallery */
+    #navbar .brochure-nav-trigger {
+        color: #0056b3;
+        text-align: left;
+        background: transparent;
+        border: none;
+        padding: 12px 10px;
+        min-height: 46px;
+    }
+
+    /* Both dropdown arrows: blue */
+    #navbar #brochureDropdownToggle,
+    #navbar #servicesDropdownToggle {
+        color: #0056b3;
+        background: transparent;
+    }
+
+    /* Keep dropdown labels and arrows aligned */
+    #navbar .brochure-nav-header,
+    #navbar .services-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Preserve the orange active-page highlight */
+    #navbar > .nav-link.active {
+        color: #e87524;
+    }
+}
+
+/* FINAL FIX — BROCHURE DESKTOP + MOBILE */
+#brochureNavItem #brochureNavTrigger,
+#brochureNavItem .brochure-nav-trigger {
+    color: #0056b3 !important;
+    -webkit-text-fill-color: #0056b3 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+    border: none !important;
+    opacity: 1 !important;
+}
+
+/* Match the dropdown arrow to other navigation arrows */
+#brochureNavItem #brochureDropdownToggle {
+    color: #0056b3 !important;
+    -webkit-text-fill-color: #0056b3 !important;
+    background: transparent !important;
+}
+
+/* Keep the Brochure header aligned */
+#brochureNavItem .brochure-nav-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* FINAL FIX — BROCHURE DESKTOP + MOBILE */
+#brochureNavItem #brochureNavTrigger,
+#brochureNavItem .brochure-nav-trigger {
+    color: #0056b3 !important;
+    -webkit-text-fill-color: #0056b3 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+    border: none !important;
+    opacity: 1 !important;
+}
+
+/* Match the dropdown arrow to other navigation arrows */
+#brochureNavItem #brochureDropdownToggle {
+    color: #0056b3 !important;
+    -webkit-text-fill-color: #0056b3 !important;
+    background: transparent !important;
+}
+
+/* Keep the Brochure header aligned */
+#brochureNavItem .brochure-nav-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ==========================================
+   MOBILE NAVIGATION
+   Preserve existing fonts and colors
+========================================== */
+
+@media (max-width: 900px) {
+
+    /* Header layout */
+    .header {
+        position: relative;
+        z-index: 1000;
+        margin-bottom: 0;
+    }
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        position: relative;
+    }
+
+    /* Logo */
+    .logo {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .site-logo {
+        max-width: 60px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .logo-name {
+        min-width: 0;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-shrink: 0;
+        cursor: pointer;
+        z-index: 1200;
+    }
+
+    .menu-toggle span {
+        display: block;
+    }
+
+    /* Mobile navigation panel */
+    #navbar.navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: calc(100dvh - 110px);
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        z-index: 1100;
+    }
+
+    #navbar.navbar.active {
+        display: flex;
+    }
+
+    /* Main navigation links */
+    #navbar > a.nav-link,
+    #navbar > a.nav-quote {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Brochure and Services headings */
+    #navbar .brochure-nav-header,
+    #navbar .services-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #navbar .brochure-nav-trigger {
+        flex: 1;
+        text-align: left;
+        font: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        line-height: inherit;
+        color: inherit;
+        -webkit-text-fill-color: currentColor;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    #navbar .services-nav-link {
+        flex: 1;
+    }
+
+    /* Dropdown arrow buttons */
+    #navbar .services-dropdown-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        cursor: pointer;
+    }
+
+    /* Dropdowns stay inside the mobile menu.
+       Existing colors and typography remain unchanged. */
+    #navbar .services-dropdown {
+        display: none;
+        position: static;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    #navbar .services-nav-item.dropdown-open > .services-dropdown,
+    #navbar .brochure-nav-item.dropdown-open > .services-dropdown {
+        display: block;
+    }
+
+    #navbar .services-dropdown-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #navbar .services-dropdown-link > span:nth-child(2) {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    /* Keep the quote button inside the menu */
+    #navbar .nav-quote {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+
+    /* Prevent the hero from gaining extra top spacing */
+    main {
+        margin-top: 0;
+    }
+
+    .contact-hero {
+        margin-top: 0;
+    }
+}
+
+/* Smaller mobile screens */
+@media (max-width: 480px) {
+
+    .nav-container {
+        gap: 8px;
+    }
+
+    .site-logo {
+        max-width: 48px;
+    }
+
+    .logo-name {
+        font-size: inherit;
+    }
+
+    #navbar.navbar {
+        max-height: calc(100dvh - 100px);
+        overflow-y: auto;
+    }
+}
+
+/* Desktop navigation remains unchanged */
+@media (min-width: 901px) {
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+    #navbar.navbar {
+        display: flex;
+    }
 }

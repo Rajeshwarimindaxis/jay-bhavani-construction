@@ -3282,10 +3282,6 @@
     .why-modern-text p {
         font-size: 5.5px;
     }
-
-
-    /* SETS APART */
-
     .sets-apart-grid {
         gap: 7px;
     }
@@ -3306,10 +3302,6 @@
     .sets-apart-item p {
         font-size: 5.5px;
     }
-
-
-    /* CTA */
-
     .about-cta {
         padding: 32px 0;
     }
@@ -3328,8 +3320,6 @@
         font-size: 7px;
     }
 }
-
-/* Align Brochure with Home, About and Services */
 @media (max-width: 768px) {
     .brochure-nav-trigger {
         display: block;
@@ -3340,12 +3330,6 @@
         box-sizing: border-box;
     }
 }
-
-/* =========================================
-   RESPONSIVE FOOTER — SAME GRID AS DESKTOP
-   ========================================= */
-
-/* Desktop: 4 columns */
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 0.9fr 1fr 1.2fr;
@@ -3495,12 +3479,6 @@
         font-size: 8px !important;
     }
 }
-```css
-/* ==========================================
-   GLOBAL MOBILE NAVIGATION FIX
-   Applies to Home, About, Services and all pages
-========================================== */
-
 @media (max-width: 1200px) {
 
     .header .nav-container {
@@ -3736,8 +3714,6 @@
         border-radius: 9px !important;
         font-weight: 700 !important;
     }
-
-    /* Hamburger / close button */
     .menu-toggle {
         display: flex !important;
         position: relative !important;
@@ -3750,7 +3726,6 @@
         overflow-x: hidden !important;
     }
 }
-
 @media screen and (max-width: 480px) {
 
     .header .navbar.active {
@@ -3766,12 +3741,6 @@
 }
     }
 }
-
-/* =========================================
-   MOBILE NAVBAR — COMPACT HEIGHT & PADDING
-   DESKTOP REMAINS UNCHANGED
-========================================= */
-
 @media screen and (max-width: 1200px) {
 
     /* Mobile navigation panel */
@@ -3790,8 +3759,6 @@
         overflow-y: auto !important;
         box-sizing: border-box !important;
     }
-
-    /* Home, About, Gallery and Contact */
     .header .navbar.active > a.nav-link,
     .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger) {
         display: flex !important;

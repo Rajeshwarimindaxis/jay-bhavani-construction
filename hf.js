@@ -6,47 +6,56 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.getElementById("navbar");
     const menuToggle = document.getElementById("menuToggle");
 
-    if (!brochureNavItem || !brochureTrigger || !brochureToggle || !brochureDropdown) {
-        return;
-    }
+    // Brochure dropdown — initialize only if its elements exist
+    if (brochureNavItem && brochureDropdown) {
 
-    function setBrochureDropdownOpen(isOpen) {
-        brochureNavItem.classList.toggle("dropdown-open", isOpen);
-        brochureTrigger.setAttribute("aria-expanded", String(isOpen));
-        brochureToggle.setAttribute("aria-expanded", String(isOpen));
-        brochureDropdown.setAttribute("aria-hidden", String(!isOpen));
-    }
+        function setBrochureDropdownOpen(isOpen) {
+            brochureNavItem.classList.toggle("dropdown-open", isOpen);
+            brochureDropdown.setAttribute("aria-hidden", String(!isOpen));
 
-    function toggleBrochureDropdown(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        setBrochureDropdownOpen(!brochureNavItem.classList.contains("dropdown-open"));
-    }
-
-    brochureTrigger.addEventListener("click", toggleBrochureDropdown);
-    brochureToggle.addEventListener("click", toggleBrochureDropdown);
-
-    document.addEventListener("click", function (event) {
-        if (!brochureNavItem.contains(event.target)) {
-            setBrochureDropdownOpen(false);
+            brochureTrigger?.setAttribute("aria-expanded", String(isOpen));
+            brochureToggle?.setAttribute("aria-expanded", String(isOpen));
         }
-    });
 
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && brochureNavItem.classList.contains("dropdown-open")) {
-            setBrochureDropdownOpen(false);
-            brochureToggle.focus();
+        function toggleBrochureDropdown(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            setBrochureDropdownOpen(
+                !brochureNavItem.classList.contains("dropdown-open")
+            );
         }
-    });
 
-    brochureDropdown.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            setBrochureDropdownOpen(false);
-            navbar?.classList.remove("active");
-            menuToggle?.classList.remove("active");
-            menuToggle?.setAttribute("aria-expanded", "false");
-            menuToggle?.setAttribute("aria-label", "Open Menu");
+        brochureTrigger?.addEventListener("click", toggleBrochureDropdown);
+
+        if (brochureToggle && brochureToggle !== brochureTrigger) {
+            brochureToggle.addEventListener("click", toggleBrochureDropdown);
+        }
+
+        document.addEventListener("click", function (event) {
+            if (!brochureNavItem.contains(event.target)) {
+                setBrochureDropdownOpen(false);
+            }
         });
-    });
+
+        document.addEventListener("keydown", function (event) {
+            if (
+                event.key === "Escape" &&
+                brochureNavItem.classList.contains("dropdown-open")
+            ) {
+                setBrochureDropdownOpen(false);
+                brochureToggle?.focus();
+            }
+        });
+
+        brochureDropdown.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                setBrochureDropdownOpen(false);
+                navbar?.classList.remove("active");
+                menuToggle?.classList.remove("active");
+                menuToggle?.setAttribute("aria-expanded", "false");
+                menuToggle?.setAttribute("aria-label", "Open Menu");
+            });
+        });
+    }
 });

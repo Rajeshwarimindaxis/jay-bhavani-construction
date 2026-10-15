@@ -612,36 +612,92 @@
         });
     </script>
 
-</body>
-</html>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+    // Mobile hamburger menu
     const menuToggle = document.getElementById("menuToggle");
     const navbar = document.getElementById("navbar");
 
-    if (!menuToggle || !navbar) {
-        console.error("Mobile menu: hamburger button or navbar not found.");
-        return;
+    if (menuToggle && navbar && !menuToggle.dataset.galleryReady) {
+        menuToggle.dataset.galleryReady = "true";
+
+        menuToggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            navbar.classList.toggle("active");
+
+            const isOpen = navbar.classList.contains("active");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
     }
 
-    menuToggle.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
+    // Services dropdown
+    const servicesItem = document.getElementById("servicesNavItem");
+    const servicesToggle =
+        document.getElementById("servicesDropdownToggle");
+    const servicesDropdown =
+        document.getElementById("servicesDropdown");
 
-        const isOpen = navbar.classList.toggle("active");
+    if (servicesItem && servicesToggle && servicesDropdown &&
+        !servicesToggle.dataset.galleryReady) {
 
-        menuToggle.classList.toggle("active", isOpen);
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-    });
+        servicesToggle.dataset.galleryReady = "true";
 
-    navbar.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            if (!link.closest(".services-nav-item, .brochure-nav-item")) {
-                navbar.classList.remove("active");
-                menuToggle.classList.remove("active");
-                menuToggle.setAttribute("aria-expanded", "false");
-            }
+        servicesToggle.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const isOpen =
+                servicesItem.classList.toggle("dropdown-open");
+
+            servicesToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            servicesDropdown.setAttribute(
+                "aria-hidden",
+                String(!isOpen)
+            );
         });
+    }
+
+    // Close Services dropdown when clicking outside it
+    document.addEventListener("click", function (event) {
+        if (servicesItem &&
+            !servicesItem.contains(event.target)) {
+            servicesItem.classList.remove("dropdown-open");
+
+            if (servicesToggle) {
+                servicesToggle.setAttribute("aria-expanded", "false");
+            }
+
+            if (servicesDropdown) {
+                servicesDropdown.setAttribute("aria-hidden", "true");
+            }
+        }
     });
+
+    // Close mobile menu when a normal navigation link is clicked
+    if (navbar) {
+        navbar.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (link.id === "servicesDropdownToggle" ||
+                    link.id === "brochureDropdownToggle") {
+                    return;
+                }
+
+                if (window.innerWidth <= 768) {
+                    navbar.classList.remove("active");
+
+                    if (menuToggle) {
+                        menuToggle.setAttribute(
+                            "aria-expanded", "false"
+                        );
+                    }
+                }
+            });
+        });
+    }
 });
 </script>
+</body>
+</html>

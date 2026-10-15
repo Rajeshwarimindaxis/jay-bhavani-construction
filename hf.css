@@ -1806,4 +1806,124 @@ body.contact-page .header .logo {
         padding: 0 12px;
     }
 }
-```
+```@media (max-width: 768px) {
+    #navbar .services-nav-item {
+        width: 100%;
+    }
+
+    #navbar .services-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #navbar #servicesDropdownToggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+        border: none;
+        background: transparent;
+        color: #F28C28;
+        cursor: pointer;
+    }
+
+    #navbar #servicesDropdown {
+        display: none;
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        max-height: none;
+        overflow: visible;
+    }
+
+    #navbar #servicesNavItem.dropdown-open #servicesDropdown {
+        display: block;
+    }
+}
+/* 
+@media (max-width: 1200px) {
+    .header .navbar.active .brochure-nav-item .brochure-nav-trigger {
+        display: inline-flex !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        align-items: center !important;
+        padding: 12px 6px !important;
+        margin: 0 !important;
+        border: 0 !important;
+        text-align: left !important;
+    }
+} */
+/* FIX: Services dropdown on mobile */
+@media (max-width: 1000px) {
+    #servicesNavItem .services-dropdown {
+        display: none;
+        position: static;
+        width: 100%;
+        max-height: none;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+
+    #servicesNavItem.dropdown-open .services-dropdown {
+        display: block;
+    }
+
+    #servicesNavItem .services-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #servicesNavItem .services-dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+/* SERVICES DROPDOWN — MOBILE FIX */
+@media (max-width: 768px) {
+    #navbar.active #servicesNavItem .services-dropdown {
+        display: none;
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin: 8px 0;
+        padding: 10px;
+        background: #fbfdff;
+        border: 1px solid #e5edf5;
+        border-radius: 10px;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    #navbar.active #servicesNavItem.dropdown-open .services-dropdown {
+        display: block;
+    }
+
+    #navbar.active #servicesNavItem .services-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #navbar.active #servicesNavItem #servicesDropdownToggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+    }
+}
