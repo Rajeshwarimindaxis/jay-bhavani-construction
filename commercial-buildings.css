@@ -29,9 +29,6 @@ body {
     color: var(--comm-text);
     background: var(--comm-white);
 }
-
-/* ================= HERO SECTION ================= */
-
 .comm-hero {
     position: relative;
     min-height: 620px;
@@ -87,7 +84,7 @@ body {
     z-index: 2;
     width: 100%;
     max-width: 860px;
-    padding: 100px 0 110px;
+    padding: 80px 0 110px;
     color: #fff;
 }
 

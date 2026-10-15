@@ -214,7 +214,7 @@
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
                         </a>
 
-                        <a href="peb-structures.html" class="services-dropdown-link">
+                        <a href="pebstructure.html" class="services-dropdown-link">
                             <span class="services-dropdown-icon">
                                 <i class="fa-solid fa-warehouse"></i>
                             </span>
@@ -703,7 +703,7 @@
                     <h4>OUR SERVICES</h4>
 
                     <a href="industrial-sheds.html">Industrial Sheds</a>
-                    <a href="peb-structures.html">PEB Structures</a>
+                    <a href="pebstructure.html">PEB Structures</a>
                     <a href="commercial-buildings.html">Commercial Buildings</a>
                     <a href="rcc-road-construction.html">RCC Road Construction</a>
                     <a href="rcc-flooring.html">RCC Flooring</a>
@@ -777,10 +777,21 @@
     >
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+</body>
+    <!-- BACK TO TOP -->
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- SHARED NAVIGATION JAVASCRIPT -->
     <script src="hf.js" defer></script>
 
+    <!-- CONTACT PAGE SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -795,18 +806,16 @@
             const backToTop = document.getElementById("backToTop");
 
             if (backToTop) {
-                const updateButton = () => {
+                function updateButton() {
                     backToTop.classList.toggle(
                         "show",
                         window.scrollY > 500
                     );
-                };
+                }
 
-                window.addEventListener(
-                    "scroll",
-                    updateButton,
-                    { passive: true }
-                );
+                window.addEventListener("scroll", updateButton, {
+                    passive: true
+                });
 
                 updateButton();
 
@@ -817,7 +826,6 @@
                     });
                 });
             }
-
         });
     </script>
 

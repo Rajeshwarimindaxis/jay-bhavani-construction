@@ -1710,3 +1710,100 @@
     height: 44px;
     margin: 0;
 }
+```css
+/* =========================================
+   CONTACT PAGE NAVBAR VISIBILITY FIX
+========================================= */
+
+/* Keep header and navigation visible */
+body.contact-page .header {
+    display: block !important;
+    width: 100%;
+    position: relative;
+    z-index: 9999;
+    overflow: visible !important;
+}
+
+body.contact-page .header .nav-container {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: visible !important;
+}
+
+body.contact-page .header .logo {
+    display: flex !important;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Desktop navigation */
+@media (min-width: 769px) {
+    body.contact-page #navbar {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: static;
+        flex: 1;
+        min-width: 0;
+    }
+
+    body.contact-page #menuToggle {
+        display: none !important;
+    }
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    body.contact-page .header .nav-container {
+        height: 76px;
+        padding: 0 16px;
+        gap: 10px;
+    }
+
+    body.contact-page #menuToggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10002;
+        cursor: pointer;
+    }
+
+    body.contact-page #navbar {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: stretch;
+        background: #fff;
+        padding: 12px 18px;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        z-index: 10001;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    body.contact-page #navbar.active {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body.contact-page .header .nav-container {
+        height: 64px;
+        padding: 0 12px;
+    }
+}
+```
