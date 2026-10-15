@@ -1680,7 +1680,7 @@ a.contact-detail:hover strong {
     #navbar.active #servicesDropdown .services-dropdown-link strong {
         display: block;
         color: #102b38;
-        font-size: 13px;
+        font-size: 12px;
     }
 
     #navbar.active #servicesDropdown .services-dropdown-link small {
@@ -2008,7 +2008,7 @@ a.contact-detail:hover strong {
     #navbar .brochure-nav-trigger,
     #navbar .nav-quote {
         font-family: 'Inter', sans-serif;
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 700;
     }
 
