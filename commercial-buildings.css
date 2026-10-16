@@ -129,38 +129,6 @@ body {
     margin-bottom: 30px;
 }
 
-.comm-hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.comm-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    min-height: 50px;
-    padding: 0 1px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.comm-button-primary {
-    background: #f28c28;
-    color: #fff;
-    box-shadow: 0 8px 24px rgba(242, 140, 40, 0.3);
-}
-
-.comm-button-primary:hover {
-    background: #d96f0b;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(242, 140, 40, 0.4);
-}
-
 .comm-button-outline {
     background: rgba(255, 255, 255, 0.08);
     color: #fff;
