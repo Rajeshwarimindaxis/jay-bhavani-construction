@@ -19,39 +19,231 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- WEBSITE CSS -->
-
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="hf.css">
+
+    <!-- CERTIFICATIONS SECTION STYLES -->
+    <style>
+        .certifications-section {
+            padding: 88px 0;
+            background: #f4f7fb;
+            color: #172838;
+        }
+
+        .certifications-section .certifications-heading {
+            max-width: 760px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .certifications-section .certifications-heading .section-tag {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .certifications-section .certifications-heading h2 {
+            margin: 0 0 14px;
+            color: #06365f;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(1.8rem, 3.4vw, 2.65rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .certifications-section .certifications-heading h2 span {
+            color: #0759b5;
+        }
+
+        .certifications-section .certifications-heading p {
+            margin: 0;
+            color: #5b6877;
+            line-height: 1.75;
+        }
+
+        /* Two certificate cards side by side */
+        .certifications-section .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        .certifications-section .certificate-card {
+            min-width: 0;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #dfe7f0;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(6, 54, 95, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certifications-section .certificate-card-header {
+            padding: 22px 24px 16px;
+        }
+
+        .certifications-section .certificate-card-header h3 {
+            margin: 0 0 8px;
+            color: #06365f;
+            font-family: "Manrope", sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            line-height: 1.45;
+        }
+
+        .certifications-section .certificate-card-header p {
+            margin: 0;
+            color: #647386;
+            font-size: 0.94rem;
+            line-height: 1.6;
+        }
+
+        .certifications-section .certificate-preview {
+            display: block;
+            width: calc(100% - 32px);
+            height: 390px;
+            margin: 0 16px;
+            border: 1px solid #e0e6ed;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .certifications-section .certificate-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 24px 24px;
+            margin-top: auto;
+        }
+
+        .certifications-section .certificate-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 44px;
+            padding: 11px 17px;
+            border: 1px solid #0759b5;
+            border-radius: 7px;
+            background: #0759b5;
+            color: #fff;
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s ease,
+                        border-color 0.2s ease,
+                        transform 0.2s ease;
+        }
+
+        .certifications-section .certificate-link:hover,
+        .certifications-section .certificate-link:focus-visible {
+            background: #06458f;
+            border-color: #06458f;
+            transform: translateY(-1px);
+        }
+
+        .certifications-section .certificate-link.certificate-download {
+            background: #fff;
+            color: #0759b5;
+        }
+
+        .certifications-section .certificate-link.certificate-download:hover,
+        .certifications-section .certificate-link.certificate-download:focus-visible {
+            background: #edf5ff;
+        }
+
+        /* Keep both cards side by side on larger screens */
+        @media (max-width: 560px) {
+            .certifications-section {
+                padding: 64px 0;
+            }
+
+            .certifications-section .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certifications-section .certificate-preview {
+                height: 430px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .certifications-section .certificate-card-header {
+                padding: 20px 18px 14px;
+            }
+
+            .certifications-section .certificate-preview {
+                width: calc(100% - 24px);
+                height: 350px;
+                margin: 0 12px;
+            }
+
+            .certifications-section .certificate-actions {
+                padding: 18px;
+            }
+
+            .certifications-section .certificate-link {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- TOP CONTACT BAR -->
     <div class="top-contact-bar" aria-label="Contact information">
-    <div class="top-contact-track">
-        <div class="top-contact-group">
-            <a href="tel:+917499429991" class="top-contact-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 7499429991</a>
-            <span class="top-contact-separator">|</span>
-            <a href="mailto:info@jbinfras.com" class="top-contact-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@jbinfras.com</a>
-            <span class="top-contact-separator">|</span>
-            <a href="tel:+917499429991" class="top-contact-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 7499429991</a>
-            <span class="top-contact-separator">|</span>
-            <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> jaybhavaniconstruction64@gmail.com</a>
-            <span class="top-contact-separator">|</span>
-        </div>
-        <div class="top-contact-group" aria-hidden="true">
-            <a href="tel:+917499429991" class="top-contact-item" tabindex="-1"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 7499429991</a>
-            <span class="top-contact-separator">|</span>
-            <a href="mailto:info@jbinfras.com" class="top-contact-item" tabindex="-1"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@jbinfras.com</a>
-            <span class="top-contact-separator">|</span>
-            <a href="tel:+917499429991" class="top-contact-item" tabindex="-1"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 7499429991</a>
-            <span class="top-contact-separator">|</span>
-            <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item" tabindex="-1"><i class="fa-solid fa-envelope" aria-hidden="true"></i> jaybhavaniconstruction64@gmail.com</a>
-            <span class="top-contact-separator">|</span>
+        <div class="top-contact-track">
+            <div class="top-contact-group">
+                <a href="tel:+917499429991" class="top-contact-item">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i> +91 7499429991
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:info@jbinfras.com" class="top-contact-item">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i> info@jbinfras.com
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="tel:+917499429991" class="top-contact-item">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i> +91 7499429991
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    jaybhavaniconstruction64@gmail.com
+                </a>
+                <span class="top-contact-separator">|</span>
+            </div>
+
+            <div class="top-contact-group" aria-hidden="true">
+                <a href="tel:+917499429991" class="top-contact-item" tabindex="-1">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i> +91 7499429991
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:info@jbinfras.com" class="top-contact-item" tabindex="-1">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i> info@jbinfras.com
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="tel:+917499429991" class="top-contact-item" tabindex="-1">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i> +91 7499429991
+                </a>
+                <span class="top-contact-separator">|</span>
+
+                <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item" tabindex="-1">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    jaybhavaniconstruction64@gmail.com
+                </a>
+                <span class="top-contact-separator">|</span>
+            </div>
         </div>
     </div>
-</div>
 
+    <!-- HEADER -->
     <header class="header" id="header">
         <div class="container nav-container">
             <a href="index.html#home" class="logo">
@@ -63,60 +255,135 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link active" aria-current="page">About</a>
 
+                <!-- BROCHURE DROPDOWN -->
                 <div class="nav-item brochure-nav-item" id="brochureNavItem">
                     <div class="brochure-nav-header">
-                        <button type="button" class="brochure-nav-trigger" id="brochureNavTrigger" aria-haspopup="true" aria-expanded="false" aria-controls="brochureDropdown">Brochure</button>
-                        <button type="button" class="services-dropdown-toggle" id="brochureDropdownToggle" aria-label="Toggle Brochure menu" aria-expanded="false" aria-controls="brochureDropdown">
+                        <button type="button"
+                                class="brochure-nav-trigger"
+                                id="brochureNavTrigger"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                aria-controls="brochureDropdown">
+                            Brochure
+                        </button>
+
+                        <button type="button"
+                                class="services-dropdown-toggle"
+                                id="brochureDropdownToggle"
+                                aria-label="Toggle Brochure menu"
+                                aria-expanded="false"
+                                aria-controls="brochureDropdown">
                             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                         </button>
                     </div>
-                    <div class="services-dropdown brochure-dropdown" id="brochureDropdown" aria-hidden="true">
-                        <a href="Jay_Bhawani_Construction_Brochure.pdf" class="services-dropdown-link" target="_blank" rel="noopener noreferrer">
-                            <span class="services-dropdown-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
-                            <span><strong>View Brochure</strong><small>Open the brochure in a new tab</small></span>
+
+                    <div class="services-dropdown brochure-dropdown"
+                         id="brochureDropdown"
+                         aria-hidden="true">
+
+                        <a href="Jay_Bhawani_Construction_Brochure.pdf"
+                           class="services-dropdown-link"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <strong>View Brochure</strong>
+                                <small>Open the brochure in a new tab</small>
+                            </span>
                         </a>
-                        <a href="Jay_Bhawani_Construction_Brochure.pdf" class="services-dropdown-link" download="Jay_Bhawani_Construction_Brochure.pdf">
-                            <span class="services-dropdown-icon"><i class="fa-solid fa-download" aria-hidden="true"></i></span>
-                            <span><strong>Download Brochure</strong><small>Save a copy of our brochure</small></span>
+
+                        <a href="Jay_Bhawani_Construction_Brochure.pdf"
+                           class="services-dropdown-link"
+                           download="Jay_Bhawani_Construction_Brochure.pdf">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <strong>Download Brochure</strong>
+                                <small>Save a copy of our brochure</small>
+                            </span>
                         </a>
                     </div>
                 </div>
 
+                <!-- SERVICES DROPDOWN -->
                 <div class="nav-item services-nav-item" id="servicesNavItem">
                     <div class="services-nav-header">
                         <a href="services.html" class="nav-link services-nav-link">Services</a>
-                        <button type="button" class="services-dropdown-toggle" id="servicesDropdownToggle" aria-label="Toggle Services menu" aria-expanded="false" aria-controls="servicesDropdown">
+
+                        <button type="button"
+                                class="services-dropdown-toggle"
+                                id="servicesDropdownToggle"
+                                aria-label="Toggle Services menu"
+                                aria-expanded="false"
+                                aria-controls="servicesDropdown">
                             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                         </button>
                     </div>
-                    <div class="services-dropdown" id="servicesDropdown" aria-hidden="true">
+
+                    <div class="services-dropdown"
+                         id="servicesDropdown"
+                         aria-hidden="true">
+
                         <div class="services-dropdown-heading">
                             <span>OUR SERVICES</span>
                             <p>Explore our construction solutions</p>
                         </div>
+
                         <a href="industrial-sheds.html" class="services-dropdown-link">
-                            <span class="services-dropdown-icon"><i class="fa-solid fa-industry" aria-hidden="true"></i></span>
-                            <span><strong>Industrial Sheds</strong><small>Industrial construction solutions</small></span>
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-industry" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <strong>Industrial Sheds</strong>
+                                <small>Industrial construction solutions</small>
+                            </span>
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow" aria-hidden="true"></i>
                         </a>
+
                         <a href="pebstructure.html" class="services-dropdown-link">
-                            <span class="services-dropdown-icon"><i class="fa-solid fa-warehouse" aria-hidden="true"></i></span>
-                            <span><strong>PEB Structures</strong><small>Pre-engineered building structures</small></span>
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-warehouse" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <strong>PEB Structures</strong>
+                                <small>Pre-engineered building structures</small>
+                            </span>
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow" aria-hidden="true"></i>
                         </a>
+
                         <a href="commercial-buildings.html" class="services-dropdown-link">
-                            <span class="services-dropdown-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
-                            <span><strong>Commercial Buildings</strong><small>Commercial construction projects</small></span>
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-building" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <strong>Commercial Buildings</strong>
+                                <small>Commercial construction solutions</small>
+                            </span>
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow" aria-hidden="true"></i>
                         </a>
+
                         <a href="rcc-road-construction.html" class="services-dropdown-link">
-                            <span class="services-dropdown-icon"><i class="fa-solid fa-road" aria-hidden="true"></i></span>
-                            <span><strong>RCC Road Construction</strong><small>Durable RCC road solutions</small></span>
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-road" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <strong>RCC Road Construction</strong>
+                                <small>Durable RCC road solutions</small>
+                            </span>
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow" aria-hidden="true"></i>
                         </a>
+
                         <a href="rcc-flooring.html" class="services-dropdown-link">
-                            <span class="services-dropdown-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
-                            <span><strong>RCC Flooring</strong><small>Strong and durable flooring</small></span>
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <strong>RCC Flooring</strong>
+                                <small>Strong and durable flooring</small>
+                            </span>
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -127,7 +394,12 @@
                 <a href="contact.html" class="nav-quote">Get a Quote</a>
             </nav>
 
-            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open Menu" aria-expanded="false" aria-controls="navbar">
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open Menu"
+                    aria-expanded="false"
+                    aria-controls="navbar">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -140,7 +412,6 @@
 
         <div class="about-hero-container">
             <div class="about-hero-content">
-
                 <div class="about-hero-tag">ABOUT JAY BHAVANI CONSTRUCTION</div>
 
                 <h1>
@@ -153,19 +424,6 @@
                     commercial and infrastructure projects, with a strong focus on precision, reliability
                     and timely project execution.
                 </p>
-
-                <div class="about-hero-buttons">
-                    <a href="#company" class="btn btn-primary">
-                        Discover Our Story
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-
-                    <a href="contact.html" class="btn btn-outline">
-                        Talk To Us
-                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                    </a>
-                </div>
-
             </div>
         </div>
     </section>
@@ -208,7 +466,6 @@
                         precision, integrity, and a vision for the future.
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -216,7 +473,6 @@
     <!-- CAPABILITIES -->
     <section class="capabilities-section">
         <div class="container">
-
             <div class="section-heading">
                 <span class="section-tag">OUR CAPABILITIES</span>
 
@@ -234,7 +490,6 @@
             </div>
 
             <div class="capabilities-grid">
-
                 <div class="capability-card">
                     <div class="capability-card-icon">▦</div>
                     <h3>Industrial Sheds &amp; Warehouses</h3>
@@ -294,7 +549,6 @@
                         and construction goals.
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -302,7 +556,6 @@
     <!-- MISSION & VISION -->
     <section class="mission-vision-section">
         <div class="container">
-
             <div class="mission-vision-heading">
                 <span class="section-tag">OUR PURPOSE</span>
                 <h2>Mission &amp; Vision</h2>
@@ -315,7 +568,6 @@
             </div>
 
             <div class="mission-vision-grid">
-
                 <div class="mission-card">
                     <div class="mission-card-icon">◆</div>
                     <h3>Our Mission</h3>
@@ -337,7 +589,6 @@
                         value for our clients.
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -349,7 +600,6 @@
 
         <div class="container">
             <div class="why-modern-grid">
-
                 <div class="why-modern-content">
                     <span class="section-tag why-tag">WHAT SETS US APART</span>
 
@@ -381,7 +631,6 @@
                 </div>
 
                 <div class="why-modern-list">
-
                     <div class="why-modern-item">
                         <div class="why-modern-number"></div>
                         <div class="why-modern-line"></div>
@@ -461,7 +710,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -470,7 +718,6 @@
     <!-- OUR VALUES -->
     <section class="values-section">
         <div class="container">
-
             <div class="section-heading centered">
                 <span class="section-tag">OUR VALUES</span>
 
@@ -486,7 +733,6 @@
             </div>
 
             <div class="values-grid">
-
                 <div class="value-card">
                     <h3>Integrity</h3>
                     <p>
@@ -522,6 +768,107 @@
                         dependable solutions.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS & REGISTRATIONS -->
+    <section class="certifications-section"
+             id="certifications"
+             aria-labelledby="certifications-title">
+
+        <div class="container">
+            <div class="certifications-heading">
+                <span class="section-tag">OUR CREDENTIALS</span>
+
+                <h2 id="certifications-title">
+                    Certifications &amp; <span>Registrations</span>
+                </h2>
+
+                <p>
+                    Our certificates reflect our commitment to quality management and our registration
+                    with the Maharashtra Public Works Department.
+                </p>
+            </div>
+
+            <!-- BOTH CERTIFICATES DISPLAY SIDE BY SIDE -->
+            <div class="certifications-grid">
+
+                <!-- ISO CERTIFICATE -->
+                <article class="certificate-card">
+                    <div class="certificate-card-header">
+                        <h3>ISO 9001:2015 — Quality Management System</h3>
+
+                        <p>
+                            Quality management certification for construction of industrial sheds,
+                            commercial buildings, housing high-rise towers and roads.
+                        </p>
+                    </div>
+
+                    <iframe
+                        class="certificate-preview"
+                        src="iso-9001-2015.pdf#view=FitH"
+                        title="Preview of Jay Bhavani Construction ISO 9001:2015 certificate"
+                        loading="lazy">
+                        Your browser cannot display this PDF.
+                        Use the View Certificate link below.
+                    </iframe>
+
+                    <div class="certificate-actions">
+                        <a class="certificate-link"
+                           href="iso-9001-2015.pdf"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                            View Certificate
+                        </a>
+
+                        <a class="certificate-link certificate-download"
+                           href="iso-9001-2015.pdf"
+                           download="iso-9001-2015.pdf">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                            Download PDF
+                        </a>
+                    </div>
+                </article>
+
+                <!-- MAHARASHTRA PWD CERTIFICATE -->
+                <article class="certificate-card">
+                    <div class="certificate-card-header">
+                        <h3>Maharashtra PWD Contractor’s Registration Certificate</h3>
+
+                        <p>
+                            Government of Maharashtra, Public Works Department — Class V registration,
+                            valid from 27 May 2025 to 26 May 2028.
+                        </p>
+                    </div>
+
+                    <iframe
+                        class="certificate-preview"
+                        src="Govind Jaybhaye - PWD Certificate.pdf#view=FitH"
+                        title="Preview of Maharashtra Public Works Department contractor registration certificate"
+                        loading="lazy">
+                        Your browser cannot display this PDF.
+                        Use the View Certificate link below.
+                    </iframe>
+
+                    <div class="certificate-actions">
+                        <a class="certificate-link"
+                           href="Govind Jaybhaye - PWD Certificate.pdf"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                            View Certificate
+                        </a>
+
+                        <a class="certificate-link certificate-download"
+                           href="Govind Jaybhaye - PWD Certificate.pdf"
+                           download="Govind Jaybhaye - PWD Certificate.pdf">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                            Download PDF
+                        </a>
+                    </div>
+                </article>
 
             </div>
         </div>
@@ -533,7 +880,6 @@
 
         <div class="container">
             <div class="about-cta-content">
-
                 <h2>
                     Let's Build Something
                     <span>Strong Together</span>
@@ -550,7 +896,6 @@
                     Get In Touch
                     <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </a>
-
             </div>
         </div>
     </section>
@@ -559,20 +904,38 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
+
                 <div class="footer-about">
                     <a href="index.html#home" class="footer-logo">
-                        <img src="./logoo.png" alt="Jay Bhavani Construction Logo" class="footer-site-logo">
+                        <img src="./logoo.png"
+                             alt="Jay Bhavani Construction Logo"
+                             class="footer-site-logo">
+
                         <span class="footer-logo-name">Jay Bhavani Construction</span>
                     </a>
-                    <p>Building strong foundations and delivering dependable construction solutions for industrial, commercial and infrastructure projects.</p>
+
+                    <p>
+                        Building strong foundations and delivering dependable construction solutions
+                        for industrial, commercial and infrastructure projects.
+                    </p>
                 </div>
 
                 <div class="footer-column">
                     <h4>QUICK LINKS</h4>
                     <a href="index.html#home">Home</a>
                     <a href="about.html">About</a>
-                    <a href="Jay_Bhawani_Construction_Brochure.pdf" target="_blank" rel="noopener noreferrer">View Brochure</a>
-                    <a href="Jay_Bhawani_Construction_Brochure.pdf" download="Jay_Bhawani_Construction_Brochure.pdf">Download Brochure</a>
+
+                    <a href="Jay_Bhawani_Construction_Brochure.pdf"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Brochure
+                    </a>
+
+                    <a href="Jay_Bhawani_Construction_Brochure.pdf"
+                       download="Jay_Bhawani_Construction_Brochure.pdf">
+                        Download Brochure
+                    </a>
+
                     <a href="services.html">Services</a>
                     <a href="gallery.html">Gallery</a>
                     <a href="contact.html">Contact</a>
@@ -592,14 +955,26 @@
                     <h4>CONTACT</h4>
                     <a href="tel:+917499429991">+91 7499429991</a>
                     <a href="mailto:info@jbinfras.com">info@jbinfras.com</a>
-                    <a href="mailto:jaybhavaniconstruction64@gmail.com">jaybhavaniconstruction64@gmail.com</a>
-                    <span>Office No C715 &amp; 716, Gera Imperium Gateway, Nashik Phata-Metro Station, Kasarwadi, Pune - 411034</span>
+                    <a href="mailto:jaybhavaniconstruction64@gmail.com">
+                        jaybhavaniconstruction64@gmail.com
+                    </a>
+
+                    <span>
+                        Office No C715 &amp; 716, Gera Imperium Gateway,
+                        Nashik Phata-Metro Station, Kasarwadi, Pune - 411034
+                    </span>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; <span id="currentYear"></span> Jay Bhavani Construction. All Rights Reserved.</p>
-                <p class="footer-developed">Developed by MindAxis Innovation Pvt. Ltd.</p>
+                <p class="footer-copyright">
+                    &copy; <span id="currentYear"></span>
+                    Jay Bhavani Construction. All Rights Reserved.
+                </p>
+
+                <p class="footer-developed">
+                    Developed by MindAxis Innovation Pvt. Ltd.
+                </p>
             </div>
         </div>
     </footer>
@@ -611,11 +986,12 @@
            target="_blank"
            rel="noopener noreferrer"
            aria-label="WhatsApp">
-
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </a>
 
-        <a href="tel:+917499429991" class="float-btn phone" aria-label="Call">
+        <a href="tel:+917499429991"
+           class="float-btn phone"
+           aria-label="Call">
             <i class="fa-solid fa-phone" aria-hidden="true"></i>
         </a>
     </div>
@@ -640,7 +1016,10 @@
                     const isOpen = navbar.classList.toggle("active");
 
                     menuToggle.setAttribute("aria-expanded", String(isOpen));
-                    menuToggle.setAttribute("aria-label", isOpen ? "Close Menu" : "Open Menu");
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        isOpen ? "Close Menu" : "Open Menu"
+                    );
 
                     const icon = menuToggle.querySelector("i");
 
@@ -652,10 +1031,6 @@
 
                 navbar.querySelectorAll("a").forEach(function (link) {
                     link.addEventListener("click", function () {
-                        /*
-                         * Keep the mobile navigation open when a Services
-                         * dropdown item is being toggled.
-                         */
                         if (link.classList.contains("services-nav-link")) {
                             return;
                         }
@@ -665,6 +1040,7 @@
                         menuToggle.setAttribute("aria-label", "Open Menu");
 
                         const icon = menuToggle.querySelector("i");
+
                         if (icon) {
                             icon.classList.remove("fa-xmark");
                             icon.classList.add("fa-bars");
@@ -672,82 +1048,72 @@
                     });
                 });
             }
-/* =========================================
-   UPDATED SERVICES DROPDOWN JAVASCRIPT
-========================================= */
 
-const servicesNavItem = document.getElementById("servicesNavItem");
-const servicesDropdownToggle = document.getElementById("servicesDropdownToggle");
-const servicesDropdown = document.getElementById("servicesDropdown");
+            /* SERVICES DROPDOWN */
+            const servicesNavItem = document.getElementById("servicesNavItem");
+            const servicesDropdownToggle = document.getElementById("servicesDropdownToggle");
+            const servicesDropdown = document.getElementById("servicesDropdown");
 
-function closeServicesDropdown() {
-    if (!servicesNavItem || !servicesDropdownToggle || !servicesDropdown) {
-        return;
-    }
-
-    servicesNavItem.classList.remove("dropdown-open");
-
-    servicesDropdownToggle.setAttribute("aria-expanded", "false");
-    servicesDropdown.setAttribute("aria-hidden", "true");
-}
-
-if (servicesNavItem && servicesDropdownToggle && servicesDropdown) {
-
-    /* Open and close using the arrow button */
-    servicesDropdownToggle.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        const isOpen = servicesNavItem.classList.toggle("dropdown-open");
-
-        servicesDropdownToggle.setAttribute("aria-expanded", String(isOpen));
-        servicesDropdown.setAttribute("aria-hidden", String(!isOpen));
-    });
-
-    /* Close when clicking outside */
-    document.addEventListener("click", function (event) {
-        if (!servicesNavItem.contains(event.target)) {
-            closeServicesDropdown();
-        }
-    });
-
-    /* Close when pressing Escape */
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            closeServicesDropdown();
-            servicesDropdownToggle.focus();
-        }
-    });
-
-    /* Close the dropdown after selecting a service */
-    servicesDropdown.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            closeServicesDropdown();
-
-            /* Also close the mobile navigation */
-            if (navbar && menuToggle) {
-                navbar.classList.remove("active");
-
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "Open Menu");
-
-                const icon = menuToggle.querySelector("i");
-
-                if (icon) {
-                    icon.classList.remove("fa-xmark");
-                    icon.classList.add("fa-bars");
+            function closeServicesDropdown() {
+                if (!servicesNavItem || !servicesDropdownToggle || !servicesDropdown) {
+                    return;
                 }
-            }
-        });
-    });
 
-    /* Reset dropdown when switching to desktop */
-    window.addEventListener("resize", function () {
-        if (window.matchMedia("(min-width: 1001px)").matches) {
-            closeServicesDropdown();
-        }
-    });
-}
+                servicesNavItem.classList.remove("dropdown-open");
+                servicesDropdownToggle.setAttribute("aria-expanded", "false");
+                servicesDropdown.setAttribute("aria-hidden", "true");
+            }
+
+            if (servicesNavItem && servicesDropdownToggle && servicesDropdown) {
+                servicesDropdownToggle.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const isOpen = servicesNavItem.classList.toggle("dropdown-open");
+
+                    servicesDropdownToggle.setAttribute("aria-expanded", String(isOpen));
+                    servicesDropdown.setAttribute("aria-hidden", String(!isOpen));
+                });
+
+                document.addEventListener("click", function (event) {
+                    if (!servicesNavItem.contains(event.target)) {
+                        closeServicesDropdown();
+                    }
+                });
+
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape") {
+                        closeServicesDropdown();
+                        servicesDropdownToggle.focus();
+                    }
+                });
+
+                servicesDropdown.querySelectorAll("a").forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        closeServicesDropdown();
+
+                        if (navbar && menuToggle) {
+                            navbar.classList.remove("active");
+                            menuToggle.setAttribute("aria-expanded", "false");
+                            menuToggle.setAttribute("aria-label", "Open Menu");
+
+                            const icon = menuToggle.querySelector("i");
+
+                            if (icon) {
+                                icon.classList.remove("fa-xmark");
+                                icon.classList.add("fa-bars");
+                            }
+                        }
+                    });
+                });
+
+                window.addEventListener("resize", function () {
+                    if (window.matchMedia("(min-width: 1001px)").matches) {
+                        closeServicesDropdown();
+                    }
+                });
+            }
+
             /* HEADER SHADOW */
             function updateHeader() {
                 if (!header) return;
@@ -767,7 +1133,10 @@ if (servicesNavItem && servicesDropdownToggle && servicesDropdown) {
                 updateBackToTop();
 
                 backToTop.addEventListener("click", function () {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
                 });
             }
 
@@ -787,6 +1156,7 @@ if (servicesNavItem && servicesDropdownToggle && servicesDropdown) {
 
                     if (target) {
                         event.preventDefault();
+
                         target.scrollIntoView({
                             behavior: "smooth",
                             block: "start"
@@ -811,7 +1181,9 @@ if (servicesNavItem && servicesDropdownToggle && servicesDropdown) {
                             observer.unobserve(valuesSection);
                         }
                     });
-                }, { threshold: 0.15 });
+                }, {
+                    threshold: 0.15
+                });
 
                 observer.observe(valuesSection);
             } else {

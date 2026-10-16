@@ -277,15 +277,6 @@ ul {
     line-height: 1.8;
     margin-bottom: 35px;
 }
-
-.hero-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 38px;
-}
-
 .hero-features {
     display: flex;
     gap: 32px;

@@ -2160,12 +2160,6 @@
         width: calc(100% - 24px);
     }
 
-
-    /* =====================================================
-       HOME HERO
-       SHOW THE TEXT ABOVE BUILDING WITH STRENGTH
-    ===================================================== */
-
     .hero {
         min-height: 570px;
         padding-top: 125px !important;
@@ -2204,18 +2198,18 @@
     }
 
     .hero h1 {
-        font-size: 30px;
-        line-height: 1.08;
-        margin-bottom: 17px;
+        font-size: 34px;
+        line-height: 1.09;
+        margin-bottom: 16px;
     }
 
     .hero-description {
-        font-size: 11px;
-        line-height: 1.6;
+        font-size: 12px;
+        line-height: 1.7;
     }
 
     .hero-feature {
-        font-size: 9px;
+        font-size: 10px;
     }
 
 
@@ -2239,7 +2233,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 4px;
+        gap: 5px;
         width: 100%;
         height: 100%;
         font-size: 8px !important;
@@ -3963,5 +3957,235 @@
         margin-top: 8px !important;
         padding:12px 14px;
         font-size: 13px !important;
+    }
+}
+/* CERTIFICATIONS SECTION */
+.certifications-section {
+    padding: 60px 0;
+    background: #f4f7fb;
+}
+
+.certifications-section .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+}
+
+.certifications-section .certificate-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #dfe7f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(6, 54, 95, 0.08);
+}
+
+.certifications-section .certificate-card-header {
+    padding: 16px 14px 12px;
+}
+
+.certifications-section .certificate-card-header h3 {
+    font-size: 16px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.certifications-section .certificate-card-header p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.certifications-section .certificate-preview {
+    display: block;
+    width: calc(100% - 20px);
+    height: 260px;
+    margin: 0 10px;
+    border: 1px solid #e0e6ed;
+    border-radius: 6px;
+    background: #f8fafc;
+}
+
+.certifications-section .certificate-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 10px;
+    margin-top: auto;
+}
+
+.certifications-section .certificate-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 6px;
+    border-radius: 6px;
+    background: #0759b5;
+    border: 1px solid #0759b5;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.certifications-section .certificate-link.certificate-download {
+    background: #fff;
+    color: #0759b5;
+}
+
+/* MOBILE: KEEP BOTH CERTIFICATES IN TWO COLUMNS */
+@media (max-width: 560px) {
+    .certifications-section {
+        padding: 40px 0;
+    }
+
+    .certifications-section .certifications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .certifications-section .certificate-card-header {
+        padding: 12px 9px 10px;
+    }
+
+    .certifications-section .certificate-card-header h3 {
+        font-size: 13px;
+        line-height: 1.;
+    }
+
+    .certifications-section .certificate-card-header p {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .certifications-section .certificate-preview {
+        width: calc(100% - 12px);
+        height: 190px;
+        margin: 0 6px;
+    }
+
+    .certifications-section .certificate-actions {
+        padding: 10px 6px;
+        gap: 7px;
+    }
+
+    .certifications-section .certificate-link {
+        font-size: 10px;
+        padding: 9px 3px;
+        gap: 4px;
+    }
+
+    .certifications-section .certificate-link i {
+        font-size: 10px;
+    }
+}
+
+/* VERY SMALL MOBILE SCREENS: STILL TWO COLUMNS */
+@media (max-width: 360px) {
+    .certifications-section .certifications-grid {
+        gap: 7px;
+    }
+
+    .certifications-section .certificate-card-header {
+        padding: 10px 7px;
+    }
+
+    .certifications-section .certificate-card-header h3 {
+        font-size: 12px;
+    }
+
+    .certifications-section .certificate-preview {
+        height: 155px;
+    }
+
+    .certifications-section .certificate-link {
+        font-size: 9px;
+        padding: 8px 2px;
+    }
+}
+/* MOBILE: KEEP BOTH CERTIFICATES IN TWO COLUMNS */
+@media (max-width: 560px) {
+    .certifications-section {
+        padding: 40px 0;
+    }
+
+    .certifications-section .certifications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .certifications-section .certificate-card-header {
+        padding: 12px 9px 10px;
+    }
+
+    .certifications-section .certificate-card-header h3 {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
+    .certifications-section .certificate-card-header p {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .certifications-section .certificate-preview {
+        width: calc(100% - 12px);
+        height: 190px;
+        margin: 0 6px;
+    }
+
+    .certifications-section .certificate-actions {
+        padding: 5px 6px;
+        gap: 5px;
+    }
+
+    .certifications-section .certificate-link {
+        font-size: 10px;
+        padding: 4px 3px;
+        gap: 4px;
+        line-height: 1.2;
+        min-height: 0;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .certifications-section .certificate-link i {
+        font-size: 10px;
+    }
+}
+
+/* VERY SMALL MOBILE SCREENS: STILL TWO COLUMNS */
+@media (max-width: 360px) {
+    .certifications-section .certifications-grid {
+        gap: 7px;
+    }
+
+    .certifications-section .certificate-card-header {
+        padding: 10px 7px;
+    }
+
+    .certifications-section .certificate-card-header h3 {
+        font-size: 12px;
+    }
+
+    .certifications-section .certificate-preview {
+        height: 155px;
+    }
+
+    .certifications-section .certificate-actions {
+        padding: 4px;
+    }
+
+    .certifications-section .certificate-link {
+        font-size: 9px;
+        padding: 3px 2px;
+        line-height: 1.2;
     }
 }

@@ -1,30 +1,52 @@
 /* ==========================================================================
    1. ROOT VARIABLES
    ========================================================================== */
+
+/* =========================================
+   JAY BHAVANI CONSTRUCTION
+   NEW LOGO-MATCHED BRAND COLORS
+========================================= */
+
 :root {
-    --logo-blue: #0759B5;
-    --logo-blue-dark: #06458F;
-    --logo-blue-light: #1976D2;
-    --dark: #06365F;
-    --dark-2: #084B7A;
-    --dark-3: #052B4A;
-    --text: #304F68;
-    --muted: #667D90;
-    --primary: #F28C28;
-    --primary-dark: #D96F0B;
-    --light: #F4F8FC;
-    --light-2: #EAF2F9;
+    /* Main logo blues */
+    --logo-blue: #173963;
+    --logo-blue-dark: #102D50;
+    --logo-blue-light: #244A78;
+
+    /* Dark backgrounds */
+    --dark: #102D50;
+    --dark-2: #173963;
+    --dark-3: #0B2038;
+
+    /* Text */
+    --text: #30445B;
+    --muted: #68798C;
+
+    /* Logo orange */
+    --primary: #F07818;
+    --primary-dark: #D9650A;
+
+    /* Logo green */
+    --logo-green: #128342;
+    --logo-green-dark: #0D6934;
+
+    /* Light backgrounds */
+    --light: #F5F8FC;
+    --light-2: #EAF0F7;
     --white: #FFFFFF;
-    --border: #DCE6EF;
+    --border: #D9E2EC;
 
-    --shadow-sm: 0 5px 18px rgba(6, 54, 95, 0.07);
-    --shadow-md: 0 12px 30px rgba(6, 54, 95, 0.10);
-    --shadow-lg: 0 20px 45px rgba(6, 54, 95, 0.14);
-    --shadow-xl: 0 25px 60px rgba(6, 54, 95, 0.18);
+    /* Shadows */
+    --shadow-sm: 0 5px 18px rgba(16, 45, 80, 0.07);
+    --shadow-md: 0 12px 30px rgba(16, 45, 80, 0.10);
+    --shadow-lg: 0 20px 45px rgba(16, 45, 80, 0.14);
+    --shadow-xl: 0 25px 60px rgba(16, 45, 80, 0.18);
 
+    /* Layout */
     --container: 1180px;
     --radius: 12px;
 }
+
 
 /* ==========================================================================
    2. ACCESSIBILITY SKIP LINK & FOCUS STYLES
@@ -226,9 +248,9 @@
 }
 
 .site-logo {
-    width: 110px;
-    max-width: 110px;
-    height: 60px;
+    width: 80px;
+    max-width: 145px;
+    height: 62px;
     object-fit: contain;
     object-position: left center;
     display: block;
@@ -664,7 +686,7 @@
     height: 60px;
     object-fit: contain;
     background: var(--white);
-    padding: 7px;
+    padding: 0px;
     border-radius: 5px;
 }
 
