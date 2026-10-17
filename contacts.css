@@ -1781,10 +1781,8 @@ a.contact-detail:hover strong {
         opacity: 1;
         visibility: visible;
         transform: none;
-        pointer-events: auto;
-    } */
-/* }
-```css
+/* } */
+
 /* =========================================
    CONTACT PAGE — BROCHURE DESKTOP LAYOUT
    Preserve existing shared button styling

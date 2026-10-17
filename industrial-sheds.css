@@ -1841,7 +1841,7 @@ body {
         transform: none !important;
     }
 }
-```css
+
 /* FORCE BROCHURE LABEL AND ARROW ON ONE LINE */
 
 @media (max-width: 1200px) {
@@ -1883,7 +1883,6 @@ body {
         margin: 0 !important;
     }
 }
-```
 
 /* =========================================
    MOBILE NAVBAR — COMPACT HEIGHT & PADDING

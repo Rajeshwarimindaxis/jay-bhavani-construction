@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -254,6 +253,17 @@
                             </span>
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
                         </a>
+
+                        <a href="plant-machinery.html" class="services-dropdown-link">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-gears"></i>
+                            </span>
+                            <span>
+                                <strong>Plant &amp; Machinery</strong>
+                                <small>Advanced fleet &amp; modern equipment</small>
+                            </span>
+                            <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -338,25 +348,6 @@
                     </p>
                 </div>
 
-                <!-- CATEGORY FILTERS -->
-                <div class="gallery-filters" aria-label="Filter gallery">
-                    <button type="button" class="gallery-filter active" data-filter="all">
-                        All Projects
-                    </button>
-                    <button type="button" class="gallery-filter" data-filter="industrial">
-                        Industrial Sheds
-                    </button>
-                    <button type="button" class="gallery-filter" data-filter="peb">
-                        PEB Structures
-                    </button>
-                    <button type="button" class="gallery-filter" data-filter="commercial">
-                        Commercial
-                    </button>
-                    <button type="button" class="gallery-filter" data-filter="infrastructure">
-                        RCC Infrastructure
-                    </button>
-                </div>
-
                 <!-- JavaScript adds all 30 project cards here -->
                 <div class="gallery-grid" id="galleryGrid"></div>
 
@@ -423,6 +414,7 @@
                     <a href="commercial-buildings.html">Commercial Buildings</a>
                     <a href="rcc-road-construction.html">RCC Road Construction</a>
                     <a href="rcc-flooring.html">RCC Flooring</a>
+                    <a href="plant-machinery.html">Plant &amp; Machinery</a>
                 </div>
 
                 <div class="footer-column">
@@ -483,63 +475,55 @@
 
             const projectTypes = [
                 {
-                    category: "industrial",
-                    label: "INDUSTRIAL",
-                    title: "Industrial Construction",
-                    description: "Industrial construction planned for functional, durable spaces."
+                    label:01,
+                    title: "Pooja Packaging",
+                    description:"Pooja Packaging 01",
                 },
                 {
-                    category: "peb",
-                    label: "PEB STRUCTURE",
-                    title: "PEB Structure Project",
-                    description: "Pre-engineered building work focused on strength and efficiency."
+                    label:02,
+                    title: "Technip (kalid site",
+                    description:"Technip (kalid site) 02",
                 },
                 {
-                    category: "commercial",
-                    label: "COMMERCIAL",
-                    title: "Commercial Building",
-                    description: "Commercial construction designed for practical everyday use."
+                    label:03,
+                    title: "PEB Plant",
+                    description:"PEB Plant 03",
                 },
                 {
-                    category: "infrastructure",
-                    label: "INFRASTRUCTURE",
-                    title: "RCC Infrastructure",
-                    description: "Concrete roads and flooring designed for long-term performance."
+                    label:04,
+                    title: "Gaikwad site series",
+                    description:"Gaikwad site series 04",
                 },
                 {
-                    category: "industrial",
-                    label: "INDUSTRIAL",
-                    title: "Industrial Facility",
-                    description: "Industrial project work with a focus on quality and reliability."
+                    label: 05,
+                    title: "sakshi site",
+                    description: "sakshi site 05"
                 },
                 {
-                    category: "peb",
-                    label: "PEB PROJECT",
-                    title: "Pre-Engineered Building",
-                    description: "Modern structural solutions for industrial requirements."
+                    label: "06",
+                    title: "Jmdp  site",
+                    description: "Jmdp  site 06"
                 },
                 {
-                    category: "commercial",
-                    label: "COMMERCIAL",
-                    title: "Commercial Project Work",
-                    description: "Construction work combining utility and a clean finish."
+                    label: "07",
+                    title: "Maharashtra ent",
+                    description: "Maharashtra ent 07"
                 },
-                {
-                    category: "infrastructure",
-                    label: "RCC WORK",
-                    title: "RCC Road & Flooring",
-                    description: "Durable RCC surfaces for industrial and infrastructure use."
-                }
+                 {
+                    label: "08",
+                    title: " Murhe site",
+                    description: "Murhe site 08"
+                },
             ];
 
-            for (let i = 1; i <= 30; i++) {
+            for (let i = 1; i <= 24; i++) {
                 const number = String(i).padStart(2, "0");
                 const imagePath = `images/project-${number}.jpg`;
                 const type = projectTypes[(i - 1) % projectTypes.length];
 
                 const card = document.createElement("article");
                 card.className = "gallery-item";
-                card.dataset.category = type.category;
+                card.dataset.category = type.label;
 
                 card.innerHTML = `
                     <a href="${imagePath}"
