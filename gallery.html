@@ -1,22 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="description" content="Explore the construction projects and work gallery of Jay Bhavani Construction.">
     <meta name="author" content="Jay Bhavani Construction">
+
     <title>Gallery | Jay Bhavani Construction</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="hf.css">
     <link rel="stylesheet" href="gallery.css">
 
     <style>
-        /* Separate navy-blue background for the gallery hero */
+        /* =========================
+           HERO BACKGROUND
+        ========================= */
+
         .hero.gallery-hero {
             background:
                 linear-gradient(
@@ -28,32 +36,189 @@
                 url("images/gallery-hero-bg.png") center / cover no-repeat;
         }
 
+        /* =========================
+           GALLERY LAYOUT
+        ========================= */
+
         .gallery-item[hidden] {
             display: none !important;
         }
 
-        .gallery-image-link {
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 28px;
+        }
+
+        .gallery-item.before-after-project {
+            min-width: 0;
+            padding: 26px 24px 24px;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #dce5ee;
+            border-radius: 22px;
+            box-shadow: 0 16px 42px rgba(18, 42, 68, 0.10);
+        }
+
+        .before-after-images {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        .before-after-image {
+            min-width: 0;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #edf3f8;
+        }
+
+        .before-after-image .gallery-image-link {
             position: relative;
             display: block;
             width: 100%;
-            height: 260px;
+            height: clamp(190px, 24vw, 310px);
             overflow: hidden;
+            background: #e8eef4;
         }
 
-        .gallery-image-link img {
+        .before-after-image .gallery-image-link img {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.45s ease;
         }
 
-        .gallery-zoom {
+        .before-after-image:hover .gallery-image-link img {
+            transform: scale(1.045);
+        }
+
+        .before-after-image .gallery-zoom {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             display: grid;
             place-items: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: #ffffff;
+            background: rgba(20, 38, 60, 0.82);
+            text-decoration: none;
         }
 
+        .before-after-label {
+            display: grid;
+            place-items: center;
+            min-height: 56px;
+            padding: 10px;
+            color: #0759a8;
+            background: #dceafa;
+            font-size: 17px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .before-after-image.before .before-after-label {
+            color: #98500a;
+            background: #fff0dc;
+        }
+
+        .gallery-item.before-after-project .gallery-caption {
+            padding: 74px 0 0;
+        }
+
+        .gallery-item.before-after-project .gallery-caption > span {
+            display: block;
+            margin-bottom: 14px;
+            color: #0759b5;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.15px;
+        }
+
+        .gallery-item.before-after-project .gallery-caption h3 {
+            margin: 0 0 12px;
+            color: #102a43;
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+        .gallery-item.before-after-project .gallery-caption p {
+            margin: 0;
+            color: #61758a;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        /* =========================
+           TABLET RESPONSIVENESS
+        ========================= */
+
+        @media (max-width: 900px) {
+            .before-after-images {
+                gap: 16px;
+            }
+
+            .before-after-image .gallery-image-link {
+                height: 230px;
+            }
+
+            .gallery-item.before-after-project .gallery-caption {
+                padding-top: 42px;
+            }
+        }
+
+        /* =========================
+           MOBILE RESPONSIVENESS
+        ========================= */
+
         @media (max-width: 650px) {
-            .gallery-image-link {
-                height: 350px;
+            .gallery-item.before-after-project {
+                padding: 14px;
+                border-radius: 16px;
+            }
+
+            .before-after-images {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 18px;
+            }
+
+            .before-after-image .gallery-image-link {
+                height: 290px;
+            }
+
+            .before-after-label {
+                min-height: 48px;
+                font-size: 16px;
+            }
+
+            .gallery-item.before-after-project .gallery-caption {
+                padding-top: 28px;
+            }
+
+            .gallery-item.before-after-project .gallery-caption h3 {
+                font-size: 22px;
+            }
+
+            .gallery-item.before-after-project .gallery-caption p {
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width: 651px) and (max-width: 760px) {
+            .before-after-images {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .before-after-image:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .before-after-image:last-child .gallery-image-link {
+                height: 280px;
             }
         }
     </style>
@@ -62,59 +227,80 @@
 <body>
 
     <!-- TOP CONTACT BAR -->
+
     <div class="top-contact-bar" aria-label="Contact information">
         <div class="top-contact-track">
 
             <div class="top-contact-group">
                 <a href="tel:+917499429991" class="top-contact-item">
-                    <i class="fa-solid fa-phone"></i> +91 7499429991
+                    <i class="fa-solid fa-phone"></i>
+                    +91 7499429991
                 </a>
+
                 <span class="top-contact-separator">|</span>
 
                 <a href="mailto:info@jbinfras.com" class="top-contact-item">
-                    <i class="fa-solid fa-envelope"></i> info@jbinfras.com
+                    <i class="fa-solid fa-envelope"></i>
+                    info@jbinfras.com
                 </a>
+
                 <span class="top-contact-separator">|</span>
 
                 <a href="tel:+917499429991" class="top-contact-item">
-                    <i class="fa-solid fa-phone"></i> +91 7499429991
+                    <i class="fa-solid fa-phone"></i>
+                    +91 7499429991
                 </a>
+
                 <span class="top-contact-separator">|</span>
 
                 <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item">
-                    <i class="fa-solid fa-envelope"></i> jaybhavaniconstruction64@gmail.com
+                    <i class="fa-solid fa-envelope"></i>
+                    jaybhavaniconstruction64@gmail.com
                 </a>
             </div>
 
             <div class="top-contact-group" aria-hidden="true">
                 <a href="tel:+917499429991" class="top-contact-item" tabindex="-1">
-                    <i class="fa-solid fa-phone"></i> +91 7499429991
+                    <i class="fa-solid fa-phone"></i>
+                    +91 7499429991
                 </a>
+
                 <span class="top-contact-separator">|</span>
 
                 <a href="mailto:info@jbinfras.com" class="top-contact-item" tabindex="-1">
-                    <i class="fa-solid fa-envelope"></i> info@jbinfras.com
+                    <i class="fa-solid fa-envelope"></i>
+                    info@jbinfras.com
                 </a>
+
                 <span class="top-contact-separator">|</span>
 
                 <a href="tel:+917499429991" class="top-contact-item" tabindex="-1">
-                    <i class="fa-solid fa-phone"></i> +91 7499429991
+                    <i class="fa-solid fa-phone"></i>
+                    +91 7499429991
                 </a>
+
                 <span class="top-contact-separator">|</span>
 
                 <a href="mailto:jaybhavaniconstruction64@gmail.com" class="top-contact-item" tabindex="-1">
-                    <i class="fa-solid fa-envelope"></i> jaybhavaniconstruction64@gmail.com
+                    <i class="fa-solid fa-envelope"></i>
+                    jaybhavaniconstruction64@gmail.com
                 </a>
             </div>
+
         </div>
     </div>
 
     <!-- HEADER / NAVIGATION -->
+
     <header class="header" id="header">
         <div class="container nav-container">
 
             <a href="index.html" class="logo">
-                <img src="./logoo.png" alt="Jay Bhavani Construction Logo" class="site-logo">
+                <img
+                    src="./logoo.png"
+                    alt="Jay Bhavani Construction Logo"
+                    class="site-logo"
+                >
                 <div class="logo-name">Jay Bhavani Construction</div>
             </a>
 
@@ -124,76 +310,104 @@
                 <a href="about.html" class="nav-link">About</a>
 
                 <!-- BROCHURE DROPDOWN -->
+
                 <div class="nav-item brochure-nav-item" id="brochureNavItem">
+
                     <div class="brochure-nav-header">
-                        <button type="button"
-                                class="brochure-nav-trigger"
-                                id="brochureNavTrigger"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                aria-controls="brochureDropdown">
+
+                        <button
+                            type="button"
+                            class="brochure-nav-trigger"
+                            id="brochureNavTrigger"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            aria-controls="brochureDropdown"
+                        >
                             Brochure
                         </button>
 
-                        <button type="button"
-                                class="services-dropdown-toggle"
-                                id="brochureDropdownToggle"
-                                aria-label="Toggle Brochure menu"
-                                aria-expanded="false"
-                                aria-controls="brochureDropdown">
+                        <button
+                            type="button"
+                            class="services-dropdown-toggle"
+                            id="brochureDropdownToggle"
+                            aria-label="Toggle Brochure menu"
+                            aria-expanded="false"
+                            aria-controls="brochureDropdown"
+                        >
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
+
                     </div>
 
-                    <div class="services-dropdown brochure-dropdown"
-                         id="brochureDropdown"
-                         aria-hidden="true">
+                    <div
+                        class="services-dropdown brochure-dropdown"
+                        id="brochureDropdown"
+                        aria-hidden="true"
+                    >
 
-                        <a href="Jay_Bhawani_Construction_Brochure.pdf"
-                           class="services-dropdown-link"
-                           target="_blank"
-                           rel="noopener noreferrer">
+                        <a
+                            href="Jay_Bhawani_Construction_Brochure.pdf"
+                            class="services-dropdown-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <span class="services-dropdown-icon">
                                 <i class="fa-solid fa-eye"></i>
                             </span>
+
                             <span>
                                 <strong>View Brochure</strong>
                                 <small>Open the brochure in a new tab</small>
                             </span>
                         </a>
 
-                        <a href="Jay_Bhawani_Construction_Brochure.pdf"
-                           class="services-dropdown-link"
-                           download="Jay_Bhawani_Construction_Brochure.pdf">
+                        <a
+                            href="Jay_Bhawani_Construction_Brochure.pdf"
+                            class="services-dropdown-link"
+                            download="Jay_Bhawani_Construction_Brochure.pdf"
+                        >
                             <span class="services-dropdown-icon">
                                 <i class="fa-solid fa-download"></i>
                             </span>
+
                             <span>
                                 <strong>Download Brochure</strong>
                                 <small>Save a copy of our brochure</small>
                             </span>
                         </a>
+
                     </div>
                 </div>
 
                 <!-- SERVICES DROPDOWN -->
+
                 <div class="nav-item services-nav-item" id="servicesNavItem">
+
                     <div class="services-nav-header">
+
                         <a href="services.html" class="nav-link services-nav-link">
                             Services
                         </a>
 
-                        <button type="button"
-                                class="services-dropdown-toggle"
-                                id="servicesDropdownToggle"
-                                aria-label="Toggle Services menu"
-                                aria-expanded="false"
-                                aria-controls="servicesDropdown">
+                        <button
+                            type="button"
+                            class="services-dropdown-toggle"
+                            id="servicesDropdownToggle"
+                            aria-label="Toggle Services menu"
+                            aria-expanded="false"
+                            aria-controls="servicesDropdown"
+                        >
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
+
                     </div>
 
-                    <div class="services-dropdown" id="servicesDropdown" aria-hidden="true">
+                    <div
+                        class="services-dropdown"
+                        id="servicesDropdown"
+                        aria-hidden="true"
+                    >
+
                         <div class="services-dropdown-heading">
                             <span>OUR SERVICES</span>
                             <p>Explore our construction solutions</p>
@@ -264,38 +478,43 @@
                             </span>
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
                         </a>
+
                     </div>
                 </div>
 
-                <a href="gallery.html" class="nav-link active" aria-current="page">
-                    Gallery
-                </a>
+                <a href="gallery.html" class="nav-link active" aria-current="page">Gallery</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="contact.html" class="nav-quote">Get a Quote</a>
+
             </nav>
 
-            <button class="menu-toggle"
-                    id="menuToggle"
-                    type="button"
-                    aria-label="Open Menu"
-                    aria-expanded="false"
-                    aria-controls="navbar">
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open Menu"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+
         </div>
     </header>
 
     <main>
 
         <!-- HERO SECTION -->
+
         <section class="hero gallery-hero" id="home">
+
             <div class="hero-overlay"></div>
 
             <div class="container hero-container">
-                <div class="hero-content">
 
+                <div class="hero-content">
 
                     <h1>
                         Our Work.
@@ -310,6 +529,7 @@
                     </p>
 
                     <div class="hero-features">
+
                         <div class="hero-feature">
                             <i class="fa-solid fa-circle-check"></i>
                             <span>Quality Focused</span>
@@ -324,65 +544,94 @@
                             <i class="fa-solid fa-circle-check"></i>
                             <span>Reliable Solutions</span>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- GALLERY SECTION -->
+        <!-- BEFORE & AFTER GALLERY -->
+
         <section class="gallery-section" id="project-gallery">
+
             <div class="container">
 
                 <div class="gallery-heading">
+
                     <div class="gallery-tag">
                         <span></span>
                         OUR PROJECT PORTFOLIO
                         <span></span>
                     </div>
 
-                    <h2>Building <span>Excellence</span> in Every Project</h2>
+                    <h2>
+                        Building <span>Excellence</span> in Every Project
+                    </h2>
 
                     <p>
                         Take a closer look at our construction work across industrial,
                         commercial and infrastructure projects.
                     </p>
+
                 </div>
 
-                <!-- JavaScript adds all 30 project cards here -->
                 <div class="gallery-grid" id="galleryGrid"></div>
 
             </div>
         </section>
 
         <!-- CALL TO ACTION -->
+
         <section class="gallery-cta">
+
             <div class="container gallery-cta-inner">
+
                 <div>
                     <span>HAVE A PROJECT IN MIND?</span>
-                    <h2>Let's Build Something <strong>Strong Together.</strong></h2>
-                    <p>Contact our team to discuss your construction requirements.</p>
+
+                    <h2>
+                        Let's Build Something
+                        <strong>Strong Together.</strong>
+                    </h2>
+
+                    <p>
+                        Contact our team to discuss your construction requirements.
+                    </p>
                 </div>
 
                 <a href="contact.html" class="btn btn-primary">
                     Get a Quote
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
+
             </div>
         </section>
 
     </main>
 
-    <!-- SAME FOOTER -->
+    <!-- FOOTER -->
+
     <footer class="footer">
+
         <div class="container">
+
             <div class="footer-grid">
 
                 <div class="footer-about">
+
                     <a href="index.html#home" class="footer-logo">
-                        <img src="./logoo.png"
-                             alt="Jay Bhavani Construction Logo"
-                             class="footer-site-logo">
-                        <span class="footer-logo-name">Jay Bhavani Construction</span>
+
+                        <img
+                            src="./logoo.png"
+                            alt="Jay Bhavani Construction Logo"
+                            class="footer-site-logo"
+                        >
+
+                        <span class="footer-logo-name">
+                            Jay Bhavani Construction
+                        </span>
+
                     </a>
 
                     <p>
@@ -390,286 +639,427 @@
                         construction solutions for industrial, commercial and
                         infrastructure projects.
                     </p>
+
                 </div>
 
                 <div class="footer-column">
+
                     <h4>QUICK LINKS</h4>
+
                     <a href="index.html#home">Home</a>
                     <a href="about.html">About</a>
-                    <a href="Jay_Bhawani_Construction_Brochure.pdf"
-                       target="_blank" rel="noopener noreferrer">View Brochure</a>
+
+                    <a
+                        href="Jay_Bhawani_Construction_Brochure.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Brochure
+                    </a>
+
                     <a href="Jay_Bhawani_Construction_Brochure.pdf" download>
                         Download Brochure
                     </a>
+
                     <a href="services.html">Services</a>
                     <a href="gallery.html">Gallery</a>
                     <a href="contact.html">Contact</a>
-                    <a href="contact.html" class="footer-quote-link">Get a Quote</a>
+
+                    <a href="contact.html" class="footer-quote-link">
+                        Get a Quote
+                    </a>
+
                 </div>
 
                 <div class="footer-column">
+
                     <h4>OUR SERVICES</h4>
+
                     <a href="industrial-sheds.html">Industrial Sheds</a>
                     <a href="pebstructure.html">PEB Structures</a>
                     <a href="commercial-buildings.html">Commercial Buildings</a>
                     <a href="rcc-road-construction.html">RCC Road Construction</a>
                     <a href="rcc-flooring.html">RCC Flooring</a>
                     <a href="plant-machinery.html">Plant &amp; Machinery</a>
+
                 </div>
 
                 <div class="footer-column">
+
                     <h4>CONTACT</h4>
+
                     <a href="tel:+917499429991">+91 7499429991</a>
                     <a href="mailto:info@jbinfras.com">info@jbinfras.com</a>
-                    <a href="mailto:jaybhavaniconstruction64@gmail.com">
-                        jaybhavaniconstruction64@gmail.com
-                    </a>
+                    <a href="mailto:jaybhavaniconstruction64@gmail.com">jaybhavaniconstruction64@gmail.com</a>
+
                     <span>
                         Office No C715 &amp; 716, Gera Imperium Gateway,
                         Nashik Phata-Metro Station, Kasarwadi, Pune - 411034
                     </span>
+
                 </div>
 
             </div>
 
             <div class="footer-bottom">
+
                 <p class="footer-copyright">
                     &copy; <span id="currentYear"></span>
                     Jay Bhavani Construction. All Rights Reserved.
                 </p>
+
                 <p class="footer-developed">
                     Developed by MindAxis Innovation Pvt. Ltd.
                 </p>
+
             </div>
+
         </div>
     </footer>
 
     <!-- FLOATING CONTACT BUTTONS -->
+
     <div class="floating-contact">
-        <a href="https://wa.me/917499429991"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="float-btn whatsapp"
-           aria-label="WhatsApp">
+
+        <a
+            href="https://wa.me/917499429991"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="float-btn whatsapp"
+            aria-label="WhatsApp"
+        >
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
-        <a href="tel:+917499429991" class="float-btn phone" aria-label="Phone">
+        <a
+            href="tel:+917499429991"
+            class="float-btn phone"
+            aria-label="Phone"
+        >
             <i class="fa-solid fa-phone"></i>
         </a>
+
     </div>
 
     <!-- BACK TO TOP -->
+
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- EXISTING SITE JAVASCRIPT -->
+    <!-- EXISTING JAVASCRIPT FILES -->
+
     <script src="hf.js" defer></script>
     <script src="gallery.js" defer></script>
 
-    <!-- GENERATE 30 IMAGES + CATEGORY FILTERS -->
+    <!-- GENERATE 8 PROJECTS / 24 IMAGES -->
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+
             const grid = document.getElementById("galleryGrid");
 
-            const projectTypes = [
+            const projects = [
                 {
-                    label:01,
+                    number: "01",
                     title: "Pooja Packaging",
-                    description:"Pooja Packaging 01",
+                    description: "Construction work and project progress at the Pooja Packaging site."
                 },
                 {
-                    label:02,
-                    title: "Technip (kalid site",
-                    description:"Technip (kalid site) 02",
+                    number: "02",
+                    title: "Technip (Kalid Site)",
+                    description: "Construction progress and completed work at the Technip (Kalid) site."
                 },
                 {
-                    label:03,
+                    number: "03",
                     title: "PEB Plant",
-                    description:"PEB Plant 03",
+                    description: "Industrial PEB construction and site development."
                 },
                 {
-                    label:04,
-                    title: "Gaikwad site series",
-                    description:"Gaikwad site series 04",
+                    number: "04",
+                    title: "Gaikwad Site",
+                    description: "Construction progress at the Gaikwad site."
                 },
                 {
-                    label: 05,
-                    title: "sakshi site",
-                    description: "sakshi site 05"
+                    number: "05",
+                    title: "Sakshi Site",
+                    description: "Construction work and project progress at the Sakshi site."
                 },
                 {
-                    label: "06",
-                    title: "Jmdp  site",
-                    description: "Jmdp  site 06"
+                    number: "06",
+                    title: "JMDP Site",
+                    description: "Construction progress and site development at the JMDP site."
                 },
                 {
-                    label: "07",
-                    title: "Maharashtra ent",
-                    description: "Maharashtra ent 07"
+                    number: "07",
+                    title: "Maharashtra ENT",
+                    description: "Construction work and project progress at the Maharashtra ENT site."
                 },
-                 {
-                    label: "08",
-                    title: " Murhe site",
-                    description: "Murhe site 08"
-                },
+                {
+                    number: "08",
+                    title: "Murhe Site",
+                    description: "Construction work and project progress at the Murhe site."
+                }
             ];
 
-            for (let i = 1; i <= 24; i++) {
-                const number = String(i).padStart(2, "0");
-                const imagePath = `images/project-${number}.jpg`;
-                const type = projectTypes[(i - 1) % projectTypes.length];
+            projects.forEach(function (project, index) {
+
+                const firstImageNumber = index * 3 + 1;
+
+                const images = [
+                    {
+                        label: "Before",
+                        path: `images/project-${String(firstImageNumber).padStart(2, "0")}.jpg`,
+                        className: "before"
+                    },
+                    {
+                        label: "After 1",
+                        path: `images/project-${String(firstImageNumber + 1).padStart(2, "0")}.jpg`,
+                        className: "after-one"
+                    },
+                    {
+                        label: "After 2",
+                        path: `images/project-${String(firstImageNumber + 2).padStart(2, "0")}.jpg`,
+                        className: "after-two"
+                    }
+                ];
 
                 const card = document.createElement("article");
-                card.className = "gallery-item";
-                card.dataset.category = type.label;
+
+                card.className = "gallery-item before-after-project";
+                card.dataset.category = project.number;
+
+                const imageCards = images.map(function (image) {
+
+                    return `
+                        <div class="before-after-image ${image.className}">
+                            <a
+                                href="${image.path}"
+                                class="gallery-image-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Enlarge ${image.label} image for ${project.title}"
+                            >
+                                <img
+                                    src="${image.path}"
+                                    alt="${project.title} - ${image.label}"
+                                    loading="lazy"
+                                >
+
+                                <span class="gallery-zoom" aria-hidden="true">
+                                    <i class="fa-solid fa-expand"></i>
+                                </span>
+                            </a>
+
+                            <div class="before-after-label">
+                                ${image.label}
+                            </div>
+                        </div>
+                    `;
+
+                }).join("");
 
                 card.innerHTML = `
-                    <a href="${imagePath}"
-                       class="gallery-image-link"
-                       target="_blank"
-                       rel="noopener"
-                       aria-label="View project ${number}">
-                        <img src="${imagePath}"
-                             alt="${type.title} - Project ${number}"
-                             loading="lazy">
-                        <span class="gallery-zoom">
-                            <i class="fa-solid fa-expand"></i>
-                        </span>
-                    </a>
+                    <div class="before-after-images">
+                        ${imageCards}
+                    </div>
 
                     <div class="gallery-caption">
-                        <span>${type.label} · PROJECT ${number}</span>
-                        <h3>${type.title} ${number}</h3>
-                        <p>${type.description}</p>
+                        <span>PROJECT ${project.number} · BEFORE &amp; AFTER</span>
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
                     </div>
                 `;
 
                 grid.appendChild(card);
-            }
-
-            // Category filtering
-            const filterButtons = document.querySelectorAll(".gallery-filter");
-            const cards = document.querySelectorAll(".gallery-item");
-
-            filterButtons.forEach(button => {
-                button.addEventListener("click", function () {
-                    const selected = this.dataset.filter;
-
-                    filterButtons.forEach(btn => {
-                        btn.classList.toggle("active", btn === this);
-                    });
-
-                    cards.forEach(card => {
-                        card.hidden =
-                            selected !== "all" &&
-                            card.dataset.category !== selected;
-                    });
-                });
             });
 
-            // Footer year
+            /* Update footer year */
+
             const year = document.getElementById("currentYear");
+
             if (year) {
                 year.textContent = new Date().getFullYear();
             }
 
-            // Report missing image files in the browser console
-            grid.querySelectorAll("img").forEach(img => {
+            /* Warn if an image file is missing */
+
+            grid.querySelectorAll("img").forEach(function (img) {
                 img.addEventListener("error", function () {
                     console.warn("Gallery image not found:", this.src);
                 });
             });
+
         });
     </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Mobile hamburger menu
-    const menuToggle = document.getElementById("menuToggle");
-    const navbar = document.getElementById("navbar");
+    <!-- MOBILE MENU & DROPDOWNS -->
 
-    if (menuToggle && navbar && !menuToggle.dataset.galleryReady) {
-        menuToggle.dataset.galleryReady = "true";
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
-        menuToggle.addEventListener("click", function (event) {
-            event.preventDefault();
-            navbar.classList.toggle("active");
+            /* Mobile hamburger menu */
 
-            const isOpen = navbar.classList.contains("active");
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
-    }
+            const menuToggle = document.getElementById("menuToggle");
+            const navbar = document.getElementById("navbar");
 
-    // Services dropdown
-    const servicesItem = document.getElementById("servicesNavItem");
-    const servicesToggle =
-        document.getElementById("servicesDropdownToggle");
-    const servicesDropdown =
-        document.getElementById("servicesDropdown");
+            if (menuToggle && navbar && !menuToggle.dataset.galleryReady) {
 
-    if (servicesItem && servicesToggle && servicesDropdown &&
-        !servicesToggle.dataset.galleryReady) {
+                menuToggle.dataset.galleryReady = "true";
 
-        servicesToggle.dataset.galleryReady = "true";
+                menuToggle.addEventListener("click", function (event) {
+                    event.preventDefault();
 
-        servicesToggle.addEventListener("click", function (event) {
-            event.preventDefault();
+                    navbar.classList.toggle("active");
 
-            const isOpen =
-                servicesItem.classList.toggle("dropdown-open");
+                    const isOpen = navbar.classList.contains("active");
 
-            servicesToggle.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-            servicesDropdown.setAttribute(
-                "aria-hidden",
-                String(!isOpen)
-            );
-        });
-    }
-
-    // Close Services dropdown when clicking outside it
-    document.addEventListener("click", function (event) {
-        if (servicesItem &&
-            !servicesItem.contains(event.target)) {
-            servicesItem.classList.remove("dropdown-open");
-
-            if (servicesToggle) {
-                servicesToggle.setAttribute("aria-expanded", "false");
+                    menuToggle.setAttribute("aria-expanded", String(isOpen));
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        isOpen ? "Close Menu" : "Open Menu"
+                    );
+                });
             }
 
-            if (servicesDropdown) {
-                servicesDropdown.setAttribute("aria-hidden", "true");
-            }
-        }
-    });
+            /* Services dropdown */
 
-    // Close mobile menu when a normal navigation link is clicked
-    if (navbar) {
-        navbar.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                if (link.id === "servicesDropdownToggle" ||
-                    link.id === "brochureDropdownToggle") {
-                    return;
+            const servicesItem = document.getElementById("servicesNavItem");
+            const servicesToggle = document.getElementById("servicesDropdownToggle");
+            const servicesDropdown = document.getElementById("servicesDropdown");
+
+            function closeServicesDropdown() {
+                if (servicesItem) {
+                    servicesItem.classList.remove("dropdown-open");
                 }
 
-                if (window.innerWidth <= 768) {
-                    navbar.classList.remove("active");
+                if (servicesToggle) {
+                    servicesToggle.setAttribute("aria-expanded", "false");
+                }
 
-                    if (menuToggle) {
-                        menuToggle.setAttribute(
-                            "aria-expanded", "false"
-                        );
+                if (servicesDropdown) {
+                    servicesDropdown.setAttribute("aria-hidden", "true");
+                }
+            }
+
+            if (
+                servicesItem &&
+                servicesToggle &&
+                servicesDropdown &&
+                !servicesToggle.dataset.galleryReady
+            ) {
+                servicesToggle.dataset.galleryReady = "true";
+
+                servicesToggle.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const isOpen = !servicesItem.classList.contains("dropdown-open");
+
+                    closeBrochureDropdown();
+
+                    if (isOpen) {
+                        servicesItem.classList.add("dropdown-open");
+                        servicesToggle.setAttribute("aria-expanded", "true");
+                        servicesDropdown.setAttribute("aria-hidden", "false");
+                    } else {
+                        closeServicesDropdown();
                     }
+                });
+            }
+
+            /* BROCHURE DROPDOWN — FIXED FOR MOBILE AND DESKTOP */
+
+            const brochureItem = document.getElementById("brochureNavItem");
+            const brochureToggle = document.getElementById("brochureDropdownToggle");
+            const brochureDropdown = document.getElementById("brochureDropdown");
+            const brochureTrigger = document.getElementById("brochureNavTrigger");
+
+            function closeBrochureDropdown() {
+                if (brochureItem) {
+                    brochureItem.classList.remove("dropdown-open");
+                }
+
+                if (brochureToggle) {
+                    brochureToggle.setAttribute("aria-expanded", "false");
+                }
+
+                if (brochureDropdown) {
+                    brochureDropdown.setAttribute("aria-hidden", "true");
+                }
+
+                if (brochureTrigger) {
+                    brochureTrigger.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            function openBrochureDropdown() {
+                closeServicesDropdown();
+
+                brochureItem.classList.add("dropdown-open");
+                brochureToggle.setAttribute("aria-expanded", "true");
+                brochureDropdown.setAttribute("aria-hidden", "false");
+
+                if (brochureTrigger) {
+                    brochureTrigger.setAttribute("aria-expanded", "true");
+                }
+            }
+
+            function toggleBrochureDropdown(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const isOpen = brochureItem.classList.contains("dropdown-open");
+
+                if (isOpen) {
+                    closeBrochureDropdown();
+                } else {
+                    openBrochureDropdown();
+                }
+            }
+            /* Close dropdowns when clicking outside */
+
+            document.addEventListener("click", function (event) {
+                if (servicesItem && !servicesItem.contains(event.target)) {
+                    closeServicesDropdown();
+                }
+
+                if (brochureItem && !brochureItem.contains(event.target)) {
+                    closeBrochureDropdown();
                 }
             });
+
+            /* Close dropdowns with Escape */
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    closeServicesDropdown();
+                    closeBrochureDropdown();
+                }
+            });
+
+            /* Close mobile menu after selecting a navigation link */
+
+            if (navbar) {
+                navbar.querySelectorAll("a").forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        if (window.innerWidth <= 768) {
+                            navbar.classList.remove("active");
+
+                            if (menuToggle) {
+                                menuToggle.setAttribute("aria-expanded", "false");
+                                menuToggle.setAttribute("aria-label", "Open Menu");
+                            }
+
+                            closeServicesDropdown();
+                            closeBrochureDropdown();
+                        }
+                    });
+                });
+            }
+
         });
-    }
-});
-</script>
+    </script>
+
 </body>
 </html>

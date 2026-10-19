@@ -1970,3 +1970,104 @@ body.contact-page .header .logo {
         margin-bottom: 4px;
     }
 }
+
+/* =========================================
+   BROCHURE DROPDOWN — MOBILE FIX
+   Does not modify the shared hf.js
+========================================= */
+
+@media (max-width: 768px) {
+
+    #navbar.active #brochureNavItem {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    #navbar.active #brochureNavItem .brochure-nav-header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-height: 48px !important;
+        box-sizing: border-box !important;
+    }
+
+    #navbar.active #brochureNavTrigger {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        align-items: center !important;
+        width: auto !important;
+        min-width: 0 !important;
+        min-height: 48px !important;
+        margin: 0 !important;
+        padding: 12px 6px !important;
+        text-align: left !important;
+        border: 0 !important;
+        background: transparent !important;
+        cursor: pointer !important;
+    }
+
+    #navbar.active #brochureDropdownToggle {
+        display: inline-flex !important;
+        flex: 0 0 44px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+        z-index: 2 !important;
+        cursor: pointer !important;
+        touch-action: manipulation;
+    }
+
+    /* Closed state */
+    #navbar.active #brochureDropdown {
+        display: none !important;
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        margin: 8px 0 12px !important;
+        padding: 8px !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        border: 1px solid #e5edf5 !important;
+        border-radius: 10px !important;
+        background: #fbfdff !important;
+        z-index: 5 !important;
+    }
+
+    /* Open state */
+    #navbar.active #brochureNavItem.dropdown-open #brochureDropdown {
+        display: block !important;
+    }
+
+    #navbar.active #brochureDropdown .services-dropdown-link {
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-height: 44px !important;
+        box-sizing: border-box !important;
+        padding: 12px 10px !important;
+        white-space: normal !important;
+    }
+
+    #navbar.active #brochureNavItem.dropdown-open
+    #brochureDropdownToggle i {
+        transform: rotate(180deg);
+    }
+}

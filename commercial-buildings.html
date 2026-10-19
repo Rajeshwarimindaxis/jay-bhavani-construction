@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -771,65 +770,6 @@
                     }
                 });
             }
-
-            /* BROCHURE DROPDOWN */
-            const brochureNavItem = document.getElementById("brochureNavItem");
-            const brochureToggle = document.getElementById("brochureDropdownToggle");
-            const brochureTrigger = document.getElementById("brochureNavTrigger");
-            const brochureDropdown = document.getElementById("brochureDropdown");
-
-            function closeBrochureDropdown() {
-                if (!brochureNavItem || !brochureToggle || !brochureDropdown) return;
-
-                brochureNavItem.classList.remove("dropdown-open");
-                brochureToggle.setAttribute("aria-expanded", "false");
-                brochureDropdown.setAttribute("aria-hidden", "true");
-
-                if (brochureTrigger) {
-                    brochureTrigger.setAttribute("aria-expanded", "false");
-                }
-            }
-
-            if (brochureNavItem && brochureToggle && brochureDropdown) {
-                function toggleBrochureDropdown(event) {
-                    event.stopPropagation();
-
-                    const isOpen = brochureNavItem.classList.toggle("dropdown-open");
-
-                    brochureToggle.setAttribute("aria-expanded", String(isOpen));
-                    brochureDropdown.setAttribute("aria-hidden", String(!isOpen));
-
-                    if (brochureTrigger) {
-                        brochureTrigger.setAttribute("aria-expanded", String(isOpen));
-                    }
-                }
-
-                brochureToggle.addEventListener("click", toggleBrochureDropdown);
-
-                if (brochureTrigger) {
-                    brochureTrigger.addEventListener("click", toggleBrochureDropdown);
-                }
-
-                document.addEventListener("click", function (event) {
-                    if (!brochureNavItem.contains(event.target)) {
-                        closeBrochureDropdown();
-                    }
-                });
-
-                document.addEventListener("keydown", function (event) {
-                    if (event.key === "Escape") {
-                        closeBrochureDropdown();
-                    }
-                });
-
-                brochureDropdown.querySelectorAll("a").forEach(function (link) {
-                    link.addEventListener("click", function () {
-                        closeBrochureDropdown();
-                        closeMobileMenu();
-                    });
-                });
-            }
-
             /* HEADER SHADOW */
             const header = document.getElementById("header");
 
@@ -895,4 +835,3 @@
     <script src="hf.js" defer></script>
 </body>
 </html>
-```
