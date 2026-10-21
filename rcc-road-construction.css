@@ -1321,3 +1321,92 @@ body {
         width: calc(100% - 64px);
     }
 }
+
+/* =========================================
+   RCC ROAD HERO - MOBILE
+   Height: 470px with extra top spacing
+========================================= */
+
+@media (max-width: 767px) {
+
+    .road-hero {
+        height: 470px;
+        min-height: 470px;
+        max-height: 470px;
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        padding: 85px 0 25px;
+        box-sizing: border-box;
+    }
+
+    .road-hero .road-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 22px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .road-hero-content {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .road-hero h1 {
+        font-size: clamp(30px, 8vw, 40px);
+        line-height: 1.15;
+        margin: 0 0 16px;
+    }
+
+    .road-hero h1 span {
+        display: block;
+    }
+
+    .road-hero-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 14px;
+    }
+
+    .road-hero-note {
+        font-size: 12px;
+        line-height: 1.6;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .road-hero {
+        padding-top: 98px;
+    }
+
+    .road-hero .road-container {
+        padding: 0 17px;
+    }
+
+    .road-hero h1 {
+        font-size: 29px;
+    }
+
+    .road-hero-description {
+        font-size: 13px;
+    }
+}
+/* =========================================
+   RCC ROAD HERO - EXTRA TOP PADDING
+========================================= */
+
+@media (max-width: 767px) {
+    .road-hero {
+        padding-top: 115px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .road-hero {
+        padding-top: 125px !important;
+    }
+}

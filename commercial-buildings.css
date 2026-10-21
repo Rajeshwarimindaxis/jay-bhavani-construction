@@ -1938,19 +1938,19 @@ ul {
     }
 
     .comm-hero {
-        min-height: 490px;
+        min-height: 470px;
         padding: 60px 0;
     }
 
     .comm-eyebrow {
         gap: 7px;
-        padding: 8px 10px;
+        padding: 12px 10px;
         font-size: 9px;
         letter-spacing: 1px;
     }
 
     .comm-hero h1 {
-        font-size: 35px;
+        font-size: 30px;
         line-height: 1.17;
     }
 
@@ -2695,5 +2695,17 @@ ul {
         font-size: 8px !important;
         line-height: 1.2 !important;
         margin-top: 2px !important;
+    }
+}
+/* Add padding above Commercial Hero H1 on mobile */
+@media (max-width: 768px) {
+    .comm-hero-content {
+        padding-top: 35px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .comm-hero-content {
+        padding-top: 75px !important;
     }
 }

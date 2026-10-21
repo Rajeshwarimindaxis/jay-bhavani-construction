@@ -1837,3 +1837,110 @@ body {
         font-size: 14px !important;
     }
 }
+/* =========================================
+   RCC FLOORING HERO — MOBILE RESPONSIVE
+   Fixed height: 470px
+========================================= */
+
+@media screen and (max-width: 767px) {
+    .floor-hero {
+        height: 470px !important;
+        min-height: 470px !important;
+        max-height: 470px !important;
+
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        background-position: center center !important;
+    }
+
+    .floor-hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 80px 0 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .floor-container {
+        width: calc(100% - 36px) !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .floor-hero h1 {
+        font-size: clamp(29px, 7.5vw, 38px) !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.8px !important;
+        margin: 0 0 14px !important;
+    }
+
+    .floor-hero h1 span {
+        display: block !important;
+    }
+
+    .floor-hero-description {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 14px !important;
+    }
+
+    .floor-hero-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    .floor-button {
+        width: auto !important;
+        min-height: 40px !important;
+        padding: 0 14px !important;
+        font-size: 12px !important;
+    }
+
+    .floor-hero-note {
+        margin-top: 14px !important;
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+        gap: 8px !important;
+    }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 380px) {
+    .floor-hero-content {
+        padding-top: 98px !important;
+    }
+
+    .floor-container {
+        width: calc(100% - 28px) !important;
+    }
+
+    .floor-hero h1 {
+        font-size: 30px !important;
+    }
+
+    .floor-hero-description {
+        font-size: 12px !important;
+        line-height: 1.45 !important;
+    }
+
+    .floor-button {
+        padding: 0 10px !important;
+        font-size: 12px !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .floor-hero-content {
+        padding-top: 100px !important;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .floor-hero-content {
+        padding-top: 130px !important;
+    }
+}

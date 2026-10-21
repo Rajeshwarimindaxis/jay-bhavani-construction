@@ -1148,3 +1148,16 @@ body {
         font-size: 8px !important;
     }
 }
+/* MOBILE SERVICES HERO — FIXED HEIGHT 470px */
+@media (max-width: 640px) {
+    .services-hero {
+        height: 470px !important;
+        min-height: 470px !important;
+        box-sizing: border-box;
+    }
+
+    .services-hero-content {
+        padding-top: 88px !important;
+        padding-bottom: 30px !important;
+    }
+}
