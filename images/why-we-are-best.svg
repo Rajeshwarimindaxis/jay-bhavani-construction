@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" width="100%" height="100%">
+  <defs>
+    <!-- Brand Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f4f8fc" />
+    </linearGradient>
+
+    <linearGradient id="tagGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f28c28" />
+      <stop offset="100%" stop-color="#e07810" />
+    </linearGradient>
+
+    <linearGradient id="circleBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0860c4" />
+      <stop offset="100%" stop-color="#053e7a" />
+    </linearGradient>
+
+    <!-- Shadow filters -->
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#06365f" flood-opacity="0.14" />
+    </filter>
+
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="#0759b5" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: 'Manrope', 'Segoe UI', -apple-system, sans-serif;
+      font-weight: 800;
+      fill: #172838;
+      text-anchor: middle;
+      font-size: 24px;
+      letter-spacing: -0.2px;
+    }
+    .badge-text {
+      font-family: 'Manrope', 'Segoe UI', -apple-system, sans-serif;
+      font-weight: 800;
+      fill: #111827;
+      font-size: 19px;
+    }
+    .icon-stroke {
+      stroke: #ffffff;
+      stroke-width: 3.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .icon-fill {
+      fill: #ffffff;
+    }
+
+    /* Embedded Keyframe Animations */
+    @keyframes minuteSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes soundWave {
+      0%, 100% { opacity: 0.25; transform: scale(0.96); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    @keyframes ringPulse {
+      0%, 100% { stroke: #0759b5; }
+      50% { stroke: #f28c28; }
+    }
+    .anim-clock-hand {
+      transform-origin: 0px 0px;
+      animation: minuteSpin 10s linear infinite;
+    }
+    .anim-wave-1 {
+      animation: soundWave 1.4s ease-in-out infinite;
+      transform-origin: 0px 0px;
+    }
+    .anim-wave-2 {
+      animation: soundWave 1.4s ease-in-out 0.4s infinite;
+      transform-origin: 0px 0px;
+    }
+    .item-group {
+      cursor: pointer;
+    }
+    .item-group:hover .outer-ring {
+      stroke: #f28c28;
+    }
+  </style>
+
+  <!-- Background Card (Compact Width) -->
+  <rect x="15" y="15" width="830" height="330" rx="18" fill="url(#bgGrad)" stroke="#dce6ef" stroke-width="1.5" filter="url(#cardShadow)" />
+
+  <!-- Top-left Ribbon Tag: "Why we are best?" -->
+  <g transform="translate(15, 28)">
+    <polygon points="0,0 230,0 208,44 0,44" fill="url(#tagGrad)" />
+    <text x="24" y="28" class="badge-text">Why we are best?</text>
+  </g>
+
+  <!-- ================= ITEM 1: Expert Engineers ================= -->
+  <g class="item-group" transform="translate(160, 168)">
+    <!-- Outer concentric ring -->
+    <circle cx="0" cy="0" r="64" fill="none" stroke="#0759b5" stroke-width="3" filter="url(#softShadow)" class="outer-ring" />
+    <!-- White separator gap -->
+    <circle cx="0" cy="0" r="58" fill="#ffffff" />
+    <!-- Main blue circle -->
+    <circle cx="0" cy="0" r="54" fill="url(#circleBlue)" />
+
+    <!-- Engineer Icon -->
+    <g transform="translate(0, -2)">
+      <!-- Back Engineer (Right) -->
+      <path class="icon-stroke" d="M11 -7 C11 -15, 19 -21, 26 -17 C31 -14, 32 -7, 32 -3" />
+      <path class="icon-stroke" d="M9 -4 C15 -6, 32 -4, 36 1 C31 5, 17 6, 9 4" />
+      <path class="icon-stroke" d="M24 3 C31 8, 37 15, 40 25" />
+
+      <!-- Front Engineer Hardhat -->
+      <g>
+        <path class="icon-stroke" d="M-21 -7 C-21 -23, 0 -29, 2 -29 C4 -29, 23 -23, 23 -7 Z" />
+        <line class="icon-stroke" x1="-3" y1="-29" x2="-3" y2="-21" />
+        <line class="icon-stroke" x1="3" y1="-29" x2="3" y2="-21" />
+        <!-- Hardhat Brim -->
+        <path class="icon-stroke" d="M-26 -6 Q0 -10 27 -6 C28 -2, -27 -2, -26 -6 Z" fill="#0860c4" />
+      </g>
+
+      <!-- Front Engineer Face / Neck -->
+      <path class="icon-stroke" d="M-13 -3 C-13 8, 13 8, 13 -3" />
+      <line class="icon-stroke" x1="-8" y1="8" x2="-8" y2="13" />
+      <line class="icon-stroke" x1="8" y1="8" x2="8" y2="13" />
+
+      <!-- Front Engineer Torso / Shoulders -->
+      <path class="icon-stroke" d="M-26 30 C-26 19, -15 15, -8 14 L8 14 C15 15, 26 19, 26 30" />
+
+      <!-- Safety Vest Stripes -->
+      <line class="icon-stroke" x1="-16" y1="20" x2="16" y2="20" />
+      <circle cx="-12" cy="25" r="1.5" class="icon-fill" />
+      <circle cx="-7" cy="25" r="1.5" class="icon-fill" />
+      <circle cx="-2" cy="25" r="1.5" class="icon-fill" />
+      <circle cx="3" cy="25" r="1.5" class="icon-fill" />
+      <circle cx="8" cy="25" r="1.5" class="icon-fill" />
+      <circle cx="13" cy="25" r="1.5" class="icon-fill" />
+    </g>
+
+    <!-- Title Below -->
+    <text x="0" y="98" class="title-text">
+      <tspan x="0" dy="0">Expert</tspan>
+      <tspan x="0" dy="28">Engineers</tspan>
+    </text>
+  </g>
+
+  <!-- ================= ITEM 2: Customer Support ================= -->
+  <g class="item-group" transform="translate(430, 168)">
+    <!-- Outer concentric ring -->
+    <circle cx="0" cy="0" r="64" fill="none" stroke="#0759b5" stroke-width="3" filter="url(#softShadow)" class="outer-ring" />
+    <!-- White separator gap -->
+    <circle cx="0" cy="0" r="58" fill="#ffffff" />
+    <!-- Main blue circle -->
+    <circle cx="0" cy="0" r="54" fill="url(#circleBlue)" />
+
+    <!-- Support Agent with Headset & Laptop -->
+    <g transform="translate(0, -2)">
+      <!-- Animated Sound Waves -->
+      <path class="icon-stroke anim-wave-1" d="M22 -18 C26 -14, 26 -6, 22 -2" />
+      <path class="icon-stroke anim-wave-2" d="M27 -23 C34 -17, 34 -1, 27 3" />
+
+      <!-- Head -->
+      <circle cx="-2" cy="-13" r="10.5" class="icon-stroke" />
+
+      <!-- Headset Band -->
+      <path class="icon-stroke" d="M-13 -12 C-13 -23, 9 -23, 9 -12" />
+      <!-- Headphone Ear Cup -->
+      <rect x="-16" y="-16" width="5" height="9" rx="2.5" class="icon-stroke" fill="#ffffff" />
+      <!-- Headset Mic Boom -->
+      <path class="icon-stroke" d="M-14 -9 C-14 -2, -6 -2, -4 -5" />
+
+      <!-- Body / Shoulders -->
+      <path class="icon-stroke" d="M-21 21 C-21 9, -13 5, -3 5 C7 5, 14 9, 14 21" />
+
+      <!-- Laptop Base & Screen -->
+      <path class="icon-stroke" d="M-6 3 L17 3 C19 3, 20 5, 20 7 L20 20 L-6 20 Z" fill="#0860c4" />
+      <circle cx="7" cy="11" r="1.8" class="icon-fill" />
+      <path class="icon-stroke" d="M-14 24 L24 24 L21 20 L-9 20 Z" />
+    </g>
+
+    <!-- Title Below -->
+    <text x="0" y="98" class="title-text">
+      <tspan x="0" dy="0">Customer</tspan>
+      <tspan x="0" dy="28">Support</tspan>
+    </text>
+  </g>
+
+  <!-- ================= ITEM 3: Delivery On time ================= -->
+  <g class="item-group" transform="translate(700, 168)">
+    <!-- Outer concentric ring -->
+    <circle cx="0" cy="0" r="64" fill="none" stroke="#0759b5" stroke-width="3" filter="url(#softShadow)" class="outer-ring" />
+    <!-- White separator gap -->
+    <circle cx="0" cy="0" r="58" fill="#ffffff" />
+    <!-- Main blue circle -->
+    <circle cx="0" cy="0" r="54" fill="url(#circleBlue)" />
+
+    <!-- Clock / On-Time Icon -->
+    <g transform="translate(0, -2)">
+      <!-- Inner clock border -->
+      <circle cx="0" cy="0" r="31" class="icon-stroke" stroke-width="2.6" />
+
+      <!-- Clock Dial Markers (12, 3, 6, 9) -->
+      <line class="icon-stroke" x1="0" y1="-28" x2="0" y2="-22" stroke-width="2.8" />
+      <line class="icon-stroke" x1="28" y1="0" x2="22" y2="0" stroke-width="2.8" />
+      <line class="icon-stroke" x1="0" y1="28" x2="0" y2="22" stroke-width="2.8" />
+      <line class="icon-stroke" x1="-28" y1="0" x2="-22" y2="0" stroke-width="2.8" />
+
+      <!-- Hour Hand (static ~8 o'clock) -->
+      <line class="icon-stroke" x1="0" y1="0" x2="-13" y2="7" stroke-width="4.2" />
+
+      <!-- Minute Hand (Rotating Animated) -->
+      <g class="anim-clock-hand">
+        <line class="icon-stroke" x1="0" y1="0" x2="0" y2="-18" stroke-width="3.2" />
+      </g>
+
+      <!-- Center Hub -->
+      <circle cx="0" cy="0" r="4.2" class="icon-fill" />
+    </g>
+
+    <!-- Title Below -->
+    <text x="0" y="98" class="title-text">
+      <tspan x="0" dy="0">Delivery</tspan>
+      <tspan x="0" dy="28">On time</tspan>
+    </text>
+  </g>
+</svg>
