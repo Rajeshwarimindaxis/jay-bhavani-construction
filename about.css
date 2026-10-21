@@ -876,7 +876,7 @@
 
     position: relative;
 
-    padding: 125px 0;
+    padding: 100px 40px;
 
     overflow: hidden;
 
@@ -2318,7 +2318,7 @@
     }
 
     .about-company-image img {
-        height: 245px;
+        height: 205px;
     }
 
     /* ORANGE QUALITY BOX — MOVE UP */
@@ -2365,7 +2365,7 @@
 
     .section-tag {
         margin-bottom: 8px;
-        font-size: 10px;
+        font-size: 12px;
         letter-spacing: 1.5px;
     }
 
@@ -2839,7 +2839,7 @@
     /* MOVE ORANGE BOX UP */
     .company-experience {
         right: -5px;
-        bottom: 75px !important;
+        bottom: 45px !important;
         padding: 7px 8px;
         z-index: 5;
     }
@@ -2957,7 +2957,7 @@
     ===================================================== */
 
     .why-section {
-        padding: 45px 0;
+        padding: 45px 10px;
     }
 
     .why-grid {
@@ -4680,5 +4680,24 @@
             font-size: 10px;
             min-height: 30px;
             padding: 5px 2px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .about-company-image {
+            width: 100%;
+            height: auto;
+            overflow: visible;
+            background: transparent;
+        }
+
+        .about-company-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 12px;
         }
     }
