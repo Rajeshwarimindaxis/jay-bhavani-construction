@@ -32,12 +32,14 @@ body {
 
 .road-hero {
     position: relative;
+    box-sizing: border-box;
     min-height: 620px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     isolation: isolate;
     overflow: hidden;
+    padding: 60px 0;
     background: var(--road-dark);
 }
 
@@ -85,9 +87,8 @@ body {
     z-index: 2;
     width: 100%;
     max-width: 860px;
-    padding: 120px 0 0px;
+    padding: 0;
     color: #fff;
-    min-height: 550px;
 }
 
 .road-eyebrow {

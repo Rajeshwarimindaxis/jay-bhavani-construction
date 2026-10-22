@@ -97,10 +97,11 @@ main textarea {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    min-height: 440px;
+    box-sizing: border-box;
+    min-height: 620px;
     display: flex;
     align-items: center;
-    padding: 82px 0 88px;
+    padding: 60px 0;
     background:
         radial-gradient(
             circle at 85% 18%,

@@ -182,9 +182,10 @@
     position: relative;
     isolation: isolate;
     display: flex;
+    box-sizing: border-box;
     min-height: 620px;
     align-items: center;
-    padding: 100px 0 90px;
+    padding: 60px 0;
     overflow: hidden;
     background:
         var(--peb-navy-dark)

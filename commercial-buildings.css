@@ -531,8 +531,9 @@ ul {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 610px;
-    padding: 90px 0;
+    box-sizing: border-box;
+    min-height: 620px;
+    padding: 60px 0;
     overflow: hidden;
     isolation: isolate;
     background:

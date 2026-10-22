@@ -32,12 +32,14 @@ body {
 
 .floor-hero {
     position: relative;
+    box-sizing: border-box;
     min-height: 620px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     isolation: isolate;
     overflow: hidden;
+    padding: 60px 0;
     background: var(--floor-dark);
 }
 
@@ -47,20 +49,25 @@ body {
     inset: 0;
     z-index: 0;
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             rgba(15, 23, 42, 0.96) 0%,
             rgba(15, 23, 42, 0.88) 50%,
-            rgba(15, 23, 42, 0.42) 100%
-        ),
+            rgba(15, 23, 42, 0.42) 100%),
         url("images/rcc flooring.png") center 45% / cover no-repeat;
     transform: scale(1.03);
     animation: floorHeroZoom 1.5s ease-out both;
 }
 
 @keyframes floorHeroZoom {
-    from { transform: scale(1.1); opacity: 0.8; }
-    to { transform: scale(1.03); opacity: 1; }
+    from {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: scale(1.03);
+        opacity: 1;
+    }
 }
 
 .floor-hero::after {
@@ -85,7 +92,7 @@ body {
     z-index: 2;
     width: 100%;
     max-width: 860px;
-    padding: 120px 0 80px;
+    padding: 0;
     color: #fff;
 }
 
@@ -737,6 +744,7 @@ body {
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1024px) {
+
     .floor-intro-grid,
     .floor-features-grid {
         grid-template-columns: 1fr;
@@ -767,6 +775,7 @@ body {
 }
 
 @media (max-width: 640px) {
+
     .floor-benefits-grid,
     .floor-types-grid,
     .floor-process-grid,
@@ -782,17 +791,20 @@ body {
         width: 80%;
     }
 }
+
 .floor-body-text {
     font-size: 12px !important;
     line-height: 1.5 !important;
     margin-bottom: 10px !important;
 }
+
 .floor-body-text {
     padding: 0 !important;
     margin-bottom: 6px !important;
     font-size: 12px !important;
     line-height: 1.5 !important;
 }
+
 .floor-body-text {
     padding: 0 !important;
 }
@@ -801,7 +813,9 @@ body {
 .floor-body-text p {
     margin-top: 0 !important;
     margin-bottom: 3px !important;
-}/* FLOOR BENEFITS — MOBILE GRID FIX */
+}
+
+/* FLOOR BENEFITS — MOBILE GRID FIX */
 @media screen and (max-width: 768px) {
     .floor-benefits {
         padding: 18px 0 !important;
@@ -826,7 +840,7 @@ body {
         box-sizing: border-box !important;
     }
 
-    .floor-benefits .floor-benefit-card > i,
+    .floor-benefits .floor-benefit-card>i,
     .floor-benefits .floor-benefit-card .floor-benefit-icon {
         width: 40px !important;
         height: 25px !important;
@@ -869,6 +883,7 @@ body {
         font-size: 10px !important;
     }
 }
+
 /* FLOOR TYPES — 2-COLUMN MOBILE GRID */
 @media screen and (max-width: 768px) {
     .floor-types-grid {
@@ -877,6 +892,7 @@ body {
         margin-top: 22px !important;
     }
 }
+
 /* FLOOR TYPES — MOBILE TEXT STYLING */
 @media screen and (max-width: 768px) {
     .floor-types-grid {
@@ -885,7 +901,7 @@ body {
         margin-top: 22px !important;
     }
 
-    .floor-types-grid > * {
+    .floor-types-grid>* {
         padding: 16px 14px !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
@@ -921,7 +937,7 @@ body {
         gap: 8px !important;
     }
 
-    .floor-types-grid > * {
+    .floor-types-grid>* {
         padding: 13px 11px !important;
     }
 
@@ -934,10 +950,12 @@ body {
         font-size: 12px !important;
         line-height: 1.55 !important;
     }
-}/* OPERATIONAL APPLICATIONS — MOBILE SPACING FIX */
+}
+
+/* OPERATIONAL APPLICATIONS — MOBILE SPACING FIX */
 @media screen and (max-width: 768px) {
     .floor-section {
-        padding: 12px 0 !important;
+        padding: 32px 0 !important;
     }
 
     .floor-section .floor-container {
@@ -964,7 +982,7 @@ body {
         margin-top: 18px !important;
     }
 
-    .floor-section .floor-types-grid > * {
+    .floor-section .floor-types-grid>* {
         min-width: 0 !important;
         width: 100% !important;
     }
@@ -986,7 +1004,7 @@ body {
         box-sizing: border-box;
     }
 
-    .floor-section .floor-container > * {
+    .floor-section .floor-container>* {
         min-width: 0;
         max-width: 100%;
     }
@@ -1066,6 +1084,7 @@ body {
         font-size: 10px !important;
     }
 }
+
 /* Fix specification table on mobile only */
 @media screen and (max-width: 768px) {
 
@@ -1085,9 +1104,11 @@ body {
 
     .floor-section th,
     .floor-section td {
-        padding: 7px 10px !important; /* Reduced row height */
+        padding: 7px 10px !important;
+        /* Reduced row height */
         font-size: 13px !important;
-        line-height: 1.2; /* Less vertical spacing */
+        line-height: 1.2;
+        /* Less vertical spacing */
         overflow-wrap: anywhere;
         word-break: normal;
         vertical-align: middle;
@@ -1136,6 +1157,7 @@ body {
         font-size: 10px !important;
     }
 }
+
 /* =========================================
    MOBILE NAVBAR - OVERFLOW AND VISIBILITY FIX
 ========================================= */
@@ -1190,7 +1212,7 @@ body {
     }
 
     /* Individual navigation links */
-    .header .navbar > a {
+    .header .navbar>a {
         display: flex !important;
         align-items: center;
         justify-content: flex-start;
@@ -1225,8 +1247,8 @@ body {
     }
 
     /* Quote button */
-    .header .navbar > a.btn,
-    .header .navbar > .btn {
+    .header .navbar>a.btn,
+    .header .navbar>.btn {
         display: flex !important;
         align-items: center;
         justify-content: center;
@@ -1249,13 +1271,14 @@ body {
 }
 
 @media (max-width: 480px) {
+
     .header .navbar,
     .header .navbar.active {
         padding: 10px 14px 16px !important;
         max-height: calc(100dvh - 135px) !important;
     }
 
-    .header .navbar > a {
+    .header .navbar>a {
         min-height: 44px;
         font-size: 14px;
     }
@@ -1301,6 +1324,7 @@ body {
         margin: 0;
     }
 }
+
 /* APPLICATIONS GRID — MOBILE: 2 + 1 LAYOUT */
 @media screen and (max-width: 768px) {
     .floor-applications-grid {
@@ -1347,6 +1371,7 @@ body {
         line-height: 1.5 !important;
     }
 }
+
 /* MOBILE: IMAGE LEFT + TEXT RIGHT */
 @media screen and (max-width: 768px) {
     .floor-intro-grid {
@@ -1374,7 +1399,7 @@ body {
         transition: transform 0.8s ease;
     }
 
-    .floor-intro-grid > div {
+    .floor-intro-grid>div {
         min-width: 0 !important;
     }
 
@@ -1389,7 +1414,9 @@ body {
         font-size: 7px !important;
         line-height: 1.2 !important;
     }
-}/* Responsive Floor Image Badge */
+}
+
+/* Responsive Floor Image Badge */
 .floor-image-badge {
     position: absolute;
     left: 20px;
@@ -1474,8 +1501,9 @@ body {
         font-size: 10px;
     }
 }
+
 @media screen and (max-width: 768px) {
-    .floor-section .floor-types-grid > * {
+    .floor-section .floor-types-grid>* {
         min-width: 0 !important;
         width: 100% !important;
         min-height: auto !important;
@@ -1508,10 +1536,11 @@ body {
         height: 110px !important;
     }
 
-    .floor-section .floor-types-grid > * {
+    .floor-section .floor-types-grid>* {
         padding: 10px !important;
     }
 }
+
 /* DESKTOP: 2 FEATURE ITEMS PER ROW */
 @media screen and (min-width: 1025px) {
     .floor-features-grid {
@@ -1542,6 +1571,7 @@ body {
         gap: 20px !important;
     }
 }
+
 /* FORCE BROCHURE BUTTON TO THE LEFT ON MOBILE & TABLET */
 @media screen and (max-width: 1024px) {
 
@@ -1572,6 +1602,7 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+
     .brochure-btn,
     a.brochure-btn {
         transform: translateX(-12px) !important;
@@ -1588,8 +1619,10 @@ body {
         left: -15px;
     }
 }
+
 /* Align Brochure navigation item to the left on mobile/tablet */
 @media (max-width: 1200px) {
+
     .navbar .brochure-nav-header,
     .navbar .brochure-nav-trigger {
         text-align: left !important;
@@ -1599,6 +1632,7 @@ body {
         margin-left: 0 !important;
     }
 }
+
 @media (max-width: 1200px) {
     .navbar .brochure-nav-header {
         width: 100% !important;
@@ -1632,8 +1666,8 @@ body {
     }
 
     /* Home, About, Gallery and Contact */
-    .header .navbar.active > a.nav-link,
-    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger) {
+    .header .navbar.active>a.nav-link,
+    .header .navbar.active>a:not(.btn):not(.brochure-nav-trigger) {
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
@@ -1777,8 +1811,8 @@ body {
     }
 
     /* Get a Quote button */
-    .header .navbar.active > a.btn,
-    .header .navbar.active > .btn,
+    .header .navbar.active>a.btn,
+    .header .navbar.active>.btn,
     .header .navbar.active .nav-quote {
         display: flex !important;
         align-items: center !important;
@@ -1804,8 +1838,8 @@ body {
         max-height: calc(100dvh - 100px) !important;
     }
 
-    .header .navbar.active > a.nav-link,
-    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger),
+    .header .navbar.active>a.nav-link,
+    .header .navbar.active>a:not(.btn):not(.brochure-nav-trigger),
     .header .navbar.active .brochure-nav-trigger {
         min-height: 39px !important;
         padding: 8px 7px !important;
@@ -1829,14 +1863,15 @@ body {
         min-height: 34px !important;
     }
 
-    .header .navbar.active > a.btn,
-    .header .navbar.active > .btn,
+    .header .navbar.active>a.btn,
+    .header .navbar.active>.btn,
     .header .navbar.active .nav-quote {
         min-height: 42px !important;
         margin-top: 8px !important;
         font-size: 14px !important;
     }
 }
+
 /* =========================================
    RCC FLOORING HERO — MOBILE RESPONSIVE
    Fixed height: 470px
@@ -1933,6 +1968,7 @@ body {
         font-size: 12px !important;
     }
 }
+
 @media screen and (max-width: 767px) {
     .floor-hero-content {
         padding-top: 100px !important;

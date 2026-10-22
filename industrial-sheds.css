@@ -15,24 +15,7 @@ html {
 body {
     overflow-x: hidden;
 }
-/* =====================================
-   PREMIUM INDUSTRIAL HERO - ORANGE THEME
-===================================== */
 
-.industrial-hero {
-    position: relative;
-    overflow: hidden;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(10, 24, 43, 0.97) 0%,
-            rgba(10, 24, 43, 0.91) 48%,
-            rgba(10, 24, 43, 0.68) 100%
-        ),
-        url("images/industrial-shed.jpg") center / cover no-repeat;
-    padding: 12px 0 9px;
-    color: #ffffff;
-}
 
 /* Subtle orange decorative glow */
 .industrial-hero::before {
@@ -49,17 +32,7 @@ body {
 }
 
 
-.industrial-hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 700px;
-    margin: 0;
-    padding: 25px 0 20px;
-    box-sizing: border-box;
-    text-align: left;
-    color: #fff;
-}
+
 
 
 /* Small heading above the main title */
@@ -192,17 +165,7 @@ body {
 
 
 
-.industrial-hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 700px;
-    margin: 0;
-    padding: 25px 0 20px;
-    box-sizing: border-box;
-    text-align: left;
-    color: #fff;
-}
+
 
 
 @media (max-width: 900px) {
@@ -348,12 +311,14 @@ body {
 ======================================== */
 .industrial-hero {
     position: relative;
+    box-sizing: border-box;
     min-height: 620px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     isolation: isolate;
     overflow: hidden;
+    padding: 60px 0;
 
     /* Hero background image */
     background:
@@ -416,7 +381,7 @@ body {
     width: 100%;
     max-width: 900px;
     margin: 0;
-    padding: 65px 0 75px;
+    padding: 0;
     box-sizing: border-box;
     text-align: left;
     color: #fff;
