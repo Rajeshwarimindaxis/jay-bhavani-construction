@@ -1523,7 +1523,7 @@
 
     position: relative;
 
-    padding: 100px 0;
+    padding: 100px 0 100px 30px;
 
     overflow: hidden;
 
@@ -2107,7 +2107,7 @@
     /* CTA */
 
     .about-cta {
-        padding: 65px 0;
+        padding: 65px 0 65px 30px;
         min-height: 300px;
     }
 
@@ -2641,7 +2641,7 @@
 
     .about-cta {
         min-height: 0;
-        padding: 48px 0;
+        padding: 48px 0 48px 25px;
     }
 
     .about-cta-content {
@@ -3107,7 +3107,7 @@
     ===================================================== */
 
     .about-cta {
-        padding: 40px 0;
+        padding: 40px 0 40px 20px;
     }
 
     .about-cta-content {
@@ -3284,7 +3284,7 @@
         }
 
         .about-cta {
-            padding: 32px 0;
+            padding: 32px 0 32px 15px;
         }
 
         .about-cta-content h2 {
