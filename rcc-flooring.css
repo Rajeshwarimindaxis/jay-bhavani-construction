@@ -1164,10 +1164,7 @@ body {
 
 @media (max-width: 1200px) {
 
-    .header {
-        position: relative;
-        z-index: 9999;
-    }
+    /* Header positioning managed by hf.css */
 
     .header .nav-container {
         position: relative;
@@ -1437,7 +1434,6 @@ body {
     max-width: calc(100% - 40px);
 }
 
-/* Tablet */
 @media screen and (max-width: 1024px) {
     .floor-image-badge {
         left: 15px;
@@ -1448,7 +1444,6 @@ body {
     }
 }
 
-/* Mobile */
 @media screen and (max-width: 768px) {
     .floor-image-badge {
         left: 10px;
@@ -1482,7 +1477,6 @@ body {
     }
 }
 
-/* Small Mobile */
 @media screen and (max-width: 480px) {
     .floor-image-badge {
         left: 8px;
@@ -1639,11 +1633,6 @@ body {
         justify-content: flex-start !important;
     }
 }
-
-/* =========================================
-   MOBILE NAVBAR — COMPACT HEIGHT & PADDING
-   DESKTOP REMAINS UNCHANGED
-========================================= */
 
 @media screen and (max-width: 1200px) {
 
@@ -1943,7 +1932,6 @@ body {
     }
 }
 
-/* Small mobile screens */
 @media screen and (max-width: 380px) {
     .floor-hero-content {
         padding-top: 98px !important;

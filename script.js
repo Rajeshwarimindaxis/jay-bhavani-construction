@@ -22,19 +22,64 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHeaderScroll();
 
     /* ================= 3. MOBILE MENU ================= */
-    const menuToggle = document.getElementById("menuToggle");
+    let menuToggle = document.getElementById("menuToggle");
     const navbar = document.getElementById("navbar");
 
     if (menuToggle && navbar) {
-        menuToggle.addEventListener("click", function () {
-            const isOpen = navbar.classList.toggle("active");
-            menuToggle.classList.toggle("active", isOpen);
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-            menuToggle.setAttribute("aria-label", isOpen ? "Close Menu" : "Open Menu");
+        // Clone and replace to strip any duplicate listeners attached by legacy inline scripts
+        const cleanToggle = menuToggle.cloneNode(true);
+        menuToggle.parentNode.replaceChild(cleanToggle, menuToggle);
+        menuToggle = cleanToggle;
+        window._scriptNavBound = true;
+
+        menuToggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const willOpen = !navbar.classList.contains("active");
+            navbar.classList.toggle("active", willOpen);
+            menuToggle.classList.toggle("active", willOpen);
+            menuToggle.setAttribute("aria-expanded", String(willOpen));
+            menuToggle.setAttribute("aria-label", willOpen ? "Close Menu" : "Open Menu");
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener("click", function (event) {
+            if (
+                navbar.classList.contains("active") &&
+                !navbar.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+                navbar.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open Menu");
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open Menu");
+                menuToggle.focus();
+            }
+        });
+
+        // Close drawer when resized to desktop breakpoint
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 992 && navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open Menu");
+            }
         });
 
         // Close mobile nav when clicking normal nav links
-        navbar.querySelectorAll(".nav-link:not(.services-nav-link), .nav-quote").forEach(link => {
+        navbar.querySelectorAll("a.nav-link:not(.services-nav-link), .nav-quote, .services-dropdown-link").forEach(link => {
             link.addEventListener("click", function () {
                 navbar.classList.remove("active");
                 menuToggle.classList.remove("active");
@@ -46,10 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* ================= 4. SERVICES DROPDOWN ================= */
     const servicesNavItem = document.getElementById("servicesNavItem");
-    const servicesToggle = document.getElementById("servicesDropdownToggle");
+    let servicesToggle = document.getElementById("servicesDropdownToggle");
     const servicesDropdown = document.getElementById("servicesDropdown");
 
     if (servicesNavItem && servicesToggle && servicesDropdown) {
+        // Strip legacy duplicate listeners
+        const cleanServicesToggle = servicesToggle.cloneNode(true);
+        servicesToggle.parentNode.replaceChild(cleanServicesToggle, servicesToggle);
+        servicesToggle = cleanServicesToggle;
+        window._scriptServicesBound = true;
+
         function setDropdownState(open) {
             servicesNavItem.classList.toggle("dropdown-open", open);
             servicesToggle.setAttribute("aria-expanded", String(open));
@@ -104,6 +155,63 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }
+    }
+
+    /* ================= 4b. BROCHURE DROPDOWN ================= */
+    const brochureNavItem = document.getElementById("brochureNavItem");
+    let brochureToggle = document.getElementById("brochureDropdownToggle");
+    let brochureTrigger = document.getElementById("brochureNavTrigger");
+    const brochureDropdown = document.getElementById("brochureDropdown");
+
+    if (brochureNavItem && brochureDropdown) {
+        if (brochureToggle) {
+            const cleanBrochureToggle = brochureToggle.cloneNode(true);
+            brochureToggle.parentNode.replaceChild(cleanBrochureToggle, brochureToggle);
+            brochureToggle = cleanBrochureToggle;
+        }
+
+        if (brochureTrigger) {
+            const cleanBrochureTrigger = brochureTrigger.cloneNode(true);
+            brochureTrigger.parentNode.replaceChild(cleanBrochureTrigger, brochureTrigger);
+            brochureTrigger = cleanBrochureTrigger;
+        }
+
+        window._scriptBrochureBound = true;
+
+        function setBrochureState(open) {
+            brochureNavItem.classList.toggle("dropdown-open", open);
+            if (brochureTrigger) brochureTrigger.setAttribute("aria-expanded", String(open));
+            if (brochureToggle) brochureToggle.setAttribute("aria-expanded", String(open));
+            brochureDropdown.setAttribute("aria-hidden", String(!open));
+        }
+
+        function toggleBrochure(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = brochureNavItem.classList.contains("dropdown-open");
+            setBrochureState(!isOpen);
+        }
+
+        if (brochureToggle) brochureToggle.addEventListener("click", toggleBrochure);
+        if (brochureTrigger) brochureTrigger.addEventListener("click", toggleBrochure);
+
+        document.addEventListener("click", function (event) {
+            if (!brochureNavItem.contains(event.target)) {
+                setBrochureState(false);
+            }
+        });
+
+        brochureDropdown.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", function () {
+                setBrochureState(false);
+                if (navbar && menuToggle) {
+                    navbar.classList.remove("active");
+                    menuToggle.classList.remove("active");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                    menuToggle.setAttribute("aria-label", "Open Menu");
+                }
+            });
+        });
     }
 
     /* ================= 5. BACK TO TOP BUTTON ================= */
@@ -248,20 +356,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /* ================= 7. SCROLL REVEAL ANIMATIONS ================= */
-    const revealItems = document.querySelectorAll(".reveal, .industrial-reveal, .service-reveal");
+    const revealItems = document.querySelectorAll(
+        ".reveal, .industrial-reveal, .service-reveal, .about-reveal, .about-reveal-left, .about-reveal-right, .contact-reveal, .contact-reveal-left, .contact-reveal-right"
+    );
     if (revealItems.length && "IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("active", "show");
+                    entry.target.classList.add("active", "show", "is-revealed", "is-visible");
                     obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
 
         revealItems.forEach(el => observer.observe(el));
     } else {
-        revealItems.forEach(el => el.classList.add("active", "show"));
+        revealItems.forEach(el => el.classList.add("active", "show", "is-revealed", "is-visible"));
     }
 
     /* ================= 8. CONTACT FORM ================= */

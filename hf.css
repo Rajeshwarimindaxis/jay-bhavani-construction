@@ -47,6 +47,19 @@
     --radius: 12px;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img, video, canvas {
+    max-width: 100%;
+    height: auto;
+}
 
 /* ==========================================================================
    2. ACCESSIBILITY SKIP LINK & FOCUS STYLES
@@ -89,6 +102,8 @@
     left: 0;
     width: 100%;
     height: 38px;
+    margin: 0;
+    padding: 0;
     z-index: 1200;
     display: flex;
     align-items: center;
@@ -97,6 +112,7 @@
     background: #06365F;
     color: #ffffff;
     border-bottom: 1px solid rgba(242, 140, 40, 0.65);
+    box-sizing: border-box;
 }
 
 .top-contact-track {
@@ -172,6 +188,8 @@
     top: 38px;
     left: 0;
     width: 100%;
+    margin: 0;
+    box-sizing: border-box;
     height: 80px;
     z-index: 1000;
     background: linear-gradient(
@@ -892,7 +910,7 @@
 /* ==========================================================================
    13. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .header {
         top: 38px;
         height: 76px;
@@ -1390,35 +1408,25 @@
 
 @media (max-width: 480px) {
     .top-contact-bar {
-        height: 32px;
+        height: 38px;
     }
 
     .top-contact-item {
-        font-size: 9.5px;
-        padding: 0 10px;
-    }
-
-    .header {
-        top: 32px;
-        height: 64px;
-    }
-
-    .nav-container {
-        height: 64px;
+        font-size: 11px;
         padding: 0 12px;
     }
 
-    .logo-name {
-        font-size: 12px;
+    .header {
+        top: 38px;
     }
 
-    .navbar.active {
-        top: 64px;
+    .logo-name {
+        font-size: 13px;
     }
 
     .menu-toggle {
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
     }
 
     .menu-toggle span {
@@ -2188,13 +2196,12 @@ body .header #brochureDropdownToggle {
 /* FIX GET A QUOTE BUTTON TEXT */
 .header .nav-quote,
 .header a.nav-quote,
-.header .navbar .nav-quote,
-.header .navbar a[href*="contact"] {
+.header .navbar .nav-quote {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    line-height: 1.4 !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: normal !important;
     text-indent: 0 !important;
     text-decoration: none !important;
     text-transform: none !important;
@@ -2213,107 +2220,597 @@ body .header #brochureDropdownToggle {
 .header .nav-quote::before,
 .header .nav-quote::after {
     content: none !important;
-}/* FIX CONTACT US BUTTON */
-.header .navbar a,
-.header .navbar button {
-    -webkit-text-fill-color: inherit;
 }
 
-.header .navbar .btn:not(.nav-quote),
-.header .navbar a:not(.nav-quote).btn {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* Keep Get a Quote styling */
-.header .nav-quote {
-    background: #06365F !important;
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-}
-/* CONTACT US — MATCH EXISTING NAVBAR BUTTONS */
-.header .navbar a[href="#contact"]:not(.nav-quote) {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    background: #06365F !important;
-    color: #FFFFFF !important;
-    -webkit-text-fill-color: #FFFFFF !important;
-    border: 1px solid #06365F !important;
-    border-radius: 6px !important;
-
-    padding: 12px 22px !important;
-    min-height: 45px !important;
-    font-size: inherit !important;
-    font-weight: 700 !important;
-    line-height: normal !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-}
-
-.header .navbar a[href="#contact"]:not(.nav-quote):hover {
-    background: #F28C28 !important;
-    border-color: #F28C28 !important;
-    color: #FFFFFF !important;
-    -webkit-text-fill-color: #FFFFFF !important;
-}
-/* FIX CONTACT LINK VISIBILITY — MOBILE MENU ONLY */
-@media (max-width: 1200px) {
-    .header .navbar.active a[href*="contact"]:not(.nav-quote) {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: relative !important;
-        color: #06365F !important;
-        -webkit-text-fill-color: #06365F !important;
-        font-size: 16px !important;
-        min-height: 48px;
+/* ==========================================================================
+   DESKTOP NAVBAR STYLING (Screen width > 992px)
+   ========================================================================== */
+@media (min-width: 993px) {
+    .header .menu-toggle,
+    #menuToggle {
+        display: none !important;
     }
-}/* ==========================================
-   CONTACT PAGE — MATCH GALLERY NAVBAR
-   ========================================== */
 
-@media (max-width: 1200px) {
-
-    .header .navbar.active > a.nav-link,
-    .header .navbar.active > a[href*="contact"]:not(.nav-quote) {
+    .header .navbar,
+    #navbar {
         display: flex !important;
         align-items: center !important;
-        justify-content: flex-start !important;
+        justify-content: flex-end !important;
+        position: static !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
 
-        width: 100% !important;
-        box-sizing: border-box !important;
-        min-height: 48px !important;
-
-        padding: 12px 6px !important;
-        margin: 0 !important;
-
+    /* Regular Nav Links (Home, About, Gallery, Contact) */
+    body .header .navbar > a.nav-link,
+    body .header .navbar > a:not(.btn):not(.nav-quote) {
+        position: relative !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        color: var(--navy-primary, #06365F) !important;
+        -webkit-text-fill-color: var(--navy-primary, #06365F) !important;
         font-family: "Inter", sans-serif !important;
         font-size: 13px !important;
         font-weight: 600 !important;
+        padding: 29px 0 !important;
+        text-decoration: none !important;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        min-height: unset !important;
+        white-space: nowrap !important;
+        transition: color 0.3s ease !important;
+    }
+
+    body .header .navbar > a.nav-link:hover,
+    body .header .navbar > a:not(.btn):not(.nav-quote):hover {
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+        background: transparent !important;
+    }
+
+    /* Active Nav Link */
+    body .header .navbar > a.nav-link.active,
+    body .header .navbar > a:not(.btn):not(.nav-quote).active {
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+        background: transparent !important;
+    }
+
+    body .header .navbar > a.nav-link.active::after,
+    body .header .navbar > a:not(.btn):not(.nav-quote).active::after {
+        content: "" !important;
+        position: absolute !important;
+        left: 0 !important;
+        bottom: 17px !important;
+        width: 100% !important;
+        height: 3px !important;
+        background: var(--nav-orange, #F28C28) !important;
+        border-radius: 3px !important;
+    }
+
+    /* Brochure & Services headers: match standard layout & gap */
+    body .header .navbar .brochure-nav-header,
+    body .header .navbar .services-nav-header {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 7px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Brochure trigger: match regular nav links exactly */
+    body .header .navbar .brochure-nav-trigger,
+    body .header .navbar #brochureNavTrigger {
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        border: 0 !important;
+        outline: none !important;
+        padding: 29px 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        cursor: pointer !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        line-height: inherit !important;
+        color: var(--navy-primary, #06365F) !important;
+        -webkit-text-fill-color: var(--navy-primary, #06365F) !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+    }
+
+    body .header .navbar .brochure-nav-trigger:hover,
+    body .header .navbar #brochureNavTrigger:hover,
+    body .header .navbar .brochure-nav-item:hover .brochure-nav-trigger {
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+    }
+
+    /* Chevron toggles for Brochure & Services */
+    body .header .navbar .services-dropdown-toggle,
+    body .header .navbar #brochureDropdownToggle,
+    body .header .navbar #servicesDropdownToggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        border-radius: 50% !important;
+        background: transparent !important;
+        color: var(--navy-primary, #06365F) !important;
+        -webkit-text-fill-color: var(--navy-primary, #06365F) !important;
+        cursor: pointer !important;
+        transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease !important;
+    }
+
+    body .header .navbar .services-dropdown-toggle i,
+    body .header .navbar #brochureDropdownToggle i,
+    body .header .navbar #servicesDropdownToggle i {
+        font-size: 11px !important;
+        line-height: 1 !important;
+        color: inherit !important;
+    }
+
+    body .header .navbar .services-dropdown-toggle:hover,
+    body .header .navbar #brochureDropdownToggle:hover,
+    body .header .navbar #servicesDropdownToggle:hover,
+    body .header .navbar .brochure-nav-item:hover #brochureDropdownToggle,
+    body .header .navbar .services-nav-item:hover #servicesDropdownToggle {
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+        background: rgba(7, 89, 181, 0.08) !important;
+    }
+
+    /* Get a Quote button styling */
+    body .header .navbar .nav-quote,
+    body .header .navbar a.nav-quote {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: var(--navy-primary, #06365F) !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        border: 1px solid var(--navy-primary, #06365F) !important;
+        border-radius: 7px !important;
+        min-height: 42px !important;
+        padding: 0 18px !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
         line-height: normal !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+    }
 
-        color: var(--navy-primary) !important;
-        -webkit-text-fill-color: var(--navy-primary) !important;
+    body .header .navbar .nav-quote:hover,
+    body .header .navbar a.nav-quote:hover {
+        background: var(--nav-orange, #F28C28) !important;
+        border-color: var(--nav-orange, #F28C28) !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 9px 22px rgba(242, 140, 40, 0.30) !important;
+    }
+}
 
+/* ==========================================================================
+   MOBILE & TABLET NAVBAR RESPONSIVE STYLING (Screen width <= 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* Top Contact Bar on mobile: fixed to viewport top at exact 38px height with 0 margin */
+    .top-contact-bar,
+    body .top-contact-bar,
+    #topContactBar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 38px !important;
+        min-height: 38px !important;
+        max-height: 38px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 1200 !important;
+        box-sizing: border-box !important;
+        border-bottom: 1px solid rgba(242, 140, 40, 0.65) !important;
+    }
+
+    /* Header layout: fixed flush directly below the 38px top contact bar with zero gap */
+    .header,
+    body .header,
+    #header {
+        position: fixed !important;
+        top: 38px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        height: 70px !important;
+        min-height: 70px !important;
+        background: #ffffff !important;
+        box-shadow: 0 4px 18px rgba(7, 59, 105, 0.12) !important;
+        border-bottom: 2px solid var(--primary, #0759B5) !important;
+        z-index: 1100 !important;
+        box-sizing: border-box !important;
+    }
+
+    .header .nav-container,
+    body .header .nav-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        height: 70px !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+    }
+
+    .header .logo,
+    body .header .logo {
+        height: 70px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        text-decoration: none !important;
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+    }
+
+    .header .logo img,
+    body .header .logo img,
+    .header .site-logo {
+        height: 46px !important;
+        width: auto !important;
+        max-width: 48px !important;
+        object-fit: contain !important;
+        flex-shrink: 0 !important;
+    }
+
+    .header .logo-name,
+    body .header .logo-name {
+        font-family: "Montserrat", sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 800 !important;
+        color: var(--navy-primary, #06365F) !important;
+        line-height: 1.15 !important;
+        white-space: normal !important;
+    }
+
+    /* Hamburger Menu Button */
+    .header .menu-toggle,
+    #menuToggle,
+    body .header .menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        padding: 0 !important;
+        border: 1.5px solid #d5e3ef !important;
+        border-radius: 8px !important;
+        background: #ffffff !important;
+        cursor: pointer !important;
+        gap: 5px !important;
+        flex-shrink: 0 !important;
+        z-index: 10002 !important;
+        margin-left: 8px !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    .header .menu-toggle span,
+    #menuToggle span {
+        display: block !important;
+        width: 22px !important;
+        height: 2.5px !important;
+        background: var(--navy-primary, #06365F) !important;
+        border-radius: 2px !important;
+        transition: transform 0.25s ease, opacity 0.25s ease !important;
+        pointer-events: none !important;
+    }
+
+    .header .menu-toggle.active span:nth-child(1),
+    #menuToggle.active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg) !important;
+    }
+
+    .header .menu-toggle.active span:nth-child(2),
+    #menuToggle.active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+    .header .menu-toggle.active span:nth-child(3),
+    #menuToggle.active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg) !important;
+    }
+
+    /* Mobile Navigation Drawer - Closed */
+    .header .navbar:not(.active),
+    #navbar:not(.active),
+    body .header .navbar:not(.active),
+    body #navbar:not(.active) {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Mobile Navigation Drawer - Open (Fixed full-width drawer directly below fixed 108px header) */
+    .header .navbar.active,
+    #navbar.active,
+    body .header .navbar.active,
+    body #navbar.active {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: fixed !important;
+        top: 108px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: calc(100dvh - 108px) !important;
+        max-height: calc(100dvh - 108px) !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior: contain !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        padding: 12px 18px 36px !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+        box-shadow: 0 20px 40px rgba(6, 54, 95, 0.22) !important;
+        border-top: 1px solid #e2e8f0 !important;
+        border-bottom: 4px solid var(--nav-orange, #f28c28) !important;
+        z-index: 10001 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Mobile Navigation Links */
+    body .header .navbar.active > a.nav-link,
+    body .header .navbar.active > a:not(.btn):not(.nav-quote),
+    .header .navbar.active > a.nav-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        padding: 12px 8px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: var(--navy-primary, #06365F) !important;
+        -webkit-text-fill-color: var(--navy-primary, #06365F) !important;
+        text-decoration: none !important;
         background: transparent !important;
         border: none !important;
         border-bottom: 1px solid #f0f4f8 !important;
         border-radius: 0 !important;
-        box-shadow: none !important;
-        text-decoration: none !important;
+        white-space: normal !important;
+        transition: color 0.2s ease, background 0.2s ease !important;
     }
 
-    .header .navbar.active > a.nav-link:hover,
-    .header .navbar.active > a[href*="contact"]:not(.nav-quote):hover {
-        color: var(--nav-orange) !important;
-        -webkit-text-fill-color: var(--nav-orange) !important;
-        background: transparent !important;
+    body .header .navbar.active > a.nav-link:hover,
+    body .header .navbar.active > a:not(.btn):not(.nav-quote):hover {
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+        background: rgba(242, 140, 40, 0.05) !important;
+    }
+
+    body .header .navbar.active > a.nav-link.active,
+    body .header .navbar.active > a:not(.btn):not(.nav-quote).active {
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+        font-weight: 700 !important;
+    }
+
+    body .header .navbar.active > a.nav-link.active::after,
+    body .header .navbar.active > a:not(.btn):not(.nav-quote).active::after {
+        content: none !important;
+    }
+
+    /* Mobile Brochure & Services Rows */
+    .header .navbar.active .brochure-nav-item,
+    .header .navbar.active .services-nav-item,
+    #navbar.active .brochure-nav-item,
+    #navbar.active .services-nav-item {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
         border-bottom: 1px solid #f0f4f8 !important;
+    }
+
+    body .header .navbar.active .brochure-nav-header,
+    body .header .navbar.active .services-nav-header,
+    #navbar.active .brochure-nav-header,
+    #navbar.active .services-nav-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Triggers in Mobile Headers */
+    body .header .navbar.active .brochure-nav-trigger,
+    body .header .navbar.active .services-nav-link,
+    #navbar.active .brochure-nav-trigger,
+    #navbar.active .services-nav-link {
+        display: flex !important;
+        align-items: center !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        min-height: 46px !important;
+        padding: 12px 8px !important;
+        margin: 0 !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: var(--navy-primary, #06365F) !important;
+        -webkit-text-fill-color: var(--navy-primary, #06365F) !important;
+        text-align: left !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    /* Mobile Chevron Toggles */
+    body .header .navbar.active .services-dropdown-toggle,
+    #navbar.active .services-dropdown-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 44px !important;
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        color: var(--navy-primary, #06365F) !important;
+        -webkit-text-fill-color: var(--navy-primary, #06365F) !important;
+        cursor: pointer !important;
+    }
+
+    .header .navbar.active .services-dropdown-toggle i {
+        font-size: 12px !important;
+        transition: transform 0.25s ease !important;
+    }
+
+    .header .navbar.active .brochure-nav-item.dropdown-open .services-dropdown-toggle i,
+    .header .navbar.active .services-nav-item.dropdown-open .services-dropdown-toggle i {
+        transform: rotate(180deg) !important;
+    }
+
+    /* Mobile Dropdown Menus */
+    .header .navbar.active .services-dropdown,
+    #navbar.active .services-dropdown {
+        display: none !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        margin: 4px 0 10px !important;
+        padding: 8px 10px !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        box-shadow: none !important;
+        box-sizing: border-box !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    .header .navbar.active .brochure-nav-item.dropdown-open > .services-dropdown,
+    .header .navbar.active .services-nav-item.dropdown-open > .services-dropdown,
+    #navbar.active .brochure-nav-item.dropdown-open > .services-dropdown,
+    #navbar.active .services-nav-item.dropdown-open > .services-dropdown {
+        display: block !important;
+    }
+
+    .header .navbar.active .services-dropdown-heading {
+        padding: 6px 8px 8px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        margin-bottom: 6px !important;
+    }
+
+    .header .navbar.active .services-dropdown-heading span {
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        color: var(--nav-orange, #F28C28) !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .header .navbar.active .services-dropdown-heading p {
+        font-size: 11px !important;
+        color: #64748b !important;
+        margin: 2px 0 0 !important;
+    }
+
+    .header .navbar.active .services-dropdown-link,
+    #navbar.active .services-dropdown-link {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 10px 8px !important;
+        color: var(--navy-primary, #06365F) !important;
+        text-decoration: none !important;
+        border-radius: 6px !important;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.6) !important;
+        transition: background 0.2s ease !important;
+    }
+
+    .header .navbar.active .services-dropdown-link:last-child {
+        border-bottom: none !important;
+    }
+
+    .header .navbar.active .services-dropdown-link:hover {
+        background: rgba(242, 140, 40, 0.08) !important;
+    }
+
+    .header .navbar.active .services-dropdown-link strong {
+        font-size: 13px !important;
+        color: var(--navy-primary, #06365F) !important;
+    }
+
+    .header .navbar.active .services-dropdown-link small {
+        font-size: 11px !important;
+        color: #64748b !important;
+    }
+
+    /* Mobile Get a Quote CTA */
+    body .header .navbar.active .nav-quote,
+    body .header .navbar.active a.nav-quote,
+    #navbar.active .nav-quote {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        margin: 14px 0 0 !important;
+        padding: 12px 16px !important;
+        box-sizing: border-box !important;
+        background: var(--navy-primary, #06365F) !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        border: 1px solid var(--navy-primary, #06365F) !important;
+        border-radius: 8px !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        text-align: center !important;
+    }
+
+    body .header .navbar.active .nav-quote:hover,
+    #navbar.active .nav-quote:hover {
+        background: var(--nav-orange, #F28C28) !important;
+        border-color: var(--nav-orange, #F28C28) !important;
     }
 }

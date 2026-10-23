@@ -198,7 +198,7 @@ body {
 
     .contact-hero h1 {
         font-size: 26px;
-        line-height: 1.;
+        line-height: 1.25;
         letter-spacing: -0.8px;
         margin: 20px 0;
     }
@@ -1165,7 +1165,10 @@ a.contact-detail:hover strong {
     }
 
     .submit-enquiry {
-        width: 100%;
+        width: auto;
+        min-width: 180px;
+        max-width: 100%;
+        display: inline-flex;
     }
 
     .map-frame,
@@ -1698,185 +1701,10 @@ a.contact-detail:hover strong {
         transition: transform .25s ease;
     }
 }
-/* 
-/* =========================================
-   CONTACT PAGE — MOBILE NAVIGATION FIX
-   ========================================= */
-@media (max-width: 768px) {
-
-    body.contact-page #menuToggle {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-    }
-
-    body.contact-page #navbar {
-        display: none !important;
-    }
-
-    body.contact-page #navbar.active {
-        display: flex !important;
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        max-height: calc(100vh - 114px);
-        overflow-y: auto;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        background: #fff !important;
-        z-index: 10001 !important;
-        box-sizing: border-box;
-    }
-
-    body.contact-page #navbar.active #servicesNavItem {
-        display: block !important;
-        width: 100%;
-    }
-
-    body.contact-page #navbar.active .services-nav-header {
-        display: flex !important;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    body.contact-page #navbar.active #servicesDropdownToggle {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 44px;
-        width: 44px;
-        height: 44px;
-        cursor: pointer;
-    }
-
-    body.contact-page #navbar.active #servicesNavItem > #servicesDropdown {
-        display: none !important;
-        position: static !important;
-        width: 100% !important;
-        transform: none !important;
-        box-shadow: none !important;
-    }
-
-    body.contact-page #navbar.active
-    #servicesNavItem.dropdown-open > #servicesDropdown {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        pointer-events: auto !important;
-    }
-}
-
-@media (max-width: 768px) {
-    body.contact-page #navbar.active {
-        display: flex !important;
-    }
-
-    body.contact-page #servicesNavItem.dropdown-open > #servicesDropdown {
-        display: block !important;
-        position: static !important;
-        width: 100%;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-/* } */
-
-/* =========================================
-   CONTACT PAGE — BROCHURE DESKTOP LAYOUT
-   Preserve existing shared button styling
-========================================= */
-
-@media (min-width: 769px) {
-    body.contact-page #brochureNavItem {
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-
-    body.contact-page #brochureNavItem .brochure-nav-header {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
-
-    body.contact-page #brochureNavItem #brochureNavTrigger {
-        font-family: inherit;
-        font-size: inherit;
-        font-weight: inherit;
-        color: inherit;
-        background: transparent;
-        border: 0;
-        padding: 10px 0;
-        cursor: pointer;
-    }
-
-    body.contact-page #brochureNavItem #brochureDropdownToggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-        border: 0;
-        color: inherit;
-        padding: 10px 6px;
-        cursor: pointer;
-    }
-} */
-
-/* =========================================
-   CONTACT PAGE — BROCHURE NAV BUTTON
-   Match the other navigation links
-========================================= */
-
-@media (min-width: 769px) {
-    body.contact-page #brochureNavItem {
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-
-    body.contact-page #brochureNavItem .brochure-nav-header {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
-
-    body.contact-page #brochureNavItem #brochureNavTrigger {
-        display: inline-flex;
-        align-items: center;
-        padding: 10px 0;
-        margin: 0;
-        border: none;
-        background: transparent;
-        color: inherit;
-        font: inherit;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    body.contact-page #brochureNavItem #brochureDropdownToggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 6px;
-        margin: 0;
-        border: none;
-        background: transparent;
-        color: inherit;
-        font: inherit;
-        cursor: pointer;
-    }
-
-    body.contact-page #brochureNavItem:hover #brochureNavTrigger,
-    body.contact-page #brochureNavItem:hover #brochureDropdownToggle {
-        color: var(--primary, #e87524);
-    }
-} */
 /* =========================================
    CONTACT PAGE — MOBILE NAVIGATION FIX
    Keep the shared desktop navigation styling
-========================================= */
+   ========================================= */
 
 @media (max-width: 768px) {
 
@@ -2012,7 +1840,8 @@ a.contact-detail:hover strong {
 
     /* Brochure label: match Home, About and Gallery */
     #navbar .brochure-nav-trigger {
-        color: #0056b3;
+        color: var(--navy-primary, #06365F);
+        -webkit-text-fill-color: var(--navy-primary, #06365F);
         text-align: left;
         background: transparent;
         border: none;
@@ -2020,10 +1849,11 @@ a.contact-detail:hover strong {
         min-height: 46px;
     }
 
-    /* Both dropdown arrows: blue */
+    /* Both dropdown arrows: navy */
     #navbar #brochureDropdownToggle,
     #navbar #servicesDropdownToggle {
-        color: #0056b3;
+        color: var(--navy-primary, #06365F);
+        -webkit-text-fill-color: var(--navy-primary, #06365F);
         background: transparent;
     }
 
@@ -2038,62 +1868,107 @@ a.contact-detail:hover strong {
 
     /* Preserve the orange active-page highlight */
     #navbar > .nav-link.active {
-        color: #e87524;
+        color: var(--nav-orange, #F28C28);
+        -webkit-text-fill-color: var(--nav-orange, #F28C28);
     }
 }
 
-/* FINAL FIX — BROCHURE DESKTOP + MOBILE */
-#brochureNavItem #brochureNavTrigger,
-#brochureNavItem .brochure-nav-trigger {
-    color: #0056b3 !important;
-    -webkit-text-fill-color: #0056b3 !important;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    background: transparent !important;
-    border: none !important;
-    opacity: 1 !important;
-}
+/* ==========================================================================
+   DESKTOP BROCHURE & CONTACT NAVBAR SYNC
+   Match all navigation buttons (Home, About, Services, Gallery, Contact)
+   ========================================================================== */
+@media (min-width: 901px) {
+    body.contact-page #navbar .brochure-nav-item,
+    body.contact-page #brochureNavItem {
+        position: relative;
+    }
 
-/* Match the dropdown arrow to other navigation arrows */
-#brochureNavItem #brochureDropdownToggle {
-    color: #0056b3 !important;
-    -webkit-text-fill-color: #0056b3 !important;
-    background: transparent !important;
-}
+    body.contact-page #navbar .brochure-nav-header,
+    body.contact-page #brochureNavItem .brochure-nav-header {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 7px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 
-/* Keep the Brochure header aligned */
-#brochureNavItem .brochure-nav-header {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+    body.contact-page #navbar .brochure-nav-trigger,
+    body.contact-page #brochureNavItem #brochureNavTrigger,
+    body.contact-page #brochureNavItem .brochure-nav-trigger {
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        border: 0 !important;
+        outline: none !important;
+        background: transparent !important;
+        padding: 29px 0 !important;
+        margin: 0 !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        line-height: inherit !important;
+        color: var(--navy-primary, #06365F) !important;
+        -webkit-text-fill-color: var(--navy-primary, #06365F) !important;
+        cursor: pointer !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+    }
 
-/* FINAL FIX — BROCHURE DESKTOP + MOBILE */
-#brochureNavItem #brochureNavTrigger,
-#brochureNavItem .brochure-nav-trigger {
-    color: #0056b3 !important;
-    -webkit-text-fill-color: #0056b3 !important;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    background: transparent !important;
-    border: none !important;
-    opacity: 1 !important;
-}
+    body.contact-page #navbar .brochure-nav-trigger:hover,
+    body.contact-page #brochureNavItem:hover #brochureNavTrigger,
+    body.contact-page #brochureNavItem:hover .brochure-nav-trigger {
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+    }
 
-/* Match the dropdown arrow to other navigation arrows */
-#brochureNavItem #brochureDropdownToggle {
-    color: #0056b3 !important;
-    -webkit-text-fill-color: #0056b3 !important;
-    background: transparent !important;
-}
+    body.contact-page #navbar #brochureDropdownToggle,
+    body.contact-page #brochureNavItem #brochureDropdownToggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        border-radius: 50% !important;
+        background: transparent !important;
+        color: var(--navy-primary, #06365F) !important;
+        -webkit-text-fill-color: var(--navy-primary, #06365F) !important;
+        cursor: pointer !important;
+        transition: background 0.25s ease, color 0.25s ease !important;
+    }
 
-/* Keep the Brochure header aligned */
-#brochureNavItem .brochure-nav-header {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    body.contact-page #navbar #brochureDropdownToggle:hover,
+    body.contact-page #brochureNavItem:hover #brochureDropdownToggle {
+        background: rgba(7, 89, 181, 0.08) !important;
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+    }
+
+    /* Active Contact Nav Link */
+    body.contact-page #navbar > a.nav-link.active {
+        color: var(--nav-orange, #F28C28) !important;
+        -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
+        position: relative !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        padding: 29px 0 !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+    }
+
+    body.contact-page #navbar > a.nav-link.active::after {
+        content: "" !important;
+        position: absolute !important;
+        left: 0 !important;
+        bottom: 17px !important;
+        width: 100% !important;
+        height: 3px !important;
+        background: var(--nav-orange, #F28C28) !important;
+        border-radius: 3px !important;
+    }
 }
 
 /* ==========================================
@@ -2103,10 +1978,8 @@ a.contact-detail:hover strong {
 
 @media (max-width: 900px) {
 
-    /* Header layout */
+    /* Header layout managed by hf.css */
     .header {
-        position: relative;
-        z-index: 1000;
         margin-bottom: 0;
     }
 
@@ -2298,3 +2171,361 @@ a.contact-detail:hover strong {
         display: flex;
     }
 }
+
+/* =========================================================
+   CONTACT PAGE MODERN ANIMATIONS & MICRO-INTERACTIONS
+========================================================= */
+
+@keyframes contactHeroRingFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(-6px) rotate(-1.5deg);
+    }
+}
+
+@keyframes contactHeroGlowPulse {
+    0% {
+        opacity: 0.12;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.22;
+        transform: scale(1.15);
+    }
+    100% {
+        opacity: 0.14;
+        transform: scale(1.05);
+    }
+}
+
+/* Decorative ring & glow animations in hero */
+.contact-hero::before {
+    animation: contactHeroRingFloat 12s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.contact-hero::after {
+    animation: contactHeroGlowPulse 7s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+/* Card hover elevations */
+.contact-info-card,
+.contact-form-card {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease;
+    will-change: transform, box-shadow;
+}
+
+.contact-info-card:hover,
+.contact-form-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(7, 89, 181, 0.28);
+    box-shadow: 0 20px 48px rgba(6, 54, 95, 0.12);
+}
+
+/* Contact detail item hover interaction */
+.contact-detail {
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.contact-detail:hover {
+    transform: translateX(6px);
+}
+
+.contact-detail-icon {
+    transition:
+        all 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+a.contact-detail:hover .contact-detail-icon {
+    background: var(--contact-orange);
+    color: #ffffff;
+    transform: scale(1.1) rotate(-4deg);
+    box-shadow: 0 8px 18px rgba(242, 140, 40, 0.32);
+}
+
+/* Social icons hover bounce */
+.contact-socials a {
+    transition:
+        all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.contact-socials a:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 10px 22px rgba(242, 140, 40, 0.32);
+}
+
+/* Form input focus glow */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--contact-orange);
+    box-shadow: 0 0 0 4px rgba(242, 140, 40, 0.16);
+    background: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Submit button interaction */
+.submit-enquiry {
+    position: relative;
+    overflow: hidden;
+    transition:
+        all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.submit-enquiry:hover {
+    transform: translateY(-3px);
+    background: var(--contact-orange-dark);
+    box-shadow: 0 12px 28px rgba(242, 140, 40, 0.35);
+}
+
+.submit-enquiry i {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.submit-enquiry:hover i {
+    transform: translateX(5px);
+}
+
+/* Map frame & directions interactions */
+.map-frame {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease;
+}
+
+.map-frame:hover {
+    transform: translateY(-3px);
+    border-color: rgba(7, 89, 181, 0.25);
+    box-shadow: 0 22px 50px rgba(6, 54, 95, 0.16);
+}
+
+.map-directions {
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.map-directions:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(242, 140, 40, 0.3);
+}
+
+.map-directions i {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.map-directions:hover i {
+    transform: rotate(-15deg) scale(1.15);
+}
+
+/* =========================================================
+   SCROLL REVEAL ANIMATIONS
+========================================================= */
+
+.contact-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.contact-reveal.is-revealed,
+.contact-reveal.show,
+.contact-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-reveal-left {
+    opacity: 0;
+    transform: translateX(-38px);
+    transition:
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.contact-reveal-left.is-revealed,
+.contact-reveal-left.show,
+.contact-reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact-reveal-right {
+    opacity: 0;
+    transform: translateX(38px);
+    transition:
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.contact-reveal-right.is-revealed,
+.contact-reveal-right.show,
+.contact-reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =========================================================
+   CONTACT PAGE RESPONSIVENESS REFINEMENTS
+========================================================= */
+
+@media (max-width: 992px) {
+    .contact-layout {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+    }
+
+    .map-heading {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+    }
+
+    .map-directions {
+        align-self: flex-start !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        min-height: 420px;
+        padding: 70px 18px 55px;
+    }
+
+    .contact-hero h1 {
+        font-size: clamp(30px, 7vw, 44px);
+        letter-spacing: -1px;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+        padding: 26px 20px;
+    }
+
+    .map-frame,
+    .map-frame iframe {
+        min-height: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-container {
+        width: calc(100% - 24px);
+        padding-inline: 0;
+    }
+
+    .contact-hero {
+        min-height: 360px;
+        padding: 60px 14px 45px;
+    }
+
+    .contact-hero h1 {
+        font-size: clamp(26px, 7.5vw, 34px);
+        line-height: 1.2;
+        letter-spacing: -0.6px;
+        margin: 16px 0 14px;
+    }
+
+    .contact-hero p {
+        font-size: 13.5px;
+        line-height: 1.75;
+    }
+
+    .contact-main,
+    .map-section {
+        padding: 45px 12px;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+        padding: 22px 16px;
+        border-radius: 14px;
+    }
+
+    .contact-info-card h3,
+    .contact-form-card h3 {
+        font-size: 20px;
+    }
+
+    .contact-detail {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .contact-detail-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-height: 46px;
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .map-frame,
+    .map-frame iframe {
+        min-height: 280px;
+        height: 280px;
+        border-radius: 12px;
+    }
+
+    .map-address {
+        font-size: 12px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .contact-hero h1 {
+        font-size: 24px;
+    }
+
+    .contact-detail strong {
+        font-size: 12px;
+    }
+
+    .contact-socials a {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+

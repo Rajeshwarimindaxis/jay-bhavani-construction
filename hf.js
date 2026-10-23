@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // If script.js already initialized brochure dropdown, skip to avoid double toggle
+    if (window._scriptBrochureBound) return;
+
     const brochureNavItem = document.getElementById("brochureNavItem");
     const brochureTrigger = document.getElementById("brochureNavTrigger");
     const brochureToggle = document.getElementById("brochureDropdownToggle");

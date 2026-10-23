@@ -19,7 +19,6 @@
     
     <link rel="stylesheet" href="peb-structures.css">
     <link rel="stylesheet" href="hf.css">
-    <link rel="stylesheet" href="hf.css">
 </head>
 
 <body>
@@ -151,11 +150,6 @@
             <div class="peb-container peb-hero-inner">
 
                 <div class="peb-hero-copy">
-
-                    <div class=>
-                        <span></span>
-                        
-                    </div>
 
                     <h1>
                         PEB Structures
@@ -785,123 +779,6 @@
             yearElement.textContent = new Date().getFullYear();
         }
 
-        // Mobile navigation
-        const menuToggle = document.getElementById("menuToggle");
-        const navbar = document.getElementById("navbar");
-
-        if (menuToggle && navbar) {
-
-            menuToggle.addEventListener("click", function () {
-
-                const isOpen = navbar.classList.toggle("active");
-
-                menuToggle.classList.toggle("active", isOpen);
-                menuToggle.setAttribute("aria-expanded", String(isOpen));
-                menuToggle.setAttribute(
-                    "aria-label",
-                    isOpen ? "Close Menu" : "Open Menu"
-                );
-
-            });
-
-            navbar.querySelectorAll(".nav-link, .nav-quote").forEach(function (link) {
-
-                link.addEventListener("click", function () {
-
-                    if (!link.classList.contains("services-nav-link")) {
-
-                        navbar.classList.remove("active");
-                        menuToggle.classList.remove("active");
-                        menuToggle.setAttribute("aria-expanded", "false");
-                        menuToggle.setAttribute("aria-label", "Open Menu");
-
-                    }
-
-                });
-
-            });
-        }
-
-        // Services dropdown
-        const servicesNavItem = document.getElementById("servicesNavItem");
-        const dropdownToggle = document.getElementById("servicesDropdownToggle");
-        const dropdown = document.getElementById("servicesDropdown");
-
-        function closeServicesDropdown() {
-
-            if (!servicesNavItem || !dropdownToggle || !dropdown) {
-                return;
-            }
-
-            servicesNavItem.classList.remove("dropdown-open");
-
-            dropdownToggle.setAttribute("aria-expanded", "false");
-            dropdownToggle.setAttribute(
-                "aria-label",
-                "Open Services dropdown"
-            );
-
-            dropdown.setAttribute("aria-hidden", "true");
-        }
-
-        if (servicesNavItem && dropdownToggle && dropdown) {
-
-            dropdownToggle.addEventListener("click", function (event) {
-
-                event.stopPropagation();
-
-                const isOpen =
-                    servicesNavItem.classList.toggle("dropdown-open");
-
-                dropdownToggle.setAttribute("aria-expanded", String(isOpen));
-
-                dropdownToggle.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "Close Services dropdown"
-                        : "Open Services dropdown"
-                );
-
-                dropdown.setAttribute("aria-hidden", String(!isOpen));
-
-            });
-
-            document.addEventListener("click", function (event) {
-
-                if (!servicesNavItem.contains(event.target)) {
-                    closeServicesDropdown();
-                }
-
-            });
-
-            document.addEventListener("keydown", function (event) {
-
-                if (event.key === "Escape") {
-                    closeServicesDropdown();
-                }
-
-            });
-
-            dropdown.querySelectorAll("a").forEach(function (link) {
-
-                link.addEventListener("click", function () {
-
-                    closeServicesDropdown();
-
-                    if (navbar && menuToggle) {
-
-                        navbar.classList.remove("active");
-                        menuToggle.classList.remove("active");
-                        menuToggle.setAttribute("aria-expanded", "false");
-
-                    }
-
-                });
-
-            });
-
-        }
-
         // Header scroll effect
         const header = document.getElementById("header");
 
@@ -984,6 +861,7 @@
     });
     </script>
 
+    <script src="script.js" defer></script>
     <script src="hf.js" defer></script>
 </body>
 </html>

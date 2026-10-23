@@ -16,13 +16,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <!-- Contact page styles -->
+    <link rel="stylesheet" href="contacts.css">
     <!-- Shared header and footer styles -->
     <link rel="stylesheet" href="hf.css">
-    <link rel="stylesheet" href="contacts.css">
 
 </head>
 
-<body>
+<body class="contact-page">
 
     <!-- TOP SCROLLING CONTACT BAR -->
     <div class="top-contact-bar" aria-label="Contact information">
@@ -307,17 +308,17 @@
         <section class="contact-hero">
             <div class="contact-container">
 
-                <div class="contact-eyebrow">
+                <div class="contact-eyebrow contact-reveal">
                     WE'RE HERE TO HELP
                 </div>
 
-                <h1>
+                <h1 class="contact-reveal">
                     Let's Build Something
                     <br>
                     <span>Strong Together.</span>
                 </h1>
 
-                <p>
+                <p class="contact-reveal">
                     Have a construction project in mind? Get in touch
                     with our team to discuss your requirements and
                     explore the right solution for your project.
@@ -330,7 +331,7 @@
         <section class="contact-main" id="enquiry">
             <div class="contact-container">
 
-                <div class="contact-heading">
+                <div class="contact-heading contact-reveal">
                     <div class="eyebrow">CONTACT OUR TEAM</div>
 
                     <h2>
@@ -348,7 +349,7 @@
 
                     <!-- CONTACT INFORMATION -->
                     <section
-                        class="contact-info-card"
+                        class="contact-info-card contact-reveal-left"
                         aria-labelledby="contact-details-title"
                     >
                         <h3 id="contact-details-title">Contact Details</h3>
@@ -455,7 +456,7 @@
 
                     <!-- PROJECT ENQUIRY FORM -->
                     <section
-                        class="contact-form-card"
+                        class="contact-form-card contact-reveal-right"
                         aria-labelledby="enquiry-title"
                     >
                         <h3 id="enquiry-title">
@@ -588,7 +589,7 @@
         </section>
 
         <!-- GOOGLE MAPS LOCATION -->
-        <section class="map-section" id="location">
+        <section class="map-section contact-reveal" id="location">
             <div class="contact-container">
 
                 <div class="map-heading">
@@ -772,96 +773,55 @@
     </button>
 
     <!-- SHARED NAVIGATION JAVASCRIPT -->
+    <script src="script.js" defer></script>
     <script src="hf.js" defer></script>
 
     <!-- CONTACT PAGE SCRIPTS -->
-    
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Mobile hamburger menu
-    const menuToggle = document.getElementById("menuToggle");
-    const navbar = document.getElementById("navbar");
-
-    if (menuToggle && navbar && !menuToggle.dataset.galleryReady) {
-        menuToggle.dataset.galleryReady = "true";
-
-        menuToggle.addEventListener("click", function (event) {
-            event.preventDefault();
-            navbar.classList.toggle("active");
-
-            const isOpen = navbar.classList.contains("active");
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
-    }
-
-    // Services dropdown
-    const servicesItem = document.getElementById("servicesNavItem");
-    const servicesToggle =
-        document.getElementById("servicesDropdownToggle");
-    const servicesDropdown =
-        document.getElementById("servicesDropdown");
-
-    if (servicesItem && servicesToggle && servicesDropdown &&
-        !servicesToggle.dataset.galleryReady) {
-
-        servicesToggle.dataset.galleryReady = "true";
-
-        servicesToggle.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            const isOpen =
-                servicesItem.classList.toggle("dropdown-open");
-
-            servicesToggle.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-            servicesDropdown.setAttribute(
-                "aria-hidden",
-                String(!isOpen)
-            );
-        });
-    }
-
-    // Close Services dropdown when clicking outside it
-    document.addEventListener("click", function (event) {
-        if (servicesItem &&
-            !servicesItem.contains(event.target)) {
-            servicesItem.classList.remove("dropdown-open");
-
-            if (servicesToggle) {
-                servicesToggle.setAttribute("aria-expanded", "false");
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Back to top button
+        const backToTop = document.getElementById("backToTop");
+        if (backToTop) {
+            function updateBackToTop() {
+                backToTop.classList.toggle("show", window.scrollY > 400);
             }
+            window.addEventListener("scroll", updateBackToTop, { passive: true });
+            updateBackToTop();
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
 
-            if (servicesDropdown) {
-                servicesDropdown.setAttribute("aria-hidden", "true");
-            }
+        // Current Year
+        const year = document.getElementById("currentYear");
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+
+        // Scroll Reveal Observer for Contact Page
+        const contactReveals = document.querySelectorAll(".contact-reveal, .contact-reveal-left, .contact-reveal-right");
+        if (contactReveals.length && "IntersectionObserver" in window) {
+            const contactObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-revealed", "show", "active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            });
+
+            contactReveals.forEach(function (el) {
+                contactObserver.observe(el);
+            });
+        } else {
+            contactReveals.forEach(function (el) {
+                el.classList.add("is-revealed", "show", "active");
+            });
         }
     });
-
-    // Close mobile menu when a normal navigation link is clicked
-    if (navbar) {
-        navbar.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                if (link.id === "servicesDropdownToggle" ||
-                    link.id === "brochureDropdownToggle") {
-                    return;
-                }
-
-                if (window.innerWidth <= 768) {
-                    navbar.classList.remove("active");
-
-                    if (menuToggle) {
-                        menuToggle.setAttribute(
-                            "aria-expanded", "false"
-                        );
-                    }
-                }
-            });
-        });
-    }
-});
-</script>
+    </script>
 </body>
 </html>
