@@ -20,208 +20,6 @@
     <link rel="stylesheet" href="gallery.css">
     <link rel="stylesheet" href="hf.css">
 
-    <style>
-        /* =========================
-           HERO BACKGROUND
-        ========================= */
-
-        .hero.gallery-hero {
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(5, 20, 43, 0.82),
-                    rgba(5, 20, 43, 0.52),
-                    rgba(5, 20, 43, 0.25)
-                ),
-                url("images/gallery-hero-bg.png") center / cover no-repeat;
-        }
-
-        /* =========================
-           GALLERY LAYOUT
-        ========================= */
-
-        .gallery-item[hidden] {
-            display: none !important;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr);
-            gap: 28px;
-        }
-
-        .gallery-item.before-after-project {
-            min-width: 0;
-            padding: 26px 24px 24px;
-            overflow: hidden;
-            background: #ffffff;
-            border: 1px solid #dce5ee;
-            border-radius: 22px;
-            box-shadow: 0 16px 42px rgba(18, 42, 68, 0.10);
-        }
-
-        .before-after-images {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 26px;
-            align-items: stretch;
-        }
-
-        .before-after-image {
-            min-width: 0;
-            overflow: hidden;
-            border-radius: 14px;
-            background: #edf3f8;
-        }
-
-        .before-after-image .gallery-image-link {
-            position: relative;
-            display: block;
-            width: 100%;
-            height: clamp(190px, 24vw, 310px);
-            overflow: hidden;
-            background: #e8eef4;
-        }
-
-        .before-after-image .gallery-image-link img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.45s ease;
-        }
-
-        .before-after-image:hover .gallery-image-link img {
-            transform: scale(1.045);
-        }
-
-        .before-after-image .gallery-zoom {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: grid;
-            place-items: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            color: #ffffff;
-            background: rgba(20, 38, 60, 0.82);
-            text-decoration: none;
-        }
-
-        .before-after-label {
-            display: grid;
-            place-items: center;
-            min-height: 56px;
-            padding: 10px;
-            color: #0759a8;
-            background: #dceafa;
-            font-size: 17px;
-            font-weight: 800;
-            text-align: center;
-        }
-
-        .before-after-image.before .before-after-label {
-            color: #98500a;
-            background: #fff0dc;
-        }
-
-        .gallery-item.before-after-project .gallery-caption {
-            padding: 74px 0 0;
-        }
-
-        .gallery-item.before-after-project .gallery-caption > span {
-            display: block;
-            margin-bottom: 14px;
-            color: #0759b5;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 1.15px;
-        }
-
-        .gallery-item.before-after-project .gallery-caption h3 {
-            margin: 0 0 12px;
-            color: #102a43;
-            font-size: 25px;
-            line-height: 1.3;
-        }
-
-        .gallery-item.before-after-project .gallery-caption p {
-            margin: 0;
-            color: #61758a;
-            font-size: 16px;
-            line-height: 1.65;
-        }
-
-        /* =========================
-           TABLET RESPONSIVENESS
-        ========================= */
-
-        @media (max-width: 900px) {
-            .before-after-images {
-                gap: 16px;
-            }
-
-            .before-after-image .gallery-image-link {
-                height: 230px;
-            }
-
-            .gallery-item.before-after-project .gallery-caption {
-                padding-top: 42px;
-            }
-        }
-
-        /* =========================
-           MOBILE RESPONSIVENESS
-        ========================= */
-
-        @media (max-width: 650px) {
-            .gallery-item.before-after-project {
-                padding: 14px;
-                border-radius: 16px;
-            }
-
-            .before-after-images {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 18px;
-            }
-
-            .before-after-image .gallery-image-link {
-                height: 290px;
-            }
-
-            .before-after-label {
-                min-height: 48px;
-                font-size: 16px;
-            }
-
-            .gallery-item.before-after-project .gallery-caption {
-                padding-top: 28px;
-            }
-
-            .gallery-item.before-after-project .gallery-caption h3 {
-                font-size: 22px;
-            }
-
-            .gallery-item.before-after-project .gallery-caption p {
-                font-size: 15px;
-            }
-        }
-
-        @media (min-width: 651px) and (max-width: 760px) {
-            .before-after-images {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .before-after-image:last-child {
-                grid-column: 1 / -1;
-            }
-
-            .before-after-image:last-child .gallery-image-link {
-                height: 280px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -571,9 +369,35 @@
 
                     <p>
                         Take a closer look at our construction work across industrial,
-                        commercial and infrastructure projects.
+                        commercial and infrastructure projects from initial groundwork to final handover.
                     </p>
 
+                </div>
+
+                <!-- CATEGORY FILTERS -->
+                <div class="gallery-filter-wrapper">
+                    <div class="gallery-filters" id="galleryFilters" role="tablist" aria-label="Project Categories">
+                        <button class="filter-btn active" data-filter="all" type="button" role="tab" aria-selected="true">
+                            <i class="fa-solid fa-shapes"></i>
+                            <span>All Projects</span>
+                            <span class="filter-count" id="countAll">8</span>
+                        </button>
+                        <button class="filter-btn" data-filter="industrial" type="button" role="tab" aria-selected="false">
+                            <i class="fa-solid fa-industry"></i>
+                            <span>Industrial &amp; PEB</span>
+                            <span class="filter-count" id="countInd">4</span>
+                        </button>
+                        <button class="filter-btn" data-filter="commercial" type="button" role="tab" aria-selected="false">
+                            <i class="fa-solid fa-building"></i>
+                            <span>Commercial</span>
+                            <span class="filter-count" id="countCom">2</span>
+                        </button>
+                        <button class="filter-btn" data-filter="infrastructure" type="button" role="tab" aria-selected="false">
+                            <i class="fa-solid fa-road"></i>
+                            <span>Infrastructure</span>
+                            <span class="filter-count" id="countInf">2</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="gallery-grid" id="galleryGrid"></div>
@@ -607,6 +431,36 @@
 
             </div>
         </section>
+
+        <!-- FULLSCREEN INTERACTIVE LIGHTBOX MODAL -->
+        <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project photo viewer">
+            <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+            <div class="lightbox-dialog">
+                <button class="lightbox-btn lightbox-close" id="lightboxClose" type="button" aria-label="Close lightbox">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <button class="lightbox-btn lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous photo">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-btn lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next photo">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div class="lightbox-body">
+                    <div class="lightbox-img-container">
+                        <img src="" alt="" id="lightboxImg" class="lightbox-img">
+                    </div>
+                    <div class="lightbox-info">
+                        <div class="lightbox-header-row">
+                            <span class="lightbox-pill" id="lightboxStage">BEFORE</span>
+                            <span class="lightbox-counter" id="lightboxCounter">Photo 1 of 24</span>
+                        </div>
+                        <h3 id="lightboxTitle">Project Title</h3>
+                        <p id="lightboxCaption">Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
 
@@ -746,153 +600,390 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- EXISTING JAVASCRIPT FILES -->
-
+    <!-- SCRIPTS -->
     <script src="hf.js" defer></script>
-    <script src="gallery.js" defer></script>
-
-    <!-- GENERATE 8 PROJECTS / 24 IMAGES -->
+    <script src="script.js" defer></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-
             const grid = document.getElementById("galleryGrid");
+            if (!grid) return;
 
+            // 8 FEATURED PROJECTS
             const projects = [
                 {
                     number: "01",
                     title: "Pooja Packaging",
-                    description: "Construction work and project progress at the Pooja Packaging site."
+                    category: "industrial",
+                    categoryName: "Industrial & PEB",
+                    categoryIcon: "fa-industry",
+                    description: "Full-cycle construction work featuring heavy-duty structural steel PEB framing and precision industrial flooring.",
+                    phases: [
+                        { label: "Before", title: "Raw Groundwork & Footings", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "Phase 2", title: "Structural PEB Framing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "Completed", title: "Turnkey Packaging Plant", className: "phase-after", icon: "fa-circle-check" }
+                    ]
                 },
                 {
                     number: "02",
                     title: "Technip (Kalid Site)",
-                    description: "Construction progress and completed work at the Technip (Kalid) site."
+                    category: "infrastructure",
+                    categoryName: "Infrastructure & Plant",
+                    categoryIcon: "fa-road",
+                    description: "Heavy engineering site progress and completed construction executed to strict industrial safety standards.",
+                    phases: [
+                        { label: "Before", title: "Site Grading & Surveying", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "Phase 2", title: "Heavy RCC Substructure", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "Completed", title: "Operational Plant Campus", className: "phase-after", icon: "fa-circle-check" }
+                    ]
                 },
                 {
                     number: "03",
                     title: "PEB Plant",
-                    description: "Industrial PEB construction and site development."
+                    category: "industrial",
+                    categoryName: "PEB Structures",
+                    categoryIcon: "fa-warehouse",
+                    description: "Industrial PEB manufacturing facility engineered with wide clear-span bays and high-load foundation anchors.",
+                    phases: [
+                        { label: "Before", title: "Plot Demarcation & Base", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "Phase 2", title: "Truss & Rafter Assembly", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "Completed", title: "Weatherproof PEB Plant", className: "phase-after", icon: "fa-circle-check" }
+                    ]
                 },
                 {
                     number: "04",
                     title: "Gaikwad Site",
-                    description: "Construction progress at the Gaikwad site."
+                    category: "commercial",
+                    categoryName: "Commercial Complex",
+                    categoryIcon: "fa-building",
+                    description: "Commercial multi-use facility developed with seismic-resistant RCC framework and modern facade aesthetics.",
+                    phases: [
+                        { label: "Before", title: "Foundation Pit & Shoring", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "Phase 2", title: "Superstructure Columns", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "Completed", title: "Finished Commercial Facility", className: "phase-after", icon: "fa-circle-check" }
+                    ]
                 },
                 {
                     number: "05",
                     title: "Sakshi Site",
-                    description: "Construction work and project progress at the Sakshi site."
+                    category: "industrial",
+                    categoryName: "Industrial Shed",
+                    categoryIcon: "fa-industry",
+                    description: "Comprehensive fabrication, plinth beam casting, and industrial shed erection designed for heavy tooling equipment.",
+                    phases: [
+                        { label: "Before", title: "Plinth & Earth Compaction", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "Phase 2", title: "Crane Girders & Cladding", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "Completed", title: "Turnkey Industrial Shed", className: "phase-after", icon: "fa-circle-check" }
+                    ]
                 },
                 {
                     number: "06",
                     title: "JMDP Site",
-                    description: "Construction progress and site development at the JMDP site."
+                    category: "infrastructure",
+                    categoryName: "Infrastructure & Road",
+                    categoryIcon: "fa-road",
+                    description: "Rigid concrete pavement, storm drainage network, and access corridors engineered for heavy trailer axle loads.",
+                    phases: [
+                        { label: "Before", title: "Subgrade & GSB Compaction", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "Phase 2", title: "PQC Casting & Joint Sealing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "Completed", title: "Heavy-Duty RCC Transit Road", className: "phase-after", icon: "fa-circle-check" }
+                    ]
                 },
                 {
                     number: "07",
                     title: "Maharashtra ENT",
-                    description: "Construction work and project progress at the Maharashtra ENT site."
+                    category: "commercial",
+                    categoryName: "Commercial & Healthcare",
+                    categoryIcon: "fa-hospital",
+                    description: "Specialized healthcare and commercial structure built with precision architectural engineering and clean utility planning.",
+                    phases: [
+                        { label: "Before", title: "Site Groundwork & Footings", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "Phase 2", title: "RCC Structural Framing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "Completed", title: "Commissioned ENT Facility", className: "phase-after", icon: "fa-circle-check" }
+                    ]
                 },
                 {
                     number: "08",
                     title: "Murhe Site",
-                    description: "Construction work and project progress at the Murhe site."
+                    category: "industrial",
+                    categoryName: "Logistics & Warehouse",
+                    categoryIcon: "fa-boxes-stacked",
+                    description: "High-bay logistics warehouse featuring expansive clear height, laser-screed flooring, and automated dock approaches.",
+                    phases: [
+                        { label: "Before", title: "Plot Leveling & Earthwork", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "Phase 2", title: "High-Bay Steel Framing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "Completed", title: "Logistics Hub Handover", className: "phase-after", icon: "fa-circle-check" }
+                    ]
                 }
             ];
 
-            projects.forEach(function (project, index) {
+            // Flat collection of photos for interactive lightbox
+            const allPhotos = [];
 
-                const firstImageNumber = index * 3 + 1;
+            // RENDER PROJECT CARDS
+            grid.innerHTML = "";
 
-                const images = [
-                    {
-                        label: "Before",
-                        path: `images/project-${String(firstImageNumber).padStart(2, "0")}.jpg`,
-                        className: "before"
-                    },
-                    {
-                        label: "After 1",
-                        path: `images/project-${String(firstImageNumber + 1).padStart(2, "0")}.jpg`,
-                        className: "after-one"
-                    },
-                    {
-                        label: "After 2",
-                        path: `images/project-${String(firstImageNumber + 2).padStart(2, "0")}.jpg`,
-                        className: "after-two"
-                    }
-                ];
+            projects.forEach(function (project, pIndex) {
+                const firstImgNum = pIndex * 3 + 1;
 
-                const card = document.createElement("article");
+                const imageCardsHtml = project.phases.map(function (phase, phaseIdx) {
+                    const imgIndex = firstImgNum + phaseIdx;
+                    const imgPath = `images/project-${String(imgIndex).padStart(2, "0")}.jpg`;
+                    const globalPhotoIndex = allPhotos.length;
 
-                card.className = "gallery-item before-after-project";
-                card.dataset.category = project.number;
+                    // Add to lightbox registry
+                    allPhotos.push({
+                        path: imgPath,
+                        projectNumber: project.number,
+                        projectTitle: project.title,
+                        phaseLabel: phase.label,
+                        phaseTitle: phase.title,
+                        desc: project.description
+                    });
 
-                const imageCards = images.map(function (image) {
+                    const isMiddlePhoto = (phaseIdx === 1);
+                    const middleBadgeHtml = isMiddlePhoto ? `
+                        <div class="middle-progress-tag" title="Construction in progress">
+                            <span class="progress-glow-ring"></span>
+                            <span class="progress-text"><i class="fa-solid fa-arrows-rotate fa-spin"></i> In Progress</span>
+                        </div>
+                    ` : '';
 
                     return `
-                        <div class="before-after-image ${image.className}">
+                        <div class="before-after-image ${phase.className} ${isMiddlePhoto ? 'middle-photo-card' : ''}" data-phase-index="${phaseIdx}">
                             <a
-                                href="${image.path}"
+                                href="${imgPath}"
                                 class="gallery-image-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Enlarge ${image.label} image for ${project.title}"
+                                data-photo-index="${globalPhotoIndex}"
+                                aria-label="View ${project.title} - ${phase.label} in lightbox"
                             >
                                 <img
-                                    src="${image.path}"
-                                    alt="${project.title} - ${image.label}"
+                                    src="${imgPath}"
+                                    alt="${project.title} - ${phase.label}: ${phase.title}"
                                     loading="lazy"
                                 >
-
-                                <span class="gallery-zoom" aria-hidden="true">
-                                    <i class="fa-solid fa-expand"></i>
+                                <span class="phase-badge ${phase.className}">
+                                    <i class="fa-solid ${phase.icon}"></i>
+                                    ${phase.label}
                                 </span>
-                            </a>
 
-                            <div class="before-after-label">
-                                ${image.label}
-                            </div>
+                                ${middleBadgeHtml}
+
+                                <!-- ANIMATED MIDDLE / CENTER HOVER BADGE -->
+                                <div class="photo-center-badge">
+                                    <span class="center-badge-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </span>
+                                    <span class="center-badge-label">Preview Photo</span>
+                                </div>
+
+                                <div class="phase-strip">
+                                    <span class="phase-title">${phase.title}</span>
+                                    <span class="phase-action">Preview <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                                </div>
+                            </a>
                         </div>
                     `;
-
                 }).join("");
 
+                const card = document.createElement("article");
+                card.className = "gallery-item before-after-project scroll-reveal";
+                card.dataset.category = project.category;
+                card.dataset.number = project.number;
+
                 card.innerHTML = `
-                    <div class="before-after-images">
-                        ${imageCards}
+                    <div class="project-card-header">
+                        <div class="project-header-left">
+                            <div class="project-meta-badges">
+                                <span class="project-num-badge">Project ${project.number}</span>
+                                <span class="project-category-badge">
+                                    <i class="fa-solid ${project.categoryIcon}"></i> ${project.categoryName}
+                                </span>
+                            </div>
+                            <h3 class="project-title">${project.title}</h3>
+                            <p class="project-desc">${project.description}</p>
+                        </div>
+                        <div class="project-header-right">
+                            <span class="project-photos-pill">
+                                <i class="fa-solid fa-camera"></i>
+                                3 Phased Views
+                            </span>
+                        </div>
                     </div>
 
-                    <div class="gallery-caption">
-                        <span>PROJECT ${project.number} · BEFORE &amp; AFTER</span>
-                        <h3>${project.title}</h3>
-                        <p>${project.description}</p>
+                    <div class="before-after-images">
+                        ${imageCardsHtml}
                     </div>
                 `;
 
                 grid.appendChild(card);
             });
 
-            /* Update footer year */
+            // UPDATE COUNTS ON FILTER PILLS
+            const indCount = projects.filter(p => p.category === "industrial").length;
+            const comCount = projects.filter(p => p.category === "commercial").length;
+            const infCount = projects.filter(p => p.category === "infrastructure").length;
 
-            const year = document.getElementById("currentYear");
+            const countAllEl = document.getElementById("countAll");
+            const countIndEl = document.getElementById("countInd");
+            const countComEl = document.getElementById("countCom");
+            const countInfEl = document.getElementById("countInf");
 
-            if (year) {
-                year.textContent = new Date().getFullYear();
-            }
+            if (countAllEl) countAllEl.textContent = projects.length;
+            if (countIndEl) countIndEl.textContent = indCount;
+            if (countComEl) countComEl.textContent = comCount;
+            if (countInfEl) countInfEl.textContent = infCount;
 
-            /* Warn if an image file is missing */
+            // CATEGORY FILTER INTERACTION
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const allCards = document.querySelectorAll(".gallery-item.before-after-project");
 
-            grid.querySelectorAll("img").forEach(function (img) {
-                img.addEventListener("error", function () {
-                    console.warn("Gallery image not found:", this.src);
+            filterButtons.forEach(btn => {
+                btn.addEventListener("click", function () {
+                    filterButtons.forEach(b => {
+                        b.classList.remove("active");
+                        b.setAttribute("aria-selected", "false");
+                    });
+                    this.classList.add("active");
+                    this.setAttribute("aria-selected", "true");
+
+                    const selected = this.dataset.filter;
+
+                    allCards.forEach(card => {
+                        if (selected === "all" || card.dataset.category === selected) {
+                            card.classList.remove("is-filtered-out");
+                            card.style.opacity = "0";
+                            card.style.transform = "translateY(20px)";
+                            requestAnimationFrame(() => {
+                                card.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+                                card.style.opacity = "1";
+                                card.style.transform = "translateY(0)";
+                            });
+                        } else {
+                            card.classList.add("is-filtered-out");
+                        }
+                    });
                 });
             });
 
+            // SCROLL REVEAL ANIMATIONS
+            if ("IntersectionObserver" in window) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("revealed");
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px"
+                });
+
+                document.querySelectorAll(".gallery-item.scroll-reveal").forEach(card => {
+                    revealObserver.observe(card);
+                });
+            } else {
+                document.querySelectorAll(".gallery-item.scroll-reveal").forEach(card => {
+                    card.classList.add("revealed");
+                });
+            }
+
+            // INTERACTIVE LIGHTBOX MODAL
+            const lightbox = document.getElementById("galleryLightbox");
+            const lightboxBackdrop = document.getElementById("lightboxBackdrop");
+            const lightboxImg = document.getElementById("lightboxImg");
+            const lightboxClose = document.getElementById("lightboxClose");
+            const lightboxPrev = document.getElementById("lightboxPrev");
+            const lightboxNext = document.getElementById("lightboxNext");
+            const lightboxStage = document.getElementById("lightboxStage");
+            const lightboxCounter = document.getElementById("lightboxCounter");
+            const lightboxTitle = document.getElementById("lightboxTitle");
+            const lightboxCaption = document.getElementById("lightboxCaption");
+
+            let currentPhotoIdx = 0;
+
+            function updateLightbox(idx) {
+                if (idx < 0) idx = allPhotos.length - 1;
+                if (idx >= allPhotos.length) idx = 0;
+                currentPhotoIdx = idx;
+
+                const item = allPhotos[idx];
+                if (!item) return;
+
+                lightboxImg.src = item.path;
+                lightboxImg.alt = item.projectTitle + " - " + item.phaseTitle;
+                lightboxStage.textContent = item.phaseLabel.toUpperCase() + " · " + item.phaseTitle;
+
+                // Color pill according to phase
+                lightboxStage.style.background = item.phaseLabel.toLowerCase().includes("before")
+                    ? "rgba(180, 83, 9, 0.9)"
+                    : item.phaseLabel.toLowerCase().includes("phase")
+                    ? "rgba(2, 132, 199, 0.9)"
+                    : "rgba(5, 150, 105, 0.9)";
+                lightboxStage.style.color = "#ffffff";
+
+                lightboxTitle.textContent = "Project " + item.projectNumber + " · " + item.projectTitle;
+                lightboxCaption.textContent = item.desc;
+                lightboxCounter.textContent = "Photo " + (idx + 1) + " of " + allPhotos.length;
+            }
+
+            function openLightbox(idx) {
+                updateLightbox(idx);
+                lightbox.classList.add("active");
+                lightbox.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove("active");
+                lightbox.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+            }
+
+            // Attach click listeners to image links
+            grid.addEventListener("click", function (e) {
+                const link = e.target.closest(".gallery-image-link");
+                if (link) {
+                    e.preventDefault();
+                    const photoIdx = parseInt(link.dataset.photoIndex, 10);
+                    if (!isNaN(photoIdx)) {
+                        openLightbox(photoIdx);
+                    }
+                }
+            });
+
+            if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+            if (lightboxBackdrop) lightboxBackdrop.addEventListener("click", closeLightbox);
+
+            if (lightboxPrev) {
+                lightboxPrev.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    updateLightbox(currentPhotoIdx - 1);
+                });
+            }
+
+            if (lightboxNext) {
+                lightboxNext.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    updateLightbox(currentPhotoIdx + 1);
+                });
+            }
+
+            // Keyboard navigation
+            document.addEventListener("keydown", function (e) {
+                if (!lightbox.classList.contains("active")) return;
+                if (e.key === "Escape") closeLightbox();
+                if (e.key === "ArrowLeft") updateLightbox(currentPhotoIdx - 1);
+                if (e.key === "ArrowRight") updateLightbox(currentPhotoIdx + 1);
+            });
+
+            // Update footer year
+            const yearEl = document.getElementById("currentYear");
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
         });
     </script>
-
-    <script src="script.js" defer></script>
-    <script src="hf.js" defer></script>
 </body>
 </html>

@@ -47,10 +47,12 @@
     --srv-radius-lg: 20px;
     --srv-radius-full: 9999px;
 
-    /* Transition */
+    /* Transition & Easing */
     --srv-trans-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --srv-trans-base: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     --srv-trans-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --srv-ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    --srv-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 html {
@@ -171,6 +173,37 @@ body {
     background: #f28c28;
     color: #ffffff !important;
     box-shadow: 0 4px 14px rgba(242, 140, 40, 0.28);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.srv-btn-primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: none;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.srv-btn-primary:hover::after {
+    animation: srvBtnShimmer 0.75s ease-out;
+}
+
+@keyframes srvBtnShimmer {
+    0% { left: -120%; }
+    100% { left: 180%; }
 }
 
 .srv-btn-primary:hover {
@@ -296,6 +329,11 @@ body {
     border-radius: var(--srv-radius-full);
     border: 1px solid var(--srv-border);
     box-shadow: var(--srv-shadow-md);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.srv-filter-bar:hover {
+    box-shadow: 0 12px 34px rgba(7, 30, 61, 0.12);
 }
 
 .srv-filter-btn {
@@ -309,32 +347,37 @@ body {
     font-weight: 700;
     color: var(--srv-text-muted);
     cursor: pointer;
-    transition: all var(--srv-trans-base);
+    transition: all 0.3s var(--srv-ease-spring);
     display: inline-flex;
     align-items: center;
     gap: 8px;
     white-space: nowrap;
+    position: relative;
 }
 
 .srv-filter-btn i {
     font-size: 13px;
     opacity: 0.75;
+    transition: transform 0.3s var(--srv-ease-bounce), color 0.3s ease, opacity 0.3s ease;
 }
 
 .srv-filter-btn:hover {
     color: var(--srv-navy);
     background: rgba(7, 30, 61, 0.05);
+    transform: translateY(-2px);
 }
 
 .srv-filter-btn.active {
     background: var(--srv-navy);
     color: #ffffff;
-    box-shadow: 0 6px 18px rgba(7, 30, 61, 0.25);
+    box-shadow: 0 8px 22px rgba(7, 30, 61, 0.25), 0 0 0 2px rgba(240, 120, 24, 0.35);
+    transform: translateY(-2px);
 }
 
 .srv-filter-btn.active i {
     color: var(--srv-orange);
     opacity: 1;
+    transform: scale(1.15);
 }
 
 /* ================= 3. PRIMARY SERVICES (3x2 GRID) ================= */
@@ -354,13 +397,35 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: transform var(--srv-trans-base), box-shadow var(--srv-trans-base), border-color var(--srv-trans-base);
+    transition: transform 0.45s var(--srv-ease-spring), box-shadow 0.45s var(--srv-ease-spring), border-color 0.35s ease;
+    will-change: transform, box-shadow;
 }
 
 .srv-primary-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--srv-shadow-lg);
-    border-color: var(--srv-border-hover);
+    transform: translateY(-10px);
+    box-shadow: 0 22px 50px -12px rgba(7, 30, 61, 0.16), 0 0 25px rgba(240, 120, 24, 0.14);
+    border-color: rgba(240, 120, 24, 0.45);
+}
+
+/* Cursor-Tracking Interactive Radial Spotlight (Desktop) */
+.srv-primary-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        400px circle at var(--srv-mouse-x, 50%) var(--srv-mouse-y, 50%),
+        rgba(240, 120, 24, 0.08),
+        transparent 70%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 5;
+}
+
+.srv-primary-card:hover::after {
+    opacity: 1;
 }
 
 /* Media Box */
@@ -375,11 +440,41 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.8s var(--srv-ease-spring);
+    will-change: transform;
 }
 
 .srv-primary-card:hover .srv-card-media img {
     transform: scale(1.09);
+}
+
+/* Diagonal Light Sweep Beam across Image on Hover */
+.srv-card-media::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.32),
+        transparent
+    );
+    transform: skewX(-25deg);
+    z-index: 3;
+    pointer-events: none;
+    transition: none;
+}
+
+.srv-primary-card:hover .srv-card-media::before {
+    animation: srvMediaSweep 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes srvMediaSweep {
+    0% { left: -120%; }
+    100% { left: 190%; }
 }
 
 /* Gradient shade over image */
@@ -387,7 +482,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(7, 30, 61, 0.2) 0%, rgba(7, 30, 61, 0.7) 100%);
+    background: linear-gradient(180deg, rgba(7, 30, 61, 0.18) 0%, rgba(7, 30, 61, 0.72) 100%);
     pointer-events: none;
 }
 
@@ -396,7 +491,7 @@ body {
     position: absolute;
     top: 14px;
     left: 14px;
-    z-index: 2;
+    z-index: 4;
     background: rgba(7, 30, 61, 0.88);
     color: #ff9b3d;
     padding: 6px 14px;
@@ -405,22 +500,17 @@ body {
     font-weight: 800;
     letter-spacing: 0.8px;
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.3s ease;
 }
 
-/* Number Watermark */
-.srv-card-number {
-    position: absolute;
-    bottom: 12px;
-    right: 16px;
-    z-index: 2;
-    font-family: "Manrope", sans-serif;
-    font-size: 26px;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.85);
-    letter-spacing: -0.5px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+.srv-primary-card:hover .srv-card-category {
+    background: rgba(7, 30, 61, 0.96);
+    border-color: rgba(240, 120, 24, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
+
 
 /* Card Body */
 .srv-card-body {
@@ -443,14 +533,14 @@ body {
     justify-content: center;
     font-size: 22px;
     margin-bottom: 20px;
-    transition: all var(--srv-trans-base);
+    transition: transform 0.45s var(--srv-ease-bounce), background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .srv-primary-card:hover .srv-card-icon {
     background: var(--srv-orange);
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(240, 120, 24, 0.35);
-    transform: scale(1.05);
+    box-shadow: 0 10px 24px rgba(240, 120, 24, 0.4), 0 0 0 4px rgba(240, 120, 24, 0.18);
+    transform: scale(1.12) rotate(6deg);
 }
 
 .srv-card-body h3 {
@@ -460,6 +550,11 @@ body {
     color: var(--srv-navy);
     line-height: 1.3;
     margin: 0 0 12px;
+    transition: color 0.3s ease;
+}
+
+.srv-primary-card:hover .srv-card-body h3 {
+    color: var(--srv-orange);
 }
 
 .srv-card-body p {
@@ -485,6 +580,15 @@ body {
     border: 1px solid var(--srv-border);
     padding: 4px 10px;
     border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+.srv-spec-chip:hover {
+    transform: translateY(-2px);
+    background: var(--srv-orange-subtle);
+    border-color: rgba(240, 120, 24, 0.45);
+    color: var(--srv-orange);
+    box-shadow: 0 4px 10px rgba(240, 120, 24, 0.15);
 }
 
 /* Feature Bullets */
@@ -506,6 +610,12 @@ body {
     gap: 10px;
     font-weight: 500;
     line-height: 1.5;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.srv-card-features li:hover {
+    transform: translateX(4px);
+    color: var(--srv-navy);
 }
 
 .srv-card-features li i {
@@ -513,6 +623,12 @@ body {
     font-size: 14px;
     margin-top: 3px;
     flex-shrink: 0;
+    transition: transform 0.3s var(--srv-ease-bounce), color 0.25s ease;
+}
+
+.srv-card-features li:hover i {
+    transform: scale(1.25);
+    color: #0da051;
 }
 
 /* Card Action Link */
@@ -526,7 +642,7 @@ body {
     font-size: 14.5px;
     font-weight: 700;
     text-decoration: none;
-    transition: all var(--srv-trans-base);
+    transition: color 0.3s ease;
 }
 
 .srv-card-action .srv-action-arrow {
@@ -538,7 +654,7 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--srv-navy);
-    transition: all var(--srv-trans-base);
+    transition: transform 0.4s var(--srv-ease-bounce), background-color 0.3s ease, color 0.3s ease;
 }
 
 .srv-primary-card:hover .srv-card-action {
@@ -548,13 +664,16 @@ body {
 .srv-primary-card:hover .srv-card-action .srv-action-arrow {
     background: var(--srv-orange);
     color: #ffffff;
-    transform: translateX(4px);
+    transform: translateX(6px) scale(1.08);
+    box-shadow: 0 4px 12px rgba(240, 120, 24, 0.35);
 }
 
 /* Filter Hide State */
 .srv-primary-card.is-filtered-out {
     display: none !important;
 }
+
+/* ================= 4. TURNKEY CONSULTATION SHOWCASE ================= */
 
 /* ================= 4. TURNKEY CONSULTATION SHOWCASE ================= */
 
@@ -570,15 +689,23 @@ body {
     overflow: hidden;
 }
 
+/* Ambient animated shifting spotlight */
 .srv-consultation-banner::before {
     content: "";
     position: absolute;
     top: -120px;
     right: -100px;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(240, 120, 24, 0.22) 0%, transparent 70%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(240, 120, 24, 0.28) 0%, transparent 70%);
     pointer-events: none;
+    animation: srvSpotlightPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes srvSpotlightPulse {
+    0% { transform: scale(0.9) translate(0, 0); opacity: 0.65; }
+    50% { transform: scale(1.15) translate(-30px, 20px); opacity: 1; }
+    100% { transform: scale(0.95) translate(25px, -25px); opacity: 0.75; }
 }
 
 .srv-consultation-grid {
@@ -626,21 +753,40 @@ body {
     align-items: center;
     gap: 10px;
     font-weight: 500;
+    transition: transform 0.25s ease;
+}
+
+.srv-consult-perks li:hover {
+    transform: translateX(4px);
 }
 
 .srv-consult-perks li i {
     color: #ff9b3d;
     font-size: 15px;
+    transition: transform 0.3s var(--srv-ease-bounce);
+}
+
+.srv-consult-perks li:hover i {
+    transform: scale(1.25);
 }
 
 /* Fast Action Card on the Right */
 .srv-consult-card {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(14px);
     border-radius: var(--srv-radius-md);
     padding: 34px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s var(--srv-ease-spring), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.srv-consult-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 30px rgba(240, 120, 24, 0.25);
+    border-color: rgba(240, 120, 24, 0.5);
 }
 
 .srv-consult-card-icon {
@@ -655,6 +801,12 @@ body {
     justify-content: center;
     font-size: 26px;
     margin: 0 auto 18px;
+    transition: transform 0.4s var(--srv-ease-bounce), box-shadow 0.3s ease;
+}
+
+.srv-consult-card:hover .srv-consult-card-icon {
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 0 25px rgba(240, 120, 24, 0.5);
 }
 
 .srv-consult-card h4 {
@@ -681,7 +833,7 @@ body {
     font-weight: 800;
     text-decoration: none;
     margin-bottom: 20px;
-    transition: color var(--srv-trans-fast);
+    transition: color 0.25s ease;
 }
 
 .srv-consult-phone:hover {
@@ -690,6 +842,16 @@ body {
 
 .srv-consult-phone i {
     color: #ff9b3d;
+    display: inline-block;
+    animation: srvPhoneRing 3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes srvPhoneRing {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    8%, 24% { transform: rotate(-14deg) scale(1.15); }
+    16%, 32% { transform: rotate(14deg) scale(1.15); }
+    40% { transform: rotate(0deg) scale(1); }
 }
 
 /* ================= 5. TURNKEY PROJECT EXECUTION LIFECYCLE ================= */
@@ -702,17 +864,48 @@ body {
     margin-top: 40px;
 }
 
-/* Horizontal connecting line behind steps */
+/* Flowing gradient connecting line behind steps */
 .srv-roadmap::before {
     content: "";
     position: absolute;
-    top: 45px;
+    top: 52px;
     left: 8%;
     right: 8%;
-    height: 3px;
-    background: linear-gradient(90deg, #f07818 0%, #0759b5 100%);
+    height: 4px;
+    background: linear-gradient(90deg, #f07818, #0759b5, #f07818, #0759b5);
+    background-size: 300% 100%;
     z-index: 0;
-    opacity: 0.35;
+    opacity: 0.45;
+    border-radius: 999px;
+    animation: srvRoadmapLinePulse 8s linear infinite;
+}
+
+@keyframes srvRoadmapLinePulse {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
+
+/* Luminous pulsing energy beam traveling along roadmap line */
+.srv-roadmap::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 8%;
+    width: 70px;
+    height: 8px;
+    border-radius: 4px;
+    background: radial-gradient(circle, #ffffff 0%, rgba(240, 120, 24, 0.85) 50%, transparent 100%);
+    box-shadow: 0 0 16px rgba(240, 120, 24, 0.9), 0 0 24px #f07818;
+    z-index: 0;
+    pointer-events: none;
+    animation: srvRoadmapBeam 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes srvRoadmapBeam {
+    0% { left: 8%; opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { left: 86%; opacity: 0; }
 }
 
 .srv-step-card {
@@ -724,43 +917,53 @@ body {
     position: relative;
     z-index: 1;
     box-shadow: var(--srv-shadow-xs);
-    transition: transform var(--srv-trans-base), box-shadow var(--srv-trans-base), border-color var(--srv-trans-base);
+    overflow: hidden;
+    transition: transform 0.4s var(--srv-ease-spring), box-shadow 0.4s var(--srv-ease-spring), border-color 0.3s ease;
+}
+
+/* Animated sliding top accent line */
+.srv-step-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--srv-orange), var(--srv-blue));
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s var(--srv-ease-spring);
+}
+
+.srv-step-card:hover::before {
+    transform: scaleX(1);
 }
 
 .srv-step-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--srv-shadow-md);
-    border-color: var(--srv-orange);
-}
-
-.srv-step-number-badge {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 3px solid var(--srv-orange);
-    color: var(--srv-navy);
-    font-family: "Manrope", sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    box-shadow: 0 4px 14px rgba(240, 120, 24, 0.25);
-    transition: all var(--srv-trans-base);
-}
-
-.srv-step-card:hover .srv-step-number-badge {
-    background: var(--srv-orange);
-    color: #ffffff;
-    transform: scale(1.1);
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px -10px rgba(7, 30, 61, 0.14), 0 0 24px rgba(240, 120, 24, 0.16);
+    border-color: rgba(240, 120, 24, 0.45);
 }
 
 .srv-step-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: var(--srv-radius-md);
+    background: rgba(7, 89, 181, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
     color: var(--srv-blue);
-    margin-bottom: 12px;
+    margin: 0 auto 16px;
+    transition: all 0.4s var(--srv-ease-bounce);
+}
+
+.srv-step-card:hover .srv-step-icon {
+    background: var(--srv-orange);
+    color: #ffffff;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(240, 120, 24, 0.35);
 }
 
 .srv-step-card h3 {
@@ -770,6 +973,11 @@ body {
     color: var(--srv-navy);
     margin: 0 0 10px;
     line-height: 1.35;
+    transition: color 0.3s ease;
+}
+
+.srv-step-card:hover h3 {
+    color: var(--srv-orange);
 }
 
 .srv-step-card p {
@@ -793,15 +1001,35 @@ body {
     padding: 34px 26px;
     border: 1px solid var(--srv-border);
     box-shadow: var(--srv-shadow-xs);
-    transition: transform var(--srv-trans-base), box-shadow var(--srv-trans-base), border-color var(--srv-trans-base);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s var(--srv-ease-spring), box-shadow 0.4s var(--srv-ease-spring), border-color 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
+/* Sliding bottom dual gradient line */
+.srv-spec-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--srv-blue), var(--srv-orange));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--srv-ease-spring);
+}
+
+.srv-spec-item:hover::after {
+    transform: scaleX(1);
+}
+
 .srv-spec-item:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--srv-shadow-md);
-    border-color: rgba(7, 89, 181, 0.35);
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px -10px rgba(7, 30, 61, 0.12), 0 0 20px rgba(7, 89, 181, 0.14);
+    border-color: rgba(7, 89, 181, 0.4);
 }
 
 .srv-spec-icon-box {
@@ -815,14 +1043,14 @@ body {
     justify-content: center;
     font-size: 22px;
     margin-bottom: 20px;
-    transition: all var(--srv-trans-base);
+    transition: transform 0.4s var(--srv-ease-bounce), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .srv-spec-item:hover .srv-spec-icon-box {
     background: var(--srv-blue);
     color: #ffffff;
-    transform: scale(1.06);
-    box-shadow: 0 8px 20px rgba(7, 89, 181, 0.3);
+    transform: scale(1.12) rotate(-6deg);
+    box-shadow: 0 10px 22px rgba(7, 89, 181, 0.35);
 }
 
 .srv-spec-item h3 {
@@ -832,6 +1060,11 @@ body {
     color: var(--srv-navy);
     margin: 0 0 12px;
     line-height: 1.35;
+    transition: color 0.3s ease;
+}
+
+.srv-spec-item:hover h3 {
+    color: var(--srv-blue);
 }
 
 .srv-spec-item p {
@@ -854,8 +1087,16 @@ body {
     font-weight: 700;
     color: var(--srv-blue);
     background: rgba(7, 89, 181, 0.06);
-    padding: 3px 8px;
+    padding: 4px 9px;
     border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.srv-spec-tag:hover {
+    transform: translateY(-2px);
+    background: var(--srv-blue);
+    color: #ffffff;
+    box-shadow: 0 3px 8px rgba(7, 89, 181, 0.25);
 }
 
 /* ================= 7. CODES & STANDARDS ================= */
@@ -874,13 +1115,13 @@ body {
     padding: 22px 16px;
     text-align: center;
     box-shadow: var(--srv-shadow-xs);
-    transition: all var(--srv-trans-base);
+    transition: transform 0.35s var(--srv-ease-spring), box-shadow 0.35s var(--srv-ease-spring), border-color 0.3s ease;
 }
 
 .srv-standard-card:hover {
     border-color: var(--srv-orange);
-    transform: translateY(-4px);
-    box-shadow: var(--srv-shadow-sm);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 30px -6px rgba(7, 30, 61, 0.12);
 }
 
 .srv-std-badge {
@@ -893,6 +1134,13 @@ body {
     font-weight: 800;
     letter-spacing: 0.5px;
     margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.srv-standard-card:hover .srv-std-badge {
+    background: var(--srv-orange);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(240, 120, 24, 0.3);
 }
 
 .srv-standard-card h4 {
@@ -925,13 +1173,15 @@ body {
     padding: 34px 24px;
     border: 1px solid var(--srv-border);
     box-shadow: var(--srv-shadow-xs);
-    transition: transform var(--srv-trans-base), box-shadow var(--srv-trans-base), border-color var(--srv-trans-base);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s var(--srv-ease-spring), box-shadow 0.4s var(--srv-ease-spring), border-color 0.3s ease;
     text-align: center;
 }
 
 .srv-why-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--srv-shadow-md);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 42px -10px rgba(7, 30, 61, 0.14), 0 0 22px rgba(240, 120, 24, 0.15);
     border-color: rgba(240, 120, 24, 0.4);
 }
 
@@ -946,14 +1196,14 @@ body {
     justify-content: center;
     font-size: 24px;
     margin: 0 auto 20px;
-    transition: all var(--srv-trans-base);
+    transition: transform 0.4s var(--srv-ease-bounce), background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .srv-why-card:hover .srv-why-icon-wrap {
     background: linear-gradient(135deg, #f07818 0%, #0759b5 100%);
     color: #ffffff;
-    transform: scale(1.08) rotate(5deg);
-    box-shadow: 0 10px 24px rgba(240, 120, 24, 0.3);
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 12px 28px rgba(240, 120, 24, 0.35);
 }
 
 .srv-why-card h3 {
@@ -962,6 +1212,11 @@ body {
     font-weight: 800;
     color: var(--srv-navy);
     margin: 0 0 12px;
+    transition: color 0.3s ease;
+}
+
+.srv-why-card:hover h3 {
+    color: var(--srv-orange);
 }
 
 .srv-why-card p {
@@ -984,12 +1239,19 @@ body {
     border-radius: var(--srv-radius-sm);
     margin-bottom: 14px;
     overflow: hidden;
-    transition: all var(--srv-trans-base);
+    transition: transform 0.3s var(--srv-ease-spring), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.srv-faq-item:hover {
+    border-color: rgba(240, 120, 24, 0.45);
+    transform: translateX(4px);
 }
 
 .srv-faq-item.active {
     border-color: var(--srv-orange);
-    box-shadow: var(--srv-shadow-sm);
+    border-left: 5px solid var(--srv-orange);
+    box-shadow: 0 10px 26px rgba(7, 30, 61, 0.08);
+    transform: translateX(4px);
 }
 
 .srv-faq-question {
@@ -1008,7 +1270,7 @@ body {
     justify-content: space-between;
     gap: 16px;
     cursor: pointer;
-    transition: color var(--srv-trans-fast);
+    transition: color 0.25s ease;
 }
 
 .srv-faq-question:hover {
@@ -1030,7 +1292,7 @@ body {
     color: var(--srv-navy);
     font-size: 13px;
     flex-shrink: 0;
-    transition: all var(--srv-trans-base);
+    transition: all 0.4s var(--srv-ease-bounce);
 }
 
 .srv-faq-item.active .srv-faq-icon {
@@ -1072,10 +1334,11 @@ body {
     position: absolute;
     top: -150px;
     right: -100px;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(240, 120, 24, 0.22) 0%, transparent 70%);
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(240, 120, 24, 0.25) 0%, transparent 70%);
     pointer-events: none;
+    animation: srvCtaGlow1 9s ease-in-out infinite alternate;
 }
 
 .srv-cta-section::after {
@@ -1083,10 +1346,21 @@ body {
     position: absolute;
     bottom: -150px;
     left: -100px;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(7, 89, 181, 0.25) 0%, transparent 70%);
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(7, 89, 181, 0.28) 0%, transparent 70%);
     pointer-events: none;
+    animation: srvCtaGlow2 11s ease-in-out infinite alternate;
+}
+
+@keyframes srvCtaGlow1 {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15) translate(-25px, 20px); opacity: 0.95; }
+}
+
+@keyframes srvCtaGlow2 {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15) translate(25px, -20px); opacity: 0.95; }
 }
 
 .srv-cta-inner {
@@ -1139,20 +1413,21 @@ body {
 
 .srv-reveal {
     opacity: 0;
-    transform: translateY(35px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(32px) scale(0.985);
+    transition: opacity 0.75s var(--srv-ease-spring), transform 0.75s var(--srv-ease-spring);
     will-change: opacity, transform;
 }
 
 .srv-reveal.is-revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 .srv-reveal-left {
     opacity: 0;
     transform: translateX(-40px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.75s var(--srv-ease-spring), transform 0.75s var(--srv-ease-spring);
+    will-change: opacity, transform;
 }
 
 .srv-reveal-left.is-revealed {
@@ -1163,7 +1438,8 @@ body {
 .srv-reveal-right {
     opacity: 0;
     transform: translateX(40px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.75s var(--srv-ease-spring), transform 0.75s var(--srv-ease-spring);
+    will-change: opacity, transform;
 }
 
 .srv-reveal-right.is-revealed {
@@ -1171,12 +1447,34 @@ body {
     transform: translateX(0);
 }
 
+.srv-reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.75s var(--srv-ease-spring), transform 0.75s var(--srv-ease-spring);
+    will-change: opacity, transform;
+}
+
+.srv-reveal-scale.is-revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
 /* Stagger Delays */
-.delay-100 { transition-delay: 0.1s; }
-.delay-200 { transition-delay: 0.2s; }
-.delay-300 { transition-delay: 0.3s; }
-.delay-400 { transition-delay: 0.4s; }
-.delay-500 { transition-delay: 0.5s; }
+.delay-100 { transition-delay: 0.08s; }
+.delay-200 { transition-delay: 0.16s; }
+.delay-300 { transition-delay: 0.24s; }
+.delay-400 { transition-delay: 0.32s; }
+.delay-500 { transition-delay: 0.40s; }
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
 
 /* ================= 12. RESPONSIVE DESIGN ================= */
 
@@ -1196,7 +1494,8 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .srv-roadmap::before {
+    .srv-roadmap::before,
+    .srv-roadmap::after {
         display: none;
     }
 
@@ -1226,7 +1525,7 @@ body {
 /* Mobile Screens (768px and below) */
 @media (max-width: 768px) {
     .srv-section {
-        padding: 65px 0;
+        padding: 55px 0;
     }
 
     .services-hero {
@@ -1235,72 +1534,351 @@ body {
     }
 
     .services-container {
-        width: calc(100% - 32px);
+        width: calc(100% - 24px);
+    }
+
+    .srv-section-heading {
+        margin-bottom: 28px;
+    }
+
+    .srv-heading {
+        font-size: clamp(23px, 5.8vw, 30px);
+    }
+
+    .srv-desc {
+        font-size: 13.5px;
+        line-height: 1.65;
+    }
+
+    /* Filter Bar Responsive Grid */
+    .srv-filter-wrapper {
+        margin-bottom: 28px;
     }
 
     .srv-filter-bar {
         width: 100%;
         border-radius: var(--srv-radius-md);
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 6px;
+        padding: 6px;
     }
 
     .srv-filter-btn {
-        padding: 8px 14px;
-        font-size: 12.5px;
+        padding: 8px 12px;
+        font-size: 11.5px;
+        gap: 6px;
+        flex: 1 1 auto;
+        text-align: center;
+        justify-content: center;
     }
 
+    /* 1. Flagship Primary Services Grid — Responsive 2-Column Grid on Mobile */
     .srv-primary-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
     }
 
     .srv-card-media {
-        height: 200px;
+        height: 140px;
+    }
+
+    .srv-card-category {
+        font-size: 8.5px;
+        font-weight: 800;
+        padding: 3px 8px;
+        top: 8px;
+        left: 8px;
+        letter-spacing: 0.5px;
     }
 
     .srv-card-body {
-        padding: 22px;
+        padding: 14px 12px;
     }
 
+    .srv-card-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .srv-card-body h3 {
+        font-size: 13.5px;
+        line-height: 1.25;
+        margin: 0 0 6px;
+    }
+
+    .srv-card-body p {
+        font-size: 11px;
+        line-height: 1.45;
+        margin: 0 0 8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .srv-card-chips {
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .srv-spec-chip {
+        font-size: 9px;
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+
+    .srv-card-features {
+        gap: 6px;
+        margin: 0 0 12px;
+    }
+
+    .srv-card-features li {
+        font-size: 10px;
+        line-height: 1.35;
+        gap: 6px;
+    }
+
+    .srv-card-features li i {
+        font-size: 11px;
+        margin-top: 2px;
+    }
+
+    .srv-card-action {
+        font-size: 11px;
+        padding-top: 10px;
+    }
+
+    .srv-card-action .srv-action-arrow {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+    }
+
+    /* 2. Turnkey Consultation Showcase — Responsive Layout */
     .srv-consultation-banner {
-        padding: 30px 22px;
+        padding: 26px 16px;
+        border-radius: var(--srv-radius-md);
+    }
+
+    .srv-consultation-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .srv-consult-left h3 {
+        font-size: clamp(20px, 4.8vw, 24px);
+    }
+
+    .srv-consult-left p {
+        font-size: 12.5px;
+        line-height: 1.6;
+        margin-bottom: 16px;
     }
 
     .srv-consult-perks {
-        grid-template-columns: 1fr;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
     }
 
+    .srv-consult-perks li {
+        font-size: 11px;
+        line-height: 1.35;
+        gap: 6px;
+    }
+
+    .srv-consult-perks li i {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+
+    .srv-consult-card {
+        padding: 20px 16px;
+    }
+
+    .srv-consult-card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .srv-consult-card h4 {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .srv-consult-card p {
+        font-size: 11.5px;
+        margin-bottom: 14px;
+    }
+
+    .srv-consult-phone {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    /* 3. 5-Stage Project Delivery Lifecycle Roadmap — Responsive Multi-Column Grid */
     .srv-roadmap {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        margin-top: 25px;
     }
 
+    .srv-roadmap .srv-step-card:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 6px);
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .srv-step-card {
+        padding: 16px 12px;
+    }
+
+    .srv-step-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+        margin: 0 auto 10px;
+    }
+
+    .srv-step-card h3 {
+        font-size: 12.5px;
+        line-height: 1.3;
+        margin: 0 0 6px;
+    }
+
+    .srv-step-card p {
+        font-size: 10.5px;
+        line-height: 1.45;
+    }
+
+    /* 4. Specialized Site Infrastructure Grid — Responsive 2-Column Grid */
     .srv-spec-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
     }
 
+    .srv-spec-item {
+        padding: 16px 12px;
+    }
+
+    .srv-spec-icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .srv-spec-item h3 {
+        font-size: 12.5px;
+        line-height: 1.3;
+        margin: 0 0 6px;
+    }
+
+    .srv-spec-item p {
+        font-size: 10.5px;
+        line-height: 1.45;
+        margin: 0 0 10px;
+    }
+
+    .srv-spec-tags {
+        gap: 4px;
+    }
+
+    .srv-spec-tag {
+        font-size: 8.5px;
+        padding: 2px 6px;
+    }
+
+    /* 5. Industry Standards Grid — Responsive 3-Column Grid */
     .srv-standards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        margin-top: 25px;
     }
 
+    .srv-standard-card {
+        padding: 14px 10px;
+    }
+
+    .srv-std-badge {
+        font-size: 9.5px;
+        padding: 3px 8px;
+        margin-bottom: 8px;
+    }
+
+    .srv-standard-card h4 {
+        font-size: 12px;
+        line-height: 1.25;
+        margin: 0 0 4px;
+    }
+
+    .srv-standard-card p {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    /* 6. Why Choose Jay Bhavani Grid — Responsive 2-Column Grid */
     .srv-why-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
     }
 
+    .srv-why-card {
+        padding: 16px 12px;
+    }
+
+    .srv-why-icon-wrap {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .srv-why-card h3 {
+        font-size: 12.5px;
+        line-height: 1.3;
+        margin: 0 0 6px;
+    }
+
+    .srv-why-card p {
+        font-size: 10.5px;
+        line-height: 1.45;
+    }
+
+    /* Buttons & FAQ */
     .srv-btn {
         width: auto;
-        min-height: 40px;
-        padding: 0 18px;
-        font-size: 13px;
+        min-height: 38px;
+        padding: 0 16px;
+        font-size: 12.5px;
     }
 
     .srv-cta-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+    }
+
+    .srv-faq-question {
+        padding: 16px 18px;
+        font-size: 13.5px;
+    }
+
+    .srv-faq-answer-inner {
+        padding: 0 18px 18px;
+        font-size: 12.5px;
     }
 }
 
@@ -1336,15 +1914,66 @@ body {
 /* Extra-small phones (480px and below) */
 @media (max-width: 480px) {
     .services-container {
-        width: calc(100% - 24px);
+        width: calc(100% - 18px);
     }
 
     .services-hero h1 {
         font-size: 28px;
     }
 
+    .srv-primary-grid {
+        gap: 10px !important;
+    }
+
+    .srv-card-media {
+        height: 125px;
+    }
+
+    .srv-card-body {
+        padding: 12px 10px;
+    }
+
+    .srv-card-body h3 {
+        font-size: 12.5px;
+    }
+
+    .srv-card-features li {
+        font-size: 9.5px;
+    }
+
+    .srv-step-card,
+    .srv-spec-item,
+    .srv-why-card {
+        padding: 14px 10px;
+    }
+
     .srv-standards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+}
+
+/* Very narrow phones (360px and below) */
+@media (max-width: 360px) {
+    .services-container {
+        width: calc(100% - 14px);
+    }
+
+    .srv-primary-grid,
+    .srv-roadmap,
+    .srv-spec-grid,
+    .srv-why-grid,
+    .srv-standards-grid,
+    .srv-consult-perks {
+        gap: 8px !important;
+    }
+
+    .srv-card-media {
+        height: 110px;
+    }
+
+    .srv-roadmap .srv-step-card:nth-child(5) {
+        max-width: 100%;
     }
 }
 
@@ -1500,5 +2129,176 @@ body {
     .footer .footer-column a,
     .footer .footer-column span {
         font-size: 8px !important;
+    }
+}
+
+/* =====================================================
+   SERVICES HUB — MODERN ANIMATIONS & SCROLL REVEALS
+   ===================================================== */
+
+/* --- Hero Entrance Keyframes --- */
+@keyframes srvHeroTitleIn {
+    0% {
+        opacity: 0;
+        transform: translateY(32px) scale(0.98);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes srvHeroDescIn {
+    0% {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes srvShineSweep {
+    0% {
+        transform: translateX(-150%) skewX(-25deg);
+    }
+    100% {
+        transform: translateX(250%) skewX(-25deg);
+    }
+}
+
+/* Hero Automatic Entrance on Load */
+.services-hero-content h1 {
+    animation: srvHeroTitleIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.services-hero-description {
+    animation: srvHeroDescIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+/* Diagonal Light Sweep Shimmer on Primary Service Card Images */
+.srv-card-media {
+    position: relative;
+    overflow: hidden;
+}
+
+.srv-card-media::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-150%) skewX(-25deg);
+    pointer-events: none;
+    z-index: 4;
+}
+
+.srv-primary-card:hover .srv-card-media::before {
+    animation: srvShineSweep 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Card Icon Pop & Action Arrow Animation */
+.srv-card-icon {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease, color 0.3s ease;
+}
+
+.srv-primary-card:hover .srv-card-icon {
+    transform: scale(1.14) rotate(8deg);
+    background: var(--srv-orange);
+    color: #ffffff;
+}
+
+.srv-action-arrow {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.srv-primary-card:hover .srv-action-arrow {
+    transform: translateX(5px);
+    background: var(--srv-orange);
+    color: #ffffff;
+}
+
+.srv-spec-chip {
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.srv-spec-chip:hover {
+    transform: translateY(-2px);
+    background: rgba(240, 120, 24, 0.16);
+    color: var(--srv-orange-hover);
+}
+
+/* --- SCROLL REVEAL ANIMATION SYSTEM --- */
+.srv-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.srv-reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.srv-reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.srv-reveal-scale {
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* Stagger Delays (Both delay-xxx and srv-delay-x formats supported) */
+.delay-100, .srv-delay-1 { transition-delay: 0.1s; }
+.delay-200, .srv-delay-2 { transition-delay: 0.2s; }
+.delay-300, .srv-delay-3 { transition-delay: 0.3s; }
+.delay-400, .srv-delay-4 { transition-delay: 0.4s; }
+.delay-500, .srv-delay-5 { transition-delay: 0.5s; }
+
+/* Active Revealed State (Set by IntersectionObserver in services.js and script.js) */
+.srv-reveal.is-revealed,
+.srv-reveal-left.is-revealed,
+.srv-reveal-right.is-revealed,
+.srv-reveal-scale.is-revealed {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+    .services-hero-content h1,
+    .services-hero-description,
+    .srv-primary-card:hover .srv-card-media::before,
+    .srv-reveal,
+    .srv-reveal-left,
+    .srv-reveal-right,
+    .srv-reveal-scale {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }

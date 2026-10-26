@@ -515,76 +515,102 @@ body {
     margin: 0;
 }
 
-/* ================= FEATURES SPLIT ================= */
+/* ================= FEATURES SECTION ================= */
 
 .road-features-section {
     background: #f8fbfe;
 }
 
+.road-features-header {
+    max-width: 920px;
+    margin-bottom: 32px;
+}
+
+.road-features-container {
+    width: min(100% - 80px, 1580px);
+    max-width: 1580px;
+    margin-inline: auto;
+}
+
 .road-features-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: clamp(30px, 4.5vw, 65px);
-    align-items: center;
-}
-
-.road-features-image {
-    min-height: 480px;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 20px 45px rgba(18, 24, 32, 0.1);
-}
-
-.road-features-image img {
-    position: absolute;
-    inset: 0;
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .road-feature-items {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
-    margin-top: 30px;
+    width: 100%;
 }
 
 .road-feature-item {
     display: flex;
-    gap: 18px;
+    gap: 20px;
     align-items: flex-start;
+    background: #ffffff;
+    border: 1px solid #dce4ee;
+    border-radius: 14px;
+    padding: 24px 26px;
+    box-shadow: 0 4px 18px rgba(18, 24, 32, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.road-feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(18, 24, 32, 0.08);
+    border-color: rgba(242, 140, 40, 0.45);
 }
 
 .road-feature-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 10px;
-    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(242, 140, 40, 0.1);
     color: var(--road-orange-dark);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    border: 1px solid #dce4ee;
-    box-shadow: 0 4px 12px rgba(18, 24, 32, 0.05);
+    font-size: 20px;
+    border: 1px solid rgba(242, 140, 40, 0.22);
+    box-shadow: 0 4px 12px rgba(242, 140, 40, 0.08);
     flex-shrink: 0;
+}
+
+.road-feature-text {
+    flex: 1;
 }
 
 .road-feature-item h3 {
     font-family: "Manrope", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     color: var(--road-dark);
-    margin: 0 0 4px;
+    margin: 0 0 8px;
+    line-height: 1.35;
 }
 
 .road-feature-item p {
-    font-size: 9.5px;
-    line-height: 1.25;
+    font-size: 13.5px;
+    line-height: 1.65;
     color: var(--road-text);
     margin: 0;
+}
+
+@media (max-width: 900px) {
+    .road-feature-items {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .road-feature-item {
+        padding: 20px 18px;
+        gap: 16px;
+    }
+
+    .road-features-container {
+        width: calc(100% - 36px);
+    }
 }
 
 /* ================= SPECIFICATIONS & PROCESS ================= */
@@ -1288,14 +1314,14 @@ body {
 
 @media (min-width: 1024px) {
 
-    /* Use more of the available desktop width */
+    /* Use full desktop container width in 2-column grid */
     .road-feature-items {
         width: 100%;
         max-width: 100%;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
-        margin-top: 30px;
+        margin-top: 32px;
     }
 
     /* Widen the section's inner container */
@@ -1312,7 +1338,7 @@ body {
     }
 
     .road-feature-item p {
-        max-width: 850px;
+        max-width: 100%;
     }
 }
 
@@ -1409,5 +1435,364 @@ body {
 @media (max-width: 380px) {
     .road-hero {
         padding-top: 125px !important;
+    }
+}
+
+/* =========================================================
+   RCC ROAD - MODERN ANIMATIONS & MICRO-INTERACTIONS
+   ========================================================= */
+
+/* --- Hero Entrance Keyframes --- */
+@keyframes roadHeroTitleIn {
+    0% {
+        opacity: 0;
+        transform: translateY(32px) scale(0.98);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes roadHeroDescIn {
+    0% {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes roadBadgeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes roadShineSweep {
+    0% {
+        transform: translateX(-150%) skewX(-25deg);
+    }
+    100% {
+        transform: translateX(250%) skewX(-25deg);
+    }
+}
+
+@keyframes roadBtnGlow {
+    0%, 100% {
+        box-shadow: 0 10px 24px rgba(242, 140, 40, 0.32);
+    }
+    50% {
+        box-shadow: 0 14px 34px rgba(242, 140, 40, 0.52);
+    }
+}
+
+/* Hero Elements Initial Animation */
+.road-hero-content.road-hero-enter h1 {
+    animation: roadHeroTitleIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.road-hero-content.road-hero-enter .road-hero-description {
+    animation: roadHeroDescIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+.road-hero-content.road-hero-enter .road-hero-note {
+    animation: roadHeroDescIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+}
+
+.road-hero-note i {
+    color: #ff9b3d;
+    animation: roadBadgeFloat 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+/* Floating Image Badge */
+.road-image-badge {
+    animation: roadBadgeFloat 4.2s ease-in-out infinite;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.road-intro-image:hover .road-image-badge {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+}
+
+/* Light Sweep Shimmer on Images */
+.road-intro-image,
+.road-app-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.road-intro-image::after,
+.road-app-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-150%) skewX(-25deg);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.road-intro-image:hover::after,
+.road-app-card:hover .road-app-image::after {
+    animation: roadShineSweep 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.road-intro-image img,
+.road-app-image img {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.road-intro-image:hover img,
+.road-app-card:hover .road-app-image img {
+    transform: scale(1.045);
+}
+
+/* Benefit Cards Micro-Interactions */
+.road-benefit-card {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s ease;
+    position: relative;
+}
+
+.road-benefit-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f28c28, #ffb366);
+    transition: width 0.35s ease;
+    border-radius: 3px 3px 0 0;
+}
+
+.road-benefit-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 36px rgba(7, 56, 99, 0.12);
+    border-color: rgba(242, 140, 40, 0.4);
+}
+
+.road-benefit-card:hover::before {
+    width: 100%;
+}
+
+.road-benefit-icon {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.35s ease;
+}
+
+.road-benefit-card:hover .road-benefit-icon {
+    transform: scale(1.12) rotate(6deg);
+    background: #f28c28;
+    color: #ffffff;
+}
+
+/* Application Cards Micro-Interactions */
+.road-app-card {
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.road-app-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 42px rgba(18, 24, 32, 0.14);
+    border-color: rgba(242, 140, 40, 0.35);
+}
+
+.road-app-badge {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.road-app-card:hover .road-app-badge {
+    transform: translateY(-2px);
+    background: #f28c28;
+    color: #fff;
+}
+
+/* Feature Items Hover */
+.road-feature-item {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.35s ease,
+                box-shadow 0.35s ease;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.road-feature-item:hover {
+    transform: translateX(8px);
+    background-color: rgba(244, 247, 251, 0.85);
+    box-shadow: 0 8px 24px rgba(7, 56, 99, 0.08);
+}
+
+.road-feature-icon {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.35s ease;
+}
+
+.road-feature-item:hover .road-feature-icon {
+    transform: scale(1.15) rotate(-6deg);
+    background-color: #f28c28;
+    color: #ffffff;
+}
+
+/* Process Step Cards Hover */
+.road-step-card {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.road-step-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #f28c28;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.35s ease;
+}
+
+.road-step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(7, 56, 99, 0.1);
+    border-color: rgba(242, 140, 40, 0.35);
+}
+
+.road-step-card:hover::before {
+    transform: scaleY(1);
+}
+
+/* Specifications Table Rows */
+.road-specs-table tbody tr {
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.road-specs-table tbody tr:hover {
+    background-color: rgba(242, 140, 40, 0.06);
+    transform: translateX(4px);
+}
+
+/* CTA Button Modern Glow */
+.road-button-primary {
+    transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.road-button-primary::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: transform 0.75s ease;
+}
+
+.road-button-primary:hover::after {
+    transform: rotate(30deg) translate(380%, 0);
+}
+
+.road-button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(242, 140, 40, 0.42);
+}
+
+/* --- SCROLL REVEAL ANIMATION SYSTEM --- */
+.road-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.road-reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.road-reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.road-reveal-scale {
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* Stagger Delays */
+.road-delay-1 { transition-delay: 0.12s; }
+.road-delay-2 { transition-delay: 0.22s; }
+.road-delay-3 { transition-delay: 0.32s; }
+.road-delay-4 { transition-delay: 0.42s; }
+
+/* Active revealed state (set by IntersectionObserver in script.js) */
+.road-reveal.is-revealed,
+.road-reveal-left.is-revealed,
+.road-reveal-right.is-revealed,
+.road-reveal-scale.is-revealed {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Accessibility: respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+    .road-hero-content.road-hero-enter h1,
+    .road-hero-content.road-hero-enter .road-hero-description,
+    .road-hero-content.road-hero-enter .road-hero-note,
+    .road-hero-note i,
+    .road-image-badge,
+    .road-button-primary::after,
+    .road-reveal,
+    .road-reveal-left,
+    .road-reveal-right,
+    .road-reveal-scale {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }

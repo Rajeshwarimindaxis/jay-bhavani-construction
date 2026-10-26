@@ -206,6 +206,40 @@ ul {
     background-position: center center;
 }
 
+/* Background slider container */
+.hero-bg-slider {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Background slides with crossfade and subtle Ken Burns slow zoom */
+.hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1);
+    transform-origin: center center;
+    will-change: transform, opacity;
+    transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 7.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-bg-slide.active {
+    opacity: 1;
+    transform: scale(1.08);
+    z-index: 1;
+}
+
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -218,6 +252,14 @@ ul {
         rgba(8, 75, 122, .43) 78%,
         rgba(8, 75, 122, .20) 100%
     );
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-bg-slide {
+        transition: opacity 0.5s ease !important;
+        transform: none !important;
+    }
 }
 
 .hero-container {
@@ -1465,29 +1507,29 @@ ul {
 
     .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 16px;
     }
 
     .gallery-item {
         width: 100%;
         min-width: 0;
-        height: 190px;
+        height: 240px;
     }
 
     .gallery-caption {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
     }
 
     .gallery-caption span {
-        font-size: 7px;
-        letter-spacing: 1px;
-        margin-bottom: 3px;
+        font-size: 9.5px;
+        letter-spacing: 1.2px;
+        margin-bottom: 4px;
     }
 
     .gallery-caption h3 {
-        font-size: 13px;
+        font-size: 18px;
     }
 
     /* Mission / Vision */
@@ -1889,25 +1931,29 @@ ul {
     }
 
     .gallery-grid {
-        gap: 7px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     .gallery-item {
-        height: 140px;
+        height: 200px;
     }
 
     .gallery-caption {
-        left: 8px;
-        right: 8px;
-        bottom: 8px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
     }
 
     .gallery-caption span {
-        font-size: 5.5px;
+        font-size: 8.5px;
+        letter-spacing: 1px;
+        margin-bottom: 3px;
     }
 
     .gallery-caption h3 {
-        font-size: 9px;
+        font-size: 14.5px;
+        line-height: 1.25;
     }
 
     /* Mission / Vision */

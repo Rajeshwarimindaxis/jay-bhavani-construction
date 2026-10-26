@@ -1010,30 +1010,196 @@ body {
 }
 
 /* ========================================
-   SCROLL REVEAL ANIMATIONS
+   SCROLL REVEAL & MICRO-INTERACTION ANIMATIONS
 ======================================== */
 
+/* Hero Entrance */
+.industrial-hero-enter h1 {
+    animation: industrialFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.industrial-hero-enter .industrial-hero-description {
+    animation: industrialFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.industrial-hero-enter .industrial-hero-note {
+    animation: industrialFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+/* Floating Badge */
+@keyframes industrialBadgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.industrial-image-badge {
+    animation: industrialBadgeFloat 4s ease-in-out infinite;
+}
+
+/* Scroll Reveal Base */
 .industrial-reveal {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity .75s ease, transform .75s ease;
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1), transform .75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
-.industrial-reveal.is-visible {
+.industrial-reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1), transform .75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.industrial-reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1), transform .75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.industrial-reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1), transform .75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.industrial-reveal.is-visible,
+.industrial-reveal.active,
+.industrial-reveal-left.is-visible,
+.industrial-reveal-left.active,
+.industrial-reveal-right.is-visible,
+.industrial-reveal-right.active,
+.industrial-reveal-scale.is-visible,
+.industrial-reveal-scale.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(0) scale(1);
 }
 
-.industrial-delay-1 {
-    transition-delay: .1s;
+.industrial-delay-1 { transition-delay: .1s; }
+.industrial-delay-2 { transition-delay: .2s; }
+.industrial-delay-3 { transition-delay: .3s; }
+.industrial-delay-4 { transition-delay: .4s; }
+
+/* Light Sweep Beam across Images */
+.industrial-application-image::before,
+.industrial-intro-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    z-index: 2;
 }
 
-.industrial-delay-2 {
-    transition-delay: .2s;
+.industrial-intro-image {
+    position: relative;
+    overflow: hidden;
 }
 
-.industrial-delay-3 {
-    transition-delay: .3s;
+.industrial-application-card:hover .industrial-application-image::before,
+.industrial-intro-image:hover::after {
+    animation: industrialShineSweep 0.85s ease-out;
+}
+
+@keyframes industrialShineSweep {
+    0% { left: -130%; }
+    100% { left: 180%; }
+}
+
+/* Card Hover Micro-interactions */
+.industrial-benefit {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+}
+
+.industrial-benefit:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(16, 43, 70, 0.1);
+}
+
+.industrial-benefit-icon {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease;
+}
+
+.industrial-benefit:hover .industrial-benefit-icon {
+    transform: scale(1.14) rotate(6deg);
+    background: #0759b5;
+    color: #fff;
+}
+
+.industrial-application-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.35s ease;
+}
+
+.industrial-application-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 42px rgba(16, 43, 70, 0.14);
+}
+
+.industrial-application-icon {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industrial-application-card:hover .industrial-application-icon {
+    transform: scale(1.15) rotate(-6deg);
+}
+
+.industrial-feature {
+    transition: transform 0.3s ease;
+}
+
+.industrial-feature:hover {
+    transform: translateX(6px);
+}
+
+.industrial-feature-icon {
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.industrial-feature:hover .industrial-feature-icon {
+    transform: scale(1.15) rotate(6deg);
+    background: #0759b5;
+    color: #fff;
+}
+
+/* Button Hover Shimmer */
+.industrial-button-primary {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.industrial-button-primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+.industrial-button-primary:hover::after {
+    animation: industrialShineSweep 0.75s ease-out;
+}
+
+.industrial-button-primary:hover {
+    transform: translateY(-3px);
+}
+
+.industrial-button-primary i {
+    transition: transform 0.3s ease;
+}
+
+.industrial-button-primary:hover i {
+    transform: translateX(4px);
 }
 
 @keyframes industrialFadeUp {
@@ -1041,7 +1207,6 @@ body {
         opacity: 0;
         transform: translateY(22px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1052,9 +1217,23 @@ body {
     from {
         transform: scale(1.12);
     }
-
     to {
         transform: scale(1.04);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .industrial-reveal,
+    .industrial-reveal-left,
+    .industrial-reveal-right,
+    .industrial-reveal-scale,
+    .industrial-hero-enter h1,
+    .industrial-hero-enter .industrial-hero-description,
+    .industrial-hero-enter .industrial-hero-note {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
     }
 }
 

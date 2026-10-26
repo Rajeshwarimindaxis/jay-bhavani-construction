@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuToggle?.classList.remove("active");
                 menuToggle?.setAttribute("aria-expanded", "false");
                 menuToggle?.setAttribute("aria-label", "Open Menu");
+                document.body.classList.remove("menu-open");
             });
         });
     }

@@ -4953,33 +4953,38 @@
     }
 
     /* =========================================================
-   COMPREHENSIVE RESPONSIVENESS FOR ABOUT PAGE
+   COMPREHENSIVE RESPONSIVENESS FOR ABOUT PAGE — MULTI-COLUMN GRIDS
 ========================================================= */
 
     @media (max-width: 1024px) {
         .about-company-grid {
-            grid-template-columns: 1fr;
-            gap: 36px;
-        }
-
-        .about-company-image {
-            max-width: 600px;
-            margin: 0 auto;
+            display: grid !important;
+            grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr) !important;
+            gap: 24px;
+            align-items: center;
         }
 
         .capabilities-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 20px;
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 16px;
         }
 
         .values-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 20px;
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 16px;
+        }
+
+        .mission-vision-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 16px;
         }
 
         .why-modern-grid {
-            grid-template-columns: 1fr !important;
-            gap: 40px;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 24px;
         }
     }
 
@@ -4994,46 +4999,41 @@
         }
 
         .about-hero-tag {
-            font-size: 12px;
-            gap: 10px;
-            margin-bottom: 18px;
+            font-size: 11px;
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
         .about-hero-tag::before,
         .about-hero-tag::after {
-            width: 28px;
+            width: 24px;
         }
 
         .about-hero h1 {
-            font-size: clamp(30px, 7.5vw, 42px);
-            margin-bottom: 18px;
+            font-size: clamp(28px, 7vw, 38px);
+            margin-bottom: 16px;
         }
 
         .about-hero p {
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 28px;
+            font-size: 13.5px;
+            line-height: 1.65;
+            margin-bottom: 24px;
         }
 
         .about-hero-buttons {
-            gap: 12px;
+            gap: 10px;
         }
 
         .about-hero .btn-primary,
         .about-hero .btn-outline {
-            min-height: 46px;
-            padding: 0 20px;
-            font-size: 13.5px;
+            min-height: 42px;
+            padding: 0 18px;
+            font-size: 12.5px;
             width: auto;
         }
 
-        .mission-vision-grid {
-            grid-template-columns: 1fr !important;
-            gap: 20px;
-        }
-
         .about-company {
-            padding: 50px 0;
+            padding: 45px 0;
         }
 
         .capabilities-section,
@@ -5041,58 +5041,279 @@
         .why-section,
         .values-section,
         .certifications-section {
-            padding: 50px 0;
+            padding: 45px 0;
         }
 
         .section-heading h2,
         .mission-vision-heading h2,
         .about-company-content h2,
         .why-modern-content h2 {
-            font-size: clamp(24px, 5.5vw, 34px);
+            font-size: clamp(22px, 5.2vw, 30px);
+        }
+
+        .section-heading p,
+        .mission-vision-heading p {
+            font-size: 12.5px;
+            line-height: 1.6;
+        }
+
+        /* 1. About Company Grid — Responsive 2-Column Grid on Mobile */
+        .about-company-grid {
+            display: grid !important;
+            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr) !important;
+            gap: 14px !important;
+            align-items: center;
+        }
+
+        .about-company-image img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .company-experience {
+            padding: 8px 12px;
+            bottom: 10px;
+            right: 10px;
+            left: auto;
+            border-radius: 8px;
+        }
+
+        .company-experience strong {
+            font-size: 15px;
+        }
+
+        .company-experience span {
+            font-size: 9.5px;
+        }
+
+        /* 2. Capabilities Grid — Responsive 2-Column Grid on Mobile */
+        .capabilities-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 10px !important;
+        }
+
+        .capability-card {
+            padding: 15px 12px;
+            min-height: auto;
+            border-radius: 10px;
+        }
+
+        .capability-card-icon {
+            width: 34px;
+            height: 34px;
+            font-size: 14px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+        }
+
+        .capability-card h3 {
+            font-size: 12.5px;
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+
+        .capability-card p {
+            font-size: 10.5px;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* 3. Mission & Vision Grid — Responsive 2-Column Grid on Mobile */
+        .mission-vision-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 10px !important;
+        }
+
+        .mission-card {
+            padding: 16px 12px;
+            border-radius: 10px;
+        }
+
+        .mission-card-icon {
+            width: 36px;
+            height: 36px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .mission-card h3 {
+            font-size: 13.5px;
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+
+        .mission-card p {
+            font-size: 10.5px;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* 4. Values Grid — Responsive 2-Column Grid on Mobile (2x2) */
+        .values-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 10px !important;
+        }
+
+        .value-card {
+            padding: 16px 12px;
+            border-radius: 10px;
+        }
+
+        .value-card h3 {
+            font-size: 13px;
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+
+        .value-card p {
+            font-size: 10.5px;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* 5. Why Choose Jay Bhavani — Stats Row & Micro-Grid */
+        .why-stats {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 6px !important;
+            margin-top: 14px;
+        }
+
+        .why-stat {
+            padding: 8px 4px;
+            text-align: center;
+        }
+
+        .why-stat span {
+            font-size: 10.5px;
+            line-height: 1.25;
+        }
+
+        .why-modern-grid {
+            grid-template-columns: 1fr !important;
+            gap: 28px;
+        }
+
+        .why-modern-item {
+            padding: 8px 10px;
+            gap: 10px;
+        }
+
+        .why-modern-text h3 {
+            font-size: 13px;
+        }
+
+        .why-modern-text p {
+            font-size: 11px;
+            line-height: 1.45;
+        }
+
+        .why-modern-icon {
+            width: 32px;
+            height: 32px;
+            font-size: 13px;
+        }
+
+        /* 6. Certifications Grid — Responsive 2-Column Grid */
+        .certifications-section .certifications-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 10px !important;
         }
     }
 
     @media (max-width: 576px) {
-        .capabilities-grid {
-            grid-template-columns: 1fr !important;
-            gap: 16px;
+        .about-company-grid {
+            display: grid !important;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+            gap: 10px !important;
         }
 
-        .values-grid {
-            grid-template-columns: 1fr !important;
-            gap: 14px;
-        }
-
-        .why-stats {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .why-stat {
-            width: 100%;
-            text-align: center;
-        }
-
-        .why-modern-item {
-            padding: 8px;
-        }
-
-        .why-modern-item:hover {
-            transform: none;
+        .about-company-image img {
+            height: 180px;
         }
 
         .company-experience {
-            padding: 10px 16px;
-            bottom: 14px;
-            left: 224px;
+            padding: 6px 10px;
+            bottom: 8px;
+            right: 8px;
         }
 
         .company-experience strong {
-            font-size: 18px;
+            font-size: 13px;
         }
 
         .company-experience span {
-            font-size: 11px;
+            font-size: 8.5px;
+        }
+
+        .capabilities-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 8px !important;
+        }
+
+        .capability-card {
+            padding: 12px 10px;
+        }
+
+        .capability-card h3 {
+            font-size: 11.5px;
+        }
+
+        .capability-card p {
+            font-size: 9.5px;
+        }
+
+        .mission-vision-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 8px !important;
+        }
+
+        .mission-card {
+            padding: 14px 10px;
+        }
+
+        .mission-card h3 {
+            font-size: 12.5px;
+        }
+
+        .mission-card p {
+            font-size: 9.5px;
+        }
+
+        .values-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 8px !important;
+        }
+
+        .value-card {
+            padding: 14px 10px;
+        }
+
+        .value-card h3 {
+            font-size: 12px;
+        }
+
+        .value-card p {
+            font-size: 9.5px;
+        }
+
+        .certifications-section .certifications-grid {
+            gap: 8px !important;
+        }
+
+        .why-best-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 6px !important;
         }
 
         .about-cta-content .btn {
@@ -5101,3 +5322,24 @@
             display: inline-flex;
         }
     }
+
+    @media (max-width: 360px) {
+        .about-company-grid,
+        .capabilities-grid,
+        .mission-vision-grid,
+        .values-grid,
+        .certifications-section .certifications-grid {
+            gap: 6px !important;
+        }
+
+        .why-best-grid {
+            gap: 4px !important;
+        }
+
+        .capability-card,
+        .mission-card,
+        .value-card {
+            padding: 10px 8px;
+        }
+    }
+}

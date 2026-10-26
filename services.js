@@ -1,11 +1,11 @@
 /* =====================================================
    JAY BHAVANI CONSTRUCTION — SERVICES JAVASCRIPT
-   Interactive Filters, Counters, Accordion & Animations
+   Interactive Filters, Micro-interactions & Smooth Animations
    ===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ================= 1. CATEGORY FILTER ================= */
+    /* ================= 1. CATEGORY FILTER WITH STAGGERED CASCADE ================= */
     const filterButtons = document.querySelectorAll(".srv-filter-btn");
     const serviceCards = document.querySelectorAll(".srv-primary-card");
 
@@ -18,19 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 filterButtons.forEach(btn => btn.classList.remove("active"));
                 this.classList.add("active");
 
-                // Filter cards with smooth fade/scale
+                // Filter cards with smooth staggered waterfall
+                let visibleCount = 0;
                 serviceCards.forEach(card => {
                     const category = card.getAttribute("data-category");
 
                     if (filter === "all" || category === filter) {
                         card.classList.remove("is-filtered-out");
                         card.style.opacity = "0";
-                        card.style.transform = "scale(0.95) translateY(15px)";
+                        card.style.transform = "scale(0.95) translateY(18px)";
+                        const delay = visibleCount * 60;
+                        visibleCount++;
+
                         setTimeout(() => {
-                            card.style.transition = "opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)";
+                            card.style.transition = "opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)";
                             card.style.opacity = "1";
                             card.style.transform = "scale(1) translateY(0)";
-                        }, 50);
+                        }, 40 + delay);
                     } else {
                         card.style.transition = "opacity 0.25s ease, transform 0.25s ease";
                         card.style.opacity = "0";
@@ -44,7 +48,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* ================= 2. ANIMATED NUMBER COUNTERS ================= */
+    /* ================= 2. DESKTOP CURSOR-TRACKING SPOTLIGHT ================= */
+    if (window.matchMedia("(min-width: 992px)").matches && serviceCards.length) {
+        serviceCards.forEach(card => {
+            card.addEventListener("mousemove", e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty("--srv-mouse-x", `${x}px`);
+                card.style.setProperty("--srv-mouse-y", `${y}px`);
+            });
+        });
+    }
+
+    /* ================= 3. ANIMATED NUMBER COUNTERS ================= */
     const counterElements = document.querySelectorAll(".srv-counter");
 
     if (counterElements.length && "IntersectionObserver" in window) {
@@ -76,13 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     observer.unobserve(counter);
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.25 });
 
         counterElements.forEach(counter => counterObserver.observe(counter));
     }
 
-    /* ================= 3. SCROLL REVEAL OBSERVER ================= */
-    const revealElements = document.querySelectorAll(".srv-reveal, .srv-reveal-left, .srv-reveal-right");
+    /* ================= 4. SCROLL REVEAL OBSERVER ================= */
+    const revealElements = document.querySelectorAll(".srv-reveal, .srv-reveal-left, .srv-reveal-right, .srv-reveal-scale");
 
     if (revealElements.length && "IntersectionObserver" in window) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -92,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12 });
+        }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
 
         revealElements.forEach(el => revealObserver.observe(el));
     } else {
@@ -100,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         revealElements.forEach(el => el.classList.add("is-revealed"));
     }
 
-    /* ================= 4. INTERACTIVE FAQ ACCORDION ================= */
+    /* ================= 5. INTERACTIVE FAQ ACCORDION ================= */
     const faqItems = document.querySelectorAll(".srv-faq-item");
 
     if (faqItems.length) {

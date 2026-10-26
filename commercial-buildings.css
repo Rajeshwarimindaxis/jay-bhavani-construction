@@ -2710,3 +2710,220 @@ ul {
         padding-top: 75px !important;
     }
 }
+
+/* ===================== SCROLL REVEAL & ANIMATIONS ===================== */
+
+/* Hero Entrance Animations */
+.comm-hero-enter h1 {
+    animation: commFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.comm-hero-enter .comm-hero-description {
+    animation: commFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.comm-hero-enter .comm-hero-note {
+    animation: commFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@keyframes commFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Image Badge */
+@keyframes commBadgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.comm-image-badge {
+    animation: commBadgeFloat 4s ease-in-out infinite;
+}
+
+/* Scroll Reveal Base */
+.comm-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1), transform .75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.comm-reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1), transform .75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.comm-reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1), transform .75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.comm-reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1), transform .75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.comm-reveal.is-visible,
+.comm-reveal.active,
+.comm-reveal-left.is-visible,
+.comm-reveal-left.active,
+.comm-reveal-right.is-visible,
+.comm-reveal-right.active,
+.comm-reveal-scale.is-visible,
+.comm-reveal-scale.active {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+.comm-delay-1 { transition-delay: .1s; }
+.comm-delay-2 { transition-delay: .2s; }
+.comm-delay-3 { transition-delay: .3s; }
+.comm-delay-4 { transition-delay: .4s; }
+
+/* Light Sweep Beam across Images */
+.comm-application-image::before,
+.comm-intro-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.comm-intro-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.comm-application-card:hover .comm-application-image::before,
+.comm-intro-image:hover::after {
+    animation: commShineSweep 0.85s ease-out;
+}
+
+@keyframes commShineSweep {
+    0% { left: -130%; }
+    100% { left: 180%; }
+}
+
+/* Card Hover Micro-interactions */
+.comm-benefit {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.comm-benefit:hover {
+    transform: translateY(-5px);
+}
+
+.comm-benefit-icon {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease;
+}
+
+.comm-benefit:hover .comm-benefit-icon {
+    transform: scale(1.14) rotate(6deg);
+    background: var(--logo-blue);
+    color: var(--white);
+}
+
+.comm-application-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.35s ease;
+}
+
+.comm-application-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 42px rgba(5, 43, 74, 0.14);
+}
+
+.comm-application-icon {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.comm-application-card:hover .comm-application-icon {
+    transform: scale(1.15) rotate(-6deg);
+}
+
+.comm-feature {
+    transition: transform 0.3s ease;
+}
+
+.comm-feature:hover {
+    transform: translateX(6px);
+}
+
+.comm-feature-icon {
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.comm-feature:hover .comm-feature-icon {
+    transform: scale(1.15) rotate(6deg);
+    background: var(--logo-blue);
+    color: var(--white);
+}
+
+/* Button Hover Shimmer */
+.comm-button {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.comm-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+.comm-button:hover::after {
+    animation: commShineSweep 0.75s ease-out;
+}
+
+.comm-button:hover {
+    transform: translateY(-3px);
+}
+
+.comm-button i {
+    transition: transform 0.3s ease;
+}
+
+.comm-button:hover i {
+    transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .comm-reveal,
+    .comm-reveal-left,
+    .comm-reveal-right,
+    .comm-reveal-scale,
+    .comm-image-badge,
+    .comm-hero-enter h1,
+    .comm-hero-enter .comm-hero-description,
+    .comm-hero-enter .comm-hero-note {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}

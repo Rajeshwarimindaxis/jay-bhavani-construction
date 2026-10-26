@@ -1,4 +1,3 @@
-
 /* =========================================================
    JAY BHAVANI CONSTRUCTION
    PLANT & MACHINERY PAGE
@@ -98,27 +97,21 @@ main textarea {
     isolation: isolate;
     overflow: hidden;
     box-sizing: border-box;
-    min-height: 620px;
+    min-height: 580px;
     display: flex;
     align-items: center;
-    padding: 60px 0;
+    padding: 150px 0 75px;
     background:
-        radial-gradient(
-            circle at 85% 18%,
+        radial-gradient(circle at 85% 18%,
             rgba(25, 118, 210, 0.30),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 10% 100%,
+            transparent 30%),
+        radial-gradient(circle at 10% 100%,
             rgba(232, 117, 36, 0.13),
-            transparent 32%
-        ),
-        linear-gradient(
-            125deg,
+            transparent 32%),
+        linear-gradient(125deg,
             #082b4c 0%,
             #06458f 55%,
-            #0759b5 100%
-        );
+            #0759b5 100%);
 }
 
 .pm-hero::before {
@@ -146,13 +139,11 @@ main textarea {
     height: 100%;
     opacity: 0.13;
     background-image:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             transparent 45%,
             rgba(255, 255, 255, 0.18) 45%,
             rgba(255, 255, 255, 0.18) 46%,
-            transparent 46%
-        );
+            transparent 46%);
     background-size: 34px 34px;
     pointer-events: none;
 }
@@ -185,11 +176,11 @@ main textarea {
 
 .pm-hero h1 {
     max-width: 850px;
-    margin: 0 0 22px;
+    margin: 20px 0 22px;
     color: var(--pm-white);
     font-family: 'Manrope', sans-serif;
     font-size: clamp(36px, 5vw, 60px);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.15;
     letter-spacing: -1.8px;
 }
@@ -363,11 +354,9 @@ main textarea {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--pm-primary),
-        var(--pm-orange)
-    );
+    background: linear-gradient(90deg,
+            var(--pm-primary),
+            var(--pm-orange));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s ease;
@@ -708,16 +697,12 @@ main textarea {
     overflow: hidden;
     padding: 72px 0;
     background:
-        radial-gradient(
-            circle at 90% 20%,
+        radial-gradient(circle at 90% 20%,
             rgba(25, 118, 210, 0.28),
-            transparent 35%
-        ),
-        linear-gradient(
-            120deg,
+            transparent 35%),
+        linear-gradient(120deg,
             #082b4c,
-            #06458f
-        );
+            #06458f);
 }
 
 .pm-cta::before {
@@ -819,17 +804,340 @@ main textarea {
     transform: translateY(-3px);
 }
 
-/* ================= ANIMATIONS ================= */
+/* ================= ANIMATIONS & MICRO-INTERACTIONS ================= */
 
-@keyframes pmFadeUp {
+/* Hero Entrance Animations */
+.pm-hero-enter .pm-hero-title-anim {
+    animation: pmHeroTitleIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pm-hero-enter .pm-hero-desc-anim {
+    animation: pmHeroDescIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.pm-hero-enter .pm-hero-pills-anim {
+    animation: pmHeroPillsIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@keyframes pmHeroTitleIn {
     from {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes pmHeroDescIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pmHeroPillsIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hero Background Pulsing Watermark */
+.pm-hero::before {
+    animation: pmWatermarkPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes pmWatermarkPulse {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.08) translate(-10px, -15px);
+        opacity: 1;
+    }
+}
+
+/* Hero Pills Micro-interaction */
+.pm-hero-pill {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pm-hero-pill:hover {
+    transform: translateY(-4px) scale(1.04);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.pm-hero-pill i {
+    transition: transform 0.3s ease;
+}
+
+.pm-hero-pill:hover i {
+    transform: rotate(-10deg) scale(1.15);
+}
+
+/* Scroll Reveal Base */
+.pm-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.pm-reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.pm-reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.pm-reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.pm-reveal.is-visible,
+.pm-reveal.active,
+.pm-reveal-left.is-visible,
+.pm-reveal-left.active,
+.pm-reveal-right.is-visible,
+.pm-reveal-right.active,
+.pm-reveal-scale.is-visible,
+.pm-reveal-scale.active {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger Delays */
+.pm-delay-1 { transition-delay: 0.1s; }
+.pm-delay-2 { transition-delay: 0.2s; }
+.pm-delay-3 { transition-delay: 0.3s; }
+.pm-delay-4 { transition-delay: 0.4s; }
+
+/* Stat Card Hover & Counter Shine */
+.pm-stat-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.pm-stat-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(7, 89, 181, 0.08), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    transition: none;
+}
+
+.pm-stat-card:hover::after {
+    animation: pmShineSweep 0.8s ease-out;
+}
+
+@keyframes pmShineSweep {
+    0% { left: -120%; }
+    100% { left: 190%; }
+}
+
+.pm-stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 36px rgba(7, 89, 181, 0.14);
+    border-color: rgba(7, 89, 181, 0.35);
+}
+
+.pm-stat-num {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.pm-stat-card:hover .pm-stat-num {
+    transform: scale(1.06);
+    color: var(--pm-primary-light);
+}
+
+/* Fleet Card Diagonal Light Sweep on Hover */
+.pm-fleet-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, border-color 0.35s ease;
+}
+
+.pm-fleet-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -140%;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    transition: none;
+    z-index: 2;
+}
+
+.pm-fleet-card:hover::after {
+    animation: pmShineSweep 0.85s ease-out;
+}
+
+.pm-fleet-card-icon {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, color 0.35s ease;
+}
+
+.pm-fleet-card:hover .pm-fleet-card-icon {
+    transform: scale(1.12) rotate(-8deg);
+}
+
+/* Specs Items Hover Highlight */
+.pm-fleet-specs li {
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.pm-fleet-specs li:hover {
+    transform: translateX(4px);
+    color: var(--pm-dark);
+}
+
+.pm-fleet-specs li i {
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.pm-fleet-specs li:hover i {
+    transform: scale(1.25);
+    color: var(--pm-orange);
+}
+
+/* Fleet Badge Hover Pulse */
+.pm-fleet-badge {
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.pm-fleet-card:hover .pm-fleet-badge {
+    transform: translateY(-2px);
+    background: #e2eeff;
+}
+
+/* Equipment Tables Interactive Row Hover */
+.pm-table tbody tr {
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.pm-table tbody tr:hover {
+    background: #edf5ff;
+}
+
+.pm-table tbody tr:hover .pm-equip-name i {
+    transform: scale(1.15) rotate(6deg);
+    background: var(--pm-primary);
+    color: var(--pm-white);
+}
+
+.pm-equip-name i {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease;
+}
+
+.pm-status-badge {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pm-table tbody tr:hover .pm-status-badge {
+    transform: scale(1.05);
+    box-shadow: 0 3px 8px rgba(7, 89, 181, 0.15);
+}
+
+/* Capabilities Items Hover Animation */
+.pm-adv-item {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.pm-adv-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(16, 43, 70, 0.12);
+    border-color: rgba(7, 89, 181, 0.28);
+}
+
+.pm-adv-icon {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, color 0.35s ease;
+}
+
+.pm-adv-item:hover .pm-adv-icon {
+    transform: scale(1.12) rotate(6deg);
+    background: var(--pm-primary);
+    color: var(--pm-white);
+}
+
+/* CTA Buttons Shimmer */
+.pm-btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.pm-btn-primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+.pm-btn-primary:hover::after {
+    animation: pmShineSweep 0.75s ease-out;
+}
+
+.pm-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(232, 117, 36, 0.35);
+}
+
+.pm-btn-primary i {
+    transition: transform 0.3s ease;
+}
+
+.pm-btn-primary:hover i {
+    transform: translateX(4px);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .pm-reveal,
+    .pm-reveal-left,
+    .pm-reveal-right,
+    .pm-reveal-scale,
+    .pm-hero-enter .pm-hero-title-anim,
+    .pm-hero-enter .pm-hero-desc-anim,
+    .pm-hero-enter .pm-hero-pills-anim {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
     }
 }
 
@@ -866,32 +1174,55 @@ main textarea {
 
 @media (max-width: 768px) {
     .pm-container {
-        width: calc(100% - 32px);
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 18px;
+        box-sizing: border-box;
     }
 
     .pm-hero {
         min-height: auto;
-        padding: 70px 0 75px;
+        padding: 146px 0 65px;
+    }
+
+    .pm-hero::before {
+        width: 320px;
+        height: 320px;
+        right: -80px;
+        bottom: -150px;
+        pointer-events: none;
     }
 
     .pm-hero h1 {
-        font-size: clamp(34px, 8vw, 46px);
-        letter-spacing: -1px;
+        font-size: clamp(30px, 7vw, 42px);
+        line-height: 1.18;
+        letter-spacing: -0.8px;
+        margin: 0 0 16px;
     }
 
     .pm-hero-desc {
         font-size: 14px;
-        line-height: 1.85;
+        line-height: 1.75;
+        max-width: 100%;
     }
 
     .pm-hero-pills {
-        gap: 9px;
-        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .pm-hero-pill {
-        padding: 9px 12px;
-        font-size: 11px;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 14px;
+        font-size: 11.5px;
+        border-radius: 9999px;
     }
 
     .pm-stats-grid {
@@ -1036,11 +1367,22 @@ main textarea {
 
 @media (max-width: 480px) {
     .pm-container {
-        width: calc(100% - 28px);
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 14px;
+        box-sizing: border-box;
     }
 
     .pm-hero {
-        padding: 58px 0 65px;
+        padding: 144px 0 55px;
+    }
+
+    .pm-hero::before {
+        width: 250px;
+        height: 250px;
+        right: -60px;
+        bottom: -110px;
+        pointer-events: none;
     }
 
     .pm-eyebrow {
@@ -1049,21 +1391,39 @@ main textarea {
     }
 
     .pm-hero h1 {
-        font-size: 33px;
+        font-size: clamp(25px, 7.5vw, 32px);
         line-height: 1.2;
+        letter-spacing: -0.6px;
+        margin: 0 0 12px;
+    }
+
+    .pm-hero h1 span {
+        margin-top: 5px;
     }
 
     .pm-hero-desc {
         font-size: 13px;
+        line-height: 1.65;
     }
 
     .pm-hero-pills {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .pm-hero-pill {
-        max-width: 100%;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 12px;
+        font-size: 11px;
+        border-radius: 9999px;
+        white-space: nowrap;
     }
 
     .pm-stats-grid {
@@ -1146,6 +1506,7 @@ main textarea {
 /* ================= ACCESSIBILITY ================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -1323,6 +1684,7 @@ main textarea {
 
 /* SMALL MOBILE */
 @media screen and (max-width: 480px) {
+
     .pm-table th,
     .pm-table td {
         padding: 6px 3px;
@@ -1336,6 +1698,7 @@ main textarea {
 
 /* VERY SMALL MOBILE */
 @media screen and (max-width: 360px) {
+
     .pm-table th,
     .pm-table td {
         padding: 5px 2px;
@@ -1413,6 +1776,34 @@ main textarea {
 
 /* VERY SMALL MOBILE */
 @media (max-width: 360px) {
+    .pm-container {
+        padding-inline: 10px;
+    }
+
+    .pm-hero {
+        padding: 138px 0 45px;
+    }
+
+    .pm-hero h1 {
+        font-size: clamp(22px, 7vw, 26px);
+    }
+
+    .pm-hero-desc {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .pm-hero-pills {
+        gap: 6px;
+        margin-top: 16px;
+    }
+
+    .pm-hero-pill {
+        padding: 6px 10px;
+        font-size: 10px;
+        gap: 5px;
+    }
+
     .pm-adv-grid {
         gap: 7px;
     }

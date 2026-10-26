@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuToggle.classList.toggle("active", willOpen);
             menuToggle.setAttribute("aria-expanded", String(willOpen));
             menuToggle.setAttribute("aria-label", willOpen ? "Close Menu" : "Open Menu");
+            document.body.classList.toggle("menu-open", willOpen);
         });
 
         // Close mobile nav when clicking outside
@@ -54,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuToggle.classList.remove("active");
                 menuToggle.setAttribute("aria-expanded", "false");
                 menuToggle.setAttribute("aria-label", "Open Menu");
+                document.body.classList.remove("menu-open");
             }
         });
 
@@ -64,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuToggle.classList.remove("active");
                 menuToggle.setAttribute("aria-expanded", "false");
                 menuToggle.setAttribute("aria-label", "Open Menu");
+                document.body.classList.remove("menu-open");
                 menuToggle.focus();
             }
         });
@@ -75,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuToggle.classList.remove("active");
                 menuToggle.setAttribute("aria-expanded", "false");
                 menuToggle.setAttribute("aria-label", "Open Menu");
+                document.body.classList.remove("menu-open");
             }
         });
 
@@ -85,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuToggle.classList.remove("active");
                 menuToggle.setAttribute("aria-expanded", "false");
                 menuToggle.setAttribute("aria-label", "Open Menu");
+                document.body.classList.remove("menu-open");
             });
         });
     }
@@ -139,6 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     menuToggle.classList.remove("active");
                     menuToggle.setAttribute("aria-expanded", "false");
                     menuToggle.setAttribute("aria-label", "Open Menu");
+                    document.body.classList.remove("menu-open");
                 }
             });
         });
@@ -152,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     menuToggle.classList.remove("active");
                     menuToggle.setAttribute("aria-expanded", "false");
                     menuToggle.setAttribute("aria-label", "Open Menu");
+                    document.body.classList.remove("menu-open");
                 }
             });
         }
@@ -209,6 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     menuToggle.classList.remove("active");
                     menuToggle.setAttribute("aria-expanded", "false");
                     menuToggle.setAttribute("aria-label", "Open Menu");
+                    document.body.classList.remove("menu-open");
                 }
             });
         });
@@ -355,9 +363,17 @@ document.addEventListener("DOMContentLoaded", function () {
         startAutoSlide();
     }
 
-    /* ================= 7. SCROLL REVEAL ANIMATIONS ================= */
+    /* ================= 7. SCROLL REVEAL & SERVICE ANIMATIONS ================= */
     const revealItems = document.querySelectorAll(
-        ".reveal, .industrial-reveal, .service-reveal, .about-reveal, .about-reveal-left, .about-reveal-right, .contact-reveal, .contact-reveal-left, .contact-reveal-right"
+        ".reveal, .reveal-left, .reveal-right, .reveal-scale, " +
+        ".pm-reveal, .pm-reveal-left, .pm-reveal-right, .pm-reveal-scale, " +
+        ".peb-reveal, .peb-reveal-left, .peb-reveal-right, .peb-reveal-scale, " +
+        ".industrial-reveal, .industrial-reveal-left, .industrial-reveal-right, .industrial-reveal-scale, " +
+        ".comm-reveal, .comm-reveal-left, .comm-reveal-right, .comm-reveal-scale, " +
+        ".floor-reveal, .floor-reveal-left, .floor-reveal-right, .floor-reveal-scale, " +
+        ".road-reveal, .road-reveal-left, .road-reveal-right, .road-reveal-scale, " +
+        ".srv-reveal, .srv-reveal-left, .srv-reveal-right, .srv-reveal-scale, " +
+        ".service-reveal, .about-reveal, .about-reveal-left, .about-reveal-right, .contact-reveal, .contact-reveal-left, .contact-reveal-right"
     );
     if (revealItems.length && "IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries, obs) => {
@@ -367,11 +383,49 @@ document.addEventListener("DOMContentLoaded", function () {
                     obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+        }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
 
         revealItems.forEach(el => observer.observe(el));
     } else {
         revealItems.forEach(el => el.classList.add("active", "show", "is-revealed", "is-visible"));
+    }
+
+    /* ================= 7B. ANIMATED NUMBER COUNTERS ================= */
+    const counterElements = document.querySelectorAll(".pm-counter, .srv-counter, .stat-counter, .counter");
+    if (counterElements.length && "IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const targetValue = parseInt(counter.getAttribute("data-target"), 10);
+                    if (isNaN(targetValue)) return;
+                    const suffix = counter.getAttribute("data-suffix") || "";
+                    const prefix = counter.getAttribute("data-prefix") || "";
+                    const duration = 1600;
+                    const startTime = performance.now();
+
+                    function updateNumber(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                        const currentVal = Math.floor(easeOutProgress * targetValue);
+
+                        counter.textContent = prefix + currentVal + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateNumber);
+                        } else {
+                            counter.textContent = prefix + targetValue + suffix;
+                        }
+                    }
+
+                    requestAnimationFrame(updateNumber);
+                    obs.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        counterElements.forEach(counter => counterObserver.observe(counter));
     }
 
     /* ================= 8. CONTACT FORM ================= */
@@ -389,4 +443,42 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    /* ================= 9. HERO BACKGROUND SLIDER (AUTO TRANSITION) ================= */
+    const heroBgSlides = document.querySelectorAll(".hero-bg-slide");
+    if (heroBgSlides.length > 1) {
+        let currentSlideIdx = 0;
+        const slideInterval = 5500; // 5.5 seconds per slide
+
+        function nextHeroBgSlide() {
+            heroBgSlides[currentSlideIdx].classList.remove("active");
+            currentSlideIdx = (currentSlideIdx + 1) % heroBgSlides.length;
+            heroBgSlides[currentSlideIdx].classList.add("active");
+        }
+
+        // Preload all background images so transitions are seamless and instant
+        heroBgSlides.forEach(slide => {
+            const bg = slide.style.backgroundImage;
+            if (bg) {
+                const match = bg.match(/url\(["']?([^"']*)["']?\)/);
+                if (match && match[1]) {
+                    const img = new Image();
+                    img.src = match[1];
+                }
+            }
+        });
+
+        let heroSlideTimer = setInterval(nextHeroBgSlide, slideInterval);
+
+        // Pause timer when tab is inactive to preserve performance
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+                clearInterval(heroSlideTimer);
+            } else {
+                heroSlideTimer = setInterval(nextHeroBgSlide, slideInterval);
+            }
+        });
+    }
 });
+
+

@@ -584,6 +584,17 @@
 
         <!-- HERO -->
         <section class="hero" id="home">
+            <!-- HERO BACKGROUND SLIDER -->
+            <div class="hero-bg-slider" id="heroBgSlider" aria-hidden="true">
+                <div class="hero-bg-slide active" style="background-image: url('images/hero-bg.png');"></div>
+                <div class="hero-bg-slide" style="background-image: url('images/industrial-shed.jpg');"></div>
+                <div class="hero-bg-slide" style="background-image: url('images/project-02.jpg');"></div>
+                <div class="hero-bg-slide" style="background-image: url('images/peb-structure.jpg');"></div>
+                <div class="hero-bg-slide" style="background-image: url('images/project-14.jpg');"></div>
+                <div class="hero-bg-slide" style="background-image: url('images/commercial-building.jpg');"></div>
+                <div class="hero-bg-slide" style="background-image: url('images/project-23.jpg');"></div>
+            </div>
+
             <div class="hero-overlay"></div>
 
             <div class="container hero-container">
@@ -1439,7 +1450,6 @@
                 galleryItems.forEach(item => item.classList.add("gallery-visible"));
                 return;
             }
-
             const galleryObserver = new IntersectionObserver(function (entries, observer) {
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
@@ -1455,9 +1465,6 @@
             galleryItems.forEach(item => galleryObserver.observe(item));
         });
     </script>
-
-
-
     <script src="script.js" defer></script>
     <script src="hf.js" defer></script>
 </body>
