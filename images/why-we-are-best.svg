@@ -144,7 +144,7 @@
     </text>
   </g>
 
-  <!-- ================= ITEM 2: Customer Support ================= -->
+  <!-- ================= ITEM 2: Quality ================= -->
   <g class="item-group" transform="translate(430, 168)">
     <!-- Outer concentric ring -->
     <circle cx="0" cy="0" r="64" fill="none" stroke="#0759b5" stroke-width="3" filter="url(#softShadow)" class="outer-ring" />
@@ -153,35 +153,21 @@
     <!-- Main blue circle -->
     <circle cx="0" cy="0" r="54" fill="url(#circleBlue)" />
 
-    <!-- Support Agent with Headset & Laptop -->
+    <!-- Quality Rosette Ribbon & Checkmark Icon -->
     <g transform="translate(0, -2)">
-      <!-- Animated Sound Waves -->
-      <path class="icon-stroke anim-wave-1" d="M22 -18 C26 -14, 26 -6, 22 -2" />
-      <path class="icon-stroke anim-wave-2" d="M27 -23 C34 -17, 34 -1, 27 3" />
-
-      <!-- Head -->
-      <circle cx="-2" cy="-13" r="10.5" class="icon-stroke" />
-
-      <!-- Headset Band -->
-      <path class="icon-stroke" d="M-13 -12 C-13 -23, 9 -23, 9 -12" />
-      <!-- Headphone Ear Cup -->
-      <rect x="-16" y="-16" width="5" height="9" rx="2.5" class="icon-stroke" fill="#ffffff" />
-      <!-- Headset Mic Boom -->
-      <path class="icon-stroke" d="M-14 -9 C-14 -2, -6 -2, -4 -5" />
-
-      <!-- Body / Shoulders -->
-      <path class="icon-stroke" d="M-21 21 C-21 9, -13 5, -3 5 C7 5, 14 9, 14 21" />
-
-      <!-- Laptop Base & Screen -->
-      <path class="icon-stroke" d="M-6 3 L17 3 C19 3, 20 5, 20 7 L20 20 L-6 20 Z" fill="#0860c4" />
-      <circle cx="7" cy="11" r="1.8" class="icon-fill" />
-      <path class="icon-stroke" d="M-14 24 L24 24 L21 20 L-9 20 Z" />
+      <!-- Ribbons -->
+      <path class="icon-stroke" d="M-8 16 L-14 36 L-4 31 L0 36 L-4 16" fill="#0860c4" />
+      <path class="icon-stroke" d="M8 16 L14 36 L4 31 L0 36 L4 16" fill="#0860c4" />
+      <!-- Rosette circle -->
+      <circle cx="0" cy="0" r="23" class="icon-stroke" stroke-width="2.8" fill="#0860c4" />
+      <circle cx="0" cy="0" r="18" class="icon-stroke" stroke-dasharray="3 3" stroke-width="1.5" />
+      <!-- Checkmark -->
+      <path class="icon-stroke" d="M-9 0 L-3 6 L9 -6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
     </g>
 
     <!-- Title Below -->
     <text x="0" y="98" class="title-text">
-      <tspan x="0" dy="0">Customer</tspan>
-      <tspan x="0" dy="28">Support</tspan>
+      <tspan x="0" dy="14">Quality</tspan>
     </text>
   </g>
 
