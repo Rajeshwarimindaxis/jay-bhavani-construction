@@ -78,7 +78,7 @@ body {
 }
 
 .road-container {
-    width: min(1180px, calc(100% - 44px));
+    width: min(1200px, calc(100% - 48px));
     margin-inline: auto;
 }
 

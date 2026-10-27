@@ -108,6 +108,9 @@ a {
 .gallery-hero .hero-container {
     position: relative;
     z-index: 1;
+    width: min(1200px, calc(100% - 48px));
+    margin-inline: auto;
+    box-sizing: border-box;
 }
 
 .gallery-hero .hero-content {

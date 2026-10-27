@@ -63,12 +63,12 @@
     position: relative;
     z-index: 2;
 
-    width: min(100% - 40px, 1180px);
+    width: min(1200px, calc(100% - 48px));
 
     margin: 0 auto;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 
@@ -78,13 +78,13 @@
 
 .about-hero-content {
     width: 100%;
-    max-width: 900px;
+    max-width: 860px;
 
-    padding: 180px 0 100px;
+    padding: 160px 0 90px;
 
     color: #fff;
 
-    text-align: center;
+    text-align: left;
 
     animation: heroContentEntry 1s ease-out both;
 }
@@ -95,20 +95,20 @@
 ========================================================= */
 
 .about-hero-tag {
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
-    gap: 16px;
+    gap: 12px;
 
-    margin-bottom: 28px;
+    margin-bottom: 22px;
 
     color: #F28C28;
 
     font-family: "Inter", sans-serif;
 
-    font-size: 16px;
+    font-size: 13px;
 
     font-weight: 800;
 
@@ -122,14 +122,18 @@
    LINES BESIDE HERO TAG
 ========================================================= */
 
-.about-hero-tag::before,
-.about-hero-tag::after {
+.about-hero-tag::before {
     content: "";
 
-    width: 50px;
+    width: 35px;
     height: 3px;
 
     background: #F28C28;
+    flex-shrink: 0;
+}
+
+.about-hero-tag::after {
+    display: none;
 }
 
 
@@ -138,21 +142,22 @@
 ========================================================= */
 
 .about-hero h1 {
-    max-width: 900px;
+    max-width: 860px;
 
-    margin: 0 auto 30px;
+    margin: 0 0 24px 0;
 
     font-family: "Manrope", sans-serif;
 
-    font-size: clamp(45px, 6vw, 72px);
+    font-size: clamp(36px, 5.2vw, 64px);
 
-    line-height: 1.08;
+    line-height: 1.12;
 
     font-weight: 800;
 
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
 
     color: #ffffff;
+    text-align: left;
 }
 
 
@@ -161,6 +166,7 @@
 ========================================================= */
 
 .about-hero h1 span {
+    display: block;
     color: #F28C28;
 }
 
@@ -170,18 +176,19 @@
 ========================================================= */
 
 .about-hero p {
-    max-width: 760px;
+    max-width: 640px;
 
-    margin: 0 auto 40px;
+    margin: 0 0 35px 0;
 
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.85);
     font-family: "Inter", sans-serif;
 
-    font-size: 18px;
+    font-size: 16px;
 
-    line-height: 1.8;
+    line-height: 1.85;
 
     font-weight: 500;
+    text-align: left;
 }
 
 
@@ -195,7 +202,7 @@
 
     align-items: center;
 
-    justify-content: center;
+    justify-content: flex-start;
 
     gap: 18px;
 
@@ -2268,10 +2275,13 @@
         letter-spacing: 1.3px;
     }
 
-    .about-hero-tag::before,
-    .about-hero-tag::after {
+    .about-hero-tag::before {
         width: 25px;
         height: 2px;
+    }
+
+    .about-hero-tag::after {
+        display: none !important;
     }
 
     .about-hero h1 {
@@ -2790,9 +2800,12 @@
         margin-bottom: 14px;
     }
 
-    .about-hero-tag::before,
-    .about-hero-tag::after {
+    .about-hero-tag::before {
         width: 20px;
+    }
+
+    .about-hero-tag::after {
+        display: none !important;
     }
 
     .about-hero h1 {
@@ -5004,9 +5017,12 @@
             margin-bottom: 16px;
         }
 
-        .about-hero-tag::before,
-        .about-hero-tag::after {
+        .about-hero-tag::before {
             width: 24px;
+        }
+
+        .about-hero-tag::after {
+            display: none !important;
         }
 
         .about-hero h1 {
