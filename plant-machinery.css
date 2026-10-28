@@ -102,50 +102,18 @@ main textarea {
     align-items: center;
     padding: 150px 0 75px;
     background:
-        radial-gradient(circle at 85% 18%,
-            rgba(25, 118, 210, 0.30),
-            transparent 30%),
-        radial-gradient(circle at 10% 100%,
-            rgba(232, 117, 36, 0.13),
-            transparent 32%),
-        linear-gradient(125deg,
-            #082b4c 0%,
-            #06458f 55%,
-            #0759b5 100%);
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.62) 0%,
+            rgba(0, 0, 0, 0.32) 50%,
+            transparent 100%
+        ),
+        url("images/peb-cnc-machinery.jpg") center / cover no-repeat;
 }
 
-.pm-hero::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 430px;
-    height: 430px;
-    right: -120px;
-    bottom: -250px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 50%;
-    box-shadow:
-        0 0 0 35px rgba(255, 255, 255, 0.035),
-        0 0 0 75px rgba(255, 255, 255, 0.025);
-}
-
+.pm-hero::before,
 .pm-hero::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    width: 45%;
-    height: 100%;
-    opacity: 0.13;
-    background-image:
-        linear-gradient(135deg,
-            transparent 45%,
-            rgba(255, 255, 255, 0.18) 45%,
-            rgba(255, 255, 255, 0.18) 46%,
-            transparent 46%);
-    background-size: 34px 34px;
-    pointer-events: none;
+    display: none;
 }
 
 .pm-hero-content {
@@ -1819,5 +1787,420 @@ main textarea {
 
     .pm-adv-item p {
         font-size: 10px;
+    }
+}
+
+/* =========================================================
+   IN-BETWEEN MACHINERY & PLANT PHOTO SPOTLIGHTS
+   Real shop-floor equipment & fabrication captures
+========================================================= */
+
+.pm-img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--pm-radius-md);
+    background: #0d2238;
+}
+
+.pm-img-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.pm-img-wrap:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.pm-img-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    background: rgba(7, 43, 76, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.pm-img-badge i {
+    color: var(--pm-orange);
+}
+
+/* 1. In-Between Spotlight (Two-column card) */
+.pm-inbetween-spotlight {
+    margin: 40px 0;
+}
+
+.pm-spotlight-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid var(--pm-border);
+    border-radius: var(--pm-radius-lg);
+    box-shadow: var(--pm-shadow-md);
+    transition: var(--pm-transition);
+}
+
+.pm-spotlight-card:hover {
+    border-color: rgba(7, 89, 181, 0.35);
+    box-shadow: var(--pm-shadow-lg);
+}
+
+.pm-spotlight-img-col .pm-img-wrap {
+    height: 320px;
+}
+
+.pm-spotlight-text-col h3 {
+    margin: 8px 0 14px;
+    color: var(--pm-dark);
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(22px, 2.5vw, 28px);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.pm-spotlight-text-col h3 span {
+    color: var(--pm-orange);
+}
+
+.pm-spotlight-text-col p {
+    margin: 0 0 20px;
+    color: var(--pm-text);
+    font-size: 14.5px;
+    line-height: 1.8;
+}
+
+.pm-spotlight-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pm-spec-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: #eef5fc;
+    border: 1px solid #d4e3f2;
+    border-radius: 8px;
+    color: var(--pm-primary-dark);
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.pm-spec-pill i {
+    color: var(--pm-orange);
+}
+
+/* 2. In-Between Banner (Wide panoramic banner) */
+.pm-inbetween-banner {
+    margin: 36px 0 44px;
+}
+
+.pm-banner-card {
+    position: relative;
+    border-radius: var(--pm-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--pm-shadow-md);
+    border: 1px solid var(--pm-border);
+}
+
+.pm-banner-card .pm-img-wrap {
+    height: 340px;
+    border-radius: 0;
+}
+
+.pm-banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 40px 30px 24px;
+    background: linear-gradient(180deg, transparent 0%, rgba(8, 28, 48, 0.78) 40%, rgba(8, 28, 48, 0.96) 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.pm-banner-info {
+    max-width: 720px;
+}
+
+.pm-banner-info h4 {
+    margin: 0 0 8px;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(18px, 2.2vw, 24px);
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.pm-banner-info p {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.pm-banner-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.pm-banner-stat-val {
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--pm-orange);
+}
+
+.pm-banner-stat-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* 3. In-Between Duo Grid (Two cards side by side) */
+.pm-inbetween-duo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 36px 0 44px;
+}
+
+.pm-duo-card {
+    background: #ffffff;
+    border: 1px solid var(--pm-border);
+    border-radius: var(--pm-radius-md);
+    overflow: hidden;
+    box-shadow: var(--pm-shadow-sm);
+    transition: var(--pm-transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.pm-duo-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(7, 89, 181, 0.35);
+    box-shadow: var(--pm-shadow-md);
+}
+
+.pm-duo-card .pm-img-wrap {
+    height: 230px;
+    border-radius: 0;
+}
+
+.pm-duo-content {
+    padding: 22px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pm-duo-content h4 {
+    margin: 0 0 10px;
+    color: var(--pm-dark);
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.pm-duo-content p {
+    margin: 0;
+    color: var(--pm-text);
+    font-size: 13.5px;
+    line-height: 1.75;
+}
+
+/* 4. Large Assembly Jig Showcase Section */
+.pm-jig-showcase {
+    background: #092440 linear-gradient(135deg, #07223e 0%, #0d3860 60%, #051b30 100%);
+    color: #ffffff;
+    padding: 85px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pm-jig-wrapper {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.pm-jig-content h2 {
+    margin: 12px 0 18px;
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+}
+
+.pm-jig-content h2 span {
+    color: #ffb77d;
+}
+
+.pm-jig-content p {
+    margin: 0 0 24px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.pm-jig-features {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.pm-jig-feat {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pm-jig-feat i {
+    width: 24px;
+    color: var(--pm-orange);
+    font-size: 16px;
+}
+
+.pm-tag-orange {
+    color: #ffbe88 !important;
+}
+
+.pm-tag-orange::before {
+    background: var(--pm-orange) !important;
+}
+
+.pm-jig-image-card {
+    position: relative;
+    border-radius: var(--pm-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.pm-jig-image-card .pm-img-wrap {
+    height: 360px;
+    border-radius: 0;
+}
+
+.pm-jig-badge {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 15px;
+    background: rgba(16, 43, 70, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    backdrop-filter: blur(8px);
+}
+
+.pm-jig-badge i {
+    color: #4ade80;
+}
+
+/* Responsiveness for In-Between Blocks */
+@media (max-width: 991px) {
+    .pm-spotlight-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .pm-spotlight-img-col .pm-img-wrap {
+        height: 260px;
+    }
+    
+    .pm-jig-wrapper {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .pm-jig-image-card .pm-img-wrap {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pm-inbetween-duo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pm-banner-overlay {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 30px 20px 18px;
+    }
+    
+    .pm-banner-stat {
+        align-items: flex-start;
+    }
+    
+    .pm-banner-card .pm-img-wrap {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pm-spotlight-card {
+        padding: 16px;
+    }
+    
+    .pm-spotlight-img-col .pm-img-wrap {
+        height: 210px;
+    }
+    
+    .pm-duo-card .pm-img-wrap {
+        height: 190px;
+    }
+    
+    .pm-banner-card .pm-img-wrap {
+        height: 240px;
+    }
+    
+    .pm-jig-image-card .pm-img-wrap {
+        height: 220px;
     }
 }

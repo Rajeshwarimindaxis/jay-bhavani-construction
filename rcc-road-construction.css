@@ -51,11 +51,11 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(18, 24, 32, 0.96) 0%,
-            rgba(18, 24, 32, 0.88) 50%,
-            rgba(18, 24, 32, 0.42) 100%
+            rgba(0, 0, 0, 0.62) 0%,
+            rgba(0, 0, 0, 0.32) 50%,
+            transparent 100%
         ),
-        url("images/rcc-road.jpg") center 45% / cover no-repeat;
+        url("images/rcc-road-hero.jpg") center 45% / cover no-repeat;
     transform: scale(1.03);
     animation: roadHeroZoom 1.5s ease-out both;
 }

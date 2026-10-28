@@ -1,0 +1,1378 @@
+/* =========================================================
+   PEB MANUFACTURING PLANT PAGE STYLESHEET
+   Jay Bhavani Construction
+   Consistent with hf.css and existing brand design system
+========================================================= */
+
+:root {
+    --plant-navy: #073b63;
+    --plant-navy-dark: #052b47;
+    --plant-navy-deep: #031d31;
+    --plant-orange: #f28c28;
+    --plant-orange-dark: #d96f16;
+    --plant-blue: #0759b5;
+    --plant-blue-dark: #06458f;
+    --plant-blue-light: #1976d2;
+    --plant-heading: #102d46;
+    --plant-text: #596b7c;
+    --plant-light: #f4f7fa;
+    --plant-white: #ffffff;
+    --plant-border: #e1e8ef;
+    --plant-max-width: 1220px;
+}
+
+.plant-page {
+    overflow: clip;
+    color: var(--plant-text);
+    font-family: "Inter", sans-serif;
+    background: var(--plant-white);
+}
+
+.plant-page *,
+.plant-page *::before,
+.plant-page *::after {
+    box-sizing: border-box;
+}
+
+.plant-container {
+    width: min(var(--plant-max-width), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.plant-section {
+    padding: 95px 0;
+}
+
+.plant-section-alt {
+    background: var(--plant-light);
+}
+
+.plant-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    color: var(--plant-orange);
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.plant-kicker > span {
+    width: 28px;
+    height: 3px;
+    background: var(--plant-orange);
+}
+
+.plant-section-head {
+    max-width: 780px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.plant-section-head .plant-kicker {
+    justify-content: center;
+}
+
+.plant-section-head h2 {
+    margin: 0 0 18px;
+    color: var(--plant-heading);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(28px, 3.8vw, 42px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.plant-section-head h2 span {
+    color: var(--plant-blue);
+}
+
+.plant-section-head p {
+    margin: 0;
+    color: var(--plant-text);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   HERO SECTION (STANDARDIZED WITH OTHER SERVICE PAGES)
+========================================================= */
+
+.plant-hero {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 640px;
+    padding-top: 118px; /* Clear fixed top contact bar (38px) + main header (80px) */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    isolation: isolate;
+    overflow: hidden;
+    background: #06182a url("images/peb-plant-facility.jpg") center 48% / cover no-repeat;
+}
+
+/* Luminous light blue atmospheric overlay over plant facility image */
+.plant-hero-shade {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background:
+        linear-gradient(
+            110deg,
+            rgba(5, 26, 48, 0.88) 0%,
+            rgba(8, 52, 98, 0.74) 30%,
+            rgba(22, 112, 190, 0.52) 65%,
+            rgba(56, 189, 248, 0.35) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(14, 116, 204, 0.22) 0%,
+            transparent 50%,
+            rgba(2, 22, 42, 0.65) 100%
+        ),
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(125, 211, 252, 0.28) 0%,
+            transparent 60%
+        );
+}
+
+.plant-hero-inner {
+    position: relative;
+    width: 100%;
+}
+
+.plant-hero-copy {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 820px;
+    padding: 30px 0 80px;
+}
+
+.plant-hero-copy .plant-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--plant-orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.plant-eyebrow span {
+    display: inline-block;
+    width: 27px;
+    height: 3px;
+    background: var(--plant-orange);
+}
+
+.plant-hero-copy h1 {
+    margin: 0 0 20px;
+    color: var(--plant-white);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(36px, 5.2vw, 62px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.12;
+    text-shadow: 0 3px 18px rgba(2, 22, 42, 0.75), 0 1px 4px rgba(2, 22, 42, 0.85);
+}
+
+.plant-hero-copy h1 span {
+    display: block;
+    color: var(--plant-orange);
+    text-shadow: 0 3px 18px rgba(2, 22, 42, 0.65);
+}
+
+.plant-hero-copy > p {
+    max-width: 680px;
+    margin: 0 0 24px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 15.5px;
+    line-height: 1.85;
+    text-shadow: 0 2px 10px rgba(2, 22, 42, 0.7);
+}
+
+.plant-hero-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 9px 18px;
+    background: rgba(3, 25, 48, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 12.5px;
+    line-height: 1.6;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.plant-hero-note i {
+    color: var(--plant-orange);
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   OVERVIEW & INFRASTRUCTURE SECTION
+========================================================= */
+
+.plant-overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.plant-overview-image {
+    position: relative;
+}
+
+.plant-overview-image img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 16px 45px rgba(7, 59, 99, 0.12);
+}
+
+.plant-experience-badge {
+    position: absolute;
+    bottom: -25px;
+    right: 30px;
+    background: var(--plant-blue);
+    color: var(--plant-white);
+    padding: 22px 28px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(7, 89, 181, 0.35);
+    text-align: center;
+}
+
+.plant-experience-badge strong {
+    display: block;
+    font-family: "Manrope", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.plant-experience-badge span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.plant-overview-copy h2 {
+    margin: 0 0 20px;
+    color: var(--plant-heading);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.plant-overview-copy h2 span {
+    color: var(--plant-blue);
+}
+
+.plant-overview-copy p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin-bottom: 24px;
+}
+
+.plant-feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.plant-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.plant-feature-item i {
+    color: var(--plant-orange);
+    font-size: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.plant-feature-item strong {
+    display: block;
+    color: var(--plant-heading);
+    font-size: 14.5px;
+    margin-bottom: 2px;
+}
+
+.plant-feature-item span {
+    color: var(--plant-text);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   CORE MACHINERY & EQUIPMENT GRID
+========================================================= */
+
+.machinery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 28px;
+}
+
+.machinery-card {
+    background: var(--plant-white);
+    border: 1px solid var(--plant-border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(16, 45, 70, 0.05);
+    transition: all 0.35s ease;
+}
+
+.machinery-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(16, 45, 70, 0.12);
+    border-color: rgba(7, 89, 181, 0.3);
+}
+
+.machinery-card-media {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #081d30;
+}
+
+.machinery-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.machinery-card:hover .machinery-card-media img {
+    transform: scale(1.08);
+}
+
+.machinery-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(7, 59, 99, 0.88);
+    backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.machinery-body {
+    padding: 24px;
+}
+
+.machinery-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgba(7, 89, 181, 0.1);
+    color: var(--plant-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.machinery-body h3 {
+    margin: 0 0 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--plant-heading);
+}
+
+.machinery-body p {
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--plant-text);
+}
+
+.machinery-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #edf2f7;
+    padding-top: 14px;
+}
+
+.machinery-specs li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #4a5c6d;
+    margin-bottom: 6px;
+}
+
+.machinery-specs li i {
+    color: var(--plant-orange);
+    font-size: 12px;
+}
+
+/* =========================================================
+   VIDEO SHOWCASE SECTION (Virtual Plant Tour)
+========================================================= */
+
+.plant-video-section {
+    background: linear-gradient(180deg, #051929 0%, #08233a 100%);
+    color: #ffffff;
+}
+
+.plant-video-section .plant-section-head h2 {
+    color: #ffffff;
+}
+
+.plant-video-section .plant-section-head p {
+    color: #b5d1ed;
+}
+
+.plant-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1220px;
+    margin: 0 auto 40px;
+}
+
+.plant-videos-grid .plant-video-card {
+    max-width: 100%;
+    margin: 0;
+}
+
+.plant-video-card {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #020d17;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+.plant-video-viewport {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 ratio */
+    overflow: hidden;
+    background: #000000;
+}
+
+.plant-video-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.plant-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 22, 38, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 2;
+}
+
+.plant-video-card:hover .plant-video-overlay {
+    background: rgba(3, 22, 38, 0.3);
+}
+
+.plant-play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--plant-orange);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 0 0 12px rgba(242, 140, 40, 0.25), 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    cursor: pointer;
+}
+
+.plant-play-btn i {
+    margin-left: 4px;
+}
+
+.plant-video-overlay:hover .plant-play-btn {
+    transform: scale(1.15);
+    background: #ffffff;
+    color: var(--plant-orange);
+    box-shadow: 0 0 0 18px rgba(255, 255, 255, 0.3), 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.plant-video-title {
+    margin-top: 20px;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.plant-video-meta {
+    font-size: 13px;
+    color: #d1e2f2;
+    margin-top: 4px;
+}
+
+/* Video features row */
+.plant-video-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.video-highlight-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.video-highlight-item i {
+    font-size: 24px;
+    color: var(--plant-orange);
+    flex-shrink: 0;
+}
+
+.video-highlight-item strong {
+    display: block;
+    font-size: 14.5px;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.video-highlight-item span {
+    font-size: 12.5px;
+    color: #a8c7e6;
+}
+
+/* =========================================================
+   MIDDLE MEDIA GALLERY (FACILITY IMAGES & TECH INFO)
+========================================================= */
+
+.plant-media-gallery-header {
+    margin: 60px 0 30px;
+    padding-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: center;
+}
+
+.plant-media-gallery-header h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px;
+}
+
+.plant-media-gallery-header p {
+    color: #b5d1ed;
+    font-size: 15px;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.plant-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.plant-media-card {
+    background: rgba(8, 30, 50, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.plant-media-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--plant-orange);
+    box-shadow: 0 20px 45px rgba(245, 130, 22, 0.22);
+}
+
+.plant-media-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #031320;
+}
+
+.plant-media-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.plant-media-card:hover .plant-media-thumb img {
+    transform: scale(1.08);
+}
+
+.media-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 5px 11px;
+    border-radius: 6px;
+    background: rgba(3, 25, 42, 0.88);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: var(--plant-orange-light, #ff9b3d);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.plant-media-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.plant-media-info h4 {
+    margin: 0 0 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.35;
+}
+
+.plant-media-info p {
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #c4dcf2;
+    flex-grow: 1;
+}
+
+.media-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.media-specs span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.media-specs span i {
+    color: var(--plant-orange);
+    font-size: 10px;
+}
+
+/* =========================================================
+   8-STEP MANUFACTURING PROCESS (Timeline Grid)
+========================================================= */
+
+.process-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 24px;
+}
+
+.process-step-card {
+    background: var(--plant-white);
+    border: 1px solid var(--plant-border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(7, 59, 99, 0.04);
+    transition: all 0.3s ease;
+}
+
+.process-step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(7, 59, 99, 0.1);
+    border-color: var(--plant-blue);
+}
+
+.process-step-number {
+    display: inline-block;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--plant-orange);
+    background: rgba(242, 140, 40, 0.12);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.process-step-card h3 {
+    margin: 0 0 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--plant-heading);
+    line-height: 1.35;
+}
+
+.process-step-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--plant-text);
+}
+
+/* =========================================================
+   TECHNICAL SPECIFICATIONS TABLE
+========================================================= */
+
+.plant-specs-table-wrapper {
+    background: var(--plant-white);
+    border: 1px solid var(--plant-border);
+    border-radius: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 10px 30px rgba(16, 45, 70, 0.05);
+}
+
+.plant-specs-table {
+    min-width: 680px;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.plant-specs-table th {
+    background: #073b63;
+    color: #ffffff;
+    padding: 16px 24px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.plant-specs-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #eef3f7;
+    font-size: 14.5px;
+    color: #495e72;
+}
+
+.plant-specs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.plant-specs-table tr:nth-child(even) td {
+    background: #fbfdff;
+}
+
+.plant-specs-table td strong {
+    color: var(--plant-heading);
+}
+
+/* =========================================================
+   PLANT GALLERY GRID
+========================================================= */
+
+.plant-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.plant-gallery-item {
+    position: relative;
+    height: 270px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #091c2c;
+    box-shadow: 0 8px 24px rgba(7, 59, 99, 0.08);
+}
+
+.plant-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.plant-gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.plant-gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 18px 14px;
+    background: linear-gradient(to top, rgba(3, 22, 38, 0.95), transparent);
+    color: #ffffff;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.plant-gallery-item:hover .plant-gallery-caption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.plant-gallery-caption strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.plant-gallery-caption span {
+    font-size: 12px;
+    color: #adcde8;
+}
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+
+.plant-faq-grid {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.plant-faq-item {
+    border: 1px solid var(--plant-border);
+    border-radius: 12px;
+    background: var(--plant-white);
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.plant-faq-item.is-open {
+    border-color: var(--plant-blue);
+    box-shadow: 0 8px 25px rgba(7, 89, 181, 0.1);
+}
+
+.plant-faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font-family: "Manrope", sans-serif;
+    font-size: 16.5px;
+    font-weight: 700;
+    color: var(--plant-heading);
+    cursor: pointer;
+    gap: 16px;
+}
+
+.plant-faq-question i {
+    color: var(--plant-blue);
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.plant-faq-item.is-open .plant-faq-question i {
+    transform: rotate(180deg);
+    color: var(--plant-orange);
+}
+
+.plant-faq-answer {
+    padding: 0 24px 22px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--plant-text);
+    display: none;
+}
+
+.plant-faq-item.is-open .plant-faq-answer {
+    display: block;
+}
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.plant-cta-box {
+    background: linear-gradient(135deg, var(--plant-navy) 0%, #06457a 100%);
+    border-radius: 20px;
+    padding: 60px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    color: var(--plant-white);
+    box-shadow: 0 20px 50px rgba(7, 59, 99, 0.25);
+}
+
+.plant-cta-copy h2 {
+    margin: 0 0 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 800;
+}
+
+.plant-cta-copy p {
+    margin: 0;
+    font-size: 16px;
+    color: #c9e0f5;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (GRIDS MANAGED FOR MOBILES AS DESKTOP)
+========================================================= */
+
+@media (max-width: 1024px) {
+    .plant-hero {
+        min-height: 550px;
+        padding-top: 118px;
+    }
+
+    .plant-overview-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .plant-videos-grid {
+        gap: 20px;
+    }
+
+    .plant-cta-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 860px) {
+    .plant-videos-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .plant-media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .plant-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .plant-section {
+        padding: 60px 0;
+    }
+
+    .plant-hero {
+        min-height: auto;
+        padding-top: 114px;
+        background-position: center;
+    }
+
+    .plant-hero-shade {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5, 26, 48, 0.92) 0%,
+                rgba(10, 60, 112, 0.82) 40%,
+                rgba(24, 120, 200, 0.58) 75%,
+                rgba(56, 189, 248, 0.38) 100%
+            ),
+            radial-gradient(
+                circle at 50% 25%,
+                rgba(125, 211, 252, 0.24) 0%,
+                transparent 60%
+            );
+    }
+
+    .plant-hero-copy {
+        max-width: 100%;
+        padding: 24px 0 60px;
+    }
+
+    .plant-hero-copy h1 {
+        font-size: clamp(30px, 6.8vw, 44px);
+        letter-spacing: -1.2px;
+        line-height: 1.15;
+    }
+
+    .plant-hero-copy > p {
+        font-size: 14px;
+        line-height: 1.75;
+        margin-bottom: 20px;
+    }
+
+    .plant-hero-note {
+        align-items: flex-start;
+        font-size: 11.5px;
+        margin-top: 16px;
+        border-radius: 14px;
+        padding: 8px 14px;
+    }
+
+    /* Retain 2-column grid layout for features on mobile as desktop */
+    .plant-feature-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 14px;
+    }
+
+    .plant-feature-item {
+        gap: 8px;
+    }
+
+    .plant-feature-item strong {
+        font-size: 13.5px;
+    }
+
+    .plant-feature-item span {
+        font-size: 12px;
+    }
+
+    /* Retain 2-column grid layout for 8-stage manufacturing process on mobile */
+    .process-steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .process-step-card {
+        padding: 18px 14px;
+        word-break: break-word;
+    }
+
+    .process-step-number {
+        font-size: 10.5px;
+        padding: 3px 8px;
+        margin-bottom: 8px;
+    }
+
+    .process-step-card h3 {
+        font-size: 14.5px;
+        margin-bottom: 6px;
+    }
+
+    .process-step-card p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    /* Retain 3-column structured grid for video highlights on tablets */
+    .plant-video-highlights {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .video-highlight-item {
+        padding: 14px 10px;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .video-highlight-item i {
+        font-size: 20px;
+    }
+
+    .video-highlight-item strong {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    .video-highlight-item span {
+        font-size: 11px;
+        line-height: 1.35;
+    }
+
+    .plant-experience-badge {
+        position: static;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 580px) {
+    .plant-media-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .plant-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .plant-feature-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 10px;
+    }
+
+    .plant-feature-item strong {
+        font-size: 12px;
+    }
+
+    .plant-feature-item span {
+        font-size: 11px;
+    }
+
+    .process-steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .process-step-card {
+        padding: 14px 12px;
+        border-radius: 12px;
+    }
+
+    .process-step-card h3 {
+        font-size: 13.5px;
+    }
+
+    .process-step-card p {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+}
+
+@media (max-width: 480px) {
+    .plant-container {
+        width: calc(100% - 28px);
+    }
+
+    .plant-section {
+        padding: 48px 0;
+    }
+
+    .plant-hero {
+        min-height: auto;
+        padding-top: 114px;
+    }
+
+    .plant-hero-copy {
+        padding: 20px 0 50px;
+    }
+
+    .plant-hero-copy h1 {
+        font-size: clamp(26px, 7.5vw, 32px);
+        line-height: 1.18;
+        letter-spacing: -0.8px;
+    }
+
+    .plant-hero-copy > p {
+        font-size: 13.5px;
+        line-height: 1.7;
+        margin-bottom: 16px;
+    }
+
+    .plant-hero-note {
+        font-size: 11px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        line-height: 1.5;
+        width: 100%;
+        display: flex;
+    }
+
+    .plant-specs-table th,
+    .plant-specs-table td {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .plant-faq-question {
+        padding: 14px 16px;
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .plant-faq-answer {
+        padding: 0 16px 16px;
+        font-size: 13px;
+    }
+
+    .plant-video-highlights {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .video-highlight-item {
+        flex-direction: row;
+        text-align: left;
+        padding: 12px 14px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    .video-highlight-item i {
+        font-size: 20px;
+    }
+
+    .video-highlight-item strong {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+    .video-highlight-item span {
+        display: block;
+        font-size: 11.5px;
+        line-height: 1.4;
+    }
+
+    .plant-play-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 17px;
+    }
+
+    .plant-video-title {
+        font-size: 13.5px;
+        margin-top: 8px;
+        padding: 0 10px;
+    }
+
+    .plant-video-meta {
+        font-size: 10.5px;
+    }
+
+    .plant-overview-image img {
+        border-radius: 14px;
+    }
+
+    .plant-experience-badge {
+        position: static;
+        margin-top: 14px;
+        width: 100%;
+        justify-content: center;
+        border-radius: 12px;
+    }
+
+    .plant-cta-box {
+        padding: 30px 18px;
+        border-radius: 16px;
+    }
+
+    .plant-cta-copy h2 {
+        font-size: 21px;
+    }
+
+    .plant-cta-copy p {
+        font-size: 13px;
+    }
+
+    .plant-cta-box .plant-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .plant-container {
+        width: calc(100% - 20px);
+    }
+
+    .plant-hero-copy h1 {
+        font-size: 24px;
+        letter-spacing: -0.5px;
+    }
+
+    .plant-feature-list {
+        gap: 8px;
+    }
+
+    .plant-feature-item {
+        gap: 6px;
+    }
+
+    .plant-feature-item strong {
+        font-size: 11px;
+    }
+
+    .plant-feature-item span {
+        font-size: 10px;
+    }
+
+    .process-steps-grid {
+        gap: 8px;
+    }
+
+    .process-step-card {
+        padding: 10px 8px;
+        border-radius: 10px;
+    }
+
+    .process-step-number {
+        font-size: 9.5px;
+        padding: 2px 6px;
+        margin-bottom: 6px;
+    }
+
+    .process-step-card h3 {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .process-step-card p {
+        font-size: 10.5px;
+        line-height: 1.4;
+    }
+}

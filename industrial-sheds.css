@@ -17,19 +17,6 @@ body {
 }
 
 
-/* Subtle orange decorative glow */
-.industrial-hero::before {
-    content: "";
-    position: absolute;
-    top: -150px;
-    right: -100px;
-    width: 430px;
-    height: 620px;
-    background: rgba(245, 130, 32, 0.13);
-    border-radius: 50%;
-    filter: blur(90px);
-    pointer-events: none;
-}
 
 
 
@@ -313,58 +300,39 @@ body {
     position: relative;
     box-sizing: border-box;
     min-height: 620px;
+    padding-top: 118px; /* Clear fixed top bar (38px) + header (80px) */
+    padding-bottom: 70px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     isolation: isolate;
     overflow: hidden;
-    padding: 60px 0;
-
-    /* Hero background image */
     background:
         linear-gradient(
             90deg,
-            rgba(15, 23, 42, 0.92) 0%,
-            rgba(15, 23, 42, 0.75) 45%,
-            rgba(15, 23, 42, 0.30) 100%
+            rgba(6, 17, 28, 0.85) 0%,
+            rgba(8, 24, 38, 0.70) 45%,
+            rgba(10, 30, 48, 0.35) 100%
         ),
-        url("./images/industrialshedd.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+        url("images/industrial-shed-hero.jpg") center 45% / cover no-repeat !important;
     margin-top: 0;
 }
 
 .industrial-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(13, 23, 33, .96) 0%,
-            rgba(13, 23, 33, .84) 48%,
-            rgba(13, 23, 33, .36) 100%
-        ),
-        url("images/industrialshedd.jpg") center 45% / cover no-repeat;
-    transform: scale(1.04);
-    animation: industrialHeroZoom 1.5s ease-out both;
+    display: none;
 }
 
 .industrial-hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: -1;
-    opacity: .15;
+    z-index: 1;
+    pointer-events: none;
+    opacity: .08;
     background-image:
         linear-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, .08) 1px, transparent 1px);
     background-size: 48px 48px;
-    mask-image: linear-gradient(90deg, black, transparent 90%);
 }
 
 .industrial-hero .industrial-container {
@@ -827,7 +795,7 @@ body {
     min-width: 0;
 }
 
-.industrial-design-content > p {
+.industrial-design-content>p {
     color: var(--industrial-text);
     font-size: 14px;
     line-height: 1.9;
@@ -1027,8 +995,15 @@ body {
 
 /* Floating Badge */
 @keyframes industrialBadgeFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
 .industrial-image-badge {
@@ -1076,10 +1051,21 @@ body {
     transform: translateY(0) translateX(0) scale(1);
 }
 
-.industrial-delay-1 { transition-delay: .1s; }
-.industrial-delay-2 { transition-delay: .2s; }
-.industrial-delay-3 { transition-delay: .3s; }
-.industrial-delay-4 { transition-delay: .4s; }
+.industrial-delay-1 {
+    transition-delay: .1s;
+}
+
+.industrial-delay-2 {
+    transition-delay: .2s;
+}
+
+.industrial-delay-3 {
+    transition-delay: .3s;
+}
+
+.industrial-delay-4 {
+    transition-delay: .4s;
+}
 
 /* Light Sweep Beam across Images */
 .industrial-application-image::before,
@@ -1107,8 +1093,13 @@ body {
 }
 
 @keyframes industrialShineSweep {
-    0% { left: -130%; }
-    100% { left: 180%; }
+    0% {
+        left: -130%;
+    }
+
+    100% {
+        left: 180%;
+    }
 }
 
 /* Card Hover Micro-interactions */
@@ -1206,6 +1197,7 @@ body {
         opacity: 0;
         transform: translateY(22px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1216,12 +1208,14 @@ body {
     from {
         transform: scale(1.12);
     }
+
     to {
         transform: scale(1.04);
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .industrial-reveal,
     .industrial-reveal-left,
     .industrial-reveal-right,
@@ -1370,23 +1364,23 @@ body {
     }
 
     .industrial-hero {
-        min-height: 420px;
+        min-height: 460px;
+        padding-top: 114px;
+        padding-bottom: 50px;
+        background:
+            linear-gradient(
+                180deg,
+                rgba(6, 17, 28, 0.90) 0%,
+                rgba(8, 24, 38, 0.78) 50%,
+                rgba(10, 30, 48, 0.45) 100%
+            ),
+            url("images/industrial-shed-hero.jpg") center / cover no-repeat !important;
     }
 
     .industrial-hero .industrial-container {
         width: 100%;
         padding-left: 0;
         padding-right: 0;
-    }
-
-    .industrial-hero::before {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(13, 23, 33, .94) 0%,
-                rgba(13, 23, 33, .82) 100%
-            ),
-            url("images/industrialshedd.jpg") center / cover no-repeat;
     }
 
     .industrial-hero-content {
@@ -1539,7 +1533,7 @@ body {
         height: 280px;
     }
 
-    .industrial-design-content > p {
+    .industrial-design-content>p {
         font-size: 13px;
     }
 
@@ -1745,6 +1739,7 @@ body {
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -1946,6 +1941,7 @@ body {
         overflow-wrap: anywhere;
     }
 }
+
 /* FIX: ALIGN BROCHURE BUTTON TO THE LEFT ON MOBILE */
 @media (max-width: 1200px) {
 
@@ -2017,8 +2013,8 @@ body {
         transform: none !important;
     }
 
-    .navbar.active .brochure-nav-header > button:not(.brochure-nav-trigger),
-    .navbar.active .brochure-nav-header > i {
+    .navbar.active .brochure-nav-header>button:not(.brochure-nav-trigger),
+    .navbar.active .brochure-nav-header>i {
         grid-column: 2 !important;
         grid-row: 1 !important;
         justify-self: end !important;
@@ -2052,8 +2048,8 @@ body {
     }
 
     /* Home, About, Gallery and Contact */
-    .header .navbar.active > a.nav-link,
-    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger) {
+    .header .navbar.active>a.nav-link,
+    .header .navbar.active>a:not(.btn):not(.brochure-nav-trigger) {
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
@@ -2197,8 +2193,8 @@ body {
     }
 
     /* Get a Quote button */
-    .header .navbar.active > a.btn,
-    .header .navbar.active > .btn,
+    .header .navbar.active>a.btn,
+    .header .navbar.active>.btn,
     .header .navbar.active .nav-quote {
         display: flex !important;
         align-items: center !important;
@@ -2224,8 +2220,8 @@ body {
         max-height: calc(100dvh - 100px) !important;
     }
 
-    .header .navbar.active > a.nav-link,
-    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger),
+    .header .navbar.active>a.nav-link,
+    .header .navbar.active>a:not(.btn):not(.brochure-nav-trigger),
     .header .navbar.active .brochure-nav-trigger {
         min-height: 39px !important;
         padding: 8px 7px !important;
@@ -2249,8 +2245,8 @@ body {
         min-height: 34px !important;
     }
 
-    .header .navbar.active > a.btn,
-    .header .navbar.active > .btn,
+    .header .navbar.active>a.btn,
+    .header .navbar.active>.btn,
     .header .navbar.active .nav-quote {
         min-height: 42px !important;
         margin-top: 8px !important;
@@ -2283,8 +2279,8 @@ body {
     }
 
     /* Home, About, Gallery and Contact */
-    .header .navbar.active > a.nav-link,
-    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger) {
+    .header .navbar.active>a.nav-link,
+    .header .navbar.active>a:not(.btn):not(.brochure-nav-trigger) {
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
@@ -2428,8 +2424,8 @@ body {
     }
 
     /* Get a Quote button */
-    .header .navbar.active > a.btn,
-    .header .navbar.active > .btn,
+    .header .navbar.active>a.btn,
+    .header .navbar.active>.btn,
     .header .navbar.active .nav-quote {
         display: flex !important;
         align-items: center !important;
@@ -2455,8 +2451,8 @@ body {
         max-height: calc(100dvh - 100px) !important;
     }
 
-    .header .navbar.active > a.nav-link,
-    .header .navbar.active > a:not(.btn):not(.brochure-nav-trigger),
+    .header .navbar.active>a.nav-link,
+    .header .navbar.active>a:not(.btn):not(.brochure-nav-trigger),
     .header .navbar.active .brochure-nav-trigger {
         min-height: 39px !important;
         padding: 8px 7px !important;
@@ -2480,8 +2476,8 @@ body {
         min-height: 34px !important;
     }
 
-    .header .navbar.active > a.btn,
-    .header .navbar.active > .btn,
+    .header .navbar.active>a.btn,
+    .header .navbar.active>.btn,
     .header .navbar.active .nav-quote {
         min-height: 42px !important;
         margin-top: 8px !important;

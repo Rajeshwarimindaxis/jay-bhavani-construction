@@ -253,7 +253,7 @@ body {
     isolation: isolate;
     overflow: hidden;
     padding: 60px 0;
-    background: var(--srv-navy);
+    background: #0b1118;
 }
 
 .services-hero::before {
@@ -264,9 +264,9 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(7, 30, 61, 0.96) 0%,
-            rgba(7, 30, 61, 0.88) 50%,
-            rgba(7, 30, 61, 0.45) 100%
+            rgba(0, 0, 0, 0.62) 0%,
+            rgba(0, 0, 0, 0.32) 50%,
+            transparent 100%
         ),
         url("images/industrial-shed.jpg") center 40% / cover no-repeat;
     transform: scale(1.03);

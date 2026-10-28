@@ -1,4 +1,3 @@
-
 /* =========================================================
    JAY BHAVANI CONSTRUCTION
    CONTACT PAGE CSS
@@ -59,10 +58,8 @@ body {
 }
 
 .contact-container {
-    width: min(
-        var(--contact-container),
-        calc(100% - 40px)
-    );
+    width: min(var(--contact-container),
+            calc(100% - 40px));
     margin-inline: auto;
 }
 
@@ -95,12 +92,7 @@ body {
     display: flex;
     align-items: center;
     padding: 155px 0 75px;
-    background: linear-gradient(
-        120deg,
-        var(--contact-navy-dark) 0%,
-        var(--contact-navy) 45%,
-        var(--contact-blue) 100%
-    );
+    background: #06233f linear-gradient(135deg, #07223e 0%, #0d3860 50%, #051b30 100%);
     color: var(--contact-white);
 }
 
@@ -112,34 +104,9 @@ body {
     z-index: 2;
 }
 
-.contact-hero::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 470px;
-    height: 470px;
-    top: -220px;
-    right: 8%;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 50%;
-    box-shadow:
-        0 0 0 55px rgba(255, 255, 255, 0.035),
-        0 0 0 110px rgba(255, 255, 255, 0.025);
-    pointer-events: none;
-}
-
+.contact-hero::before,
 .contact-hero::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 300px;
-    height: 300px;
-    bottom: -220px;
-    right: 30%;
-    border-radius: 50%;
-    background: rgba(242, 140, 40, 0.12);
-    filter: blur(5px);
-    pointer-events: none;
+    display: none;
 }
 
 .contact-eyebrow {
@@ -251,8 +218,7 @@ body {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.9fr)
-        minmax(0, 1.1fr);
+        minmax(0, 0.9fr) minmax(0, 1.1fr);
 
     gap: 28px;
     align-items: stretch;
@@ -294,7 +260,7 @@ body {
     line-height: 1.35;
 }
 
-.contact-info-card > p,
+.contact-info-card>p,
 .form-intro {
     margin: 0 0 28px;
 
@@ -987,6 +953,7 @@ a.contact-detail:hover strong {
 ========================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     .contact-page *,
     .contact-page *::before,
     .contact-page *::after {
@@ -1064,7 +1031,7 @@ a.contact-detail:hover strong {
         padding: 12px 10px;
         color: #102b38;
         white-space: normal;
-        border-bottom: 1px solid rgba(255,255,255,.1);
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
     }
 
     #navbar.active #servicesDropdown .services-dropdown-link strong {
@@ -1079,8 +1046,7 @@ a.contact-detail:hover strong {
         font-size: 11px;
     }
 
-    #navbar.active .services-nav-item.dropdown-open
-    #servicesDropdownToggle i {
+    #navbar.active .services-nav-item.dropdown-open #servicesDropdownToggle i {
         transform: rotate(180deg);
     }
 
@@ -1088,6 +1054,7 @@ a.contact-detail:hover strong {
         transition: transform .25s ease;
     }
 }
+
 /* =========================================
    CONTACT PAGE — MOBILE NAVIGATION FIX
    Keep the shared desktop navigation styling
@@ -1108,7 +1075,7 @@ a.contact-detail:hover strong {
 @media (max-width: 900px) {
 
     /* Consistent font and weight for all menu labels */
-    #navbar > .nav-link,
+    #navbar>.nav-link,
     #navbar .services-nav-link,
     #navbar .brochure-nav-trigger,
     #navbar .nav-quote {
@@ -1146,7 +1113,7 @@ a.contact-detail:hover strong {
     }
 
     /* Preserve the orange active-page highlight */
-    #navbar > .nav-link.active {
+    #navbar>.nav-link.active {
         color: var(--nav-orange, #F28C28);
         -webkit-text-fill-color: var(--nav-orange, #F28C28);
     }
@@ -1157,6 +1124,7 @@ a.contact-detail:hover strong {
    Match all navigation buttons (Home, About, Services, Gallery, Contact)
    ========================================================================== */
 @media (min-width: 901px) {
+
     body.contact-page #navbar .brochure-nav-item,
     body.contact-page #brochureNavItem {
         position: relative;
@@ -1225,7 +1193,7 @@ a.contact-detail:hover strong {
     }
 
     /* Active Contact Nav Link */
-    body.contact-page #navbar > a.nav-link.active {
+    body.contact-page #navbar>a.nav-link.active {
         color: var(--nav-orange, #F28C28) !important;
         -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
         position: relative !important;
@@ -1238,7 +1206,7 @@ a.contact-detail:hover strong {
         text-decoration: none !important;
     }
 
-    body.contact-page #navbar > a.nav-link.active::after {
+    body.contact-page #navbar>a.nav-link.active::after {
         content: "" !important;
         position: absolute !important;
         left: 0 !important;
@@ -1325,8 +1293,8 @@ a.contact-detail:hover strong {
     }
 
     /* Main navigation links */
-    #navbar > a.nav-link,
-    #navbar > a.nav-quote {
+    #navbar>a.nav-link,
+    #navbar>a.nav-quote {
         display: flex;
         align-items: center;
         width: 100%;
@@ -1381,8 +1349,8 @@ a.contact-detail:hover strong {
         box-shadow: none;
     }
 
-    #navbar .services-nav-item.dropdown-open > .services-dropdown,
-    #navbar .brochure-nav-item.dropdown-open > .services-dropdown {
+    #navbar .services-nav-item.dropdown-open>.services-dropdown,
+    #navbar .brochure-nav-item.dropdown-open>.services-dropdown {
         display: block;
     }
 
@@ -1394,7 +1362,7 @@ a.contact-detail:hover strong {
         box-sizing: border-box;
     }
 
-    #navbar .services-dropdown-link > span:nth-child(2) {
+    #navbar .services-dropdown-link>span:nth-child(2) {
         display: flex;
         flex: 1;
         flex-direction: column;
@@ -1459,9 +1427,11 @@ a.contact-detail:hover strong {
     0% {
         transform: translateY(0) rotate(0deg);
     }
+
     50% {
         transform: translateY(-14px) rotate(2deg);
     }
+
     100% {
         transform: translateY(-6px) rotate(-1.5deg);
     }
@@ -1472,10 +1442,12 @@ a.contact-detail:hover strong {
         opacity: 0.12;
         transform: scale(1);
     }
+
     50% {
         opacity: 0.22;
         transform: scale(1.15);
     }
+
     100% {
         opacity: 0.14;
         transform: scale(1.05);
@@ -1786,7 +1758,7 @@ a.contact-detail:hover .contact-detail-icon {
         letter-spacing: -0.2px !important;
     }
 
-    .contact-info-card > p,
+    .contact-info-card>p,
     .form-intro {
         font-size: 11.5px !important;
         line-height: 1.5 !important;
@@ -1998,7 +1970,7 @@ a.contact-detail:hover .contact-detail-icon {
         letter-spacing: -0.2px !important;
     }
 
-    .contact-info-card > p,
+    .contact-info-card>p,
     .form-intro {
         font-size: 10.5px !important;
         line-height: 1.4 !important;
@@ -2201,6 +2173,7 @@ a.contact-detail:hover .contact-detail-icon {
         transform: translateY(32px) scale(0.98);
         filter: blur(4px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -2213,6 +2186,7 @@ a.contact-detail:hover .contact-detail-icon {
         opacity: 0;
         transform: translateY(22px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -2225,6 +2199,7 @@ a.contact-detail:hover .contact-detail-icon {
         transform: translateY(16px);
         letter-spacing: 2px;
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -2234,10 +2209,13 @@ a.contact-detail:hover .contact-detail-icon {
 
 
 @keyframes contactRingPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1) rotate(0deg);
         opacity: 0.8;
     }
+
     50% {
         transform: scale(1.05) rotate(4deg);
         opacity: 1;
@@ -2245,10 +2223,13 @@ a.contact-detail:hover .contact-detail-icon {
 }
 
 @keyframes contactGlowFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0, 0) scale(1);
         opacity: 0.7;
     }
+
     50% {
         transform: translate(-18px, 14px) scale(1.15);
         opacity: 0.95;
@@ -2259,6 +2240,7 @@ a.contact-detail:hover .contact-detail-icon {
     0% {
         transform: translateX(-150%) skewX(-25deg);
     }
+
     100% {
         transform: translateX(250%) skewX(-25deg);
     }
@@ -2268,29 +2250,66 @@ a.contact-detail:hover .contact-detail-icon {
     0% {
         transform: translateX(-150%) skewX(-25deg);
     }
+
     100% {
         transform: translateX(250%) skewX(-25deg);
     }
 }
 
 @keyframes contactPhoneVibe {
-    0%, 100% { transform: rotate(0deg) scale(1.12); }
-    15% { transform: rotate(-14deg) scale(1.15); }
-    30% { transform: rotate(14deg) scale(1.15); }
-    45% { transform: rotate(-10deg) scale(1.15); }
-    60% { transform: rotate(10deg) scale(1.15); }
-    75% { transform: rotate(0deg) scale(1.12); }
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1.12);
+    }
+
+    15% {
+        transform: rotate(-14deg) scale(1.15);
+    }
+
+    30% {
+        transform: rotate(14deg) scale(1.15);
+    }
+
+    45% {
+        transform: rotate(-10deg) scale(1.15);
+    }
+
+    60% {
+        transform: rotate(10deg) scale(1.15);
+    }
+
+    75% {
+        transform: rotate(0deg) scale(1.12);
+    }
 }
 
 @keyframes contactMailBob {
-    0%, 100% { transform: translateY(0) scale(1.12); }
-    50% { transform: translateY(-4px) scale(1.15); }
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1.12);
+    }
+
+    50% {
+        transform: translateY(-4px) scale(1.15);
+    }
 }
 
 @keyframes contactPinBounce {
-    0%, 100% { transform: translateY(0) scale(1.12); }
-    30% { transform: translateY(-5px) scale(1.15); }
-    60% { transform: translateY(1px) scale(1.12); }
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1.12);
+    }
+
+    30% {
+        transform: translateY(-5px) scale(1.15);
+    }
+
+    60% {
+        transform: translateY(1px) scale(1.12);
+    }
 }
 
 @keyframes contactItemIn {
@@ -2298,6 +2317,7 @@ a.contact-detail:hover .contact-detail-icon {
         opacity: 0;
         transform: translateX(-18px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -2338,8 +2358,8 @@ a.contact-detail:hover .contact-detail-icon {
     position: relative;
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.35s ease;
+        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.35s ease;
     will-change: transform, box-shadow;
 }
 
@@ -2351,12 +2371,10 @@ a.contact-detail:hover .contact-detail-icon {
     left: 0;
     width: 60%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.28) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.28) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: translateX(-150%) skewX(-25deg);
     pointer-events: none;
     z-index: 4;
@@ -2405,8 +2423,8 @@ a.contact-detail:hover .contact-detail-icon {
 /* Contact Detail Row Hover Transitions */
 .contact-detail {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                background-color 0.28s ease,
-                border-color 0.28s ease;
+        background-color 0.28s ease,
+        border-color 0.28s ease;
     border-radius: 10px;
     padding: 6px 8px;
     margin-left: -8px;
@@ -2420,9 +2438,9 @@ a.contact-detail:hover .contact-detail-icon {
 
 .contact-detail-icon {
     transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
-                background 0.3s ease,
-                color 0.3s ease,
-                box-shadow 0.3s ease;
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .contact-detail:hover .contact-detail-icon {
@@ -2445,8 +2463,8 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
 /* Social Media Buttons Hover */
 .contact-socials a {
     transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-                background-color 0.3s ease,
-                box-shadow 0.35s ease;
+        background-color 0.3s ease,
+        box-shadow 0.35s ease;
 }
 
 .contact-socials a:hover {
@@ -2467,9 +2485,9 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
 .form-group select,
 .form-group textarea {
     transition: border-color 0.28s ease,
-                box-shadow 0.28s ease,
-                background-color 0.28s ease,
-                transform 0.28s ease;
+        box-shadow 0.28s ease,
+        background-color 0.28s ease,
+        transform 0.28s ease;
 }
 
 .form-group input:hover,
@@ -2484,7 +2502,7 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
     border-color: var(--contact-blue);
     background: #ffffff;
     box-shadow: 0 0 0 4px rgba(7, 89, 181, 0.14),
-                0 4px 14px rgba(7, 89, 181, 0.08);
+        0 4px 14px rgba(7, 89, 181, 0.08);
     transform: translateY(-1px);
 }
 
@@ -2502,12 +2520,10 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
     left: 0;
     width: 60%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.35) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.35) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: translateX(-150%) skewX(-25deg);
     pointer-events: none;
     z-index: 2;
@@ -2539,8 +2555,8 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
 /* Map Section Polish */
 .map-frame {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.35s ease;
+        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.35s ease;
 }
 
 .map-frame:hover {
@@ -2588,7 +2604,7 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
@@ -2597,7 +2613,7 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
     opacity: 0;
     transform: translateX(-35px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
@@ -2606,7 +2622,7 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
     opacity: 0;
     transform: translateX(35px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
@@ -2615,15 +2631,34 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
     opacity: 0;
     transform: scale(0.95);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
 /* Stagger Delays */
-.contact-delay-1, .delay-1, .delay-100 { transition-delay: 0.12s; }
-.contact-delay-2, .delay-2, .delay-200 { transition-delay: 0.22s; }
-.contact-delay-3, .delay-3, .delay-300 { transition-delay: 0.32s; }
-.contact-delay-4, .delay-4, .delay-400 { transition-delay: 0.42s; }
+.contact-delay-1,
+.delay-1,
+.delay-100 {
+    transition-delay: 0.12s;
+}
+
+.contact-delay-2,
+.delay-2,
+.delay-200 {
+    transition-delay: 0.22s;
+}
+
+.contact-delay-3,
+.delay-3,
+.delay-300 {
+    transition-delay: 0.32s;
+}
+
+.contact-delay-4,
+.delay-4,
+.delay-400 {
+    transition-delay: 0.42s;
+}
 
 /* Active Revealed States (triggered by IntersectionObserver in contact.html and script.js) */
 .contact-reveal.is-revealed,
@@ -2664,6 +2699,7 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
 
 /* Accessibility: Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+
     .contact-hero .contact-eyebrow,
     .contact-hero h1,
     .contact-hero p,
@@ -2682,4 +2718,3 @@ a.contact-detail[href^="mailto"]:hover .contact-detail-icon i {
         transform: none !important;
     }
 }
-

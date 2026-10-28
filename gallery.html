@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -94,11 +96,7 @@
         <div class="container nav-container">
 
             <a href="index.html" class="logo">
-                <img
-                    src="./logoo.png"
-                    alt="Jay Bhavani Construction Logo"
-                    class="site-logo"
-                >
+                <img src="./logoo.png" alt="Jay Bhavani Construction Logo" class="site-logo">
                 <div class="logo-name">Jay Bhavani Construction</div>
             </a>
 
@@ -107,75 +105,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
 
-                <!-- BROCHURE DROPDOWN -->
 
-                <div class="nav-item brochure-nav-item" id="brochureNavItem">
-
-                    <div class="brochure-nav-header">
-
-                        <button
-                            type="button"
-                            class="brochure-nav-trigger"
-                            id="brochureNavTrigger"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            aria-controls="brochureDropdown"
-                        >
-                            Brochure
-                        </button>
-
-                        <button
-                            type="button"
-                            class="services-dropdown-toggle"
-                            id="brochureDropdownToggle"
-                            aria-label="Toggle Brochure menu"
-                            aria-expanded="false"
-                            aria-controls="brochureDropdown"
-                        >
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-
-                    </div>
-
-                    <div
-                        class="services-dropdown brochure-dropdown"
-                        id="brochureDropdown"
-                        aria-hidden="true"
-                    >
-
-                        <a
-                            href="Jay_Bhawani_Construction_Brochure.pdf"
-                            class="services-dropdown-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <span class="services-dropdown-icon">
-                                <i class="fa-solid fa-eye"></i>
-                            </span>
-
-                            <span>
-                                <strong>View Brochure</strong>
-                                <small>Open the brochure in a new tab</small>
-                            </span>
-                        </a>
-
-                        <a
-                            href="Jay_Bhawani_Construction_Brochure.pdf"
-                            class="services-dropdown-link"
-                            download="Jay_Bhawani_Construction_Brochure.pdf"
-                        >
-                            <span class="services-dropdown-icon">
-                                <i class="fa-solid fa-download"></i>
-                            </span>
-
-                            <span>
-                                <strong>Download Brochure</strong>
-                                <small>Save a copy of our brochure</small>
-                            </span>
-                        </a>
-
-                    </div>
-                </div>
 
                 <!-- SERVICES DROPDOWN -->
 
@@ -187,24 +117,14 @@
                             Services
                         </a>
 
-                        <button
-                            type="button"
-                            class="services-dropdown-toggle"
-                            id="servicesDropdownToggle"
-                            aria-label="Toggle Services menu"
-                            aria-expanded="false"
-                            aria-controls="servicesDropdown"
-                        >
+                        <button type="button" class="services-dropdown-toggle" id="servicesDropdownToggle"
+                            aria-label="Toggle Services menu" aria-expanded="false" aria-controls="servicesDropdown">
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
 
                     </div>
 
-                    <div
-                        class="services-dropdown"
-                        id="servicesDropdown"
-                        aria-hidden="true"
-                    >
+                    <div class="services-dropdown" id="servicesDropdown" aria-hidden="true">
 
                         <div class="services-dropdown-heading">
                             <span>OUR SERVICES</span>
@@ -231,6 +151,16 @@
                                 <small>Pre-engineered building structures</small>
                             </span>
                             <i class="fa-solid fa-arrow-right dropdown-link-arrow"></i>
+                        </a>
+                        <a href="peb-manufacturing-plant.html" class="services-dropdown-link">
+                            <span class="services-dropdown-icon">
+                                <i class="fa-solid fa-city" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                <strong>PEB Manufacturing Plant</strong>
+                                <small>High-capacity fabrication facility</small>
+                            </span>
+                            <i class="fa-solid fa-arrow-right dropdown-link-arrow" aria-hidden="true"></i>
                         </a>
 
                         <a href="commercial-buildings.html" class="services-dropdown-link">
@@ -286,14 +216,8 @@
 
             </nav>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="Open Menu"
-                aria-expanded="false"
-                aria-controls="navbar"
-            >
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open Menu" aria-expanded="false"
+                aria-controls="navbar">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -377,25 +301,29 @@
                 <!-- CATEGORY FILTERS -->
                 <div class="gallery-filter-wrapper">
                     <div class="gallery-filters" id="galleryFilters" role="tablist" aria-label="Project Categories">
-                        <button class="filter-btn active" data-filter="all" type="button" role="tab" aria-selected="true">
+                        <button class="filter-btn active" data-filter="all" type="button" role="tab"
+                            aria-selected="true">
                             <i class="fa-solid fa-shapes"></i>
                             <span>All Projects</span>
-                            <span class="filter-count" id="countAll">8</span>
+                            <span class="filter-count" id="countAll">5</span>
                         </button>
-                        <button class="filter-btn" data-filter="industrial" type="button" role="tab" aria-selected="false">
+                        <button class="filter-btn" data-filter="industrial" type="button" role="tab"
+                            aria-selected="false">
                             <i class="fa-solid fa-industry"></i>
                             <span>Industrial &amp; PEB</span>
-                            <span class="filter-count" id="countInd">4</span>
+                            <span class="filter-count" id="countInd">3</span>
                         </button>
-                        <button class="filter-btn" data-filter="commercial" type="button" role="tab" aria-selected="false">
+                        <button class="filter-btn" data-filter="commercial" type="button" role="tab"
+                            aria-selected="false">
                             <i class="fa-solid fa-building"></i>
                             <span>Commercial</span>
-                            <span class="filter-count" id="countCom">2</span>
+                            <span class="filter-count" id="countCom">1</span>
                         </button>
-                        <button class="filter-btn" data-filter="infrastructure" type="button" role="tab" aria-selected="false">
+                        <button class="filter-btn" data-filter="infrastructure" type="button" role="tab"
+                            aria-selected="false">
                             <i class="fa-solid fa-road"></i>
                             <span>Infrastructure</span>
-                            <span class="filter-count" id="countInf">2</span>
+                            <span class="filter-count" id="countInf">1</span>
                         </button>
                     </div>
                 </div>
@@ -404,6 +332,394 @@
 
             </div>
         </section>
+
+        <!-- =========================================================
+             FEATURED SITE VIDEOS SECTION
+        ========================================================= -->
+        <section class="gallery-videos-section" id="site-videos">
+            <div class="container">
+                <div class="gallery-heading">
+                    <div class="gallery-tag">
+                        <span></span>
+                        SITE DRONE &amp; VIDEO TOURS
+                        <span></span>
+                    </div>
+                    <h2>
+                        Featured <span>Project Videos</span> &amp; Walkthroughs
+                    </h2>
+                    <p>
+                        Explore high-definition drone footage, site progress timelapses, and manufacturing operations
+                        across our prominent construction sites.
+                    </p>
+                </div>
+
+                <div class="video-cards-grid">
+                    <!-- 1. PEB Manufacturing Plant -->
+                    <article class="video-project-card" data-video-title="PEB Manufacturing Plant"
+                        data-video-desc="Automated CNC plasma profiling, SAW beam welding gantry, and continuous purlin roll-forming facility tour."
+                        data-video-tag="FACILITY TOUR" data-video-duration="0:09 MIN"
+                        data-video-img="images/thumb-peb-plant.jpg" data-video-src="images/PEB-Manufacturingplant.MP4">
+                        <div class="video-card-thumb">
+                            <video class="video-card-media" poster="images/thumb-peb-plant.jpg" preload="metadata"
+                                playsinline muted loop>
+                                <source src="images/PEB-Manufacturingplant.MP4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                            <div class="video-thumb-overlay"></div>
+                            <span class="video-duration-badge"><i class="fa-solid fa-play"></i> 0:09 MIN</span>
+                            <span class="video-quality-badge">4K 60FPS</span>
+                            <button type="button" class="video-play-btn"
+                                aria-label="Play PEB Manufacturing Plant Video">
+                                <span class="play-ripple"></span>
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                        <div class="video-card-body">
+                            <div class="video-meta-row">
+                                <span class="video-category-chip"><i class="fa-solid fa-gears"></i> Steel
+                                    Fabrication</span>
+                                <span class="video-status-chip"><i class="fa-solid fa-city"></i> Plant Facility</span>
+                            </div>
+                            <h3 class="video-card-title">PEB Manufacturing Plant</h3>
+                            <p class="video-card-desc">
+                                Tour of our 1,500+ MT/month state-of-the-art PEB fabrication facility with automated
+                                submerged arc welding &amp; CNC lines.
+                            </p>
+                            <div class="video-card-footer">
+                                <span class="video-spec"><i class="fa-solid fa-weight-hanging"></i> 1,500+ MT /
+                                    Mo</span>
+                                <button type="button" class="btn-watch-video">
+                                    <span>Watch Video</span>
+                                    <i class="fa-solid fa-circle-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. Sakshi Site -->
+                    <article class="video-project-card" data-video-title="Sakshi Site"
+                        data-video-desc="Comprehensive drone walkthrough and erection timelapse of the heavy industrial shed at Sakshi Site."
+                        data-video-tag="DRONE TIMELAPSE" data-video-duration="0:17 MIN"
+                        data-video-img="images/thumb-sakshi.jpg" data-video-src="images/sakshi.MP4">
+                        <div class="video-card-thumb">
+                            <video class="video-card-media" poster="images/thumb-sakshi.jpg" preload="metadata"
+                                playsinline muted loop>
+                                <source src="images/sakshi.MP4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                            <div class="video-thumb-overlay"></div>
+                            <span class="video-duration-badge"><i class="fa-solid fa-play"></i> 0:17 MIN</span>
+                            <span class="video-quality-badge">4K 60FPS</span>
+                            <button type="button" class="video-play-btn" aria-label="Play Sakshi Site Video">
+                                <span class="play-ripple"></span>
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                        <div class="video-card-body">
+                            <div class="video-meta-row">
+                                <span class="video-category-chip"><i class="fa-solid fa-industry"></i> Industrial
+                                    Shed</span>
+                                <span class="video-status-chip"><i class="fa-solid fa-video"></i> Drone View</span>
+                            </div>
+                            <h3 class="video-card-title">Sakshi Site</h3>
+                            <p class="video-card-desc">
+                                Turnkey industrial shed erection, high-clearance crane girders, and roofing cladding
+                                installation recorded via aerial drone.
+                            </p>
+                            <div class="video-card-footer">
+                                <span class="video-spec"><i class="fa-solid fa-ruler-combined"></i> 38,000 Sq.Ft</span>
+                                <button type="button" class="btn-watch-video">
+                                    <span>Watch Video</span>
+                                    <i class="fa-solid fa-circle-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Khalid Site -->
+                    <article class="video-project-card" data-video-title="Khalid Site"
+                        data-video-desc="High-precision PEB warehouse framework, deep column shoring, and structural alignment at Khalid Site."
+                        data-video-tag="SITE WALKTHROUGH" data-video-duration="0:15 MIN"
+                        data-video-img="images/thumb-khalid.jpg" data-video-src="images/khalid.MP4">
+                        <div class="video-card-thumb">
+                            <video class="video-card-media" poster="images/thumb-khalid.jpg" preload="metadata"
+                                playsinline muted loop>
+                                <source src="images/khalid.MP4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                            <div class="video-thumb-overlay"></div>
+                            <span class="video-duration-badge"><i class="fa-solid fa-play"></i> 0:15 MIN</span>
+                            <span class="video-quality-badge">4K 60FPS</span>
+                            <button type="button" class="video-play-btn" aria-label="Play Khalid Site Video">
+                                <span class="play-ripple"></span>
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                        <div class="video-card-body">
+                            <div class="video-meta-row">
+                                <span class="video-category-chip"><i class="fa-solid fa-warehouse"></i> Warehouse
+                                    PEB</span>
+                                <span class="video-status-chip"><i class="fa-solid fa-video"></i> Site Tour</span>
+                            </div>
+                            <h3 class="video-card-title">Khalid Site</h3>
+                            <p class="video-card-desc">
+                                Structural PEB warehouse framing, multi-tier rafter alignment, and foundation
+                                engineering progress at Khalid Site.
+                            </p>
+                            <div class="video-card-footer">
+                                <span class="video-spec"><i class="fa-solid fa-ruler-combined"></i> 52,000 Sq.Ft</span>
+                                <button type="button" class="btn-watch-video">
+                                    <span>Watch Video</span>
+                                    <i class="fa-solid fa-circle-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             ONGOING PROJECTS HORIZONTAL SLIDER
+        ========================================================= -->
+        <!-- =========================================================
+             ONGOING PROJECTS SLIDER (LIKE HOME PAGE COMPLETED PROJECTS)
+        ========================================================= -->
+        <section class="services-section ongoing-section" id="ongoing-projects">
+            <div class="container">
+                <div class="gallery-heading">
+                    <div class="gallery-tag">
+                        <span></span>
+                        LIVE SITE PROGRESS
+                        <span></span>
+                    </div>
+                    <h2>
+                        Ongoing <span>Projects</span> Under Execution
+                    </h2>
+                    <p>
+                        Track active engineering milestones, structural progress, and site developments across our
+                        active construction projects.
+                    </p>
+                </div>
+
+                <div class="services-controls-row">
+                    <div class="services-slider-controls" aria-label="Ongoing projects navigation">
+                        <button type="button" class="service-nav-btn ongoing-prev" id="ongoingPrev"
+                            aria-label="Previous ongoing project" title="Previous ongoing project">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button type="button" class="service-nav-btn ongoing-next" id="ongoingNext"
+                            aria-label="Next ongoing project" title="Next ongoing project">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="services-slider ongoing-slider">
+                    <div class="services-track ongoing-track" id="ongoingTrack">
+
+                        <!-- Ongoing Project Card 1 -->
+                        <div class="service-card ongoing-card">
+                            <div class="service-image">
+                                <img src="images/ongoing-project-01.jpg" alt="Ongoing PEB Industrial Shed Construction"
+                                    loading="lazy">
+                                <div class="service-category">PEB STRUCTURES</div>
+                                <div class="service-photo-badge"><i class="fa-solid fa-clock-rotate-left"></i> 75% IN
+                                    PROGRESS</div>
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-industry"></i>
+                                </div>
+                                <h3>PEB Industrial Shed</h3>
+                                <p>
+                                    Turnkey pre-engineered building erection with standing-seam roof sheeting, perimeter
+                                    masonry walls, and heavy anchor base assemblies.
+                                </p>
+                                <span class="service-arrow" title="View Ongoing Project">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Ongoing Project Card 2 -->
+                        <div class="service-card ongoing-card">
+                            <div class="service-image">
+                                <img src="images/ongoing-project-02.jpg"
+                                    alt="Ongoing Industrial Site Development and Earthwork" loading="lazy">
+                                <div class="service-category">INFRASTRUCTURE & EARTHWORK</div>
+                                <div class="service-photo-badge"><i class="fa-solid fa-clock-rotate-left"></i> 45% IN
+                                    PROGRESS</div>
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-trowel-bricks"></i>
+                                </div>
+                                <h3>Industrial Infrastructure & Earthwork</h3>
+                                <p>
+                                    Extensive site grading, deep foundation footing casting, retaining perimeter walls,
+                                    and heavy earthmoving machinery operations.
+                                </p>
+                                <span class="service-arrow" title="View Ongoing Project">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Ongoing Project Card 3 -->
+                        <div class="service-card ongoing-card">
+                            <div class="service-image">
+                                <img src="images/ongoing-project-03.jpg" alt="Ongoing Heavy Structural Steel Framing"
+                                    loading="lazy">
+                                <div class="service-category">STRUCTURAL FRAMING</div>
+                                <div class="service-photo-badge"><i class="fa-solid fa-clock-rotate-left"></i> 65% IN
+                                    PROGRESS</div>
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <h3>Heavy Structural Steel Framing</h3>
+                                <p>
+                                    High-precision portal frame assembly, overhead crane beam alignments, continuous
+                                    purlins, and reinforced plinth brickwork.
+                                </p>
+                                <span class="service-arrow" title="View Ongoing Project">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Loop Duplicate 1 for infinite continuous slide (like home page) -->
+                        <div class="service-card ongoing-card" aria-hidden="true">
+                            <div class="service-image">
+                                <img src="images/ongoing-project-01.jpg" alt="Ongoing PEB Industrial Shed Construction"
+                                    loading="lazy">
+                                <div class="service-category">PEB STRUCTURES</div>
+                                <div class="service-photo-badge"><i class="fa-solid fa-clock-rotate-left"></i> 75% IN
+                                    PROGRESS</div>
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-industry"></i>
+                                </div>
+                                <h3>PEB Industrial Shed</h3>
+                                <p>
+                                    Turnkey pre-engineered building erection with standing-seam roof sheeting, perimeter
+                                    masonry walls, and heavy anchor base assemblies.
+                                </p>
+                                <span class="service-arrow" title="View Ongoing Project">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Loop Duplicate 2 for infinite continuous slide (like home page) -->
+                        <div class="service-card ongoing-card" aria-hidden="true">
+                            <div class="service-image">
+                                <img src="images/ongoing-project-02.jpg"
+                                    alt="Ongoing Industrial Site Development and Earthwork" loading="lazy">
+                                <div class="service-category">INFRASTRUCTURE & EARTHWORK</div>
+                                <div class="service-photo-badge"><i class="fa-solid fa-clock-rotate-left"></i> 45% IN
+                                    PROGRESS</div>
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-trowel-bricks"></i>
+                                </div>
+                                <h3>Industrial Infrastructure & Earthwork</h3>
+                                <p>
+                                    Extensive site grading, deep foundation footing casting, retaining perimeter walls,
+                                    and heavy earthmoving machinery operations.
+                                </p>
+                                <span class="service-arrow" title="View Ongoing Project">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Loop Duplicate 3 for infinite continuous slide (like home page) -->
+                        <div class="service-card ongoing-card" aria-hidden="true">
+                            <div class="service-image">
+                                <img src="images/ongoing-project-03.jpg" alt="Ongoing Heavy Structural Steel Framing"
+                                    loading="lazy">
+                                <div class="service-category">STRUCTURAL FRAMING</div>
+                                <div class="service-photo-badge"><i class="fa-solid fa-clock-rotate-left"></i> 65% IN
+                                    PROGRESS</div>
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <h3>Heavy Structural Steel Framing</h3>
+                                <p>
+                                    High-precision portal frame assembly, overhead crane beam alignments, continuous
+                                    purlins, and reinforced plinth brickwork.
+                                </p>
+                                <span class="service-arrow" title="View Ongoing Project">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE VIDEO PLAYER MODAL -->
+        <div class="gallery-video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true"
+            aria-label="Project Video Player">
+            <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
+            <div class="video-modal-dialog">
+                <button type="button" class="video-modal-close" id="videoModalClose" aria-label="Close Video">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="video-player-container">
+                    <div class="video-screen" id="modalVideoScreen">
+                        <video id="modalHtml5Video" class="modal-video-media" playsinline preload="metadata">
+                            <source id="modalVideoSourceWeb" src="" type="video/mp4">
+                            <source id="modalVideoSource" src="" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <img src="" alt="" id="modalVideoPoster" class="video-poster-img">
+                        <div class="video-screen-overlay" id="videoScreenOverlay">
+                            <div class="video-live-watermark">
+                                <span class="rec-dot"></span> JAY BHAVANI CONSTRUCTION &bull; HD SITE CAPTURE
+                            </div>
+                            <button type="button" class="video-screen-play" id="modalScreenPlayBtn"
+                                aria-label="Play/Pause">
+                                <i class="fa-solid fa-play" id="modalPlayIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-controls-bar">
+                        <button type="button" class="control-btn" id="modalControlPlay" aria-label="Play">
+                            <i class="fa-solid fa-play" id="modalControlPlayIcon"></i>
+                        </button>
+                        <div class="video-timeline" id="modalTimeline" role="slider" aria-label="Seek timeline"
+                            tabindex="0">
+                            <div class="timeline-fill" id="modalTimelineFill"></div>
+                        </div>
+                        <span class="video-time-display" id="modalTimeDisplay">0:00 / 0:00</span>
+                        <button type="button" class="control-btn" id="modalMuteBtn" aria-label="Mute">
+                            <i class="fa-solid fa-volume-high" id="modalMuteIcon"></i>
+                        </button>
+                        <button type="button" class="control-btn" id="modalFullscreenBtn" aria-label="Fullscreen">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-modal-info">
+                    <div class="video-info-header">
+                        <span class="video-info-badge" id="modalVideoTag">FACILITY TOUR</span>
+                        <span class="video-info-duration" id="modalVideoDuration">0:09 MIN</span>
+                    </div>
+                    <h3 id="modalVideoTitle">Project Video Title</h3>
+                    <p id="modalVideoDesc">Video description</p>
+                </div>
+            </div>
+        </div>
 
         <!-- CALL TO ACTION -->
 
@@ -433,16 +749,20 @@
         </section>
 
         <!-- FULLSCREEN INTERACTIVE LIGHTBOX MODAL -->
-        <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project photo viewer">
+        <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-modal="true"
+            aria-label="Project photo viewer">
             <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
             <div class="lightbox-dialog">
-                <button class="lightbox-btn lightbox-close" id="lightboxClose" type="button" aria-label="Close lightbox">
+                <button class="lightbox-btn lightbox-close" id="lightboxClose" type="button"
+                    aria-label="Close lightbox">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-                <button class="lightbox-btn lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous photo">
+                <button class="lightbox-btn lightbox-nav lightbox-prev" id="lightboxPrev" type="button"
+                    aria-label="Previous photo">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button class="lightbox-btn lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next photo">
+                <button class="lightbox-btn lightbox-nav lightbox-next" id="lightboxNext" type="button"
+                    aria-label="Next photo">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
 
@@ -476,11 +796,7 @@
 
                     <a href="index.html#home" class="footer-logo">
 
-                        <img
-                            src="./logoo.png"
-                            alt="Jay Bhavani Construction Logo"
-                            class="footer-site-logo"
-                        >
+                        <img src="./logoo.png" alt="Jay Bhavani Construction Logo" class="footer-site-logo">
 
                         <span class="footer-logo-name">
                             Jay Bhavani Construction
@@ -503,18 +819,6 @@
                     <a href="index.html#home">Home</a>
                     <a href="about.html">About</a>
 
-                    <a
-                        href="Jay_Bhawani_Construction_Brochure.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View Brochure
-                    </a>
-
-                    <a href="Jay_Bhawani_Construction_Brochure.pdf" download>
-                        Download Brochure
-                    </a>
-
                     <a href="services.html">Services</a>
                     <a href="gallery.html">Gallery</a>
                     <a href="contact.html">Contact</a>
@@ -531,6 +835,7 @@
 
                     <a href="industrial-sheds.html">Industrial Sheds</a>
                     <a href="pebstructure.html">PEB Structures</a>
+                    <a href="peb-manufacturing-plant.html">PEB Manufacturing Plant</a>
                     <a href="commercial-buildings.html">Commercial Buildings</a>
                     <a href="rcc-road-construction.html">RCC Road Construction</a>
                     <a href="rcc-flooring.html">RCC Flooring</a>
@@ -587,21 +892,12 @@
 
     <div class="floating-contact">
 
-        <a
-            href="https://wa.me/917499429991"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="float-btn whatsapp"
-            aria-label="WhatsApp"
-        >
+        <a href="https://wa.me/917499429991" target="_blank" rel="noopener noreferrer" class="float-btn whatsapp"
+            aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
-        <a
-            href="tel:+917499429991"
-            class="float-btn phone"
-            aria-label="Phone"
-        >
+        <a href="tel:+917499429991" class="float-btn phone" aria-label="Phone">
             <i class="fa-solid fa-phone"></i>
         </a>
 
@@ -622,45 +918,48 @@
             const grid = document.getElementById("galleryGrid");
             if (!grid) return;
 
-            // 8 FEATURED PROJECTS
+            // 5 FEATURED PROJECTS (CUSTOM SPECIFIED ORDER)
             const projects = [
                 {
                     number: "01",
-                    title: "Pooja Packaging",
+                    title: "Sakshi Site",
                     category: "industrial",
-                    categoryName: "Industrial & PEB",
+                    categoryName: "Industrial Shed & PEB",
                     categoryIcon: "fa-industry",
-                    description: "Full-cycle construction work featuring heavy-duty structural steel PEB framing and precision industrial flooring.",
+                    description: "High-precision automotive manufacturing facility with heavy-duty structural steel PEB shed and turnkey execution.",
+                    imageNumbers: [10, 11, 12],
                     phases: [
-                        { label: "Before", title: "Raw Groundwork & Footings", className: "phase-before", icon: "fa-clock-rotate-left" },
-                        { label: "Phase 2", title: "Structural PEB Framing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
-                        { label: "Completed", title: "Turnkey Packaging Plant", className: "phase-after", icon: "fa-circle-check" }
+                        { label: "Before", title: "Foundation Pit & Shoring", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "In-Process", title: "Superstructure Columns", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "After", title: "Finished Commercial Facility", className: "phase-after", icon: "fa-circle-check" }
                     ]
                 },
                 {
                     number: "02",
-                    title: "Technip (Kalid Site)",
-                    category: "infrastructure",
-                    categoryName: "Infrastructure & Plant",
-                    categoryIcon: "fa-road",
-                    description: "Heavy engineering site progress and completed construction executed to strict industrial safety standards.",
+                    title: "Pooja Site",
+                    category: "industrial",
+                    categoryName: "Industrial & PEB",
+                    categoryIcon: "fa-industry",
+                    description: "Full-cycle construction work featuring heavy-duty structural steel PEB framing and precision industrial flooring.",
+                    imageNumbers: [1, 2, 3],
                     phases: [
-                        { label: "Before", title: "Site Grading & Surveying", className: "phase-before", icon: "fa-clock-rotate-left" },
-                        { label: "Phase 2", title: "Heavy RCC Substructure", className: "phase-mid", icon: "fa-screwdriver-wrench" },
-                        { label: "Completed", title: "Operational Plant Campus", className: "phase-after", icon: "fa-circle-check" }
+                        { label: "Before", title: "Raw Groundwork & Footings", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "In-Process", title: "Structural PEB Framing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "After", title: "Turnkey Packaging Plant", className: "phase-after", icon: "fa-circle-check" }
                     ]
                 },
                 {
                     number: "03",
-                    title: "PEB Plant",
-                    category: "industrial",
-                    categoryName: "PEB Structures",
-                    categoryIcon: "fa-warehouse",
-                    description: "Industrial PEB manufacturing facility engineered with wide clear-span bays and high-load foundation anchors.",
+                    title: "Khalid Technip Site",
+                    category: "infrastructure",
+                    categoryName: "Infrastructure & Plant",
+                    categoryIcon: "fa-road",
+                    description: "Heavy engineering site progress and completed construction executed to strict industrial safety standards.",
+                    imageNumbers: [4, 5, 6],
                     phases: [
-                        { label: "Before", title: "Plot Demarcation & Base", className: "phase-before", icon: "fa-clock-rotate-left" },
-                        { label: "Phase 2", title: "Truss & Rafter Assembly", className: "phase-mid", icon: "fa-screwdriver-wrench" },
-                        { label: "Completed", title: "Weatherproof PEB Plant", className: "phase-after", icon: "fa-circle-check" }
+                        { label: "Before", title: "Site Grading & Surveying", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "In-Process", title: "Heavy RCC Substructure", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "After", title: "Operational Plant Campus", className: "phase-after", icon: "fa-circle-check" }
                     ]
                 },
                 {
@@ -669,63 +968,26 @@
                     category: "commercial",
                     categoryName: "Commercial Complex",
                     categoryIcon: "fa-building",
-                    description: "Commercial multi-use facility developed with seismic-resistant RCC framework and modern facade aesthetics.",
+                    description: "Industrial PEB manufacturing facility engineered with wide clear-span bays and high-load foundation anchors.",
+                    imageNumbers: [7, 8, 9],
                     phases: [
-                        { label: "Before", title: "Foundation Pit & Shoring", className: "phase-before", icon: "fa-clock-rotate-left" },
-                        { label: "Phase 2", title: "Superstructure Columns", className: "phase-mid", icon: "fa-screwdriver-wrench" },
-                        { label: "Completed", title: "Finished Commercial Facility", className: "phase-after", icon: "fa-circle-check" }
+                        { label: "Before", title: "Plot Demarcation & Base", className: "phase-before", icon: "fa-clock-rotate-left" },
+                        { label: "In-Process", title: "Truss & Rafter Assembly", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "After", title: "Weatherproof PEB Plant", className: "phase-after", icon: "fa-circle-check" }
                     ]
                 },
                 {
                     number: "05",
-                    title: "Sakshi Site",
+                    title: "JMDP Site",
                     category: "industrial",
-                    categoryName: "Industrial Shed",
+                    categoryName: "Industrial Campus",
                     categoryIcon: "fa-industry",
                     description: "Comprehensive fabrication, plinth beam casting, and industrial shed erection designed for heavy tooling equipment.",
+                    imageNumbers: [13, 14, 15],
                     phases: [
                         { label: "Before", title: "Plinth & Earth Compaction", className: "phase-before", icon: "fa-clock-rotate-left" },
-                        { label: "Phase 2", title: "Crane Girders & Cladding", className: "phase-mid", icon: "fa-screwdriver-wrench" },
-                        { label: "Completed", title: "Turnkey Industrial Shed", className: "phase-after", icon: "fa-circle-check" }
-                    ]
-                },
-                {
-                    number: "06",
-                    title: "JMDP Site",
-                    category: "infrastructure",
-                    categoryName: "Infrastructure & Road",
-                    categoryIcon: "fa-road",
-                    description: "Rigid concrete pavement, storm drainage network, and access corridors engineered for heavy trailer axle loads.",
-                    phases: [
-                        { label: "Before", title: "Subgrade & GSB Compaction", className: "phase-before", icon: "fa-clock-rotate-left" },
-                        { label: "Phase 2", title: "PQC Casting & Joint Sealing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
-                        { label: "Completed", title: "Heavy-Duty RCC Transit Road", className: "phase-after", icon: "fa-circle-check" }
-                    ]
-                },
-                {
-                    number: "07",
-                    title: "Maharashtra ENT",
-                    category: "commercial",
-                    categoryName: "Commercial & Healthcare",
-                    categoryIcon: "fa-hospital",
-                    description: "Specialized healthcare and commercial structure built with precision architectural engineering and clean utility planning.",
-                    phases: [
-                        { label: "Before", title: "Site Groundwork & Footings", className: "phase-before", icon: "fa-clock-rotate-left" },
-                        { label: "Phase 2", title: "RCC Structural Framing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
-                        { label: "Completed", title: "Commissioned ENT Facility", className: "phase-after", icon: "fa-circle-check" }
-                    ]
-                },
-                {
-                    number: "08",
-                    title: "Murhe Site",
-                    category: "industrial",
-                    categoryName: "Logistics & Warehouse",
-                    categoryIcon: "fa-boxes-stacked",
-                    description: "High-bay logistics warehouse featuring expansive clear height, laser-screed flooring, and automated dock approaches.",
-                    phases: [
-                        { label: "Before", title: "Plot Leveling & Earthwork", className: "phase-before", icon: "fa-clock-rotate-left" },
-                        { label: "Phase 2", title: "High-Bay Steel Framing", className: "phase-mid", icon: "fa-screwdriver-wrench" },
-                        { label: "Completed", title: "Logistics Hub Handover", className: "phase-after", icon: "fa-circle-check" }
+                        { label: "In-Process", title: "Crane Girders & Cladding", className: "phase-mid", icon: "fa-screwdriver-wrench" },
+                        { label: "After", title: "Turnkey Industrial Shed", className: "phase-after", icon: "fa-circle-check" }
                     ]
                 }
             ];
@@ -737,10 +999,8 @@
             grid.innerHTML = "";
 
             projects.forEach(function (project, pIndex) {
-                const firstImgNum = pIndex * 3 + 1;
-
                 const imageCardsHtml = project.phases.map(function (phase, phaseIdx) {
-                    const imgIndex = firstImgNum + phaseIdx;
+                    const imgIndex = project.imageNumbers ? project.imageNumbers[phaseIdx] : (pIndex * 3 + 1 + phaseIdx);
                     const imgPath = `images/project-${String(imgIndex).padStart(2, "0")}.jpg`;
                     const globalPhotoIndex = allPhotos.length;
 
@@ -749,9 +1009,7 @@
                         path: imgPath,
                         projectNumber: project.number,
                         projectTitle: project.title,
-                        phaseLabel: phase.label,
-                        phaseTitle: phase.title,
-                        desc: project.description
+                        phaseLabel: phase.label
                     });
 
                     const isMiddlePhoto = (phaseIdx === 1);
@@ -772,7 +1030,7 @@
                             >
                                 <img
                                     src="${imgPath}"
-                                    alt="${project.title} - ${phase.label}: ${phase.title}"
+                                    alt="${project.title} - ${phase.label}"
                                     loading="lazy"
                                 >
                                 <span class="phase-badge ${phase.className}">
@@ -789,11 +1047,6 @@
                                     </span>
                                     <span class="center-badge-label">Preview Photo</span>
                                 </div>
-
-                                <div class="phase-strip">
-                                    <span class="phase-title">${phase.title}</span>
-                                    <span class="phase-action">Preview <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-                                </div>
                             </a>
                         </div>
                     `;
@@ -803,24 +1056,15 @@
                 card.className = "gallery-item before-after-project scroll-reveal";
                 card.dataset.category = project.category;
                 card.dataset.number = project.number;
+                card.id = `project-${project.number}`;
 
                 card.innerHTML = `
                     <div class="project-card-header">
                         <div class="project-header-left">
                             <div class="project-meta-badges">
                                 <span class="project-num-badge">Project ${project.number}</span>
-                                <span class="project-category-badge">
-                                    <i class="fa-solid ${project.categoryIcon}"></i> ${project.categoryName}
-                                </span>
                             </div>
                             <h3 class="project-title">${project.title}</h3>
-                            <p class="project-desc">${project.description}</p>
-                        </div>
-                        <div class="project-header-right">
-                            <span class="project-photos-pill">
-                                <i class="fa-solid fa-camera"></i>
-                                3 Phased Views
-                            </span>
                         </div>
                     </div>
 
@@ -925,19 +1169,22 @@
                 if (!item) return;
 
                 lightboxImg.src = item.path;
-                lightboxImg.alt = item.projectTitle + " - " + item.phaseTitle;
-                lightboxStage.textContent = item.phaseLabel.toUpperCase() + " · " + item.phaseTitle;
+                lightboxImg.alt = "Project " + item.projectNumber + " - " + item.projectTitle;
+                lightboxStage.textContent = item.phaseLabel.toUpperCase();
 
                 // Color pill according to phase
                 lightboxStage.style.background = item.phaseLabel.toLowerCase().includes("before")
                     ? "rgba(180, 83, 9, 0.9)"
-                    : item.phaseLabel.toLowerCase().includes("phase")
-                    ? "rgba(2, 132, 199, 0.9)"
-                    : "rgba(5, 150, 105, 0.9)";
+                    : (item.phaseLabel.toLowerCase().includes("process") || item.phaseLabel.toLowerCase().includes("phase"))
+                        ? "rgba(2, 132, 199, 0.9)"
+                        : "rgba(5, 150, 105, 0.9)";
                 lightboxStage.style.color = "#ffffff";
 
                 lightboxTitle.textContent = "Project " + item.projectNumber + " · " + item.projectTitle;
-                lightboxCaption.textContent = item.desc;
+                if (lightboxCaption) {
+                    lightboxCaption.textContent = "";
+                    lightboxCaption.style.display = "none";
+                }
                 lightboxCounter.textContent = "Photo " + (idx + 1) + " of " + allPhotos.length;
             }
 
@@ -996,7 +1243,332 @@
             if (yearEl) {
                 yearEl.textContent = new Date().getFullYear();
             }
+
+            // DIRECT NAVIGATION TO PROJECT FROM HASH (e.g. #project-01)
+            function handleProjectHashNavigation() {
+                const hash = window.location.hash;
+                if (!hash || !hash.startsWith("#project-")) return;
+
+                const targetCard = document.querySelector(hash);
+                if (!targetCard) return;
+
+                // Ensure category filter doesn't hide the target card
+                const targetCategory = targetCard.dataset.category;
+                const activeFilterBtn = document.querySelector(".filter-btn.active");
+                if (activeFilterBtn && activeFilterBtn.dataset.filter !== "all" && activeFilterBtn.dataset.filter !== targetCategory) {
+                    const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+                    if (allBtn) allBtn.click();
+                }
+
+                // Ensure card is revealed
+                targetCard.classList.add("revealed");
+
+                setTimeout(() => {
+                    targetCard.scrollIntoView({ behavior: "smooth", block: "start" });
+                    targetCard.classList.add("highlight-project");
+                    setTimeout(() => {
+                        targetCard.classList.remove("highlight-project");
+                    }, 2800);
+                }, 300);
+            }
+
+            // Check hash on initial load and when hash changes
+            setTimeout(handleProjectHashNavigation, 250);
+            window.addEventListener("hashchange", handleProjectHashNavigation);
+
+            /* =========================================================
+               VIDEOS SECTION & INTERACTIVE VIDEO MODAL
+            ========================================================= */
+            const videoCards = document.querySelectorAll(".video-project-card");
+            const videoModal = document.getElementById("videoModal");
+            const videoModalClose = document.getElementById("videoModalClose");
+            const videoModalBackdrop = document.getElementById("videoModalBackdrop");
+            const modalHtml5Video = document.getElementById("modalHtml5Video");
+            const modalVideoSourceWeb = document.getElementById("modalVideoSourceWeb");
+            const modalVideoSource = document.getElementById("modalVideoSource");
+            const modalVideoPoster = document.getElementById("modalVideoPoster");
+            const modalVideoScreen = document.getElementById("modalVideoScreen");
+            const videoScreenOverlay = document.getElementById("videoScreenOverlay");
+            const modalVideoTitle = document.getElementById("modalVideoTitle");
+            const modalVideoDesc = document.getElementById("modalVideoDesc");
+            const modalVideoTag = document.getElementById("modalVideoTag");
+            const modalVideoDuration = document.getElementById("modalVideoDuration");
+            const modalScreenPlayBtn = document.getElementById("modalScreenPlayBtn");
+            const modalControlPlay = document.getElementById("modalControlPlay");
+            const modalPlayIcon = document.getElementById("modalPlayIcon");
+            const modalControlPlayIcon = document.getElementById("modalControlPlayIcon");
+            const modalTimelineFill = document.getElementById("modalTimelineFill");
+            const modalTimeline = document.getElementById("modalTimeline");
+            const modalTimeDisplay = document.getElementById("modalTimeDisplay");
+            const modalMuteBtn = document.getElementById("modalMuteBtn");
+            const modalMuteIcon = document.getElementById("modalMuteIcon");
+            const modalFullscreenBtn = document.getElementById("modalFullscreenBtn");
+
+            function formatTime(secs) {
+                if (isNaN(secs) || secs < 0) return "0:00";
+                const m = Math.floor(secs / 60);
+                const s = Math.floor(secs % 60);
+                return `${m}:${s < 10 ? "0" : ""}${s}`;
+            }
+
+            function updatePlayStateUI(isPlaying) {
+                if (modalPlayIcon) {
+                    modalPlayIcon.className = isPlaying ? "fa-solid fa-pause" : "fa-solid fa-play";
+                }
+                if (modalControlPlayIcon) {
+                    modalControlPlayIcon.className = isPlaying ? "fa-solid fa-pause" : "fa-solid fa-play";
+                }
+                if (modalScreenPlayBtn) {
+                    modalScreenPlayBtn.classList.toggle("playing", isPlaying);
+                }
+                if (videoScreenOverlay) {
+                    videoScreenOverlay.classList.toggle("is-playing", isPlaying);
+                }
+                if (modalVideoPoster) {
+                    if (isPlaying) {
+                        modalVideoPoster.classList.add("is-hidden");
+                    }
+                }
+            }
+
+            function updateTimeUI() {
+                if (!modalHtml5Video) return;
+                const cur = modalHtml5Video.currentTime || 0;
+                const dur = modalHtml5Video.duration || 0;
+                const pct = dur > 0 ? (cur / dur) * 100 : 0;
+                if (modalTimelineFill) modalTimelineFill.style.width = `${pct}%`;
+                if (modalTimeDisplay) {
+                    modalTimeDisplay.textContent = `${formatTime(cur)} / ${formatTime(dur || 0)}`;
+                }
+            }
+
+            function openVideoModal(card) {
+                const title = card.dataset.videoTitle || "Project Video";
+                const desc = card.dataset.videoDesc || "";
+                const tag = card.dataset.videoTag || "SITE VIDEO";
+                const duration = card.dataset.videoDuration || "0:15 MIN";
+                const img = card.dataset.videoImg || "";
+                const videoSrc = card.dataset.videoSrc || "";
+                const videoSrcWeb = card.dataset.videoSrcWeb || "";
+
+                if (modalVideoTitle) modalVideoTitle.textContent = title;
+                if (modalVideoDesc) modalVideoDesc.textContent = desc;
+                if (modalVideoTag) modalVideoTag.textContent = tag;
+                if (modalVideoDuration) modalVideoDuration.textContent = duration;
+
+                if (modalVideoPoster) {
+                    modalVideoPoster.src = img;
+                    modalVideoPoster.classList.remove("is-hidden");
+                }
+
+                if (modalTimelineFill) modalTimelineFill.style.width = "0%";
+                if (modalTimeDisplay) modalTimeDisplay.textContent = `0:00 / ${duration.replace(" MIN", "")}`;
+
+                if (modalHtml5Video) {
+                    modalHtml5Video.pause();
+                    modalHtml5Video.currentTime = 0;
+
+                    if (modalVideoSource) modalVideoSource.src = videoSrc;
+                    modalHtml5Video.src = videoSrc;
+                    modalHtml5Video.poster = img;
+                    modalHtml5Video.load();
+
+                    const playPromise = modalHtml5Video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            updatePlayStateUI(true);
+                        }).catch(() => {
+                            // Autoplay was prevented; user can tap big play icon
+                            updatePlayStateUI(false);
+                        });
+                    }
+                }
+
+                videoModal.classList.add("active");
+                videoModal.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeVideoModal() {
+                if (modalHtml5Video) {
+                    modalHtml5Video.pause();
+                    modalHtml5Video.currentTime = 0;
+                }
+                updatePlayStateUI(false);
+                if (modalVideoPoster) modalVideoPoster.classList.remove("is-hidden");
+                videoModal.classList.remove("active");
+                videoModal.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+            }
+
+            function toggleVideoPlayback() {
+                if (!modalHtml5Video) return;
+                if (modalHtml5Video.paused || modalHtml5Video.ended) {
+                    modalHtml5Video.play().then(() => {
+                        updatePlayStateUI(true);
+                    }).catch(err => {
+                        console.error("Video playback error:", err);
+                    });
+                } else {
+                    modalHtml5Video.pause();
+                    updatePlayStateUI(false);
+                }
+            }
+
+            if (modalHtml5Video) {
+                modalHtml5Video.addEventListener("play", () => updatePlayStateUI(true));
+                modalHtml5Video.addEventListener("pause", () => updatePlayStateUI(false));
+                modalHtml5Video.addEventListener("timeupdate", updateTimeUI);
+                modalHtml5Video.addEventListener("loadedmetadata", updateTimeUI);
+                modalHtml5Video.addEventListener("ended", () => {
+                    updatePlayStateUI(false);
+                    if (modalVideoPoster) modalVideoPoster.classList.remove("is-hidden");
+                });
+            }
+
+            videoCards.forEach(card => {
+                const cardMedia = card.querySelector(".video-card-media");
+                if (cardMedia) {
+                    card.addEventListener("mouseenter", () => {
+                        const playP = cardMedia.play();
+                        if (playP !== undefined) playP.catch(() => { });
+                    });
+                    card.addEventListener("mouseleave", () => {
+                        cardMedia.pause();
+                        cardMedia.currentTime = 0;
+                    });
+                }
+                card.addEventListener("click", () => openVideoModal(card));
+            });
+
+            if (videoModalClose) videoModalClose.addEventListener("click", closeVideoModal);
+            if (videoModalBackdrop) videoModalBackdrop.addEventListener("click", closeVideoModal);
+
+            if (modalScreenPlayBtn) {
+                modalScreenPlayBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    toggleVideoPlayback();
+                });
+            }
+
+            if (modalControlPlay) {
+                modalControlPlay.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    toggleVideoPlayback();
+                });
+            }
+
+            if (modalVideoScreen) {
+                modalVideoScreen.addEventListener("click", (e) => {
+                    if (e.target.closest(".video-screen-play") || e.target.closest(".video-live-watermark")) return;
+                    toggleVideoPlayback();
+                });
+            }
+
+            if (modalTimeline) {
+                modalTimeline.addEventListener("click", (e) => {
+                    if (!modalHtml5Video || !modalHtml5Video.duration) return;
+                    const rect = modalTimeline.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const pct = Math.max(0, Math.min(1, clickX / rect.width));
+                    modalHtml5Video.currentTime = pct * modalHtml5Video.duration;
+                    updateTimeUI();
+                });
+            }
+
+            if (modalMuteBtn) {
+                modalMuteBtn.addEventListener("click", () => {
+                    if (!modalHtml5Video) return;
+                    modalHtml5Video.muted = !modalHtml5Video.muted;
+                    if (modalMuteIcon) {
+                        modalMuteIcon.className = modalHtml5Video.muted ? "fa-solid fa-volume-xmark" : "fa-solid fa-volume-high";
+                    }
+                });
+            }
+
+            if (modalFullscreenBtn) {
+                modalFullscreenBtn.addEventListener("click", () => {
+                    const player = document.querySelector(".video-player-container");
+                    if (!document.fullscreenElement) {
+                        if (player && player.requestFullscreen) {
+                            player.requestFullscreen();
+                        } else if (modalHtml5Video && modalHtml5Video.webkitEnterFullscreen) {
+                            modalHtml5Video.webkitEnterFullscreen();
+                        }
+                    } else {
+                        if (document.exitFullscreen) document.exitFullscreen();
+                    }
+                });
+            }
+
+            // Keyboard support for video modal
+            document.addEventListener("keydown", (e) => {
+                if (videoModal && videoModal.classList.contains("active")) {
+                    if (e.key === "Escape") closeVideoModal();
+                    if (e.key === " ") {
+                        e.preventDefault();
+                        toggleVideoPlayback();
+                    }
+                }
+            });
+
+            /* =========================================================
+               ONGOING PROJECTS SLIDER CONTROLS (LIKE HOME PAGE)
+            ========================================================= */
+            const ongoingTrack = document.getElementById("ongoingTrack");
+            const ongoingPrev = document.getElementById("ongoingPrev");
+            const ongoingNext = document.getElementById("ongoingNext");
+            const ongoingCards = document.querySelectorAll(".ongoing-track .service-card");
+
+            if (ongoingTrack && ongoingCards.length > 0) {
+                let currentIndex = 0;
+                let manualSlideTimeout = null;
+
+                function getVisibleCards() {
+                    if (window.innerWidth <= 768) return 1;
+                    if (window.innerWidth <= 1100) return 2;
+                    return 3;
+                }
+
+                function getCardWidth() {
+                    return ongoingCards[0] ? ongoingCards[0].offsetWidth : 350;
+                }
+
+                function slideOngoing(direction) {
+                    ongoingTrack.style.animation = "none";
+                    const gap = 24;
+                    const cardWidth = getCardWidth();
+                    const totalCards = ongoingCards.length;
+                    const visible = getVisibleCards();
+                    const maxIdx = Math.max(0, totalCards - visible);
+
+                    if (direction === "next") {
+                        currentIndex = currentIndex >= maxIdx ? 0 : currentIndex + 1;
+                    } else {
+                        currentIndex = currentIndex <= 0 ? maxIdx : currentIndex - 1;
+                    }
+
+                    ongoingTrack.style.transition = "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)";
+                    ongoingTrack.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+
+                    // Resume continuous marquee slide after 4 seconds of inactivity
+                    clearTimeout(manualSlideTimeout);
+                    manualSlideTimeout = setTimeout(() => {
+                        ongoingTrack.style.transition = "none";
+                        ongoingTrack.style.transform = "none";
+                        ongoingTrack.style.animation = "ongoingContinuousSlide 26s linear infinite";
+                    }, 4000);
+                }
+
+                if (ongoingNext) {
+                    ongoingNext.addEventListener("click", () => slideOngoing("next"));
+                }
+                if (ongoingPrev) {
+                    ongoingPrev.addEventListener("click", () => slideOngoing("prev"));
+                }
+            }
         });
     </script>
 </body>
+
 </html>
