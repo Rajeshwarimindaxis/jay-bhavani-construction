@@ -3,7 +3,7 @@
 ========================================================= */
 
 .about-hero {
-    min-height: 700px;
+    min-height: 760px;
     position: relative;
     overflow: hidden;
     background: #052B4A;
@@ -368,7 +368,8 @@
 
     width: 100%;
 
-    height: 700px;
+    height: 480px;
+    max-height: 480px;
 
     object-fit: cover;
 
@@ -4449,7 +4450,7 @@
         align-items: center;
         justify-content: center;
         width: calc(100% - 28px);
-        height: 380px;
+        height: 320px;
         margin: 0 14px;
         border: 1px solid #e0e6ed;
         border-radius: 8px;

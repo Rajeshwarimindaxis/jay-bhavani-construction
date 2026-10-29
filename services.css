@@ -246,7 +246,7 @@ body {
 .services-hero {
     position: relative;
     box-sizing: border-box;
-    min-height: 620px;
+    min-height: 760px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -431,7 +431,7 @@ body {
 /* Media Box */
 .srv-card-media {
     position: relative;
-    height: 240px;
+    height: 200px;
     overflow: hidden;
     background: #0e2a47;
 }

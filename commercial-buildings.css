@@ -532,7 +532,7 @@ ul {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    min-height: 620px;
+    min-height: 760px;
     padding: 60px 0;
     overflow: hidden;
     isolation: isolate;
@@ -753,7 +753,7 @@ ul {
 
 .comm-intro-image > img {
     width: 100%;
-    height: 460px;
+    height: 390px;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: var(--shadow-md);
@@ -941,7 +941,7 @@ ul {
 
 .comm-application-image {
     position: relative;
-    height: 240px;
+    height: 200px;
     overflow: hidden;
     background: var(--light-2);
 }

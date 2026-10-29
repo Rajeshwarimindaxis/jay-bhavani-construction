@@ -33,7 +33,7 @@ body {
 .road-hero {
     position: relative;
     box-sizing: border-box;
-    min-height: 620px;
+    min-height: 760px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -248,7 +248,7 @@ body {
 
 .road-intro-image {
     position: relative;
-    min-height: 440px;
+    min-height: 380px;
     border-radius: 16px;
     overflow: hidden;
     background: #e5ebf2;
@@ -467,7 +467,7 @@ body {
 
 .road-app-image {
     position: relative;
-    height: 230px;
+    height: 195px;
     overflow: hidden;
 }
 

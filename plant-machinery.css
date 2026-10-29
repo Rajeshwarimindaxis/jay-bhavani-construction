@@ -97,7 +97,7 @@ main textarea {
     isolation: isolate;
     overflow: hidden;
     box-sizing: border-box;
-    min-height: 580px;
+    min-height: 760px;
     display: flex;
     align-items: center;
     padding: 150px 0 75px;
@@ -1864,7 +1864,7 @@ main textarea {
 }
 
 .pm-spotlight-img-col .pm-img-wrap {
-    height: 320px;
+    height: 270px;
 }
 
 .pm-spotlight-text-col h3 {
@@ -1924,7 +1924,7 @@ main textarea {
 }
 
 .pm-banner-card .pm-img-wrap {
-    height: 340px;
+    height: 280px;
     border-radius: 0;
 }
 
@@ -2011,7 +2011,7 @@ main textarea {
 }
 
 .pm-duo-card .pm-img-wrap {
-    height: 230px;
+    height: 190px;
     border-radius: 0;
 }
 
@@ -2113,7 +2113,7 @@ main textarea {
 }
 
 .pm-jig-image-card .pm-img-wrap {
-    height: 360px;
+    height: 290px;
     border-radius: 0;
 }
 

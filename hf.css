@@ -2960,3 +2960,73 @@ body.menu-open #navbar.active {
     touch-action: pan-y !important;
     overflow-y: scroll !important;
 }
+
+/* ==========================================================================
+   14. STANDARDIZED EQUAL HERO SECTION HEIGHT ACROSS ALL PAGES
+   Matches Home Page hero section height (760px) and responsive breakpoints.
+   ========================================================================== */
+.hero,
+.about-hero,
+.services-hero,
+.industrial-hero,
+.peb-hero,
+.plant-hero,
+.comm-hero,
+.road-hero,
+.floor-hero,
+.pm-hero,
+.gallery-hero,
+.contact-hero {
+    min-height: 760px !important;
+}
+
+@media (max-width: 1024px) {
+    .hero,
+    .about-hero,
+    .services-hero,
+    .industrial-hero,
+    .peb-hero,
+    .plant-hero,
+    .comm-hero,
+    .road-hero,
+    .floor-hero,
+    .pm-hero,
+    .gallery-hero,
+    .contact-hero {
+        min-height: 680px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero,
+    .about-hero,
+    .services-hero,
+    .industrial-hero,
+    .peb-hero,
+    .plant-hero,
+    .comm-hero,
+    .road-hero,
+    .floor-hero,
+    .pm-hero,
+    .gallery-hero,
+    .contact-hero {
+        min-height: 600px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero,
+    .about-hero,
+    .services-hero,
+    .industrial-hero,
+    .peb-hero,
+    .plant-hero,
+    .comm-hero,
+    .road-hero,
+    .floor-hero,
+    .pm-hero,
+    .gallery-hero,
+    .contact-hero {
+        min-height: 580px !important;
+    }
+}

@@ -33,7 +33,7 @@ body {
 .floor-hero {
     position: relative;
     box-sizing: border-box;
-    min-height: 620px;
+    min-height: 760px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -253,7 +253,7 @@ body {
 
 .floor-intro-image {
     position: relative;
-    min-height: 400px;
+    min-height: 350px;
     border-radius: 16px;
     overflow: hidden;
     background: #e5ebf2;
@@ -472,7 +472,7 @@ body {
 
 .floor-app-image {
     position: relative;
-    height: 230px;
+    height: 195px;
     overflow: hidden;
 }
 
@@ -534,7 +534,7 @@ body {
 }
 
 .floor-features-image {
-    min-height: 480px;
+    min-height: 380px;
     border-radius: 16px;
     overflow: hidden;
     position: relative;
