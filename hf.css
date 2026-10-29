@@ -47,16 +47,21 @@
     --radius: 12px;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden;
     max-width: 100%;
 }
 
-img, video, canvas {
+img,
+video,
+canvas {
     max-width: 100%;
     height: auto;
 }
@@ -175,6 +180,7 @@ img, video, canvas {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -192,29 +198,25 @@ img, video, canvas {
     box-sizing: border-box;
     height: 80px;
     z-index: 1000;
-    background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #ffffff 20%,
-        #f4f8fc 34%,
-        #e8f2fa 52%,
-        #d8e9f7 70%,
-        #c5def0 100%
-    );
+    background: linear-gradient(90deg,
+            #ffffff 0%,
+            #ffffff 20%,
+            #f4f8fc 34%,
+            #e8f2fa 52%,
+            #d8e9f7 70%,
+            #c5def0 100%);
     border-bottom: 2px solid var(--primary);
     box-shadow: 0 4px 18px rgba(7, 59, 105, 0.12);
     transition: box-shadow 0.3s ease, background 0.3s ease, top 0.3s ease;
 }
 
 .header.scrolled {
-    background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #f8fbfd 25%,
-        #edf5fb 45%,
-        #dcecf8 70%,
-        #c9e1f2 100%
-    );
+    background: linear-gradient(90deg,
+            #ffffff 0%,
+            #f8fbfd 25%,
+            #edf5fb 45%,
+            #dcecf8 70%,
+            #c9e1f2 100%);
     box-shadow: 0 8px 25px rgba(7, 59, 105, 0.16);
 }
 
@@ -378,12 +380,10 @@ img, video, canvas {
     margin: 0;
     box-sizing: border-box;
     white-space: nowrap;
-    background: linear-gradient(
-        135deg,
-        #ff9f43 0%,
-        #f28c28 55%,
-        #e47a18 100%
-    );
+    background: linear-gradient(135deg,
+            #ff9f43 0%,
+            #f28c28 55%,
+            #e47a18 100%);
     color: #06365F;
     border-radius: 7px;
     box-shadow: 0 6px 17px rgba(242, 140, 40, 0.24);
@@ -392,17 +392,15 @@ img, video, canvas {
     font-weight: 800;
     text-decoration: none;
     transition: background 0.3s ease,
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .nav-quote:hover {
-    background: linear-gradient(
-        135deg,
-        #f28c28 0%,
-        #e47a18 55%,
-        #d96f0b 100%
-    );
+    background: linear-gradient(135deg,
+            #f28c28 0%,
+            #e47a18 55%,
+            #d96f0b 100%);
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 9px 22px rgba(242, 140, 40, 0.30);
@@ -490,8 +488,8 @@ img, video, canvas {
     transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
 }
 
-.services-nav-item:hover > .services-dropdown,
-.services-nav-item:focus-within > .services-dropdown,
+.services-nav-item:hover>.services-dropdown,
+.services-nav-item:focus-within>.services-dropdown,
 .services-nav-item.dropdown-open .services-dropdown {
     opacity: 1;
     visibility: visible;
@@ -499,7 +497,7 @@ img, video, canvas {
     transform: translateY(0);
 }
 
-.brochure-nav-item {
+/* .brochure-nav-item {
     position: relative;
 }
 
@@ -534,7 +532,7 @@ img, video, canvas {
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
-}
+} */
 
 .services-dropdown-heading {
     padding: 8px 10px 14px;
@@ -543,7 +541,7 @@ img, video, canvas {
 }
 
 .services-dropdown-heading span,
-.services-dropdown-heading > span {
+.services-dropdown-heading>span {
     display: block;
     color: #bd891e;
     font-size: 11px;
@@ -672,12 +670,10 @@ img, video, canvas {
    10. FOOTER STYLING
    ========================================================================== */
 .footer {
-    background: linear-gradient(
-        135deg,
-        #052B4A 0%,
-        #06365F 48%,
-        #084B7A 100%
-    );
+    background: linear-gradient(135deg,
+            #052B4A 0%,
+            #06365F 48%,
+            #084B7A 100%);
     color: var(--white);
     padding: 70px 0 25px;
     border-top: 3px solid var(--primary);
@@ -923,9 +919,11 @@ img, video, canvas {
 .float-btn.phone {
     background: var(--primary-dark);
 }
+
 .float-btn.email {
     background: var(--logo-blue);
 }
+
 /* ==========================================================================
    12. BACK TO TOP BUTTON
    ========================================================================== */
@@ -950,16 +948,19 @@ img, video, canvas {
     transform: translateY(10px);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
+
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
+
 .back-to-top:hover {
     background: var(--primary);
     color: #ffffff;
     transform: translateY(-2px);
 }
+
 /* ==========================================================================
    13. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
@@ -1085,6 +1086,7 @@ img, video, canvas {
         gap: 35px;
     }
 }
+
 /* =========================================
    TABLET RESPONSIVENESS
    ========================================= */
@@ -1095,7 +1097,7 @@ img, video, canvas {
         padding: 55px 0 22px;
     }
 
-    .footer > .container {
+    .footer>.container {
         width: 100%;
         padding: 0 28px;
         box-sizing: border-box;
@@ -1156,7 +1158,7 @@ img, video, canvas {
         padding: 42px 0 20px;
     }
 
-    .footer > .container {
+    .footer>.container {
         width: 100%;
         padding: 0 22px;
         box-sizing: border-box;
@@ -1357,7 +1359,7 @@ img, video, canvas {
         padding: 30px 0 18px;
     }
 
-    .footer > .container {
+    .footer>.container {
         width: 100%;
         max-width: 100%;
         padding: 0 18px;
@@ -1518,6 +1520,7 @@ img, video, canvas {
     flex-shrink: 0;
     white-space: nowrap;
 }
+
 /* =========================================
    RESPONSIVE FOOTER — SAME GRID AS DESKTOP
    ========================================= */
@@ -1560,7 +1563,7 @@ img, video, canvas {
         overflow: hidden;
     }
 
-    .footer > .container {
+    .footer>.container {
         width: 100%;
         max-width: 100%;
         padding: 0 10px;
@@ -1654,7 +1657,7 @@ img, video, canvas {
 
 /* Extra-small mobile screens */
 @media (max-width: 380px) {
-    .footer > .container {
+    .footer>.container {
         padding: 0 6px;
     }
 
@@ -1672,6 +1675,7 @@ img, video, canvas {
         font-size: 8px !important;
     }
 }
+
 /* FIX: SERVICES NAVIGATION ON MOBILE */
 @media (max-width: 768px) {
 
@@ -1768,6 +1772,7 @@ img, video, canvas {
         margin: 0 !important;
     }
 }
+
 /* BROCHURE ROW — MATCH SERVICES ROW */
 .navbar.active .brochure-nav-item {
     display: block;
@@ -1902,6 +1907,7 @@ body.contact-page .header .logo {
         padding: 0 12px;
     }
 }
+
 @media (max-width: 768px) {
     #navbar .services-nav-item {
         width: 100%;
@@ -1942,6 +1948,7 @@ body.contact-page .header .logo {
         display: block;
     }
 }
+
 /* 
 @media (max-width: 1200px) {
     .header .navbar.active .brochure-nav-item .brochure-nav-trigger {
@@ -1984,8 +1991,10 @@ body.contact-page .header .logo {
         cursor: pointer;
     }
 }
+
 /* SERVICES DROPDOWN — MOBILE FIX */
 @media (max-width: 768px) {
+
     #navbar.active #servicesNavItem .services-dropdown,
     .navbar.active .services-nav-item .services-dropdown {
         display: none;
@@ -2135,8 +2144,7 @@ body.contact-page .header .logo {
         white-space: normal !important;
     }
 
-    #navbar.active #brochureNavItem.dropdown-open
-    #brochureDropdownToggle i {
+    #navbar.active #brochureNavItem.dropdown-open #brochureDropdownToggle i {
         transform: rotate(180deg);
     }
 }
@@ -2163,23 +2171,23 @@ body .header {
 }
 
 /* NAVIGATION LINKS */
-body .header .navbar > a:not(.btn),
-body .header .navbar .services-nav-header > a,
+body .header .navbar>a:not(.btn),
+body .header .navbar .services-nav-header>a,
 body .header .navbar .brochure-nav-header .brochure-nav-trigger {
     color: var(--navy-primary) !important;
 }
 
 /* NAVIGATION HOVER AND ACTIVE LINKS */
-body .header .navbar > a:not(.btn):hover,
-body .header .navbar > a:not(.btn).active,
-body .header .navbar .services-nav-header > a:hover,
+body .header .navbar>a:not(.btn):hover,
+body .header .navbar>a:not(.btn).active,
+body .header .navbar .services-nav-header>a:hover,
 body .header .navbar .brochure-nav-header .brochure-nav-trigger:hover {
     color: var(--nav-orange) !important;
 }
 
 /* GET A QUOTE BUTTON */
-body .header .navbar > a.btn,
-body .header .navbar > .btn,
+body .header .navbar>a.btn,
+body .header .navbar>.btn,
 body .header .nav-quote {
     background: var(--navy-primary) !important;
     color: var(--nav-white) !important;
@@ -2188,8 +2196,8 @@ body .header .nav-quote {
 }
 
 /* QUOTE BUTTON HOVER */
-body .header .navbar > a.btn:hover,
-body .header .navbar > .btn:hover,
+body .header .navbar>a.btn:hover,
+body .header .navbar>.btn:hover,
 body .header .nav-quote:hover {
     background: var(--nav-orange) !important;
     color: var(--nav-white) !important;
@@ -2236,14 +2244,14 @@ body .header #brochureDropdownToggle {
         background: var(--nav-white) !important;
     }
 
-    body .header .navbar.active > a:not(.btn),
-    body .header .navbar.active .services-nav-header > a,
+    body .header .navbar.active>a:not(.btn),
+    body .header .navbar.active .services-nav-header>a,
     body .header .navbar.active .brochure-nav-header .brochure-nav-trigger {
         color: var(--navy-primary) !important;
     }
 
-    body .header .navbar.active > a:not(.btn):hover,
-    body .header .navbar.active > a:not(.btn).active {
+    body .header .navbar.active>a:not(.btn):hover,
+    body .header .navbar.active>a:not(.btn).active {
         color: var(--nav-orange) !important;
     }
 
@@ -2254,6 +2262,7 @@ body .header #brochureDropdownToggle {
         background: var(--nav-white) !important;
     }
 }
+
 /* FIX GET A QUOTE BUTTON TEXT */
 .header .nav-quote,
 .header a.nav-quote,
@@ -2287,6 +2296,7 @@ body .header #brochureDropdownToggle {
    DESKTOP NAVBAR STYLING (Screen width > 992px)
    ========================================================================== */
 @media (min-width: 993px) {
+
     .header .menu-toggle,
     #menuToggle {
         display: none !important;
@@ -2307,8 +2317,8 @@ body .header #brochureDropdownToggle {
     }
 
     /* Regular Nav Links (Home, About, Gallery, Contact) */
-    body .header .navbar > a.nav-link,
-    body .header .navbar > a:not(.btn):not(.nav-quote) {
+    body .header .navbar>a.nav-link,
+    body .header .navbar>a:not(.btn):not(.nav-quote) {
         position: relative !important;
         display: inline-flex !important;
         align-items: center !important;
@@ -2328,23 +2338,23 @@ body .header #brochureDropdownToggle {
         transition: color 0.3s ease !important;
     }
 
-    body .header .navbar > a.nav-link:hover,
-    body .header .navbar > a:not(.btn):not(.nav-quote):hover {
+    body .header .navbar>a.nav-link:hover,
+    body .header .navbar>a:not(.btn):not(.nav-quote):hover {
         color: var(--nav-orange, #F28C28) !important;
         -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
         background: transparent !important;
     }
 
     /* Active Nav Link */
-    body .header .navbar > a.nav-link.active,
-    body .header .navbar > a:not(.btn):not(.nav-quote).active {
+    body .header .navbar>a.nav-link.active,
+    body .header .navbar>a:not(.btn):not(.nav-quote).active {
         color: var(--nav-orange, #F28C28) !important;
         -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
         background: transparent !important;
     }
 
-    body .header .navbar > a.nav-link.active::after,
-    body .header .navbar > a:not(.btn):not(.nav-quote).active::after {
+    body .header .navbar>a.nav-link.active::after,
+    body .header .navbar>a:not(.btn):not(.nav-quote).active::after {
         content: "" !important;
         position: absolute !important;
         left: 0 !important;
@@ -2468,6 +2478,7 @@ body .header #brochureDropdownToggle {
    MOBILE & TABLET NAVBAR RESPONSIVE STYLING (Screen width <= 992px)
    ========================================================================== */
 @media (max-width: 992px) {
+
     /* Top Contact Bar on mobile: fixed to viewport top at exact 38px height with 0 margin */
     .top-contact-bar,
     body .top-contact-bar,
@@ -2651,10 +2662,10 @@ body .header #brochureDropdownToggle {
     }
 
     /* Prevent mobile drawer flex items from shrinking when dropdown expands */
-    .header .navbar.active > *,
-    #navbar.active > *,
-    body .header .navbar.active > *,
-    body #navbar.active > * {
+    .header .navbar.active>*,
+    #navbar.active>*,
+    body .header .navbar.active>*,
+    body #navbar.active>* {
         flex-shrink: 0 !important;
     }
 
@@ -2662,6 +2673,7 @@ body .header #brochureDropdownToggle {
     .header .navbar.active::-webkit-scrollbar {
         width: 5px;
     }
+
     #navbar.active::-webkit-scrollbar-thumb,
     .header .navbar.active::-webkit-scrollbar-thumb {
         background: rgba(6, 54, 95, 0.25);
@@ -2669,9 +2681,9 @@ body .header #brochureDropdownToggle {
     }
 
     /* Mobile Navigation Links */
-    body .header .navbar.active > a.nav-link,
-    body .header .navbar.active > a:not(.btn):not(.nav-quote),
-    .header .navbar.active > a.nav-link {
+    body .header .navbar.active>a.nav-link,
+    body .header .navbar.active>a:not(.btn):not(.nav-quote),
+    .header .navbar.active>a.nav-link {
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
@@ -2696,22 +2708,22 @@ body .header #brochureDropdownToggle {
         flex-shrink: 0 !important;
     }
 
-    body .header .navbar.active > a.nav-link:hover,
-    body .header .navbar.active > a:not(.btn):not(.nav-quote):hover {
+    body .header .navbar.active>a.nav-link:hover,
+    body .header .navbar.active>a:not(.btn):not(.nav-quote):hover {
         color: var(--nav-orange, #F28C28) !important;
         -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
         background: rgba(242, 140, 40, 0.05) !important;
     }
 
-    body .header .navbar.active > a.nav-link.active,
-    body .header .navbar.active > a:not(.btn):not(.nav-quote).active {
+    body .header .navbar.active>a.nav-link.active,
+    body .header .navbar.active>a:not(.btn):not(.nav-quote).active {
         color: var(--nav-orange, #F28C28) !important;
         -webkit-text-fill-color: var(--nav-orange, #F28C28) !important;
         font-weight: 700 !important;
     }
 
-    body .header .navbar.active > a.nav-link.active::after,
-    body .header .navbar.active > a:not(.btn):not(.nav-quote).active::after {
+    body .header .navbar.active>a.nav-link.active::after,
+    body .header .navbar.active>a:not(.btn):not(.nav-quote).active::after {
         content: none !important;
     }
 
@@ -2833,14 +2845,14 @@ body .header #brochureDropdownToggle {
         transform: none !important;
     }
 
-    .header .navbar.active .brochure-nav-item.dropdown-open > .services-dropdown,
-    .header .navbar.active .services-nav-item.dropdown-open > .services-dropdown,
-    #navbar.active .brochure-nav-item.dropdown-open > .services-dropdown,
-    #navbar.active .services-nav-item.dropdown-open > .services-dropdown,
-    body .header .navbar.active .brochure-nav-item.dropdown-open > .services-dropdown,
-    body .header .navbar.active .services-nav-item.dropdown-open > .services-dropdown,
-    body #navbar.active .brochure-nav-item.dropdown-open > .services-dropdown,
-    body #navbar.active .services-nav-item.dropdown-open > .services-dropdown,
+    .header .navbar.active .brochure-nav-item.dropdown-open>.services-dropdown,
+    .header .navbar.active .services-nav-item.dropdown-open>.services-dropdown,
+    #navbar.active .brochure-nav-item.dropdown-open>.services-dropdown,
+    #navbar.active .services-nav-item.dropdown-open>.services-dropdown,
+    body .header .navbar.active .brochure-nav-item.dropdown-open>.services-dropdown,
+    body .header .navbar.active .services-nav-item.dropdown-open>.services-dropdown,
+    body #navbar.active .brochure-nav-item.dropdown-open>.services-dropdown,
+    body #navbar.active .services-nav-item.dropdown-open>.services-dropdown,
     body .header .navbar.active .services-nav-item.dropdown-open #servicesDropdown,
     body #navbar.active .services-nav-item.dropdown-open #servicesDropdown,
     body .header .navbar.active .brochure-nav-item.dropdown-open #brochureDropdown,

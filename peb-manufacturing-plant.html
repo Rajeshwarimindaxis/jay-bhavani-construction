@@ -772,9 +772,27 @@
     </button>
 
     <!-- SCRIPTS -->
+    <script src="script.js" defer></script>
     <script src="hf.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Back to Top Button
+            const backToTop = document.getElementById("backToTop");
+            if (backToTop) {
+                function updateBackToTop() {
+                    backToTop.classList.toggle("show", window.scrollY > 400);
+                }
+                window.addEventListener("scroll", updateBackToTop, { passive: true });
+                updateBackToTop();
+
+                backToTop.addEventListener("click", function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+            }
+
             // Video Play/Pause Overlay handlers for all plant video cards
             const videoViewports = document.querySelectorAll(".plant-video-viewport");
             videoViewports.forEach(function (viewport) {

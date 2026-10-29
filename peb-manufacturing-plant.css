@@ -976,6 +976,65 @@
 }
 
 /* =========================================================
+   BUTTONS & CTA ACTIONS (STANDARDIZED BRAND STYLING)
+========================================================= */
+
+.plant-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    min-height: 50px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.plant-btn i {
+    font-size: 15px;
+    transition: transform 0.3s ease;
+}
+
+.plant-btn:hover i {
+    transform: translateX(4px);
+}
+
+.plant-btn-primary {
+    background: linear-gradient(135deg, var(--plant-orange) 0%, var(--plant-orange-dark) 100%);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 22px rgba(242, 140, 40, 0.35);
+}
+
+.plant-btn-primary:hover {
+    background: linear-gradient(135deg, #ff9b3d 0%, #e07415 100%);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(242, 140, 40, 0.45);
+}
+
+.plant-btn-primary:active {
+    transform: translateY(0);
+}
+
+.plant-cta-box .plant-btn {
+    flex-shrink: 0;
+    color: #ffffff !important;
+}
+
+.plant-cta-box .plant-btn i {
+    color: #ffffff !important;
+}
+
+/* =========================================================
    RESPONSIVE DESIGN (GRIDS MANAGED FOR MOBILES AS DESKTOP)
 ========================================================= */
 
