@@ -1831,7 +1831,7 @@
     /* ABOUT HERO */
 
     .about-hero {
-        min-height: 590px;
+        min-height: 680px;
     }
 
     .about-hero-content {
@@ -2258,7 +2258,7 @@
     ===================================================== */
 
     .about-hero {
-        min-height: 500px;
+        min-height: 600px;
     }
 
     .about-hero-content {
@@ -5025,8 +5025,8 @@
 
     @media (max-width: 768px) {
         .about-hero {
-            min-height: 480px;
-            padding: 80px 0 50px;
+            min-height: 600px;
+            padding: 114px 0 50px;
         }
 
         .about-hero-content {

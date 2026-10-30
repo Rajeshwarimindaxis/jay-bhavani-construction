@@ -2963,7 +2963,7 @@ body.menu-open #navbar.active {
 
 /* ==========================================================================
    14. STANDARDIZED EQUAL HERO SECTION HEIGHT ACROSS ALL PAGES
-   Matches Home Page hero section height (760px) and responsive breakpoints.
+   Guarantees identical hero height across desktop and mobile responses.
    ========================================================================== */
 .hero,
 .about-hero,
@@ -2978,6 +2978,14 @@ body.menu-open #navbar.active {
 .gallery-hero,
 .contact-hero {
     min-height: 760px !important;
+    height: auto !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-top: 118px !important;
+    padding-bottom: 70px !important;
 }
 
 @media (max-width: 1024px) {
@@ -2994,6 +3002,10 @@ body.menu-open #navbar.active {
     .gallery-hero,
     .contact-hero {
         min-height: 680px !important;
+        height: auto !important;
+        max-height: none !important;
+        padding-top: 118px !important;
+        padding-bottom: 60px !important;
     }
 }
 
@@ -3011,6 +3023,10 @@ body.menu-open #navbar.active {
     .gallery-hero,
     .contact-hero {
         min-height: 600px !important;
+        height: auto !important;
+        max-height: none !important;
+        padding-top: 114px !important;
+        padding-bottom: 50px !important;
     }
 }
 
@@ -3028,5 +3044,410 @@ body.menu-open #navbar.active {
     .gallery-hero,
     .contact-hero {
         min-height: 580px !important;
+        height: auto !important;
+        max-height: none !important;
+        padding-top: 110px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
+/* ==========================================================================
+   14B. STANDARDIZED EQUAL HERO CONTAINER POSITIONING & HORIZONTAL PADDING
+   Guarantees all hero text across pages matches the exact left/right alignment and padding of Home page.
+   ========================================================================== */
+.hero .hero-container,
+.about-hero .about-hero-container,
+.services-hero .services-container,
+.industrial-hero .industrial-container,
+.peb-hero .peb-container,
+.plant-hero .plant-container,
+.comm-hero .comm-container,
+.road-hero .road-container,
+.road-hero-inner,
+.floor-hero .floor-container,
+.pm-hero .pm-container,
+.gallery-hero .hero-container,
+.contact-hero .contact-container {
+    width: min(1200px, calc(100% - 48px)) !important;
+    max-width: 1200px !important;
+    margin-inline: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 1024px) {
+    .hero .hero-container,
+    .about-hero .about-hero-container,
+    .services-hero .services-container,
+    .industrial-hero .industrial-container,
+    .peb-hero .peb-container,
+    .plant-hero .plant-container,
+    .comm-hero .comm-container,
+    .road-hero .road-container,
+    .road-hero-inner,
+    .floor-hero .floor-container,
+    .pm-hero .pm-container,
+    .gallery-hero .hero-container,
+    .contact-hero .contact-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+}
+
+/* ==========================================================================
+   15. STANDARDIZED EQUAL HERO TEXT FONT SIZES ACROSS ALL PAGES
+   Guarantees headings, descriptions, tags, and notes are identical in size.
+   ========================================================================== */
+.hero h1,
+.about-hero h1,
+.about-hero-content h1,
+.services-hero h1,
+.services-hero-content h1,
+.industrial-hero h1,
+.industrial-hero-content h1,
+.peb-hero-copy h1,
+.peb-hero h1,
+.plant-hero-copy h1,
+.plant-hero h1,
+.comm-hero h1,
+.comm-hero-content h1,
+.road-hero h1,
+.road-hero-content h1,
+.floor-hero h1,
+.floor-hero-content h1,
+.pm-hero h1,
+.pm-hero-content h1,
+.gallery-hero .hero-content h1,
+.gallery-hero h1,
+.contact-hero h1,
+.contact-hero-content h1 {
+    font-family: "Manrope", sans-serif !important;
+    font-size: clamp(48px, 6vw, 78px) !important;
+    line-height: 1.05 !important;
+    font-weight: 800 !important;
+    letter-spacing: -1.5px !important;
+}
+
+.hero h1 span,
+.about-hero h1 span,
+.about-hero-content h1 span,
+.services-hero h1 span,
+.services-hero-content h1 span,
+.industrial-hero h1 span,
+.industrial-hero-content h1 span,
+.peb-hero-copy h1 span,
+.peb-hero h1 span,
+.plant-hero-copy h1 span,
+.plant-hero h1 span,
+.comm-hero h1 span,
+.comm-hero-content h1 span,
+.road-hero h1 span,
+.road-hero-content h1 span,
+.floor-hero h1 span,
+.floor-hero-content h1 span,
+.pm-hero h1 span,
+.pm-hero-content h1 span,
+.gallery-hero .hero-content h1 span,
+.gallery-hero h1 span,
+.contact-hero h1 span,
+.contact-hero-content h1 span {
+    display: block !important;
+}
+
+.hero-description,
+.about-hero-description,
+.about-hero-content p,
+.services-hero-description,
+.industrial-hero-description,
+.peb-hero-copy > p,
+.peb-hero-desc,
+.plant-hero-copy > p,
+.comm-hero-description,
+.road-hero-description,
+.floor-hero-description,
+.pm-hero-desc,
+.gallery-hero .hero-description,
+.contact-hero p,
+.contact-hero-desc {
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+    max-width: 650px !important;
+}
+
+.hero-tag,
+.about-hero-tag,
+.services-hero-tag,
+.industrial-hero-tag,
+.peb-eyebrow,
+.peb-hero-tag,
+.plant-eyebrow,
+.comm-hero-tag,
+.comm-eyebrow,
+.road-hero-tag,
+.road-eyebrow,
+.floor-hero-tag,
+.floor-eyebrow,
+.pm-eyebrow,
+.gallery-tag,
+.contact-eyebrow {
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+}
+
+.hero-features,
+.hero-feature,
+.plant-hero-note,
+.peb-hero-note,
+.industrial-hero-note,
+.comm-hero-note,
+.road-hero-note,
+.floor-hero-note,
+.pm-hero-pill {
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+}
+
+@media (max-width: 1024px) {
+    .hero h1,
+    .about-hero h1,
+    .about-hero-content h1,
+    .services-hero h1,
+    .services-hero-content h1,
+    .industrial-hero h1,
+    .industrial-hero-content h1,
+    .peb-hero-copy h1,
+    .peb-hero h1,
+    .plant-hero-copy h1,
+    .plant-hero h1,
+    .comm-hero h1,
+    .comm-hero-content h1,
+    .road-hero h1,
+    .road-hero-content h1,
+    .floor-hero h1,
+    .floor-hero-content h1,
+    .pm-hero h1,
+    .pm-hero-content h1,
+    .gallery-hero .hero-content h1,
+    .gallery-hero h1,
+    .contact-hero h1,
+    .contact-hero-content h1 {
+        font-size: clamp(38px, 5.5vw, 48px) !important;
+        line-height: 1.1 !important;
+        letter-spacing: -1.2px !important;
+    }
+
+    .hero-description,
+    .about-hero-description,
+    .about-hero-content p,
+    .services-hero-description,
+    .industrial-hero-description,
+    .peb-hero-copy > p,
+    .peb-hero-desc,
+    .plant-hero-copy > p,
+    .comm-hero-description,
+    .road-hero-description,
+    .floor-hero-description,
+    .pm-hero-desc,
+    .gallery-hero .hero-description,
+    .contact-hero p,
+    .contact-hero-desc {
+        font-size: 15px !important;
+        line-height: 1.75 !important;
+    }
+
+    .hero-tag,
+    .about-hero-tag,
+    .services-hero-tag,
+    .industrial-hero-tag,
+    .peb-eyebrow,
+    .peb-hero-tag,
+    .plant-eyebrow,
+    .comm-hero-tag,
+    .comm-eyebrow,
+    .road-hero-tag,
+    .road-eyebrow,
+    .floor-hero-tag,
+    .floor-eyebrow,
+    .pm-eyebrow,
+    .gallery-tag,
+    .contact-eyebrow {
+        font-size: 11.5px !important;
+    }
+
+    .hero-features,
+    .hero-feature,
+    .plant-hero-note,
+    .peb-hero-note,
+    .industrial-hero-note,
+    .comm-hero-note,
+    .road-hero-note,
+    .floor-hero-note,
+    .pm-hero-pill {
+        font-size: 12.5px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1,
+    .about-hero h1,
+    .about-hero-content h1,
+    .services-hero h1,
+    .services-hero-content h1,
+    .industrial-hero h1,
+    .industrial-hero-content h1,
+    .peb-hero-copy h1,
+    .peb-hero h1,
+    .plant-hero-copy h1,
+    .plant-hero h1,
+    .comm-hero h1,
+    .comm-hero-content h1,
+    .road-hero h1,
+    .road-hero-content h1,
+    .floor-hero h1,
+    .floor-hero-content h1,
+    .pm-hero h1,
+    .pm-hero-content h1,
+    .gallery-hero .hero-content h1,
+    .gallery-hero h1,
+    .contact-hero h1,
+    .contact-hero-content h1 {
+        font-size: 34px !important;
+        line-height: 1.1 !important;
+        letter-spacing: -1px !important;
+    }
+
+    .hero-description,
+    .about-hero-description,
+    .about-hero-content p,
+    .services-hero-description,
+    .industrial-hero-description,
+    .peb-hero-copy > p,
+    .peb-hero-desc,
+    .plant-hero-copy > p,
+    .comm-hero-description,
+    .road-hero-description,
+    .floor-hero-description,
+    .pm-hero-desc,
+    .gallery-hero .hero-description,
+    .contact-hero p,
+    .contact-hero-desc {
+        font-size: 13.5px !important;
+        line-height: 1.65 !important;
+    }
+
+    .hero-tag,
+    .about-hero-tag,
+    .services-hero-tag,
+    .industrial-hero-tag,
+    .peb-eyebrow,
+    .peb-hero-tag,
+    .plant-eyebrow,
+    .comm-hero-tag,
+    .comm-eyebrow,
+    .road-hero-tag,
+    .road-eyebrow,
+    .floor-hero-tag,
+    .floor-eyebrow,
+    .pm-eyebrow,
+    .gallery-tag,
+    .contact-eyebrow {
+        font-size: 11px !important;
+    }
+
+    .hero-features,
+    .hero-feature,
+    .plant-hero-note,
+    .peb-hero-note,
+    .industrial-hero-note,
+    .comm-hero-note,
+    .road-hero-note,
+    .floor-hero-note,
+    .pm-hero-pill {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1,
+    .about-hero h1,
+    .about-hero-content h1,
+    .services-hero h1,
+    .services-hero-content h1,
+    .industrial-hero h1,
+    .industrial-hero-content h1,
+    .peb-hero-copy h1,
+    .peb-hero h1,
+    .plant-hero-copy h1,
+    .plant-hero h1,
+    .comm-hero h1,
+    .comm-hero-content h1,
+    .road-hero h1,
+    .road-hero-content h1,
+    .floor-hero h1,
+    .floor-hero-content h1,
+    .pm-hero h1,
+    .pm-hero-content h1,
+    .gallery-hero .hero-content h1,
+    .gallery-hero h1,
+    .contact-hero h1,
+    .contact-hero-content h1 {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.5px !important;
+    }
+
+    .hero-description,
+    .about-hero-description,
+    .about-hero-content p,
+    .services-hero-description,
+    .industrial-hero-description,
+    .peb-hero-copy > p,
+    .peb-hero-desc,
+    .plant-hero-copy > p,
+    .comm-hero-description,
+    .road-hero-description,
+    .floor-hero-description,
+    .pm-hero-desc,
+    .gallery-hero .hero-description,
+    .contact-hero p,
+    .contact-hero-desc {
+        font-size: 12.5px !important;
+        line-height: 1.6 !important;
+    }
+
+    .hero-tag,
+    .about-hero-tag,
+    .services-hero-tag,
+    .industrial-hero-tag,
+    .peb-eyebrow,
+    .peb-hero-tag,
+    .plant-eyebrow,
+    .comm-hero-tag,
+    .comm-eyebrow,
+    .road-hero-tag,
+    .road-eyebrow,
+    .floor-hero-tag,
+    .floor-eyebrow,
+    .pm-eyebrow,
+    .gallery-tag,
+    .contact-eyebrow {
+        font-size: 10.5px !important;
+    }
+
+    .hero-features,
+    .hero-feature,
+    .plant-hero-note,
+    .peb-hero-note,
+    .industrial-hero-note,
+    .comm-hero-note,
+    .road-hero-note,
+    .floor-hero-note,
+    .pm-hero-pill {
+        font-size: 11px !important;
     }
 }

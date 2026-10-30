@@ -1885,10 +1885,10 @@ body {
 /* Mobile Hero (640px and below) - Preserved Original 470px Height */
 @media (max-width: 640px) {
     .services-hero {
-        height: 470px !important;
-        min-height: 470px !important;
+        min-height: 600px;
+        height: auto;
+        max-height: none;
         box-sizing: border-box;
-        padding: 0 !important;
     }
 
     .services-hero-content {

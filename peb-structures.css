@@ -1197,7 +1197,7 @@
     }
 
     .peb-hero {
-        min-height: 590px;
+        min-height: 680px;
     }
 
     .peb-hero-stamp {
@@ -1262,8 +1262,8 @@
     }
 
     .peb-hero {
-        min-height: 0;
-        padding: 146px 0 65px;
+        min-height: 600px;
+        padding: 114px 0 50px;
         background-position: 60% center;
     }
 

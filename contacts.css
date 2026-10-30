@@ -79,7 +79,7 @@ body {
 ========================= */
 
 /* =========================
-   CONTACT HERO — INCREASED SIZE
+   CONTACT HERO — INCREASED SIZE WITH BRANDED HERO BACKGROUND
 ========================= */
 
 .contact-hero {
@@ -92,7 +92,22 @@ body {
     display: flex;
     align-items: center;
     padding: 155px 0 75px;
-    background: #06233f linear-gradient(135deg, #07223e 0%, #0d3860 50%, #051b30 100%);
+    background:
+        /* Soft, balanced navy tint allowing the construction site, crane, blueprints, and helmet to remain clearly visible while keeping text ultra-legible */
+        linear-gradient(
+            90deg,
+            rgba(6, 25, 45, 0.68) 0%,
+            rgba(6, 36, 66, 0.48) 42%,
+            rgba(7, 42, 77, 0.22) 75%,
+            rgba(5, 27, 48, 0.08) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5, 27, 48, 0.38) 0%,
+            transparent 32%,
+            rgba(5, 27, 48, 0.28) 100%
+        ),
+        url("images/contact-hero.jpg") center center / cover no-repeat;
     color: var(--contact-white);
 }
 
@@ -119,6 +134,7 @@ body {
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .contact-eyebrow::before {
@@ -128,6 +144,7 @@ body {
     height: 3px;
     border-radius: 10px;
     background: var(--contact-orange);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .contact-hero h1 {
@@ -139,18 +156,21 @@ body {
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -1.5px;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.70), 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .contact-hero h1 span {
-    color: #FFAD60;
+    color: #f58220;
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.60);
 }
 
 .contact-hero p {
     max-width: 700px;
     margin: 0;
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.96);
     font-size: 16px;
     line-height: 1.85;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
 }
 
 /* Ensure hero text is instantly visible */
@@ -798,8 +818,9 @@ a.contact-detail:hover strong {
 
 @media (max-width: 768px) {
     .contact-hero {
-        min-height: auto;
-        padding: 148px 0 62px;
+        min-height: 600px;
+        padding: 114px 0 50px;
+        background-position: 65% center;
     }
 
     .contact-main,
@@ -844,8 +865,9 @@ a.contact-detail:hover strong {
     }
 
     .contact-hero {
-        min-height: auto;
-        padding: 144px 0 52px;
+        min-height: 580px;
+        padding: 110px 0 40px;
+        background-position: 70% center;
     }
 
     .contact-hero h1 {
@@ -1694,8 +1716,8 @@ a.contact-detail:hover .contact-detail-icon {
     }
 
     .contact-hero {
-        min-height: auto !important;
-        padding: 148px 0 62px !important;
+        min-height: 600px !important;
+        padding: 114px 0 50px !important;
     }
 
     .contact-hero .contact-container {
@@ -1898,8 +1920,8 @@ a.contact-detail:hover .contact-detail-icon {
     }
 
     .contact-hero {
-        min-height: auto !important;
-        padding: 144px 0 52px !important;
+        min-height: 580px !important;
+        padding: 110px 0 40px !important;
     }
 
     .contact-hero .contact-container {
@@ -2077,8 +2099,8 @@ a.contact-detail:hover .contact-detail-icon {
 /* Ultra-Compact Screens (max-width: 360px) */
 @media (max-width: 360px) {
     .contact-hero {
-        min-height: auto !important;
-        padding: 138px 0 44px !important;
+        min-height: 580px !important;
+        padding: 105px 0 35px !important;
     }
 
     .contact-hero .contact-container {

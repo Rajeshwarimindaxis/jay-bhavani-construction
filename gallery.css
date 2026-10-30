@@ -1215,7 +1215,7 @@ a {
 
 @media (max-width: 1024px) {
     .gallery-hero {
-        min-height: 560px;
+        min-height: 680px;
         padding: 100px 0 70px;
     }
 
@@ -1277,8 +1277,8 @@ a {
 
 @media (max-width: 650px) {
     .gallery-hero {
-        min-height: 480px;
-        padding: 85px 0 50px;
+        min-height: 600px;
+        padding: 114px 0 50px;
     }
 
     .gallery-hero .hero-content {

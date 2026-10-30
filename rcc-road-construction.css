@@ -82,11 +82,23 @@ body {
     margin-inline: auto;
 }
 
+.road-hero .road-container,
+.road-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, calc(100% - 48px)) !important;
+    max-width: 1200px !important;
+    margin-inline: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+}
+
 .road-hero-content {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 860px;
+    max-width: 780px;
     padding: 0;
     color: #fff;
 }
@@ -1357,20 +1369,21 @@ body {
 @media (max-width: 767px) {
 
     .road-hero {
-        height: 470px;
-        min-height: 470px;
-        max-height: 470px;
+        min-height: 600px;
+        height: auto;
+        max-height: none;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         overflow: hidden;
-        padding: 85px 0 25px;
         box-sizing: border-box;
     }
 
-    .road-hero .road-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 22px;
+    .road-hero .road-container,
+    .road-hero-inner {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
         margin: 0 auto;
         box-sizing: border-box;
     }
@@ -1410,8 +1423,10 @@ body {
         padding-top: 98px;
     }
 
-    .road-hero .road-container {
-        padding: 0 17px;
+    .road-hero .road-container,
+    .road-hero-inner {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
     }
 
     .road-hero h1 {

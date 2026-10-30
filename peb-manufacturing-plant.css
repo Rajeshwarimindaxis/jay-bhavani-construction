@@ -112,29 +112,18 @@
     background: #06182a url("images/peb-plant-facility.jpg") center 48% / cover no-repeat;
 }
 
-/* Luminous light blue atmospheric overlay over plant facility image */
+/* Subtle translucent tint allowing the background plant facility image to be clearly visible */
 .plant-hero-shade {
     position: absolute;
     z-index: -1;
     inset: 0;
     background:
         linear-gradient(
-            110deg,
-            rgba(5, 26, 48, 0.88) 0%,
-            rgba(8, 52, 98, 0.74) 30%,
-            rgba(22, 112, 190, 0.52) 65%,
-            rgba(56, 189, 248, 0.35) 100%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(14, 116, 204, 0.22) 0%,
-            transparent 50%,
-            rgba(2, 22, 42, 0.65) 100%
-        ),
-        radial-gradient(
-            circle at 75% 30%,
-            rgba(125, 211, 252, 0.28) 0%,
-            transparent 60%
+            90deg,
+            rgba(6, 25, 45, 0.64) 0%,
+            rgba(8, 48, 86, 0.42) 42%,
+            rgba(56, 189, 248, 0.16) 78%,
+            rgba(56, 189, 248, 0.06) 100%
         );
 }
 
@@ -1130,15 +1119,9 @@
         background:
             linear-gradient(
                 180deg,
-                rgba(5, 26, 48, 0.92) 0%,
-                rgba(10, 60, 112, 0.82) 40%,
-                rgba(24, 120, 200, 0.58) 75%,
-                rgba(56, 189, 248, 0.38) 100%
-            ),
-            radial-gradient(
-                circle at 50% 25%,
-                rgba(125, 211, 252, 0.24) 0%,
-                transparent 60%
+                rgba(6, 25, 45, 0.70) 0%,
+                rgba(8, 48, 86, 0.45) 50%,
+                rgba(56, 189, 248, 0.12) 100%
             );
     }
 

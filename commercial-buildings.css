@@ -1556,7 +1556,7 @@ ul {
     }
 
     .comm-hero {
-        min-height: 550px;
+        min-height: 680px;
         padding: 80px 0;
     }
 
@@ -1662,8 +1662,8 @@ ul {
     }
 
     .comm-hero {
-        min-height: 510px;
-        padding: 70px 0;
+        min-height: 600px;
+        padding: 114px 0 50px;
         background-position: center;
     }
 
@@ -1920,8 +1920,8 @@ ul {
     }
 
     .comm-hero {
-        min-height: 470px;
-        padding: 60px 0;
+        min-height: 580px;
+        padding: 110px 0 40px;
     }
 
     .comm-eyebrow {
