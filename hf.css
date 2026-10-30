@@ -3785,4 +3785,18 @@ body.menu-open #navbar.active {
     .plant-overview-copy p {
         font-size: 9px !important;
     }
-}
+}
+
+/* Service Pages - Hide Image Overlay Badges */
+.industrial-image-badge,
+.peb-image-caption,
+.comm-image-badge,
+#commercial-overview .comm-image-badge,
+.road-image-badge,
+.floor-image-badge,
+.plant-experience-badge,
+.peb-orange-square,
+.pm-jig-badge {
+    display: none !important;
+}
+

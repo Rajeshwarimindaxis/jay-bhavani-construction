@@ -50,6 +50,7 @@ html {
 }
 
 body {
+    margin: 8px;
     font-family: var(--font-body);
     font-size: 15px;
     line-height: 1.75;
