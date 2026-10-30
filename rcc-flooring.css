@@ -6,8 +6,8 @@
 :root {
     --floor-dark: #0f172a;
     --floor-dark-2: #1e293b;
-    --floor-blue: #0284c7;
-    --floor-blue-dark: #0369a1;
+    --floor-blue: #0759b5;
+    --floor-blue-dark: #06458f;
     --floor-orange: #f28c28;
     --floor-orange-dark: #d96f0b;
     --floor-text: #506173;
@@ -110,7 +110,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #38bdf8;
+    color: var(--floor-blue);
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -123,7 +123,7 @@ body {
     content: "";
     height: 2px;
     width: 35px;
-    background: #38bdf8;
+    background: var(--floor-blue);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -208,7 +208,7 @@ body {
 }
 
 .floor-hero-note i {
-    color: #38bdf8;
+    color: var(--floor-blue);
     font-size: 16px;
     filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
 }
@@ -308,7 +308,7 @@ body {
 
 .floor-image-badge i {
     font-size: 24px;
-    color: #38bdf8;
+    color: var(--floor-blue);
 }
 
 .floor-image-badge strong {
@@ -381,7 +381,7 @@ body {
     width: 48px;
     height: 48px;
     border-radius: 10px;
-    background: rgba(2, 132, 199, 0.1);
+    background: rgba(7, 89, 181, 0.1);
     color: var(--floor-blue);
     display: flex;
     align-items: center;
@@ -509,7 +509,7 @@ body {
     top: 16px;
     left: 10px;
     background: rgba(15, 23, 42, 0.88);
-    color: #38bdf8;
+    color: var(--floor-blue);
     padding: 4px 6px;
     border-radius: 4px;
     font-size: 10px;
@@ -675,7 +675,7 @@ body {
     font-family: "Manrope", sans-serif;
     font-size: 28px;
     font-weight: 800;
-    color: rgba(2, 132, 199, 0.25);
+    color: rgba(7, 89, 181, 0.35);
     margin-bottom: 12px;
 }
 
@@ -711,7 +711,7 @@ body {
     right: -80px;
     width: 360px;
     height: 360px;
-    background: rgba(2, 132, 199, 0.15);
+    background: rgba(7, 89, 181, 0.15);
     border-radius: 50%;
     filter: blur(80px);
     pointer-events: none;
@@ -731,11 +731,11 @@ body {
 }
 
 .floor-cta-content .floor-section-label {
-    color: #38bdf8;
+    color: var(--floor-blue);
 }
 
 .floor-cta-content .floor-section-label::before {
-    background: #38bdf8;
+    background: var(--floor-blue);
 }
 
 .floor-cta-content h2 {
@@ -1386,129 +1386,137 @@ body {
     }
 }
 
-/* MOBILE: IMAGE LEFT + TEXT RIGHT */
+/* MOBILE: SIDE-BY-SIDE 2-COLUMN GRID (MATCHING INDUSTRIAL SHEDS) */
 @media screen and (max-width: 768px) {
     .floor-intro-grid {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr) !important;
         gap: 12px !important;
         align-items: start !important;
     }
 
     .floor-intro-image {
         position: relative !important;
+        min-height: 240px !important;
+        max-height: 280px !important;
+        height: 100% !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        background: #e5ebf2 !important;
         width: 100% !important;
         min-width: 0 !important;
-        min-height: 220px !important;
-        height: 100% !important;
-        overflow: hidden !important;
     }
 
     .floor-intro-image img {
         position: absolute !important;
         inset: 0 !important;
         width: 100% !important;
-        height: 50% !important;
+        height: 100% !important;
         object-fit: cover !important;
-        transition: transform 0.8s ease;
+        object-position: center center !important;
+        border-radius: 12px !important;
     }
 
-    .floor-intro-grid>div {
+    .floor-image-badge {
+        position: absolute !important;
+        left: 7px !important;
+        right: 7px !important;
+        bottom: 7px !important;
+        top: auto !important;
+        max-width: none !important;
+        gap: 7px !important;
+        padding: 9px 7px !important;
+        border-left: 3px solid var(--floor-blue) !important;
+        background: rgba(15, 23, 42, 0.92) !important;
+        border-radius: 6px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .floor-image-badge i {
+        font-size: 17px !important;
+        color: var(--floor-blue) !important;
+        flex-shrink: 0 !important;
+    }
+
+    .floor-image-badge strong {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        color: #fff !important;
+    }
+
+    .floor-image-badge small {
+        font-size: 8px !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        color: rgba(255, 255, 255, 0.75) !important;
+    }
+
+    .floor-intro-content {
         min-width: 0 !important;
     }
 
-    .floor-intro-grid .floor-heading,
-    .floor-section h2 {
-        font-size: 16px !important;
-        line-height: 1.2 !important;
-        margin: 0 0 7px !important;
+    .floor-intro-content .floor-section-label {
+        font-size: 8px !important;
+        line-height: 1.5 !important;
+        letter-spacing: .6px !important;
+        margin-bottom: 8px !important;
     }
 
-    .floor-intro-grid p {
-        font-size: 7px !important;
-        line-height: 1.2 !important;
+    .floor-intro-content .floor-heading {
+        font-size: clamp(19px, 4.8vw, 27px) !important;
+        line-height: 1.18 !important;
+        letter-spacing: -.5px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .floor-intro-content .floor-body-text {
+        font-size: 10px !important;
+        line-height: 1.65 !important;
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .floor-check-list {
+        grid-template-columns: 1fr !important;
+        gap: 6px !important;
+        margin-top: 10px !important;
+    }
+
+    .floor-check-item {
+        gap: 6px !important;
+        font-size: 9px !important;
+        line-height: 1.45 !important;
+    }
+
+    .floor-check-item i {
+        font-size: 10px !important;
+        margin-top: 2px !important;
     }
 }
 
-.floor-image-badge {
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
+@media screen and (max-width: 380px) {
+    .floor-intro-image {
+        min-height: 195px !important;
+        max-height: 230px !important;
+        height: 100% !important;
+    }
 
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    padding: 16px 20px;
-    background: rgba(15, 23, 42, 0.92);
-    border-left: 4px solid var(--floor-orange);
-    border-radius: 8px;
-    color: #fff;
-
-    backdrop-filter: blur(8px);
-    box-sizing: border-box;
-    max-width: calc(100% - 40px);
-}
-
-@media screen and (max-width: 1024px) {
     .floor-image-badge {
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        gap: 10px;
-        padding: 12px 15px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .floor-image-badge {
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-
-        gap: 8px;
-        padding: 10px 12px;
-        border-left-width: 3px;
-        border-radius: 6px;
-
-        max-width: calc(100% - 20px);
+        left: 5px !important;
+        right: 5px !important;
+        bottom: 5px !important;
+        padding: 7px 5px !important;
     }
 
-    .floor-image-badge h3 {
-        font-size: 14px;
-        line-height: 1.3;
-        margin: 0;
+    .floor-intro-content .floor-heading {
+        font-size: 18px !important;
     }
 
-    .floor-image-badge p {
-        font-size: 11px;
-        line-height: 1.4;
-        margin: 4px 0 0;
-    }
-
-    .floor-image-badge img,
-    .floor-image-badge .badge-icon {
-        max-width: 28px;
-        flex-shrink: 0;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .floor-image-badge {
-        left: 8px;
-        right: 8px;
-        bottom: 90px;
-        gap: 6px;
-        padding: 8px 10px;
-    }
-
-    .floor-image-badge h3 {
-        font-size: 12px;
-    }
-
-    .floor-image-badge p {
-        font-size: 10px;
+    .floor-intro-content .floor-body-text {
+        font-size: 9px !important;
     }
 }
 

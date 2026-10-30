@@ -2595,88 +2595,162 @@ ul {
         line-height: 1.7;
     }
 }
-/* Tablet and mobile: KEEP TWO COLUMNS */
+/* Tablet and mobile: KEEP TWO COLUMNS (MATCHING INDUSTRIAL SHEDS) */
 @media (max-width: 768px) {
-    #commercial-overview .comm-container.comm-intro-grid {
-        grid-template-columns: 36% minmax(0, 1fr) !important;
+    #commercial-overview .comm-container.comm-intro-grid,
+    .comm-intro-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr) !important;
         gap: 12px !important;
+        align-items: start !important;
+    }
+
+    #commercial-overview .comm-intro-image,
+    .comm-intro-image {
+        position: relative !important;
+        min-height: 240px !important;
+        max-height: 280px !important;
+        height: 100% !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    #commercial-overview .comm-intro-image::before {
+        display: none !important;
+    }
+
+    #commercial-overview .comm-intro-image > img,
+    .comm-intro-image > img {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        border-radius: 12px !important;
+    }
+
+    #commercial-overview .comm-image-badge,
+    .comm-image-badge {
+        position: absolute !important;
+        left: 7px !important;
+        right: 7px !important;
+        bottom: 7px !important;
+        top: auto !important;
+        width: auto !important;
+        max-width: none !important;
+        gap: 7px !important;
+        padding: 9px 7px !important;
+        background: rgba(18, 24, 32, 0.92) !important;
+        border-left: 3px solid #ff9b3d !important;
+        border-radius: 6px !important;
+        display: flex !important;
         align-items: center !important;
     }
 
-    #commercial-overview .comm-intro-image > img {
-        height: 230px !important;
+    #commercial-overview .comm-image-badge > i,
+    .comm-image-badge > i {
+        font-size: 17px !important;
+        width: auto !important;
+        height: auto !important;
+        background: none !important;
+        color: #ff9b3d !important;
+        flex-shrink: 0 !important;
     }
 
-    #commercial-overview .comm-intro-content .comm-heading {
-        font-size: 19px !important;
-        line-height: 1.25 !important;
-        margin: 7px 0 10px !important;
+    #commercial-overview .comm-image-badge strong,
+    .comm-image-badge strong {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        color: #fff !important;
     }
 
-    #commercial-overview .comm-intro-content .comm-body-text {
-        font-size: 11px !important;
-        line-height: 1.55 !important;
+    #commercial-overview .comm-image-badge small,
+    .comm-image-badge small {
+        font-size: 8px !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        color: rgba(255, 255, 255, 0.75) !important;
+    }
+
+    #commercial-overview .comm-intro-content,
+    .comm-intro-content {
+        min-width: 0 !important;
+    }
+
+    #commercial-overview .comm-section-label,
+    .comm-section-label {
+        font-size: 8px !important;
+        line-height: 1.5 !important;
+        letter-spacing: .6px !important;
         margin-bottom: 8px !important;
     }
 
-    #commercial-overview .comm-section-label {
+    #commercial-overview .comm-intro-content .comm-heading,
+    .comm-intro-content .comm-heading {
+        font-size: clamp(19px, 4.8vw, 27px) !important;
+        line-height: 1.18 !important;
+        letter-spacing: -.5px !important;
+        margin-bottom: 10px !important;
+    }
+
+    #commercial-overview .comm-intro-content .comm-body-text,
+    .comm-intro-content .comm-body-text {
+        font-size: 10px !important;
+        line-height: 1.65 !important;
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    #commercial-overview .comm-check-list,
+    .comm-check-list {
+        grid-template-columns: 1fr !important;
+        gap: 6px !important;
+        margin-top: 10px !important;
+    }
+
+    #commercial-overview .comm-check-item,
+    .comm-check-item {
+        gap: 6px !important;
         font-size: 9px !important;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-    #commercial-overview .comm-container.comm-intro-grid {
-        grid-template-columns: 34% minmax(0, 1fr) !important;
-        gap: 10px !important;
+        line-height: 1.45 !important;
     }
 
-    #commercial-overview .comm-intro-image > img {
-        height: 210px !important;
-    }
-
-    #commercial-overview .comm-intro-content .comm-heading {
-        font-size: 17px !important;
-    }
-
-    #commercial-overview .comm-intro-content .comm-body-text {
+    #commercial-overview .comm-check-item i,
+    .comm-check-item i {
         font-size: 10px !important;
-        line-height: 1.5 !important;
-    }
-
-    #commercial-overview .comm-check-item {
-        font-size: 10px !important;
-    }
-}
-
-/* Compact image badge on mobile */
-@media (max-width: 480px) {
-
-    #commercial-overview .comm-image-badge {
-        padding: 3px 4px !important;
-        gap: 7px !important;
-        min-height: 0 !important;
-        height: auto !important;
-        max-width: 85% !important;
-        border-radius: 8px !important;
-    }
-
-    #commercial-overview .comm-image-badge > i {
-        width: 32px !important;
-        height: 32px !important;
-        font-size: 14px !important;
-        flex-shrink: 0;
-    }
-
-    #commercial-overview .comm-image-badge strong {
-        font-size: 10px !important;
-        line-height: 1.2 !important;
-    }
-
-    #commercial-overview .comm-image-badge small {
-        font-size: 8px !important;
-        line-height: 1.2 !important;
         margin-top: 2px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    #commercial-overview .comm-intro-image,
+    .comm-intro-image {
+        min-height: 195px !important;
+        max-height: 230px !important;
+        height: 100% !important;
+    }
+
+    #commercial-overview .comm-image-badge,
+    .comm-image-badge {
+        left: 5px !important;
+        right: 5px !important;
+        bottom: 5px !important;
+        padding: 7px 5px !important;
+    }
+
+    #commercial-overview .comm-intro-content .comm-heading,
+    .comm-intro-content .comm-heading {
+        font-size: 18px !important;
+    }
+
+    #commercial-overview .comm-intro-content .comm-body-text,
+    .comm-intro-content .comm-body-text {
+        font-size: 9px !important;
     }
 }
 /* Add padding above Commercial Hero H1 on mobile */

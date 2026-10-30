@@ -156,12 +156,19 @@ body {
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -1.5px;
-    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.70), 0 1px 3px rgba(0, 0, 0, 0.85);
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.45),
+        0 0 40px rgba(255, 255, 255, 0.20),
+        0 3px 18px rgba(0, 0, 0, 0.70), 
+        0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .contact-hero h1 span {
     color: #f58220;
-    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.60);
+    text-shadow: 
+        0 0 22px rgba(255, 255, 255, 0.50),
+        0 0 45px rgba(255, 255, 255, 0.25),
+        0 3px 16px rgba(0, 0, 0, 0.60);
 }
 
 .contact-hero p {
