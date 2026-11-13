@@ -4555,7 +4555,8 @@ body {
         align-items: center;
         justify-content: center;
         gap: 8px;
-        flex: 1 1 calc(50% - 5px);
+        flex: 1 1 100%;
+        width: 100%;
         min-height: 42px;
         padding: 10px 14px;
         border: 1.5px solid #0759b5;

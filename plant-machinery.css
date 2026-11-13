@@ -2211,7 +2211,7 @@ main textarea {
         overflow: hidden !important;
     }
 
-    /* 2-Column Side-by-Side Grid Preserved on Mobile */
+
     .pm-jig-wrapper {
         display: grid !important;
         grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important;
@@ -2432,7 +2432,6 @@ main textarea {
     }
 }
 
-/* Extra small screens (<= 380px) */
 @media (max-width: 380px) {
     .pm-jig-wrapper {
         grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr) !important;
